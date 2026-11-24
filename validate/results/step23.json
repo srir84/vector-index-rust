@@ -1,0 +1,180 @@
+{
+ "step": "step23",
+ "pass": true,
+ "seconds": 10.4,
+ "checks": [
+  {
+   "check": "nytimes: file matches its server's checksum",
+   "pass": true,
+   "detail": "piece checksum dec76e37150d602463a8ac07e1044c44-38, sha256 6ad5d2cde6d6a6f2... (0.32 GB)",
+   "data": null
+  },
+  {
+   "check": "imagenet: file matches the published checksum",
+   "pass": true,
+   "detail": "sha256 84f1fb99ba8611a3... (4.22 GB)",
+   "data": null
+  },
+  {
+   "check": "llama head 15_18: both files match the published checksums",
+   "pass": true,
+   "detail": "K_15_18.npy dfa5b9a294dcd966..., Q_15_18.npy 888648dd0db968c8...",
+   "data": null
+  },
+  {
+   "check": "llama head 12_15: both files match the published checksums",
+   "pass": true,
+   "detail": "K_12_15.npy 0eb97418ce740735..., Q_12_15.npy 3761f5aa21801c25...",
+   "data": null
+  },
+  {
+   "check": "llama2: the head is the one the spec's draw names",
+   "pass": true,
+   "detail": "random.Random(23).choice over the 19 heads that are not Llama's gives 15_18",
+   "data": null
+  },
+  {
+   "check": "llama2: the file is the head made by VIBE's rule",
+   "pass": true,
+   "detail": "items, test and extra questions equal the rule run again on the raw head (256,921 / 1,000 / 255,921)",
+   "data": null
+  },
+  {
+   "check": "the rule, run on Llama's own head, gives VIBE's Llama file exactly",
+   "pass": true,
+   "detail": "layer 12, head 15: items, test and extra questions identical (256,921 items)",
+   "data": null
+  },
+  {
+   "check": "nytimes: prepared like the five",
+   "pass": true,
+   "detail": "268,761 items, 256 numbers, formula cos; test questions 1,000 (of 10,000 in the file); questions from items set aside (removed from the items); our top 10 agree with the file's on 92.53% counting ties (91.64% without), +7.47% set aside as questions; answers differing beyond ties: 0; all-zero rows 0 (left out: 239), exact duplicates 40,793",
+   "data": {
+    "card": {
+     "items_full": 268761,
+     "questions": {
+      "test": 1000,
+      "test_in_file": 10000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "items set aside (removed from the items)"
+     },
+     "agreement_with_vibe_top10_full": 0.9164000000000001,
+     "agreement_with_vibe_top10_full_counting_ties": 0.9253000000000001,
+     "vibe_top10_items_we_set_aside_as_questions": 0.0747,
+     "rows_without_angle_left_out": {
+      "items": 239,
+      "test_questions": 9,
+      "extra_questions": 0
+     },
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 1,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 2,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "imagenet: prepared like the five",
+   "pass": true,
+   "detail": "1,281,167 items, 640 numbers, formula cos; test questions 1,000 (of 1,000 in the file); questions from file's extra question sample; our top 10 agree with the file's on 100.00% counting ties (100.00% without), +0.00% set aside as questions; answers differing beyond ties: 0; all-zero rows 0 (left out: 0), exact duplicates 5,950",
+   "data": {
+    "card": {
+     "items_full": 1281167,
+     "questions": {
+      "test": 1000,
+      "test_in_file": 1000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "file's extra question sample"
+     },
+     "agreement_with_vibe_top10_full": 1.0,
+     "agreement_with_vibe_top10_full_counting_ties": 1.0,
+     "vibe_top10_items_we_set_aside_as_questions": 0.0,
+     "rows_without_angle_left_out": {
+      "items": 0,
+      "test_questions": 0,
+      "extra_questions": 0
+     },
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "llama2: prepared like the five",
+   "pass": true,
+   "detail": "256,921 items, 128 numbers, formula ip; test questions 1,000 (of 1,000 in the file); questions from file's extra question sample; our top 10 agree with our own float64 run's (the file has none of its own) on 100.00% counting ties (100.00% without), +0.00% set aside as questions; answers differing beyond ties: 0; all-zero rows 0 (left out: 0), exact duplicates 0",
+   "data": {
+    "card": {
+     "items_full": 256921,
+     "questions": {
+      "test": 1000,
+      "test_in_file": 1000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "file's extra question sample"
+     },
+     "agreement_with_vibe_top10_full": 1.0,
+     "agreement_with_vibe_top10_full_counting_ties": 1.0,
+     "vibe_top10_items_we_set_aside_as_questions": 0.0,
+     "rows_without_angle_left_out": null,
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 2,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 1,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "our loader refuses all seven held-back datasets",
+   "pass": true,
+   "detail": "14/14 refused",
+   "data": null
+  },
+  {
+   "check": "the experiments' loader refuses all seven",
+   "pass": true,
+   "detail": "7/7 refused",
+   "data": null
+  },
+  {
+   "check": "nothing has been run on the three but step 27",
+   "pass": true,
+   "detail": "no result names them outside step 27's runs",
+   "data": null
+  }
+ ]
+}

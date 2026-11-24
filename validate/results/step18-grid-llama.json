@@ -1,0 +1,182 @@
+[
+ {
+  "r": 24,
+  "alpha": 1.0,
+  "searches_per_s": 28632.13413041611,
+  "checks": 1268.8711153846143,
+  "build_s": 1.9699347920250148,
+  "bytes_per_item": 264.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 24,
+  "alpha": 1.1,
+  "searches_per_s": 34276.52115082485,
+  "checks": 1110.1929374999993,
+  "build_s": 2.1269520001951605,
+  "bytes_per_item": 264.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 24,
+  "alpha": 1.2,
+  "searches_per_s": 39125.71252948457,
+  "checks": 1016.1622056074765,
+  "build_s": 2.121537541039288,
+  "bytes_per_item": 264.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 24,
+  "alpha": 1.3,
+  "searches_per_s": 41006.432228099846,
+  "checks": 958.9267333333331,
+  "build_s": 2.0637722501996905,
+  "bytes_per_item": 264.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 32,
+  "alpha": 1.0,
+  "searches_per_s": 25128.36081699426,
+  "checks": 1400.4074339622646,
+  "build_s": 2.402771041961387,
+  "bytes_per_item": 304.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 32,
+  "alpha": 1.1,
+  "searches_per_s": 32086.917540236165,
+  "checks": 1275.6553786407765,
+  "build_s": 2.2798686660826206,
+  "bytes_per_item": 304.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 32,
+  "alpha": 1.2,
+  "searches_per_s": 30407.97705352449,
+  "checks": 1274.678999999999,
+  "build_s": 2.5159768748562783,
+  "bytes_per_item": 304.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 32,
+  "alpha": 1.3,
+  "searches_per_s": 41932.492322551676,
+  "checks": 1089.1323846153844,
+  "build_s": 2.5101982918567955,
+  "bytes_per_item": 304.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 48,
+  "alpha": 1.0,
+  "searches_per_s": 23906.216144803824,
+  "checks": 1476.737623853211,
+  "build_s": 2.6671914579346776,
+  "bytes_per_item": 388.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 48,
+  "alpha": 1.1,
+  "searches_per_s": 29438.426815977655,
+  "checks": 1502.452891304348,
+  "build_s": 2.7162355419714004,
+  "bytes_per_item": 388.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 48,
+  "alpha": 1.2,
+  "searches_per_s": 27461.53324556858,
+  "checks": 1613.403969230768,
+  "build_s": 2.6144552920013666,
+  "bytes_per_item": 388.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 48,
+  "alpha": 1.3,
+  "searches_per_s": 32379.02543643388,
+  "checks": 1504.292414285714,
+  "build_s": 2.714414707850665,
+  "bytes_per_item": 388.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 64,
+  "alpha": 1.0,
+  "searches_per_s": 24633.27360085341,
+  "checks": 1475.9704999999988,
+  "build_s": 2.3180840839631855,
+  "bytes_per_item": 472.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 64,
+  "alpha": 1.1,
+  "searches_per_s": 28913.93683958711,
+  "checks": 1571.2347457627106,
+  "build_s": 2.4958799169398844,
+  "bytes_per_item": 472.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 64,
+  "alpha": 1.2,
+  "searches_per_s": 29137.94508056737,
+  "checks": 1679.96114953271,
+  "build_s": 2.8260124169755727,
+  "bytes_per_item": 472.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 64,
+  "alpha": 1.3,
+  "searches_per_s": 28119.575046370286,
+  "checks": 1783.3700517241377,
+  "build_s": 3.1870027501136065,
+  "bytes_per_item": 472.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 96,
+  "alpha": 1.0,
+  "searches_per_s": 23052.569024766988,
+  "checks": 1541.787,
+  "build_s": 2.2080325421411544,
+  "bytes_per_item": 636.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 96,
+  "alpha": 1.1,
+  "searches_per_s": 26611.785891081425,
+  "checks": 1653.9403695652165,
+  "build_s": 2.59346141689457,
+  "bytes_per_item": 636.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 96,
+  "alpha": 1.2,
+  "searches_per_s": 26880.76175636055,
+  "checks": 1820.9566435643555,
+  "build_s": 3.0351417080964893,
+  "bytes_per_item": 636.00008,
+  "code_bits": 8
+ },
+ {
+  "r": 96,
+  "alpha": 1.3,
+  "searches_per_s": 24321.241099279207,
+  "checks": 2102.07056701031,
+  "build_s": 3.645526292035356,
+  "bytes_per_item": 636.00008,
+  "code_bits": 8
+ }
+]

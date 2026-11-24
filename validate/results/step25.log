@@ -1,0 +1,18 @@
+PASS  gooaq: part 1's design: answers identical to step 12's recording  identical
+PASS  gooaq: part 3's settings: build and answers identical to the recording  {'r': 32, 'alpha': 1.2, 'code_bits': 4, 'rerank': 15}: identical
+PASS  gooaq: no more than 2% slower  41,988 searches/s at 95% against 41,750 before (1.006x); checks 522 (before 522); one core, the same saved index, 5 rounds each, taking turns
+PASS  glove: part 1's design: answers identical to step 12's recording  identical
+PASS  glove: part 3's settings: build and answers identical to the recording  {'r': 96, 'alpha': 1.3, 'code_bits': 4, 'rerank': 50}: identical
+PASS  glove: no more than 2% slower  10,344 searches/s at 95% against 10,041 before (1.030x); checks 5,217 (before 5,217); one core, the same saved index, 5 rounds each, taking turns
+PASS  yandex: part 1's design: answers identical to step 12's recording  identical
+PASS  yandex: part 3's settings: build and answers identical to the recording  {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15}: identical
+PASS  yandex: no more than 2% slower  49,213 searches/s at 95% against 48,083 before (1.024x); checks 908 (before 908); one core, the same saved index, 5 rounds each, taking turns
+PASS  llama: part 1's design: answers identical to step 12's recording  identical
+PASS  llama: part 3's settings: build and answers identical to the recording  {'r': 24, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15}: identical
+PASS  llama: no more than 2% slower  54,237 searches/s at 95% against 53,246 before (1.019x); checks 925 (before 925); one core, the same saved index, 5 rounds each, taking turns
+PASS  landmark: part 1's design: answers identical to step 12's recording  identical
+PASS  landmark: part 3's settings: build and answers identical to the recording  {'r': 24, 'alpha': 1.0, 'code_bits': 8, 'rerank': 50}: identical
+PASS  landmark: no more than 2% slower  68,479 searches/s at 95% against 67,651 before (1.012x); checks 282 (before 282); one core, the same saved index, 5 rounds each, taking turns
+FAIL  all five: at least 5% faster on average  1.018x on average (gooaq 1.006x, glove 1.030x, yandex 1.024x, llama 1.019x, landmark 1.012x)
+
+step25: SOME FAILED (15/16) in 143.6 s

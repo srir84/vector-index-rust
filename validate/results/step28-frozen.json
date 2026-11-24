@@ -1,0 +1,73 @@
+{
+ "index": {
+  "Cargo.lock": "7b85c1ce6fec1f30665d75d9fa122bc70b52c0c2b4d6a9aae228613923ef6090",
+  "Cargo.toml": "1d34fdf3734baf1a8ee48e6b450b9ccad960a6f2c5e58a317ef906084fb9a86a",
+  "crates/vindex/Cargo.toml": "282660ff82d4df5e05d00095ed76958aef8311ebedf9525a472bf99200c13d78",
+  "crates/vindex/examples/basic.rs": "da742128593904353ddddc5b2eaff5ead29f017e27041ae03948488ed5ac8833",
+  "crates/vindex/examples/kernels.rs": "aacba08ca29e222402ea4e6756ca084b1544c46f992f32151c8fefc9c601e731",
+  "crates/vindex/src/audit.rs": "6a70c73a61ff14524c5f52b8948756d6cb7bdf731b91d72202f3033ffc167872",
+  "crates/vindex/src/build.rs": "55cfac7640b2e38551818ef498b2c96056e605f14f2f3781179c25c805f77289",
+  "crates/vindex/src/changes.rs": "d7c1435b9650375d70487c7d115722f4ff8e4572ca3a7cfcbe8f22655feb802f",
+  "crates/vindex/src/codes.rs": "48b33a553323755f15f4b1f4bd34f8a078df0eb6b275d72bf5830b6d59dca4e6",
+  "crates/vindex/src/debug.rs": "9a8eb75b3bf6dff671f573873720663b07a90d1690df95d2e7c58d2f42e3953c",
+  "crates/vindex/src/effort.rs": "8a6db60ef7f0decf1fec93732214e627be964a86bdc8a8f912bb921811daa200",
+  "crates/vindex/src/graph.rs": "818e208d2632e8478a43e08a60c79dc87ef62a4adc66e4754ed4220904da3aea",
+  "crates/vindex/src/index.rs": "1a1bbf0d66181b267105f3786dc7eca65912054787be24468d23c620220f7997",
+  "crates/vindex/src/layout.rs": "5753877b9de85434a58f6922bf0aced6c90a3e5b841e66a8a809b68ddf8c45f7",
+  "crates/vindex/src/lib.rs": "37308033cdbee7040f60e72b8564092cb8a3776ff0f029a222bf51f2b1c48c91",
+  "crates/vindex/src/metric.rs": "12e0673f31bf11ee741183d4f157d473b58495bcb4f16dcdf3867531145caf40",
+  "crates/vindex/src/persist.rs": "91011d4ce2ffabf2c0a20bc0c1e65b60b20f0cbd73fd690ef314ac33e68c4f61",
+  "crates/vindex/src/prefetch.rs": "8788fd228df1d3a0fbf4e346d539f586790782c5e120e5b08c090258d81b074a",
+  "crates/vindex/src/prune.rs": "f659a659bf763387893de9569e6fa9adbda71b542ff8cf7ab7109fdc06b9399e",
+  "crates/vindex/src/qlinks.rs": "f91b04f4158e7ded048220ebea6ef42b50f9c2c4fac01148a416316c92ee1c0f",
+  "crates/vindex/src/rng.rs": "98eefb046e273f89ed0ad60ebdee2bf4531d33b276aa55ebe21ead0e356ed55b",
+  "crates/vindex/src/score.rs": "b28264731826cf342c721782e0e2e92b00d8f8f77ff07ab74e52f6d47237bfa2",
+  "crates/vindex/src/search.rs": "0fce1dccfb98fbb987ed7a5cdf27e1ff6d07e343c785879060d302950bfa60ef",
+  "crates/vindex/src/store.rs": "9ff10543d9da6d1570b336ef60c5465aa186c7b9cc51ea07654c0ef4b8e8edaa",
+  "crates/vindex/src/suggest.rs": "624d3eb6b8c444f45d76000344975c5bd571e66c46b206e664417d56e764bda4",
+  "crates/vindex/src/tune.rs": "c4a1b3a7b1e244ed681645722ac7b3f7a002a2c4abebb47c7e9d8e90b38153e7",
+  "crates/vindex/src/usage.rs": "9da495d6ff53b89f20eb471c644afcf7bc0ed80b86f08e6e442edfdaf268594c",
+  "crates/vindex-py/Cargo.toml": "48e68d02167603c774dc730b833c17ca632ca44c910784ca5c28bbe55c590020",
+  "crates/vindex-py/pyproject.toml": "21bcae17b875581d402eb811bebaedb4cee93a44821cf07587cc2c073932ec46",
+  "crates/vindex-py/src/lib.rs": "471199e131c7746fcc0236044cb67072fce2593182384d1a8e6f9fb8e47a7157",
+  "rust-toolchain.toml": "bb6f1b6abb2a229f648898ae03b248aa646433570e9afb8475ed7e32f99ec628",
+  "tools/build_py.sh": "158b25e679e770ae811bbdd4bdd5c6c8a503e9b8821e2a82e85ce6ccfa43e05c",
+  "tools/build_py_pgo.sh": "4a63c62711b038f15a9475b8fcc0b662b113f3fbf5de5593fab3f05a834fdb52",
+  "tools/pgo_workload.py": "ee4bb91dda3f73001f0ea3cd843aff95134e8cd4690c6630c6b481020b2ff1e7"
+ },
+ "package": {
+  "vindex.cpython-313-darwin.so": "934a3e470848b6c205f84a091242de0889569743e2745cf551b2b64f25594100"
+ },
+ "rivals": {
+  ".venv/lib/python3.13/site-packages/corenn_py/corenn_py.cpython-313-darwin.so": "a4e9b8cfcd595bb75758011aa827b2449ef0ccbd68d6fdbb224a84abd3f5be4c",
+  ".venv/lib/python3.13/site-packages/glass.cpython-313-darwin.so": "cb35c8208edc1c4b89624be13922af30dea6d5afd34aa84c2edb37d8b14ef204",
+  ".venv/lib/python3.13/site-packages/hnswlib.cpython-313-darwin.so": "c1ce1e432b41747411e4cf6c0104abafef1ab53379267afcf8f1c9bfac4d92ca",
+  "baselines/bin/diskann-benchmark": "a3cc787e1ab8dcac2b72701ba74fa3a06968e93fb3a2a6011442ac28b5967e6b",
+  "baselines/bin/roargraph-build": "e443bfefacacd97c485b253dd1964f4f2dd9971ea75556879606a5e2600ee787",
+  "baselines/bin/roargraph-search": "67796c7e1a9d68c798df9a4d29ab7e85eb6a4d26cc55cde1e399d40b7a551562",
+  "baselines/scann/Dockerfile": "94a0cb981faae9e619d707a85fcac4dc58d5d58136467842337112a47c52b8a5"
+ },
+ "rival_versions": [
+  "corenn_py-0.3.1.dist-info",
+  "glass-2.1.0.dist-info",
+  "hnswlib-0.8.0.dist-info"
+ ],
+ "runners": {
+  "bench/runners/__init__.py": "4c592ad39485a5e3e6da9ae59f4b7099cf8c617558948d13388d703c279a8d36",
+  "bench/runners/changes.py": "c367d38ce0022beb7ce17b748a06a6c66887894ad9cff2cd0ca8f28a06da695d",
+  "bench/runners/common.py": "6c59c213206393f7d6627944ec67b97fa39a3504ae83a5c40fc208f8e3d3e360",
+  "bench/runners/corenn.py": "f0fb43e1a2fc39309aec590207954fc220bbaed4ef8bf2a44d756a997d5a24ed",
+  "bench/runners/corenn_timing.py": "e21e75c7f5a0c2485e2946b15aee77427c4dc16f033928e4fafd9a970235b85c",
+  "bench/runners/diskann.py": "bd435b21b370fe414ad2069815bd61e12c8732be2ca0b21122e5f00a36ec009a",
+  "bench/runners/diskann_changes.py": "610499e432995becdee775dd33bddfe2c5059e4a9724e7586db4b4a5fb90756b",
+  "bench/runners/glass.py": "5952eaf5f6ed288236208204d7e7aaf80b38ba3414e5fae90c131e3c4cf8f535",
+  "bench/runners/hnsw.py": "1191ed7b2c469cfc048b49e9eb4fe8be5e37a2b90c6773063ce1780d73905496",
+  "bench/runners/roargraph.py": "5f2ca9291aeb05baaf05a18040d750a23720b2639df5b90a4c4e68f6409f56b5",
+  "bench/runners/scann.py": "681167fe9a5792e9b751ae3845a8abb8c42736c71f741034cb9c0c8e0a0fe8af",
+  "bench/runners/scann_job.py": "1910d78ecc658f4565f6cf47050416fa5c37da18a2adb05672a9cfdac74c7097",
+  "bench/runners/worker.py": "a4b9926d3e44b272f47dcdafcc1f73eed56b0df91284fa1745b0d4c51944f4c9",
+  "scripts/step3_baselines.py": "2f3c7d98314a0cd51e45477ccd3a0872bc4bba8137fdb9f0860b94543af741f5",
+  "scripts/step6_baselines.py": "912d865c4933553faba593928122fda1cfac8fe4a6482dcddaf0bdb3166c378f",
+  "scripts/step6_prepare_full.py": "61d45faa18f8ecea203564b5f9b625468bed2a9054de9ffc87fc66044d0cc503"
+ }
+}

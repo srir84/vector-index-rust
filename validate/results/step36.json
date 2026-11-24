@@ -1,0 +1,37 @@
+{
+ "step": "step36",
+ "pass": true,
+ "seconds": 1.4,
+ "checks": [
+  {
+   "check": "the download matches the server's tag",
+   "pass": true,
+   "detail": "tag 9ef1a69a639809d4ae43efd5e6707fa1-58 (server 9ef1a69a639809d4ae43efd5e6707fa1-58); sha256 544af1d5e84e112c... as recorded",
+   "data": null
+  },
+  {
+   "check": "prepared like the others",
+   "pass": true,
+   "detail": "1,162,514 items of 100 numbers; questions 1,000 test (of 10,000 in the file), 1,000 tuning, 20,000 training (items set aside (removed from the items)); our true top 10 agree with the file's on 98.31%, and 1.69% are items set aside as questions; full size: name, items_full 1,162,514, seconds",
+   "data": null
+  },
+  {
+   "check": "both loaders refuse it, even with the earlier held-back datasets unlocked",
+   "pass": true,
+   "detail": "ours refused; the experiments' refused",
+   "data": null
+  },
+  {
+   "check": "nothing has been run on it",
+   "pass": true,
+   "detail": "no result names it",
+   "data": null
+  },
+  {
+   "check": "the index's code is as frozen in step 28: the expectations come before any part 5 change",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  }
+ ]
+}

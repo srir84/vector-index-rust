@@ -1,0 +1,26 @@
+PASS  the code is as frozen in step 42  unchanged
+      gooaq: 39,545/s (part 4: 39,116/s, 1.01x); 1.49x Glass; HNSW 12.3x
+      glove: 2,907/s (part 4: 2,936/s, 0.99x); 0.73x ScaNN; HNSW 9.8x
+      yandex: 14,971/s (part 4: 18,057/s, 0.83x); 1.08x Glass; HNSW 6.8x
+      llama: 100,112/s (part 4: 104,715/s, 0.96x); 1.75x RoarGraph; HNSW never 95%
+      landmark: 46,560/s (part 4: 48,733/s, 0.96x); 1.34x Glass; HNSW 9.0x
+      arxiv: 29,407/s (part 4: 30,005/s, 0.98x); 1.36x Glass; HNSW 10.9x
+      laion: 10,566/s (part 4: 10,628/s, 0.99x); 2.19x Glass; HNSW 13.2x
+      yi: 44,284/s (part 4: 44,290/s, 1.00x); 1.82x RoarGraph; HNSW never 95%
+      gist: 3,921/s (part 4: 3,980/s, 0.99x); 1.35x Glass; HNSW 13.0x
+      nytimes: 12,169/s (part 4: 12,702/s, 0.96x); 1.43x Glass; HNSW 17.4x
+      imagenet: 15,379/s (part 4: 14,499/s, 1.06x); 1.70x Glass; HNSW 15.6x
+      llama2: 57,607/s (part 4: 54,188/s, 1.06x); 1.95x RoarGraph; HNSW never 95%
+      glove100: 7,184/s; 0.73x ScaNN; HNSW 7.1x
+PASS  still ahead of the fastest rival on the eleven datasets won in part 4  all eleven ahead (gooaq 1.49x, yandex 1.08x, llama 1.75x, landmark 1.34x, arxiv 1.36x, laion 2.19x, yi 1.82x, gist 1.35x, nytimes 1.43x, imagenet 1.70x, llama2 1.95x)
+PASS  the change test passes on all thirteen at full size  gooaq -0.46; glove +0.09; yandex -0.64; llama -0.37; landmark -0.63; arxiv +0.13; laion -0.60; yi -0.42; gist +1.02; nytimes -0.35; imagenet -0.90; llama2 -0.69; glove100 -0.10
+FAIL  GloVe: the bucket search picked, and 1.25x part 4's speed (not built in, step 41)  the link walk as before: 2,907/s, 0.99x part 4, 0.73x ScaNN
+      RIGHT  GloVe-100: ScaNN is the fastest rival, then Glass: fastest: ScaNN
+      WRONG  GloVe-100: ours within 10% of ScaNN (0.9-1.1x): 0.73x ScaNN
+      RIGHT  GloVe-100: at least 5x HNSW: 7.1x HNSW
+      RIGHT  GloVe-100: the change test passes: drift -0.10
+      WRONG  GloVe: 1.25-1.5x part 4's speed, within 10% of ScaNN: 0.99x part 4, 0.73x ScaNN: the bucket search was not built in
+      WRONG  The bucket search is picked on GloVe and GloVe-100 and on none of the other eleven: not built in (step 41)
+      RIGHT  The other eleven: still ahead of the fastest rival: gooaq 1.49x, yandex 1.08x, llama 1.75x, landmark 1.34x, arxiv 1.36x, laion 2.19x, yi 1.82x, gist 1.35x, nytimes 1.43x, imagenet 1.70x, llama2 1.95x
+
+step42: SOME FAILED (3/4) in 0.0 s

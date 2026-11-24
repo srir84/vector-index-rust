@@ -1,0 +1,55 @@
+{
+ "step": "step33",
+ "pass": true,
+ "seconds": 2.3,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 42",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "the page is complete, not a draft",
+   "pass": true,
+   "detail": "no draft banner; title in the first 8 KB",
+   "data": null
+  },
+  {
+   "check": "every number on the page is recomputed from the results files and matches",
+   "pass": true,
+   "detail": "499 numbers (466 different), 0 wrong",
+   "data": null
+  },
+  {
+   "check": "the page shows every dataset's headline numbers",
+   "pass": true,
+   "detail": "all there",
+   "data": null
+  },
+  {
+   "check": "every passage copied from a results file is word for word",
+   "pass": true,
+   "detail": "15 passages",
+   "data": null
+  },
+  {
+   "check": "no other number is on the page (only the method's constants and axis ticks)",
+   "pass": true,
+   "detail": "115 axis ticks",
+   "data": null
+  },
+  {
+   "check": "the hover data is each index's speed-accuracy line from the results files",
+   "pass": true,
+   "detail": "42 lines on 13 datasets",
+   "data": null
+  },
+  {
+   "check": "in Chrome, phone and desktop widths, light and dark: no errors, no sideways scroll, the readout works",
+   "pass": true,
+   "detail": "light 390px 375/390 px; light 1280px 1265/1280 px; dark 390px 375/390 px; dark 1280px 1265/1280 px",
+   "data": null
+  }
+ ]
+}

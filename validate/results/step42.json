@@ -1,0 +1,100 @@
+{
+ "step": "step42",
+ "pass": false,
+ "seconds": 0.0,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 42",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "still ahead of the fastest rival on the eleven datasets won in part 4",
+   "pass": true,
+   "detail": "all eleven ahead (gooaq 1.49x, yandex 1.08x, llama 1.75x, landmark 1.34x, arxiv 1.36x, laion 2.19x, yi 1.82x, gist 1.35x, nytimes 1.43x, imagenet 1.70x, llama2 1.95x)",
+   "data": {
+    "ratios": {
+     "gooaq": [
+      1.491597375619702,
+      "glass"
+     ],
+     "glove": [
+      0.7349645011894378,
+      "scann"
+     ],
+     "yandex": [
+      1.079223536479756,
+      "glass"
+     ],
+     "llama": [
+      1.749422297599191,
+      "roargraph"
+     ],
+     "landmark": [
+      1.339391000238901,
+      "glass"
+     ],
+     "arxiv": [
+      1.3597373946757805,
+      "glass"
+     ],
+     "laion": [
+      2.186024709661042,
+      "glass"
+     ],
+     "yi": [
+      1.8170369533820976,
+      "roargraph"
+     ],
+     "gist": [
+      1.349865005516375,
+      "glass"
+     ],
+     "nytimes": [
+      1.4278363479079277,
+      "glass"
+     ],
+     "imagenet": [
+      1.695957286554855,
+      "glass"
+     ],
+     "llama2": [
+      1.9523389526527832,
+      "roargraph"
+     ],
+     "glove100": [
+      0.7309632875646158,
+      "scann"
+     ]
+    }
+   }
+  },
+  {
+   "check": "the change test passes on all thirteen at full size",
+   "pass": true,
+   "detail": "gooaq -0.46; glove +0.09; yandex -0.64; llama -0.37; landmark -0.63; arxiv +0.13; laion -0.60; yi -0.42; gist +1.02; nytimes -0.35; imagenet -0.90; llama2 -0.69; glove100 -0.10",
+   "data": {
+    "gooaq": -0.0045999999999999375,
+    "glove": 0.0009000000000000119,
+    "yandex": -0.006399999999999961,
+    "llama": -0.0037000000000000366,
+    "landmark": -0.006300000000000083,
+    "arxiv": 0.0012999999999999678,
+    "laion": -0.006000000000000005,
+    "yi": -0.0041999999999999815,
+    "gist": 0.010200000000000098,
+    "nytimes": -0.0035000000000000586,
+    "imagenet": -0.00900000000000023,
+    "llama2": -0.006900000000000128,
+    "glove100": -0.0010000000000000009
+   }
+  },
+  {
+   "check": "GloVe: the bucket search picked, and 1.25x part 4's speed (not built in, step 41)",
+   "pass": false,
+   "detail": "the link walk as before: 2,907/s, 0.99x part 4, 0.73x ScaNN",
+   "data": null
+  }
+ ]
+}

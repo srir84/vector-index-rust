@@ -1,0 +1,16 @@
+PASS  the code is as frozen in step 42  unchanged
+PASS  gooaq: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.46 (96.03% after 414,399 changes, fresh 96.49%); memory 1.001x
+PASS  glove: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift +0.09 (95.03% after 333,882 changes, fresh 94.94%); memory 1.001x
+PASS  yandex: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.64 (94.94% after 285,000 changes, fresh 95.58%); memory 1.001x
+PASS  llama: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.37 (94.97% after 73,224 changes, fresh 95.34%); memory 1.005x
+PASS  landmark: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.63 (94.58% after 210,831 changes, fresh 95.21%); memory 1.002x
+PASS  arxiv: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift +0.13 (94.69% after 377,241 changes, fresh 94.56%); memory 1.001x
+PASS  laion: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.60 (95.09% after 285,129 changes, fresh 95.69%); memory 1.001x
+PASS  yi: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.42 (95.55% after 53,538 changes, fresh 95.97%); memory 1.006x
+PASS  gist: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift +1.02 (96.40% after 279,015 changes, fresh 95.38%); memory 1.001x
+PASS  nytimes: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.35 (95.25% after 76,599 changes, fresh 95.60%); memory 1.005x
+PASS  imagenet: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.90 (94.95% after 365,133 changes, fresh 95.85%); memory 1.001x
+PASS  llama2: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.69 (95.61% after 73,224 changes, fresh 96.30%); memory 1.005x
+PASS  glove100: drift under 1 point, nothing deleted or outdated returned, memory within 5%  drift -0.10 (95.60% after 331,317 changes, fresh 95.70%); memory 1.001x
+
+step42-changes: ALL PASS (14/14) in 11874.7 s

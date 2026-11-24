@@ -1,0 +1,17 @@
+PASS  arxiv: file matches the published checksum  sha256 8be0993b978b0d0e... (4.14 GB)
+PASS  laion: file matches the published checksum  sha256 a152088cefc13ac9... (4.50 GB)
+PASS  yi: file matches the published checksum  sha256 23d76fdbb0808909... (0.27 GB)
+PASS  gist: file matches its server's checksum  piece checksum 34da1d8a80764582ee4b0c0839b7c32a-459, sha256 8e95831936bfdbfa... (3.84 GB)
+PASS  arxiv: prepared like the five  1,323,643 items, 768 numbers, formula cos; questions from items set aside (removed from the items); our top 10 agree with the file's on 98.37% (+1.63% set aside as questions); answers differing beyond ties: 0; all-zero rows 0, exact duplicates 10
+PASS  laion: prepared like the five  1,000,448 items, 512 numbers, formula cos; questions from file's extra question sample; our top 10 agree with the file's on 99.99% (+0.00% set aside as questions); answers differing beyond ties: 0; all-zero rows 0, exact duplicates 5,330
+PASS  yi: prepared like the five  187,843 items, 128 numbers, formula ip; questions from file's extra question sample; our top 10 agree with the file's on 100.00% (+0.00% set aside as questions); answers differing beyond ties: 0; all-zero rows 0, exact duplicates 0
+PASS  gist: prepared like the five  979,000 items, 960 numbers, formula l2; questions from items set aside (removed from the items); our top 10 agree with the file's on 97.68% (+2.27% set aside as questions); answers differing beyond ties: 0; all-zero rows 10, exact duplicates 17,306
+PASS  our loader refuses every held-back dataset  8/8 refused
+PASS  the experiments' loader refuses every held-back dataset  4/4 refused
+PASS  nothing has been run on a held-back dataset but step 22  no result names them outside step 22's runs
+PASS  straight-line distance on Llama's numbers: a fixed list size reaches 99%  list 10: 96.01%; list 15: 99.71%
+PASS  straight-line: the learned effort lands near its target  target 95% gives 96.01%, 99% gives 99.39% (pass: at least 93.5% and 98%)
+PASS  straight-line: returned distances equal numpy's  largest gap 1.8e-07 (pass: 1e-4)
+      question links on, build space same, unlike-items ratio 24.79
+
+step14: ALL PASS (14/14) in 27.6 s

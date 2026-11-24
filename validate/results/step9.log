@@ -1,0 +1,12 @@
+PASS  gooaq, prototype's order: same target, accuracy and drift as the prototype's re-run  target 0.95 (0.95); before 95.66% (95.66%); after 95.83% (95.83%); fresh 95.68% (95.68%); drift +0.15 (+0.15) points; work per change 5,741 (5,741)
+PASS  gooaq, our own order: Fix 7's pass rule  drift +0.55 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 40 s for 30,000 changes; table learned again: 95.92%
+PASS  glove, prototype's order: same target, accuracy and drift as the prototype's re-run  target 0.96 (0.96); before 95.90% (95.90%); after 95.41% (95.43%); fresh 96.12% (96.13%); drift -0.71 (-0.70) points; work per change 6,938 (6,937)
+PASS  glove, our own order: Fix 7's pass rule  drift -0.30 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 18 s for 30,000 changes; table learned again: 94.69%
+PASS  yandex, prototype's order: same target, accuracy and drift as the prototype's re-run  target 0.98 (0.98); before 96.40% (96.40%); after 96.11% (96.11%); fresh 96.87% (96.87%); drift -0.76 (-0.76) points; work per change 24,678 (24,678)
+PASS  yandex, our own order: Fix 7's pass rule  drift -0.32 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 16 s for 30,000 changes; table learned again: 96.42%
+PASS  llama, prototype's order: same target, accuracy and drift as the prototype's re-run  target 0.95 (0.95); before 94.98% (94.98%); after 95.11% (95.11%); fresh 94.79% (94.79%); drift +0.32 (+0.32) points; work per change 29,107 (29,107)
+PASS  llama, our own order: Fix 7's pass rule  drift +0.38 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 13 s for 30,000 changes; table learned again: 95.72%
+PASS  landmark, prototype's order: same target, accuracy and drift as the prototype's re-run  target 0.88 (0.88); before 98.70% (98.70%); after 98.67% (98.67%); fresh 98.61% (98.61%); drift +0.06 (+0.06) points; work per change 3,386 (3,386)
+PASS  landmark, our own order: Fix 7's pass rule  drift -0.41 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 28 s for 30,000 changes; table learned again: 98.44%
+
+step9: ALL PASS (10/10) in 415.4 s

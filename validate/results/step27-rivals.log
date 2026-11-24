@@ -1,0 +1,1 @@
+.venv/bin/python -I validate/step27.py rivals  45836.42s user 290.76s system 512% cpu 2:30:01.36 total

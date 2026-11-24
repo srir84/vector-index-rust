@@ -1,0 +1,8 @@
+PASS  yandex: 3 fresh builds pick the same settings, so the same index  picks {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 25, 'question_links': True, 'popular_links': False}; checks per search 1,770.19, 1,770.19, 1,770.19
+FAIL  yandex: the 3 builds within 3% of each other, head to head  17,706/s, 17,161/s, 17,597/s: 3.2% apart
+PASS  yandex: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 17,161/s against 17,422/s (48/1.2/8b/rr15): 1.5% slower
+FAIL  imagenet: 3 fresh builds pick the same settings, so the same index  picks [{'r': 48, 'alpha': 1.3, 'code_bits': 4, 'rerank': 50, 'question_links': True, 'popular_links': False}, {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}, {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}]; checks per search 1,328.52, 1,239.73, 1,239.73
+PASS  imagenet: the 3 builds within 3% of each other, head to head  15,393/s, 15,320/s, 15,414/s: 0.6% apart
+PASS  imagenet: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 15,320/s against 13,093/s (32/1.2/8b/rr15): 14.5% faster
+
+step37-full: SOME FAILED (4/6) in 2933.9 s

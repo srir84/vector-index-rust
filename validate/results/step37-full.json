@@ -1,0 +1,1183 @@
+{
+ "step": "step37-full",
+ "pass": false,
+ "seconds": 2933.9,
+ "checks": [
+  {
+   "check": "yandex: 3 fresh builds pick the same settings, so the same index",
+   "pass": true,
+   "detail": "picks {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 25, 'question_links': True, 'popular_links': False}; checks per search 1,770.19, 1,770.19, 1,770.19",
+   "data": {
+    "builds": [
+     {
+      "picks": {
+       "r": 48,
+       "alpha": 1.3,
+       "code_bits": 8,
+       "rerank": 25,
+       "question_links": true,
+       "popular_links": false
+      },
+      "qps95": 16516.0210170456,
+      "checks95": 1770.1902279411759,
+      "build_seconds": 251.238676071167,
+      "trials": [
+       {
+        "r": 32,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 39328.19911402797,
+        "checks": 921.2876086956517,
+        "bytes_per_item": 376.0,
+        "seconds": 6.018377667
+       },
+       {
+        "r": 24,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 39338.14116023496,
+        "checks": 890.5446465517234,
+        "bytes_per_item": 336.0,
+        "seconds": 5.068754666
+       },
+       {
+        "r": 48,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 43879.6114417006,
+        "checks": 993.0421999999995,
+        "bytes_per_item": 460.0,
+        "seconds": 6.995347583
+       },
+       {
+        "r": 64,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 38071.34826144272,
+        "checks": 1113.678570247933,
+        "bytes_per_item": 544.0,
+        "seconds": 8.2220505
+       },
+       {
+        "r": 96,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 43356.18212848621,
+        "checks": 1161.4215918367343,
+        "bytes_per_item": 708.0,
+        "seconds": 8.879930334
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 43384.47516982454,
+        "checks": 1006.9067920792077,
+        "bytes_per_item": 460.0,
+        "seconds": 7.204545917
+       },
+       {
+        "r": 48,
+        "alpha": 1.100000023841858,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35081.934208162515,
+        "checks": 1083.6068906249996,
+        "bytes_per_item": 460.0,
+        "seconds": 6.582705166
+       },
+       {
+        "r": 48,
+        "alpha": 1.0,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35362.7968681043,
+        "checks": 956.5431621621617,
+        "bytes_per_item": 460.0,
+        "seconds": 5.345546167
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 28404.820771498606,
+        "checks": 1156.790476190476,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 21524.566478751425,
+        "checks": 1587.0779999999975,
+        "bytes_per_item": 372.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 28044.64705318009,
+        "checks": 1156.790476190476,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 25,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 29041.26744921202,
+        "checks": 1116.4055849056601,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 15,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 29315.271568344047,
+        "checks": 1106.4055849056601,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       }
+      ]
+     },
+     {
+      "picks": {
+       "r": 48,
+       "alpha": 1.3,
+       "code_bits": 8,
+       "rerank": 25,
+       "question_links": true,
+       "popular_links": false
+      },
+      "qps95": 16547.04993689538,
+      "checks95": 1770.1902279411759,
+      "build_seconds": 265.42216396331787,
+      "trials": [
+       {
+        "r": 32,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 38887.194744532426,
+        "checks": 921.2876086956517,
+        "bytes_per_item": 376.0,
+        "seconds": 6.237681042
+       },
+       {
+        "r": 24,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 38622.69874734064,
+        "checks": 890.5446465517234,
+        "bytes_per_item": 336.0,
+        "seconds": 5.355110583
+       },
+       {
+        "r": 48,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 43519.19991416369,
+        "checks": 993.0421999999995,
+        "bytes_per_item": 460.0,
+        "seconds": 7.3863635
+       },
+       {
+        "r": 64,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 37356.61184948513,
+        "checks": 1113.678570247933,
+        "bytes_per_item": 544.0,
+        "seconds": 8.306976916
+       },
+       {
+        "r": 96,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 42936.658653143306,
+        "checks": 1161.4215918367343,
+        "bytes_per_item": 708.0,
+        "seconds": 9.178192541
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 42724.43757337579,
+        "checks": 1006.9067920792077,
+        "bytes_per_item": 460.0,
+        "seconds": 7.503510333
+       },
+       {
+        "r": 48,
+        "alpha": 1.100000023841858,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34548.81208286093,
+        "checks": 1083.6068906249996,
+        "bytes_per_item": 460.0,
+        "seconds": 6.85863775
+       },
+       {
+        "r": 48,
+        "alpha": 1.0,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34844.298197002434,
+        "checks": 956.5431621621617,
+        "bytes_per_item": 460.0,
+        "seconds": 5.521746125
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 27864.600210812954,
+        "checks": 1156.790476190476,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 21088.564870221755,
+        "checks": 1587.0779999999975,
+        "bytes_per_item": 372.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 28566.316599923717,
+        "checks": 1156.790476190476,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 25,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 28852.949555548774,
+        "checks": 1116.4055849056601,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 15,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 29294.53213344667,
+        "checks": 1106.4055849056601,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       }
+      ]
+     },
+     {
+      "picks": {
+       "r": 48,
+       "alpha": 1.3,
+       "code_bits": 8,
+       "rerank": 25,
+       "question_links": true,
+       "popular_links": false
+      },
+      "qps95": 16320.392755009196,
+      "checks95": 1770.1902279411759,
+      "build_seconds": 245.80672216415405,
+      "trials": [
+       {
+        "r": 32,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 37190.446069987825,
+        "checks": 921.2876086956517,
+        "bytes_per_item": 376.0,
+        "seconds": 6.224687625
+       },
+       {
+        "r": 24,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 37896.96613843383,
+        "checks": 890.5446465517234,
+        "bytes_per_item": 336.0,
+        "seconds": 5.243645667
+       },
+       {
+        "r": 48,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 42089.058311047615,
+        "checks": 993.0421999999995,
+        "bytes_per_item": 460.0,
+        "seconds": 7.383816792
+       },
+       {
+        "r": 64,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 36462.43836654019,
+        "checks": 1113.678570247933,
+        "bytes_per_item": 544.0,
+        "seconds": 8.158441125
+       },
+       {
+        "r": 96,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 41648.05760062304,
+        "checks": 1161.4215918367343,
+        "bytes_per_item": 708.0,
+        "seconds": 9.124399417
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 41336.406876037036,
+        "checks": 1006.9067920792077,
+        "bytes_per_item": 460.0,
+        "seconds": 7.415573
+       },
+       {
+        "r": 48,
+        "alpha": 1.100000023841858,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 33199.40004688331,
+        "checks": 1083.6068906249996,
+        "bytes_per_item": 460.0,
+        "seconds": 6.746001167
+       },
+       {
+        "r": 48,
+        "alpha": 1.0,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 33923.99989171984,
+        "checks": 956.5431621621617,
+        "bytes_per_item": 460.0,
+        "seconds": 5.442500834
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 27074.43531569024,
+        "checks": 1156.790476190476,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 20180.716181820095,
+        "checks": 1587.0779999999975,
+        "bytes_per_item": 372.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 28341.40160702963,
+        "checks": 1156.790476190476,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 25,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 29014.31154085435,
+        "checks": 1116.4055849056601,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 15,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 29409.862431363657,
+        "checks": 1106.4055849056601,
+        "bytes_per_item": 460.0,
+        "seconds": 0.0
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex: the 3 builds within 3% of each other, head to head",
+   "pass": false,
+   "detail": "17,706/s, 17,161/s, 17,597/s: 3.2% apart",
+   "data": {
+    "sec_per_question": [
+     5.647779633808467e-05,
+     5.8271972203834187e-05,
+     5.682869910055564e-05
+    ],
+    "targets": [
+     0.95,
+     0.95,
+     0.95
+    ]
+   }
+  },
+  {
+   "check": "yandex: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix",
+   "pass": true,
+   "detail": "slowest now 17,161/s against 17,422/s (48/1.2/8b/rr15): 1.5% slower",
+   "data": {
+    "now": [
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "rerank": 25,
+      "question_links": true,
+      "popular_links": false
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "rerank": 25,
+      "question_links": true,
+      "popular_links": false
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "rerank": 25,
+      "question_links": true,
+      "popular_links": false
+     }
+    ],
+    "before": [
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "rerank": 15,
+      "question_links": true,
+      "popular_links": false
+     }
+    ],
+    "sec_per_question": [
+     5.7399115783886775e-05
+    ],
+    "targets": [
+     0.95
+    ]
+   }
+  },
+  {
+   "check": "imagenet: 3 fresh builds pick the same settings, so the same index",
+   "pass": false,
+   "detail": "picks [{'r': 48, 'alpha': 1.3, 'code_bits': 4, 'rerank': 50, 'question_links': True, 'popular_links': False}, {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}, {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}]; checks per search 1,328.52, 1,239.73, 1,239.73",
+   "data": {
+    "builds": [
+     {
+      "picks": {
+       "r": 48,
+       "alpha": 1.3,
+       "code_bits": 4,
+       "rerank": 50,
+       "question_links": true,
+       "popular_links": false
+      },
+      "qps95": 14575.817376351997,
+      "checks95": 1328.5225568181813,
+      "build_seconds": 607.7047128677368,
+      "trials": [
+       {
+        "r": 32,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34288.97869613416,
+        "checks": 568.810213333333,
+        "bytes_per_item": 816.0,
+        "seconds": 17.543971333000002
+       },
+       {
+        "r": 24,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34488.627123931605,
+        "checks": 530.879,
+        "bytes_per_item": 776.0,
+        "seconds": 14.791153125
+       },
+       {
+        "r": 48,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35657.35546894907,
+        "checks": 625.9606470588235,
+        "bytes_per_item": 900.0,
+        "seconds": 19.529592834
+       },
+       {
+        "r": 64,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35267.955219316915,
+        "checks": 675.0548604651156,
+        "bytes_per_item": 984.0,
+        "seconds": 21.633979166
+       },
+       {
+        "r": 96,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 32461.323312547207,
+        "checks": 754.1074999999995,
+        "bytes_per_item": 1148.0,
+        "seconds": 24.26069575
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 41699.69166137261,
+        "checks": 592.28740625,
+        "bytes_per_item": 900.0,
+        "seconds": 20.699948667
+       },
+       {
+        "r": 48,
+        "alpha": 1.100000023841858,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34394.668830355105,
+        "checks": 622.5982567567563,
+        "bytes_per_item": 900.0,
+        "seconds": 18.292967541
+       },
+       {
+        "r": 48,
+        "alpha": 1.0,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 27787.172146740533,
+        "checks": 609.7443364485977,
+        "bytes_per_item": 900.0,
+        "seconds": 14.896671875
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 21205.375787281766,
+        "checks": 896.330775280898,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 22317.99404239333,
+        "checks": 1001.1923469387751,
+        "bytes_per_item": 580.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 21891.682390423408,
+        "checks": 1001.1923469387751,
+        "bytes_per_item": 580.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 25,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 21387.569274526766,
+        "checks": 1020.6128110236218,
+        "bytes_per_item": 580.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 15,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 3710.42417316841,
+        "checks": 5394.559404761873,
+        "bytes_per_item": 580.0,
+        "seconds": 0.0
+       }
+      ]
+     },
+     {
+      "picks": {
+       "r": 48,
+       "alpha": 1.3,
+       "code_bits": 8,
+       "rerank": 15,
+       "question_links": true,
+       "popular_links": false
+      },
+      "qps95": 15801.13198378819,
+      "checks95": 1239.7302999999988,
+      "build_seconds": 578.6509280204773,
+      "trials": [
+       {
+        "r": 32,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34454.71241010769,
+        "checks": 568.810213333333,
+        "bytes_per_item": 816.0,
+        "seconds": 17.784319334
+       },
+       {
+        "r": 24,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 34455.08558589116,
+        "checks": 530.879,
+        "bytes_per_item": 776.0,
+        "seconds": 14.88183725
+       },
+       {
+        "r": 48,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 36929.85188320554,
+        "checks": 625.9606470588235,
+        "bytes_per_item": 900.0,
+        "seconds": 20.036831208
+       },
+       {
+        "r": 64,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35194.763558258805,
+        "checks": 675.0548604651156,
+        "bytes_per_item": 984.0,
+        "seconds": 22.594258
+       },
+       {
+        "r": 96,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 32306.675152216852,
+        "checks": 754.1074999999995,
+        "bytes_per_item": 1148.0,
+        "seconds": 24.719368667
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 42419.33920537612,
+        "checks": 592.28740625,
+        "bytes_per_item": 900.0,
+        "seconds": 20.931849375
+       },
+       {
+        "r": 48,
+        "alpha": 1.100000023841858,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35400.14794899501,
+        "checks": 622.5982567567563,
+        "bytes_per_item": 900.0,
+        "seconds": 18.4216625
+       },
+       {
+        "r": 48,
+        "alpha": 1.0,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 28390.204020084933,
+        "checks": 609.7443364485977,
+        "bytes_per_item": 900.0,
+        "seconds": 14.819988667
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 21410.71362903862,
+        "checks": 896.330775280898,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 22357.66249800857,
+        "checks": 1001.1923469387751,
+        "bytes_per_item": 580.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 21236.41502188325,
+        "checks": 896.330775280898,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 25,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 22226.244452496914,
+        "checks": 880.5554943820218,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 15,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 23325.49455749844,
+        "checks": 870.5554943820218,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       }
+      ]
+     },
+     {
+      "picks": {
+       "r": 48,
+       "alpha": 1.3,
+       "code_bits": 8,
+       "rerank": 15,
+       "question_links": true,
+       "popular_links": false
+      },
+      "qps95": 15901.80528150359,
+      "checks95": 1239.7302999999988,
+      "build_seconds": 608.5237879753113,
+      "trials": [
+       {
+        "r": 32,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35507.16842862806,
+        "checks": 568.810213333333,
+        "bytes_per_item": 816.0,
+        "seconds": 18.352152791
+       },
+       {
+        "r": 24,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35695.110269178476,
+        "checks": 530.879,
+        "bytes_per_item": 776.0,
+        "seconds": 14.866299542
+       },
+       {
+        "r": 48,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 36843.21276100824,
+        "checks": 625.9606470588235,
+        "bytes_per_item": 900.0,
+        "seconds": 20.223353334
+       },
+       {
+        "r": 64,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 36216.2164029394,
+        "checks": 675.0548604651156,
+        "bytes_per_item": 984.0,
+        "seconds": 22.291854959
+       },
+       {
+        "r": 96,
+        "alpha": 1.2000000476837158,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 33527.6621778911,
+        "checks": 754.1074999999995,
+        "bytes_per_item": 1148.0,
+        "seconds": 24.500969042
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 43464.905855540535,
+        "checks": 592.28740625,
+        "bytes_per_item": 900.0,
+        "seconds": 20.743434542
+       },
+       {
+        "r": 48,
+        "alpha": 1.100000023841858,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 35499.317266366634,
+        "checks": 622.5982567567563,
+        "bytes_per_item": 900.0,
+        "seconds": 18.261283583
+       },
+       {
+        "r": 48,
+        "alpha": 1.0,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "auto",
+        "question_links": true,
+        "searches_per_s": 28564.743471840542,
+        "checks": 609.7443364485977,
+        "bytes_per_item": 900.0,
+        "seconds": 14.666009917
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 21004.896334984503,
+        "checks": 896.330775280898,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 4,
+        "rerank": 50,
+        "links": "full size",
+        "question_links": true,
+        "searches_per_s": 21871.70058757015,
+        "checks": 1001.1923469387751,
+        "bytes_per_item": 580.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 50,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 20904.0335031262,
+        "checks": 896.330775280898,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 25,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 22028.256066107508,
+        "checks": 880.5554943820218,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       },
+       {
+        "r": 48,
+        "alpha": 1.2999999523162842,
+        "code_bits": 8,
+        "rerank": 15,
+        "links": "full size, re-check",
+        "question_links": true,
+        "searches_per_s": 22566.43696990797,
+        "checks": 870.5554943820218,
+        "bytes_per_item": 900.0,
+        "seconds": 0.0
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "check": "imagenet: the 3 builds within 3% of each other, head to head",
+   "pass": true,
+   "detail": "15,393/s, 15,320/s, 15,414/s: 0.6% apart",
+   "data": {
+    "sec_per_question": [
+     6.496480212081223e-05,
+     6.527426050161011e-05,
+     6.487749476218596e-05
+    ],
+    "targets": [
+     0.95,
+     0.96,
+     0.96
+    ]
+   }
+  },
+  {
+   "check": "imagenet: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix",
+   "pass": true,
+   "detail": "slowest now 15,320/s against 13,093/s (32/1.2/8b/rr15): 14.5% faster",
+   "data": {
+    "now": [
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "rerank": 50,
+      "question_links": true,
+      "popular_links": false
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "rerank": 15,
+      "question_links": true,
+      "popular_links": false
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "rerank": 15,
+      "question_links": true,
+      "popular_links": false
+     }
+    ],
+    "before": [
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "rerank": 15,
+      "question_links": true,
+      "popular_links": false
+     }
+    ],
+    "sec_per_question": [
+     7.637789885380438e-05
+    ],
+    "targets": [
+     0.96
+    ]
+   }
+  }
+ ]
+}

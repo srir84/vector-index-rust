@@ -1,0 +1,6 @@
+PASS  llama, prototype's order: checks at 95% within 1%  ours 6,845 vs prototype 6,845 (0.00% apart)
+PASS  llama, our own order: prototype inside our seed spread, or averages over seeds within 5%  prototype 6,845 (average 6,845); ours over seeds 7, 1, 2, 3: 5,945, 6,761, 7,270, 6,999 (average 6,744, -1.5%)
+PASS  the build used the flipped copies  flipped
+PASS  items with no links in: under 10  ours 1 (prototype 3; before the flip about 60,000)
+
+step4: ALL PASS (4/4) in 20.6 s

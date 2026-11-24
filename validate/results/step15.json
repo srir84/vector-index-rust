@@ -1,0 +1,593 @@
+{
+ "step": "step15",
+ "pass": true,
+ "seconds": 88.4,
+ "checks": [
+  {
+   "check": "glove: the build's own searches are not counted",
+   "pass": true,
+   "detail": "calls 0, questions 0",
+   "data": null
+  },
+  {
+   "check": "glove: counts equal what the searches returned",
+   "pass": true,
+   "detail": "16 threads: 500 questions, 2,831,311 checks; one thread: 500 questions, 25,000 re-checks (50 each); 8 Python threads: 800 calls, 3,053,001 checks (returned 3,053,001)",
+   "data": {
+    "a": {
+     "calls": 1,
+     "questions": 500,
+     "checks": 2831311,
+     "rechecks": 25000,
+     "checks_per_question": 5662.622,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.12152050900000001,
+     "typical_ms": 0.21983892285755033,
+     "slow_ms": 0.9891188008190419,
+     "learned_questions": 500,
+     "fixed_questions": 0,
+     "hardness": [
+      0.138,
+      0.1,
+      0.128,
+      0.124,
+      0.126,
+      0.098,
+      0.134,
+      0.152
+     ],
+     "hardness_counts": [
+      69,
+      50,
+      64,
+      62,
+      63,
+      49,
+      67,
+      76
+     ],
+     "hard_share": 0.23800000000000002,
+     "unlike_items": 0.9768364411388368,
+     "unlike_items_at_build": 0.9892903566360474,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 2831311,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    },
+    "b": {
+     "calls": 1,
+     "questions": 500,
+     "checks": 1415709,
+     "rechecks": 25000,
+     "checks_per_question": 2831.418,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.052958586,
+     "typical_ms": 0.10457058900743038,
+     "slow_ms": 0.15994461066531224,
+     "learned_questions": 0,
+     "fixed_questions": 500,
+     "hardness": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "hardness_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "hard_share": null,
+     "unlike_items": 0.9862264017107621,
+     "unlike_items_at_build": 0.9892903566360474,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 1415709,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    },
+    "c": {
+     "calls": 800,
+     "questions": 800,
+     "checks": 3053001,
+     "rechecks": 40000,
+     "checks_per_question": 3816.25125,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.10548631400000001,
+     "typical_ms": 0.07105889731974707,
+     "slow_ms": 0.4223286242996749,
+     "learned_questions": 400,
+     "fixed_questions": 400,
+     "hardness": [
+      0.12,
+      0.1075,
+      0.1425,
+      0.135,
+      0.125,
+      0.0975,
+      0.1225,
+      0.15
+     ],
+     "hardness_counts": [
+      48,
+      43,
+      57,
+      54,
+      50,
+      39,
+      49,
+      60
+     ],
+     "hard_share": 0.22749999999999998,
+     "unlike_items": 0.9833380428636959,
+     "unlike_items_at_build": 0.9892903566360474,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 3053001,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    }
+   }
+  },
+  {
+   "check": "glove: the time counted is the time spent",
+   "pass": true,
+   "detail": "53.0 ms counted over 53.2 ms of wall clock (100%); typical 0.105 ms, slow 0.160 ms per question",
+   "data": null
+  },
+  {
+   "check": "glove: the sample questions fill the 8 hardness bins equally",
+   "pass": true,
+   "detail": "bins (hardest first): [375, 375, 375, 375, 375, 375, 375, 375]",
+   "data": null
+  },
+  {
+   "check": "glove: 'questions unlike items' in use agrees with the build's test",
+   "pass": true,
+   "detail": "in use 0.98, at build 0.99 (pass: within 15%)",
+   "data": null
+  },
+  {
+   "check": "yandex: the build's own searches are not counted",
+   "pass": true,
+   "detail": "calls 0, questions 0",
+   "data": null
+  },
+  {
+   "check": "yandex: counts equal what the searches returned",
+   "pass": true,
+   "detail": "16 threads: 500 questions, 339,306 checks; one thread: 500 questions, 25,000 re-checks (50 each); 8 Python threads: 800 calls, 787,537 checks (returned 787,537)",
+   "data": {
+    "a": {
+     "calls": 1,
+     "questions": 500,
+     "checks": 339306,
+     "rechecks": 15500,
+     "checks_per_question": 678.612,
+     "rechecks_per_question": 31.0,
+     "seconds": 0.015821006000000002,
+     "typical_ms": 0.02625988571463585,
+     "slow_ms": 0.09050966799187808,
+     "learned_questions": 500,
+     "fixed_questions": 0,
+     "hardness": [
+      0.158,
+      0.088,
+      0.126,
+      0.13,
+      0.104,
+      0.114,
+      0.142,
+      0.138
+     ],
+     "hardness_counts": [
+      79,
+      44,
+      63,
+      65,
+      52,
+      57,
+      71,
+      69
+     ],
+     "hard_share": 0.246,
+     "unlike_items": 2.0088368091058264,
+     "unlike_items_at_build": 2.0488598346710205,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 339306,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    },
+    "b": {
+     "calls": 1,
+     "questions": 500,
+     "checks": 927618,
+     "rechecks": 25000,
+     "checks_per_question": 1855.236,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.037175993000000004,
+     "typical_ms": 0.07232331437796409,
+     "slow_ms": 0.11593262902578004,
+     "learned_questions": 0,
+     "fixed_questions": 500,
+     "hardness": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "hardness_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "hard_share": null,
+     "unlike_items": 2.011084870439554,
+     "unlike_items_at_build": 2.0488598346710205,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 927618,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    },
+    "c": {
+     "calls": 800,
+     "questions": 800,
+     "checks": 787537,
+     "rechecks": 32400,
+     "checks_per_question": 984.42125,
+     "rechecks_per_question": 40.5,
+     "seconds": 0.032949453000000004,
+     "typical_ms": 0.040410734438132485,
+     "slow_ms": 0.07909724581947451,
+     "learned_questions": 400,
+     "fixed_questions": 400,
+     "hardness": [
+      0.1675,
+      0.08,
+      0.12,
+      0.115,
+      0.11,
+      0.1125,
+      0.1425,
+      0.1525
+     ],
+     "hardness_counts": [
+      67,
+      32,
+      48,
+      46,
+      44,
+      45,
+      57,
+      61
+     ],
+     "hard_share": 0.2475,
+     "unlike_items": 2.0103205639396453,
+     "unlike_items_at_build": 2.0488598346710205,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 787537,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    }
+   }
+  },
+  {
+   "check": "yandex: the time counted is the time spent",
+   "pass": true,
+   "detail": "37.2 ms counted over 37.5 ms of wall clock (99%); typical 0.072 ms, slow 0.116 ms per question",
+   "data": null
+  },
+  {
+   "check": "yandex: the sample questions fill the 8 hardness bins equally",
+   "pass": true,
+   "detail": "bins (hardest first): [375, 375, 375, 375, 375, 375, 375, 375]",
+   "data": null
+  },
+  {
+   "check": "yandex: 'questions unlike items' in use agrees with the build's test",
+   "pass": true,
+   "detail": "in use 2.01, at build 2.05 (pass: within 15%)",
+   "data": null
+  },
+  {
+   "check": "llama: the build's own searches are not counted",
+   "pass": true,
+   "detail": "calls 0, questions 0",
+   "data": null
+  },
+  {
+   "check": "llama: counts equal what the searches returned",
+   "pass": true,
+   "detail": "16 threads: 500 questions, 633,672 checks; one thread: 500 questions, 25,000 re-checks (50 each); 8 Python threads: 800 calls, 1,125,918 checks (returned 1,125,918)",
+   "data": {
+    "a": {
+     "calls": 1,
+     "questions": 500,
+     "checks": 633672,
+     "rechecks": 25000,
+     "checks_per_question": 1267.344,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.017540045,
+     "typical_ms": 0.033404390072943026,
+     "slow_ms": 0.07183757109179988,
+     "learned_questions": 500,
+     "fixed_questions": 0,
+     "hardness": [
+      0.082,
+      0.136,
+      0.132,
+      0.116,
+      0.124,
+      0.13,
+      0.148,
+      0.132
+     ],
+     "hardness_counts": [
+      41,
+      68,
+      66,
+      58,
+      62,
+      65,
+      74,
+      66
+     ],
+     "hard_share": 0.21800000000000003,
+     "unlike_items": 25.798036745071368,
+     "unlike_items_at_build": 24.785337448120117,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 633672,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    },
+    "b": {
+     "calls": 1,
+     "questions": 500,
+     "checks": 1092691,
+     "rechecks": 25000,
+     "checks_per_question": 2185.382,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.028445211,
+     "typical_ms": 0.056940077398464274,
+     "slow_ms": 0.0759312378077889,
+     "learned_questions": 0,
+     "fixed_questions": 500,
+     "hardness": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "hardness_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "hard_share": null,
+     "unlike_items": 25.798036745071368,
+     "unlike_items_at_build": 24.785337448120117,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 1092691,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    },
+    "c": {
+     "calls": 800,
+     "questions": 800,
+     "checks": 1125918,
+     "rechecks": 40000,
+     "checks_per_question": 1407.3975,
+     "rechecks_per_question": 50.0,
+     "seconds": 0.030881338,
+     "typical_ms": 0.03822247266965431,
+     "slow_ms": 0.0581259752124418,
+     "learned_questions": 400,
+     "fixed_questions": 400,
+     "hardness": [
+      0.0925,
+      0.085,
+      0.1525,
+      0.13,
+      0.11,
+      0.16,
+      0.1325,
+      0.1375
+     ],
+     "hardness_counts": [
+      37,
+      34,
+      61,
+      52,
+      44,
+      64,
+      53,
+      55
+     ],
+     "hard_share": 0.1775,
+     "unlike_items": 25.798036745071368,
+     "unlike_items_at_build": 24.785337448120117,
+     "spot_checks": {
+      "accuracy": {},
+      "pending": 0,
+      "dropped": 0,
+      "checks": 0,
+      "search_checks": 1125918,
+      "share_of_search_checks": 0.0,
+      "relearned": false
+     }
+    }
+   }
+  },
+  {
+   "check": "llama: the time counted is the time spent",
+   "pass": true,
+   "detail": "28.4 ms counted over 28.6 ms of wall clock (100%); typical 0.057 ms, slow 0.076 ms per question",
+   "data": null
+  },
+  {
+   "check": "llama: the sample questions fill the 8 hardness bins equally",
+   "pass": true,
+   "detail": "bins (hardest first): [375, 375, 375, 375, 375, 375, 375, 375]",
+   "data": null
+  },
+  {
+   "check": "llama: 'questions unlike items' in use agrees with the build's test",
+   "pass": true,
+   "detail": "in use 25.80, at build 24.79 (pass: same side of the 1.5 switch)",
+   "data": null
+  },
+  {
+   "check": "gooaq: build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "glove: build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "yandex: build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "llama: build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "landmark: build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "llama: the counters cost under 1% (one core)",
+   "pass": true,
+   "detail": "30,983 searches/s with, 31,004 without (+0.07%; middle of 9 turns each)",
+   "data": {
+    "on": [
+     0.030648125102743506,
+     0.03226183378137648,
+     0.03221350000239909,
+     0.03266320796683431,
+     0.032429249957203865,
+     0.03196554211899638,
+     0.03281137486919761,
+     0.03227570792660117,
+     0.032348457956686616
+    ],
+    "off": [
+     0.032253459095954895,
+     0.032318666810169816,
+     0.03220041608437896,
+     0.03215083293616772,
+     0.032206041971221566,
+     0.03237512498162687,
+     0.03227716684341431,
+     0.03226554091088474,
+     0.032220957800745964
+    ]
+   }
+  },
+  {
+   "check": "landmark: the counters cost under 1% (one core)",
+   "pass": true,
+   "detail": "27,569 searches/s with, 27,625 without (+0.20%; middle of 9 turns each)",
+   "data": {
+    "on": [
+     0.03638041694648564,
+     0.03628391702659428,
+     0.036242791917175055,
+     0.036281000124290586,
+     0.03601466701366007,
+     0.03627249994315207,
+     0.03605820797383785,
+     0.038542832946404815,
+     0.035483290906995535
+    ],
+    "off": [
+     0.03623262490145862,
+     0.036198917077854276,
+     0.03637620899826288,
+     0.03581362497061491,
+     0.035962834022939205,
+     0.03610925003886223,
+     0.037884874967858195,
+     0.039153833175078034,
+     0.0353645000141114
+    ]
+   }
+  }
+ ]
+}

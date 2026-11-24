@@ -1,0 +1,1970 @@
+{
+ "step": "step38",
+ "pass": false,
+ "seconds": 1835.7,
+ "checks": [
+  {
+   "check": "landmark: at full size, drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.63 (after 94.58%, fresh 95.21%); target 0.88; checks 332 (fresh 336); unreachable 179 -> 383 (fresh 241); links per item 16.6 -> 15.7 (fresh 16.3); memory 1.002x fresh",
+   "data": {
+    "dataset": "landmark",
+    "size": "full",
+    "extra": {},
+    "changes": 210831,
+    "checkpoints": [
+     {
+      "after_changes": 21083,
+      "accuracy": 0.9476000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 334.596,
+      "start": 0,
+      "unreachable": 200,
+      "no_links_in": 198,
+      "mean_links": 16.506135129366566
+     },
+     {
+      "after_changes": 42166,
+      "accuracy": 0.9449,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 334.851,
+      "start": 0,
+      "unreachable": 214,
+      "no_links_in": 212,
+      "mean_links": 16.40353692919026
+     },
+     {
+      "after_changes": 63249,
+      "accuracy": 0.9409000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 334.744,
+      "start": 0,
+      "unreachable": 232,
+      "no_links_in": 230,
+      "mean_links": 16.30954120258809
+     },
+     {
+      "after_changes": 84332,
+      "accuracy": 0.9389,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 329.689,
+      "start": 0,
+      "unreachable": 249,
+      "no_links_in": 247,
+      "mean_links": 16.220109404726323
+     },
+     {
+      "after_changes": 105415,
+      "accuracy": 0.9404999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 333.051,
+      "start": 0,
+      "unreachable": 278,
+      "no_links_in": 276,
+      "mean_links": 16.134899160102414
+     },
+     {
+      "after_changes": 126498,
+      "accuracy": 0.9451,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.135,
+      "start": 0,
+      "unreachable": 306,
+      "no_links_in": 302,
+      "mean_links": 16.05717317863198
+     },
+     {
+      "after_changes": 147581,
+      "accuracy": 0.9408,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.685,
+      "start": 0,
+      "unreachable": 322,
+      "no_links_in": 316,
+      "mean_links": 15.967751425475884
+     },
+     {
+      "after_changes": 168664,
+      "accuracy": 0.9490000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 329.887,
+      "start": 0,
+      "unreachable": 345,
+      "no_links_in": 337,
+      "mean_links": 15.892418782837474
+     },
+     {
+      "after_changes": 189747,
+      "accuracy": 0.9409000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 335.185,
+      "start": 0,
+      "unreachable": 359,
+      "no_links_in": 351,
+      "mean_links": 15.8092069686323
+     },
+     {
+      "after_changes": 210831,
+      "accuracy": 0.9458,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.071,
+      "start": 0,
+      "unreachable": 383,
+      "no_links_in": 375,
+      "mean_links": 15.7211763608451
+     }
+    ],
+    "picks": {
+     "r": 24,
+     "alpha": 1.0,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 179,
+     "no_links_in": 177,
+     "mean_links": 16.635320865211156
+    },
+    "target": 0.88,
+    "change_seconds": 124.50921511650085,
+    "memory_after": 572762656,
+    "fresh_accuracy": 0.9521000000000001,
+    "fresh_checks": 336.46,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 241,
+     "no_links_in": 235,
+     "mean_links": 16.301127443307674
+    },
+    "fresh_memory": 571773680,
+    "drift": -0.006300000000000083,
+    "memory_after_vs_fresh": 1.001729663387094
+   }
+  },
+  {
+   "check": "gooaq (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift +0.57 (after 95.79%, fresh 95.22%); target 0.94; checks 551 (fresh 541); unreachable 0 -> 0 (fresh 0); links per item 36.0 -> 36.8 (fresh 36.0); memory 1.012x fresh; before: drift +0.62",
+   "data": {
+    "dataset": "gooaq",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9581,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 554.906,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.6917614109959
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9574,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 553.893,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.830940563827546
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9591,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 562.954,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.82488842507272
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9603999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 557.212,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.81297807382737
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9605,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 558.13,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.784504008349806
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9611000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 556.794,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.789118140506424
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.959,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 557.953,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.758851302560686
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9573,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 552.363,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.73429726368159
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9605,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 550.85,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.75063570849573
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9579000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 551.328,
+      "start": 1,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.77334444444445
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 36.013977777777775
+    },
+    "target": 0.94,
+    "change_seconds": 36.26050090789795,
+    "memory_after": 51009848,
+    "fresh_accuracy": 0.9522,
+    "fresh_checks": 540.656,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 36.01711111111111
+    },
+    "fresh_memory": 50400008,
+    "drift": 0.005700000000000038,
+    "memory_after_vs_fresh": 1.0120999980793655
+   }
+  },
+  {
+   "check": "glove (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift +0.80 (after 95.05%, fresh 94.25%); target 0.95; checks 5497 (fresh 5129); unreachable 0 -> 0 (fresh 0); links per item 107.8 -> 110.4 (fresh 107.6); memory 1.012x fresh; before: drift +0.66",
+   "data": {
+    "dataset": "glove",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5840.442,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 109.9505669186305
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9542999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5783.121,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.133738703187
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9553,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5751.555,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.45578888888889
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9551999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5684.636,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.61669002023976
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9560000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5647.118,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.44855733990805
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9549,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5646.992,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.40049298276782
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9551999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5611.643,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.39123868746877
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9525,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5593.057,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.53484132718279
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5519.213,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.36973650578443
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9505000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5496.602,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 110.3523
+     }
+    ],
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 107.7778888888889
+    },
+    "target": 0.95,
+    "change_seconds": 50.0918710231781,
+    "memory_after": 56469608,
+    "fresh_accuracy": 0.9425000000000001,
+    "fresh_checks": 5129.057,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 107.56943333333334
+    },
+    "fresh_memory": 55800008,
+    "drift": 0.008000000000000007,
+    "memory_after_vs_fresh": 1.0119999982795702
+   }
+  },
+  {
+   "check": "yandex (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift -0.25 (after 95.77%, fresh 96.02%); target 0.96; checks 918 (fresh 954); unreachable 0 -> 1 (fresh 0); links per item 31.6 -> 31.0 (fresh 31.5); memory 1.011x fresh; before: drift -0.27",
+   "data": {
+    "dataset": "yandex",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9579000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 942.329,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 31.437772865125478
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9603999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 939.488,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 31.35563528915154
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.959,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 935.438,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 31.292274878357663
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9606,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 932.26,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 31.24075515332103
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9608000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 933.744,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 31.207459648264123
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9602,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 926.356,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 31.17289797551946
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9606999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 925.293,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 31.12973357489802
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9619,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 919.698,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 31.09795705139605
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9612,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 924.362,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 31.068353360975557
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9577,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 917.938,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 31.04232222222222
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 31.561055555555555
+    },
+    "target": 0.96,
+    "change_seconds": 13.967595100402832,
+    "memory_after": 34224280,
+    "fresh_accuracy": 0.9602,
+    "fresh_checks": 953.536,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 31.4913
+    },
+    "fresh_memory": 33840008,
+    "drift": -0.0025000000000000577,
+    "memory_after_vs_fresh": 1.0113555528710276
+   }
+  },
+  {
+   "check": "llama (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift -0.03 (after 95.71%, fresh 95.74%); target 0.95; checks 564 (fresh 527); unreachable 0 -> 0 (fresh 2); links per item 26.7 -> 27.1 (fresh 26.6); memory 1.011x fresh; before: drift -0.42",
+   "data": {
+    "dataset": "llama",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9535,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 558.297,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.142828576824378
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9538,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 582.221,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.2616802686295
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9521000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 521.549,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.23007846362444
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9516,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 529.939,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.209588356202435
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 530.83,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.181588944924574
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9526,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 538.996,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.187180569752456
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 543.447,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.159624830529193
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9515,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 568.66,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.14507075130887
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.954,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 531.641,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.108587627146907
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9571,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 564.09,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 27.085766666666668
+     }
+    ],
+    "picks": {
+     "r": 24,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 26.659522222222222
+    },
+    "target": 0.95,
+    "change_seconds": 16.737747192382812,
+    "memory_after": 24886902,
+    "fresh_accuracy": 0.9574,
+    "fresh_checks": 526.96,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 2,
+     "no_links_in": 2,
+     "mean_links": 26.602855555555557
+    },
+    "fresh_memory": 24608872,
+    "drift": -0.000300000000000078,
+    "memory_after_vs_fresh": 1.0112979579072132
+   }
+  },
+  {
+   "check": "landmark (sample): drift no worse than before by more than 0.2 points",
+   "pass": false,
+   "detail": "drift +0.22 (after 96.39%, fresh 96.17%); target 0.96; checks 280 (fresh 291); unreachable 25 -> 35 (fresh 49); links per item 15.9 -> 15.0 (fresh 15.6); memory 1.012x fresh; before: drift +0.42",
+   "data": {
+    "dataset": "landmark",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9650000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 286.959,
+      "start": 0,
+      "unreachable": 27,
+      "no_links_in": 27,
+      "mean_links": 15.830590771213654
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9606999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 286.369,
+      "start": 0,
+      "unreachable": 26,
+      "no_links_in": 26,
+      "mean_links": 15.706281588447654
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9638,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 285.5,
+      "start": 0,
+      "unreachable": 26,
+      "no_links_in": 26,
+      "mean_links": 15.609566666666666
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9630000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 291.039,
+      "start": 0,
+      "unreachable": 30,
+      "no_links_in": 30,
+      "mean_links": 15.52223653811978
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9657,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 287.179,
+      "start": 0,
+      "unreachable": 31,
+      "no_links_in": 31,
+      "mean_links": 15.425826005861976
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9627000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 280.162,
+      "start": 0,
+      "unreachable": 33,
+      "no_links_in": 33,
+      "mean_links": 15.343020480657158
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9621999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 281.801,
+      "start": 0,
+      "unreachable": 36,
+      "no_links_in": 36,
+      "mean_links": 15.257472667739608
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9642,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 280.514,
+      "start": 0,
+      "unreachable": 34,
+      "no_links_in": 34,
+      "mean_links": 15.16538598205561
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9637,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 281.554,
+      "start": 0,
+      "unreachable": 36,
+      "no_links_in": 36,
+      "mean_links": 15.07344413091297
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9639,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 279.837,
+      "start": 0,
+      "unreachable": 35,
+      "no_links_in": 35,
+      "mean_links": 14.981411111111111
+     }
+    ],
+    "picks": {
+     "r": 24,
+     "alpha": 1.0,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 25,
+     "no_links_in": 25,
+     "mean_links": 15.946077777777777
+    },
+    "target": 0.96,
+    "change_seconds": 14.838064908981323,
+    "memory_after": 82327288,
+    "fresh_accuracy": 0.9617000000000001,
+    "fresh_checks": 290.935,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 49,
+     "no_links_in": 49,
+     "mean_links": 15.579133333333333
+    },
+    "fresh_memory": 81360008,
+    "drift": 0.0021999999999998687,
+    "memory_after_vs_fresh": 1.0118888877198733
+   }
+  },
+  {
+   "check": "arxiv (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift +0.02 (after 95.05%, fresh 95.03%); target 0.95; checks 492 (fresh 514); unreachable 0 -> 0 (fresh 0); links per item 35.9 -> 36.2 (fresh 35.8); memory 1.011x fresh; before: drift +0.03",
+   "data": {
+    "dataset": "arxiv",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9541000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 509.13,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.408003025045595
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 504.499,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.46717854559617
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9471,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 503.551,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.486831417667155
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9477,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 501.183,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.45720550262666
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9529,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 501.995,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.39045393858478
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.95,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 506.163,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.353670066627366
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9516,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 499.979,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.32544747081712
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9490999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 493.77,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.32394663937071
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9476000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 494.734,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.286079637063146
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9505000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 492.247,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 36.237033333333336
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 35.90275555555556
+    },
+    "target": 0.95,
+    "change_seconds": 32.883540868759155,
+    "memory_after": 85869080,
+    "fresh_accuracy": 0.9503,
+    "fresh_checks": 514.222,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 35.754377777777776
+    },
+    "fresh_memory": 84960008,
+    "drift": 0.000200000000000089,
+    "memory_after_vs_fresh": 1.0106999989924672
+   }
+  },
+  {
+   "check": "laion (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift +0.33 (after 95.29%, fresh 94.96%); target 0.95; checks 1155 (fresh 1166); unreachable 28 -> 36 (fresh 26); links per item 46.3 -> 45.3 (fresh 46.0); memory 1.011x fresh; before: drift -0.09",
+   "data": {
+    "dataset": "laion",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9490999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1193.229,
+      "start": 0,
+      "unreachable": 28,
+      "no_links_in": 28,
+      "mean_links": 46.15776717917931
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9502,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1182.292,
+      "start": 0,
+      "unreachable": 28,
+      "no_links_in": 28,
+      "mean_links": 46.01193678173695
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9494,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1178.433,
+      "start": 0,
+      "unreachable": 31,
+      "no_links_in": 31,
+      "mean_links": 45.903951347505114
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9480000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1170.012,
+      "start": 0,
+      "unreachable": 32,
+      "no_links_in": 32,
+      "mean_links": 45.80658756546977
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9507,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1161.67,
+      "start": 0,
+      "unreachable": 34,
+      "no_links_in": 34,
+      "mean_links": 45.715515422123
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9484,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1159.352,
+      "start": 0,
+      "unreachable": 35,
+      "no_links_in": 35,
+      "mean_links": 45.635109599395314
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9513,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1164.78,
+      "start": 0,
+      "unreachable": 36,
+      "no_links_in": 36,
+      "mean_links": 45.54458627054193
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9501,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1157.32,
+      "start": 0,
+      "unreachable": 36,
+      "no_links_in": 36,
+      "mean_links": 45.46020226717048
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9521000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1148.635,
+      "start": 65086,
+      "unreachable": 36,
+      "no_links_in": 36,
+      "mean_links": 45.37838708960366
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9529,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1154.744,
+      "start": 65086,
+      "unreachable": 36,
+      "no_links_in": 36,
+      "mean_links": 45.30455555555555
+     }
+    ],
+    "picks": {
+     "r": 48,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 28,
+     "no_links_in": 28,
+     "mean_links": 46.31198888888889
+    },
+    "target": 0.95,
+    "change_seconds": 36.66049098968506,
+    "memory_after": 70272080,
+    "fresh_accuracy": 0.9496,
+    "fresh_checks": 1166.394,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 26,
+     "no_links_in": 23,
+     "mean_links": 46.00324444444445
+    },
+    "fresh_memory": 69480008,
+    "drift": 0.0032999999999999696,
+    "memory_after_vs_fresh": 1.0113999986873923
+   }
+  },
+  {
+   "check": "yi (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift -0.35 (after 95.57%, fresh 95.92%); target 0.96; checks 1139 (fresh 1233); unreachable 37 -> 134 (fresh 85); links per item 15.0 -> 14.0 (fresh 14.3); memory 1.012x fresh; before: drift -0.31",
+   "data": {
+    "dataset": "yi",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9586,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1161.556,
+      "start": 0,
+      "unreachable": 42,
+      "no_links_in": 40,
+      "mean_links": 14.945821069584051
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9574,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1170.91,
+      "start": 0,
+      "unreachable": 50,
+      "no_links_in": 48,
+      "mean_links": 14.857948177328968
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9574,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1157.514,
+      "start": 0,
+      "unreachable": 61,
+      "no_links_in": 59,
+      "mean_links": 14.75867853056509
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9570000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1144.488,
+      "start": 0,
+      "unreachable": 72,
+      "no_links_in": 70,
+      "mean_links": 14.647961167205393
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9561,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1126.071,
+      "start": 0,
+      "unreachable": 81,
+      "no_links_in": 79,
+      "mean_links": 14.537666059448172
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9561,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1128.905,
+      "start": 0,
+      "unreachable": 95,
+      "no_links_in": 93,
+      "mean_links": 14.44049445296694
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9564999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1120.722,
+      "start": 0,
+      "unreachable": 103,
+      "no_links_in": 101,
+      "mean_links": 14.341530904807415
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9545999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1125.199,
+      "start": 0,
+      "unreachable": 108,
+      "no_links_in": 106,
+      "mean_links": 14.24719151063948
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9550000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1127.033,
+      "start": 0,
+      "unreachable": 118,
+      "no_links_in": 116,
+      "mean_links": 14.12757233654829
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9557,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1139.373,
+      "start": 0,
+      "unreachable": 134,
+      "no_links_in": 132,
+      "mean_links": 14.018422222222222
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.0,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 37,
+     "no_links_in": 35,
+     "mean_links": 15.024066666666666
+    },
+    "target": 0.96,
+    "change_seconds": 21.39688014984131,
+    "memory_after": 29165947,
+    "fresh_accuracy": 0.9592,
+    "fresh_checks": 1232.578,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 85,
+     "no_links_in": 85,
+     "mean_links": 14.342888888888888
+    },
+    "fresh_memory": 28829404,
+    "drift": -0.0035000000000000586,
+    "memory_after_vs_fresh": 1.0116736024095399
+   }
+  },
+  {
+   "check": "gist (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift +1.35 (after 96.54%, fresh 95.19%); target 0.95; checks 1413 (fresh 1340); unreachable 91 -> 168 (fresh 269); links per item 43.7 -> 42.9 (fresh 37.9); memory 1.012x fresh; before: drift +1.12",
+   "data": {
+    "dataset": "gist",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9547000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1472.716,
+      "start": 0,
+      "unreachable": 95,
+      "no_links_in": 93,
+      "mean_links": 43.932649633493874
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.958,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1477.387,
+      "start": 0,
+      "unreachable": 106,
+      "no_links_in": 104,
+      "mean_links": 43.956431327632416
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9570000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1460.781,
+      "start": 0,
+      "unreachable": 120,
+      "no_links_in": 118,
+      "mean_links": 44.13134966116594
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9564,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1457.676,
+      "start": 0,
+      "unreachable": 127,
+      "no_links_in": 125,
+      "mean_links": 44.039010995119455
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9616,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1445.357,
+      "start": 0,
+      "unreachable": 130,
+      "no_links_in": 128,
+      "mean_links": 43.91883401600675
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9618,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1447.566,
+      "start": 0,
+      "unreachable": 138,
+      "no_links_in": 136,
+      "mean_links": 43.783285961717816
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9596,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1437.092,
+      "start": 0,
+      "unreachable": 146,
+      "no_links_in": 146,
+      "mean_links": 43.63368470159615
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9650000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1437.891,
+      "start": 0,
+      "unreachable": 152,
+      "no_links_in": 152,
+      "mean_links": 43.415291138115656
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9659000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1424.024,
+      "start": 0,
+      "unreachable": 156,
+      "no_links_in": 154,
+      "mean_links": 43.17804431117774
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9654,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1413.263,
+      "start": 0,
+      "unreachable": 168,
+      "no_links_in": 166,
+      "mean_links": 42.91943333333333
+     }
+    ],
+    "picks": {
+     "r": 64,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 91,
+     "no_links_in": 89,
+     "mean_links": 43.73608888888889
+    },
+    "target": 0.95,
+    "change_seconds": 52.96877884864807,
+    "memory_after": 118810056,
+    "fresh_accuracy": 0.9519,
+    "fresh_checks": 1339.746,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 269,
+     "no_links_in": 265,
+     "mean_links": 37.86921111111111
+    },
+    "fresh_memory": 117360008,
+    "drift": 0.013500000000000068,
+    "memory_after_vs_fresh": 1.0123555547133227
+   }
+  },
+  {
+   "check": "nytimes (sample): drift no worse than before by more than 0.2 points",
+   "pass": false,
+   "detail": "drift -0.25 (after 95.07%, fresh 95.32%); target 0.95; checks 3973 (fresh 3833); unreachable 14 -> 13 (fresh 9); links per item 108.1 -> 110.9 (fresh 107.9); memory 1.012x fresh; before: drift +0.04",
+   "data": {
+    "dataset": "nytimes",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9494999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 4062.462,
+      "start": 0,
+      "unreachable": 14,
+      "no_links_in": 14,
+      "mean_links": 110.68511153572697
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.95,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 4013.33,
+      "start": 0,
+      "unreachable": 14,
+      "no_links_in": 14,
+      "mean_links": 110.81932810451707
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9513999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 4045.243,
+      "start": 0,
+      "unreachable": 14,
+      "no_links_in": 14,
+      "mean_links": 111.03596634545919
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9477,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3987.335,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 110.78355978713712
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9490999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3975.81,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 110.77829570930723
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9455,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 4029.954,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 111.01758127033841
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9498,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 4028.497,
+      "start": 0,
+      "unreachable": 14,
+      "no_links_in": 14,
+      "mean_links": 111.02644497756452
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9506,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 4015.466,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 110.95642851588104
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9490999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3931.091,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 110.75106075752527
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9507,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3973.499,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 110.86123333333333
+     }
+    ],
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 25,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 14,
+     "no_links_in": 14,
+     "mean_links": 108.10397777777777
+    },
+    "target": 0.95,
+    "change_seconds": 65.52336573600769,
+    "memory_after": 69576724,
+    "fresh_accuracy": 0.9532,
+    "fresh_checks": 3833.269,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 9,
+     "no_links_in": 9,
+     "mean_links": 107.88487777777777
+    },
+    "fresh_memory": 68760008,
+    "drift": -0.0025000000000000577,
+    "memory_after_vs_fresh": 1.0118777763958375
+   }
+  },
+  {
+   "check": "imagenet (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift +0.33 (after 95.79%, fresh 95.46%); target 0.96; checks 629 (fresh 707); unreachable 3 -> 5 (fresh 3); links per item 32.0 -> 31.6 (fresh 32.0); memory 1.012x fresh; before: drift +0.38",
+   "data": {
+    "dataset": "imagenet",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9559,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 660.105,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 31.98320270000222
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9597,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 662.934,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 31.920198642388154
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9586,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 654.051,
+      "start": 0,
+      "unreachable": 4,
+      "no_links_in": 4,
+      "mean_links": 31.87192041656952
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9619,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 671.602,
+      "start": 0,
+      "unreachable": 4,
+      "no_links_in": 4,
+      "mean_links": 31.831599169378034
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9593,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 644.892,
+      "start": 0,
+      "unreachable": 5,
+      "no_links_in": 5,
+      "mean_links": 31.790071032359187
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9560000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 632.865,
+      "start": 0,
+      "unreachable": 5,
+      "no_links_in": 5,
+      "mean_links": 31.754271485265182
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9563,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 668.491,
+      "start": 0,
+      "unreachable": 6,
+      "no_links_in": 6,
+      "mean_links": 31.721370182950565
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9532,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 643.111,
+      "start": 0,
+      "unreachable": 5,
+      "no_links_in": 5,
+      "mean_links": 31.699503062778625
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9582,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 655.926,
+      "start": 0,
+      "unreachable": 5,
+      "no_links_in": 5,
+      "mean_links": 31.67351382578072
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9579000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 629.485,
+      "start": 0,
+      "unreachable": 5,
+      "no_links_in": 5,
+      "mean_links": 31.64141111111111
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.3,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 3,
+     "no_links_in": 3,
+     "mean_links": 32.03313333333333
+    },
+    "target": 0.96,
+    "change_seconds": 25.679814338684082,
+    "memory_after": 45168744,
+    "fresh_accuracy": 0.9545999999999999,
+    "fresh_checks": 707.419,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 3,
+     "no_links_in": 3,
+     "mean_links": 31.963911111111113
+    },
+    "fresh_memory": 44640008,
+    "drift": 0.0033000000000001917,
+    "memory_after_vs_fresh": 1.0118444423217845
+   }
+  },
+  {
+   "check": "llama2 (sample): drift no worse than before by more than 0.2 points",
+   "pass": true,
+   "detail": "drift -0.05 (after 94.82%, fresh 94.87%); target 0.95; checks 817 (fresh 854); unreachable 0 -> 0 (fresh 1); links per item 33.0 -> 32.8 (fresh 32.6); memory 1.012x fresh; before: drift -0.11",
+   "data": {
+    "dataset": "llama2",
+    "size": "slice",
+    "extra": {},
+    "changes": 30000,
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9451,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 847.482,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 33.1244789756244
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9479,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 848.141,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 33.11784193616525
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9458,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 839.833,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 33.15358263074767
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9470000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 849.553,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 33.11388604723569
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 836.703,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 33.07685122377039
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9506,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 835.101,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 33.00658048308749
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.952,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 834.776,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 32.958392555743096
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9501,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 833.626,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 32.934928995266354
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9480000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 826.486,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 32.877073680233785
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9481999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 817.424,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 32.82756666666667
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 32.99333333333333
+    },
+    "target": 0.95,
+    "change_seconds": 23.2204270362854,
+    "memory_after": 29000868,
+    "fresh_accuracy": 0.9487,
+    "fresh_checks": 854.393,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 1,
+     "no_links_in": 1,
+     "mean_links": 32.63941111111111
+    },
+    "fresh_memory": 28666932,
+    "drift": -0.000500000000000056,
+    "memory_after_vs_fresh": 1.0116488224132252
+   }
+  }
+ ]
+}

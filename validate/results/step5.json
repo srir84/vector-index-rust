@@ -1,0 +1,619 @@
+{
+ "step": "step5",
+ "pass": true,
+ "seconds": 197.4,
+ "checks": [
+  {
+   "check": "gooaq, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 507 vs prototype 507 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9367000000000001,
+      "checks": 474.756
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9367000000000001,
+      "checks": 474.756
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9367000000000001,
+      "checks": 474.756
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.944,
+      "checks": 489.57
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9490999999999999,
+      "checks": 503.929
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9574,
+      "checks": 532.861
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9659000000000001,
+      "checks": 560.244
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9769,
+      "checks": 632.865
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9837999999999999,
+      "checks": 710.082
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9926999999999999,
+      "checks": 892.102
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9965999999999999,
+      "checks": 1177.398
+     }
+    ]
+   }
+  },
+  {
+   "check": "gooaq, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 508 vs prototype 507 (0.3% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9349999999999999,
+      "checks": 469.809
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9349999999999999,
+      "checks": 469.809
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9349999999999999,
+      "checks": 469.809
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9423999999999999,
+      "checks": 485.055
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9471999999999999,
+      "checks": 498.397
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9555999999999999,
+      "checks": 528.587
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9662000000000001,
+      "checks": 569.385
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9732,
+      "checks": 624.299
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9812,
+      "checks": 723.526
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9912000000000001,
+      "checks": 902.117
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9951000000000001,
+      "checks": 1211.383
+     }
+    ]
+   }
+  },
+  {
+   "check": "gooaq: the hardest group gets at least the easiest group's effort",
+   "pass": true,
+   "detail": "table for 95%, hardest group first: [20, 15, 15, 10, 10, 10, 10, 10]",
+   "data": null
+  },
+  {
+   "check": "glove, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 5,622 vs prototype 5,622 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8812,
+      "checks": 2726.384
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8987999999999999,
+      "checks": 3211.889
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9207000000000001,
+      "checks": 3982.889
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9296,
+      "checks": 4403.591
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9362999999999999,
+      "checks": 4832.172
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9478,
+      "checks": 5441.277
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9581,
+      "checks": 6288.036
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9685,
+      "checks": 7390.635
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9783,
+      "checks": 9169.938
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9901,
+      "checks": 12828.388
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9944000000000001,
+      "checks": 16891.259
+     }
+    ]
+   }
+  },
+  {
+   "check": "glove, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 5,482 vs prototype 5,622 (2.5% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8824,
+      "checks": 2734.888
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9071,
+      "checks": 3343.929
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.924,
+      "checks": 3999.604
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9361,
+      "checks": 4587.143
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9428000000000001,
+      "checks": 5028.174
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9532,
+      "checks": 5683.806
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9643,
+      "checks": 6832.286
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9699,
+      "checks": 7603.66
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9812,
+      "checks": 9636.97
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9904999999999999,
+      "checks": 13546.609
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.994,
+      "checks": 16777.04
+     }
+    ]
+   }
+  },
+  {
+   "check": "glove: the hardest group gets at least the easiest group's effort",
+   "pass": true,
+   "detail": "table for 95%, hardest group first: [400, 400, 300, 300, 150, 100, 70, 50]",
+   "data": null
+  },
+  {
+   "check": "yandex, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 870 vs prototype 870 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8916000000000001,
+      "checks": 608.551
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9013,
+      "checks": 642.169
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9244,
+      "checks": 728.555
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9327,
+      "checks": 762.235
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9403,
+      "checks": 807.36
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9529,
+      "checks": 888.583
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9597,
+      "checks": 972.851
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9710000000000001,
+      "checks": 1137.363
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9800000000000001,
+      "checks": 1376.723
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9912000000000001,
+      "checks": 1973.119
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9957,
+      "checks": 2788.312
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 899 vs prototype 870 (3.4% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.882,
+      "checks": 599.599
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8954000000000001,
+      "checks": 635.184
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9195,
+      "checks": 713.491
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9332,
+      "checks": 782.947
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9414999999999999,
+      "checks": 828.768
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9507,
+      "checks": 904.993
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9644999999999999,
+      "checks": 1010.671
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9739000000000001,
+      "checks": 1136.49
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9821,
+      "checks": 1450.589
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9913000000000001,
+      "checks": 1905.615
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9964999999999999,
+      "checks": 2800.763
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex: the hardest group gets at least the easiest group's effort",
+   "pass": true,
+   "detail": "table for 95%, hardest group first: [50, 40, 30, 40, 30, 30, 20, 15]",
+   "data": null
+  },
+  {
+   "check": "llama, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 6,820 vs prototype 6,820 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8785000000000001,
+      "checks": 4050.355
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.898,
+      "checks": 4699.533
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9169,
+      "checks": 5310.395
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9298,
+      "checks": 5691.578
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9377000000000001,
+      "checks": 6036.238
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9488,
+      "checks": 6722.68
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.961,
+      "checks": 7712.85
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9685,
+      "checks": 8617.588
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9785,
+      "checks": 10134.16
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9885999999999999,
+      "checks": 13110.03
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9932000000000001,
+      "checks": 16323.003
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama, our own order: prototype inside our seed spread, or averages over seeds within 5%",
+   "pass": true,
+   "detail": "prototype 6,820 (average 6,820); ours over seeds 7, 1, 2, 3: 5,956, 6,803, 7,255, 7,033 (average 6,762, -0.9%)",
+   "data": null
+  },
+  {
+   "check": "llama: the hardest group gets at least the easiest group's effort",
+   "pass": true,
+   "detail": "table for 95%, hardest group first: [400, 400, 300, 300, 300, 300, 300, 300]",
+   "data": null
+  },
+  {
+   "check": "landmark, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 381 vs prototype 381 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9827,
+      "checks": 380.914
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9869999999999999,
+      "checks": 394.521
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9926,
+      "checks": 439.468
+     }
+    ]
+   }
+  },
+  {
+   "check": "landmark, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 386 vs prototype 381 (1.3% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9794,
+      "checks": 385.69
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9849,
+      "checks": 399.853
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9917999999999999,
+      "checks": 454.373
+     }
+    ]
+   }
+  },
+  {
+   "check": "landmark: the hardest group gets at least the easiest group's effort",
+   "pass": true,
+   "detail": "table for 95%, hardest group first: [10, 10, 10, 10, 10, 10, 10, 10]",
+   "data": null
+  }
+ ]
+}

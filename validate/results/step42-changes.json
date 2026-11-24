@@ -1,0 +1,2015 @@
+{
+ "step": "step42-changes",
+ "pass": true,
+ "seconds": 11874.7,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 42",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "gooaq: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.46 (96.03% after 414,399 changes, fresh 96.49%); memory 1.001x",
+   "data": {
+    "dataset": "gooaq",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 414399,
+    "checkpoints": [
+     {
+      "after_changes": 41439,
+      "accuracy": 0.9602,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 564.963,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.0164614847437
+     },
+     {
+      "after_changes": 82878,
+      "accuracy": 0.9632999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 561.359,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.11847782181819
+     },
+     {
+      "after_changes": 124317,
+      "accuracy": 0.9621000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 559.052,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.14387213082312
+     },
+     {
+      "after_changes": 165756,
+      "accuracy": 0.9611000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 549.94,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.15191699356711
+     },
+     {
+      "after_changes": 207195,
+      "accuracy": 0.9615,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 557.566,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.13721767004164
+     },
+     {
+      "after_changes": 248634,
+      "accuracy": 0.9637,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 555.486,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.11933018511218
+     },
+     {
+      "after_changes": 290073,
+      "accuracy": 0.9612,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 552.546,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.106350848624885
+     },
+     {
+      "after_changes": 331512,
+      "accuracy": 0.9642,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 560.924,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.10373096440574
+     },
+     {
+      "after_changes": 372951,
+      "accuracy": 0.9648,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 560.482,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.0972949662977
+     },
+     {
+      "after_changes": 414399,
+      "accuracy": 0.9602999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 558.519,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 36.08263499545524
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 1,
+     "no_links_in": 1,
+     "mean_links": 35.66251015532622
+    },
+    "target": 0.94,
+    "change_seconds": 540.510890007019,
+    "memory_after": 696740808,
+    "fresh_accuracy": 0.9648999999999999,
+    "fresh_checks": 554.142,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 1,
+     "no_links_in": 1,
+     "mean_links": 35.61727008743635
+    },
+    "fresh_memory": 696186408,
+    "drift": -0.0045999999999999375,
+    "memory_after_vs_fresh": 1.000796338442735
+   }
+  },
+  {
+   "check": "glove: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift +0.09 (95.03% after 333,882 changes, fresh 94.94%); memory 1.001x",
+   "data": {
+    "dataset": "glove",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 333882,
+    "checkpoints": [
+     {
+      "after_changes": 33388,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12795.465,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.15145074109498
+     },
+     {
+      "after_changes": 66776,
+      "accuracy": 0.9488,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12631.455,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.31809944495421
+     },
+     {
+      "after_changes": 100164,
+      "accuracy": 0.9503,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12653.178,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.37450003494514
+     },
+     {
+      "after_changes": 133552,
+      "accuracy": 0.9483,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12484.124,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.39219771356011
+     },
+     {
+      "after_changes": 166940,
+      "accuracy": 0.9487,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12479.309,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.37928473383414
+     },
+     {
+      "after_changes": 200328,
+      "accuracy": 0.9481999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12429.973,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.3180565732963
+     },
+     {
+      "after_changes": 233716,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12268.473,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.31732980043589
+     },
+     {
+      "after_changes": 267104,
+      "accuracy": 0.9503999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12275.813,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.20065614753935
+     },
+     {
+      "after_changes": 300492,
+      "accuracy": 0.9480000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12188.238,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.16717630181581
+     },
+     {
+      "after_changes": 333882,
+      "accuracy": 0.9503,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12161.728,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 107.06058433876274
+     }
+    ],
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 105.59965157316215
+    },
+    "target": 0.95,
+    "change_seconds": 657.9618897438049,
+    "memory_after": 709999400,
+    "fresh_accuracy": 0.9494,
+    "fresh_checks": 11678.065,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 105.1585751438883
+    },
+    "fresh_memory": 709164668,
+    "drift": 0.0009000000000000119,
+    "memory_after_vs_fresh": 1.0011770637168855
+   }
+  },
+  {
+   "check": "yandex: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.64 (94.94% after 285,000 changes, fresh 95.58%); memory 1.001x",
+   "data": {
+    "dataset": "yandex",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 285000,
+    "checkpoints": [
+     {
+      "after_changes": 28500,
+      "accuracy": 0.9598000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1871.962,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 50.80006409064382
+     },
+     {
+      "after_changes": 57000,
+      "accuracy": 0.96,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1854.768,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 50.768532064708296
+     },
+     {
+      "after_changes": 85500,
+      "accuracy": 0.9599,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1842.159,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 50.80357209689643
+     },
+     {
+      "after_changes": 114000,
+      "accuracy": 0.9587999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1837.008,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 50.712853037800436
+     },
+     {
+      "after_changes": 142500,
+      "accuracy": 0.959,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1858.871,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 50.74982780657738
+     },
+     {
+      "after_changes": 171000,
+      "accuracy": 0.9564,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1839.949,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 50.68031453330542
+     },
+     {
+      "after_changes": 199500,
+      "accuracy": 0.9522,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1814.365,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 50.70440911414198
+     },
+     {
+      "after_changes": 228000,
+      "accuracy": 0.9545999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1842.644,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 50.63174556396394
+     },
+     {
+      "after_changes": 256500,
+      "accuracy": 0.9528000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1825.408,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 50.67447561526172
+     },
+     {
+      "after_changes": 285000,
+      "accuracy": 0.9494,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1809.409,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 50.5939216374269
+     }
+    ],
+    "picks": {
+     "r": 48,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 2,
+     "no_links_in": 2,
+     "mean_links": 50.481164912280704
+    },
+    "target": 0.96,
+    "change_seconds": 290.98304891586304,
+    "memory_after": 393851548,
+    "fresh_accuracy": 0.9558,
+    "fresh_checks": 1838.225,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 50.363863157894734
+    },
+    "fresh_memory": 393300008,
+    "drift": -0.006399999999999961,
+    "memory_after_vs_fresh": 1.001402339152762
+   }
+  },
+  {
+   "check": "llama: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.37 (94.97% after 73,224 changes, fresh 95.34%); memory 1.005x",
+   "data": {
+    "dataset": "llama",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 73224,
+    "checkpoints": [
+     {
+      "after_changes": 7322,
+      "accuracy": 0.9477,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 635.777,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.291682218317874
+     },
+     {
+      "after_changes": 14644,
+      "accuracy": 0.9384,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 615.109,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.41492999430848
+     },
+     {
+      "after_changes": 21966,
+      "accuracy": 0.9484999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 620.868,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.38646185794241
+     },
+     {
+      "after_changes": 29288,
+      "accuracy": 0.9432,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 668.909,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.387451958980712
+     },
+     {
+      "after_changes": 36610,
+      "accuracy": 0.9499000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 624.217,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.354489424991005
+     },
+     {
+      "after_changes": 43932,
+      "accuracy": 0.9511,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 667.796,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.346822573371657
+     },
+     {
+      "after_changes": 51254,
+      "accuracy": 0.9507,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 621.897,
+      "start": 0,
+      "unreachable": 3,
+      "no_links_in": 3,
+      "mean_links": 27.30329619291767
+     },
+     {
+      "after_changes": 58576,
+      "accuracy": 0.9497,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 658.819,
+      "start": 0,
+      "unreachable": 5,
+      "no_links_in": 5,
+      "mean_links": 27.299496984181175
+     },
+     {
+      "after_changes": 65898,
+      "accuracy": 0.9464,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 661.865,
+      "start": 0,
+      "unreachable": 6,
+      "no_links_in": 6,
+      "mean_links": 27.2851759480075
+     },
+     {
+      "after_changes": 73224,
+      "accuracy": 0.9497,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 655.061,
+      "start": 0,
+      "unreachable": 7,
+      "no_links_in": 7,
+      "mean_links": 27.280615659156815
+     }
+    ],
+    "picks": {
+     "r": 24,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 3,
+     "no_links_in": 3,
+     "mean_links": 26.804413043379295
+    },
+    "target": 0.95,
+    "change_seconds": 56.1631600856781,
+    "memory_after": 59882076,
+    "fresh_accuracy": 0.9534,
+    "fresh_checks": 630.567,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 4,
+     "no_links_in": 4,
+     "mean_links": 26.742628615131085
+    },
+    "fresh_memory": 59605867,
+    "drift": -0.0037000000000000366,
+    "memory_after_vs_fresh": 1.0046339230331136
+   }
+  },
+  {
+   "check": "landmark: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.63 (94.58% after 210,831 changes, fresh 95.21%); memory 1.002x",
+   "data": {
+    "dataset": "landmark",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 210831,
+    "checkpoints": [
+     {
+      "after_changes": 21083,
+      "accuracy": 0.9476000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 334.596,
+      "start": 0,
+      "unreachable": 200,
+      "no_links_in": 198,
+      "mean_links": 16.506135129366566
+     },
+     {
+      "after_changes": 42166,
+      "accuracy": 0.9449,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 334.851,
+      "start": 0,
+      "unreachable": 214,
+      "no_links_in": 212,
+      "mean_links": 16.40353692919026
+     },
+     {
+      "after_changes": 63249,
+      "accuracy": 0.9409000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 334.744,
+      "start": 0,
+      "unreachable": 232,
+      "no_links_in": 230,
+      "mean_links": 16.30954120258809
+     },
+     {
+      "after_changes": 84332,
+      "accuracy": 0.9389,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 329.689,
+      "start": 0,
+      "unreachable": 249,
+      "no_links_in": 247,
+      "mean_links": 16.220109404726323
+     },
+     {
+      "after_changes": 105415,
+      "accuracy": 0.9404999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 333.051,
+      "start": 0,
+      "unreachable": 278,
+      "no_links_in": 276,
+      "mean_links": 16.134899160102414
+     },
+     {
+      "after_changes": 126498,
+      "accuracy": 0.9451,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.135,
+      "start": 0,
+      "unreachable": 306,
+      "no_links_in": 302,
+      "mean_links": 16.05717317863198
+     },
+     {
+      "after_changes": 147581,
+      "accuracy": 0.9408,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.685,
+      "start": 0,
+      "unreachable": 322,
+      "no_links_in": 316,
+      "mean_links": 15.967751425475884
+     },
+     {
+      "after_changes": 168664,
+      "accuracy": 0.9490000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 329.887,
+      "start": 0,
+      "unreachable": 345,
+      "no_links_in": 337,
+      "mean_links": 15.892418782837474
+     },
+     {
+      "after_changes": 189747,
+      "accuracy": 0.9409000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 335.185,
+      "start": 0,
+      "unreachable": 359,
+      "no_links_in": 351,
+      "mean_links": 15.8092069686323
+     },
+     {
+      "after_changes": 210831,
+      "accuracy": 0.9458,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.071,
+      "start": 0,
+      "unreachable": 383,
+      "no_links_in": 375,
+      "mean_links": 15.7211763608451
+     }
+    ],
+    "picks": {
+     "r": 24,
+     "alpha": 1.0,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 179,
+     "no_links_in": 177,
+     "mean_links": 16.635320865211156
+    },
+    "target": 0.88,
+    "change_seconds": 127.38323903083801,
+    "memory_after": 572762656,
+    "fresh_accuracy": 0.9521000000000001,
+    "fresh_checks": 336.46,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 241,
+     "no_links_in": 235,
+     "mean_links": 16.301127443307674
+    },
+    "fresh_memory": 571773680,
+    "drift": -0.006300000000000083,
+    "memory_after_vs_fresh": 1.001729663387094
+   }
+  },
+  {
+   "check": "arxiv: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift +0.13 (94.69% after 377,241 changes, fresh 94.56%); memory 1.001x",
+   "data": {
+    "dataset": "arxiv",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 377241,
+    "checkpoints": [
+     {
+      "after_changes": 37724,
+      "accuracy": 0.9537000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 628.752,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.29028980475
+     },
+     {
+      "after_changes": 75448,
+      "accuracy": 0.9541000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 629.164,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.360813383812726
+     },
+     {
+      "after_changes": 113172,
+      "accuracy": 0.9545,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 626.544,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.34458484041566
+     },
+     {
+      "after_changes": 150896,
+      "accuracy": 0.9493,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 622.664,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.311559165196435
+     },
+     {
+      "after_changes": 188620,
+      "accuracy": 0.9493,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 620.747,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.269947750737266
+     },
+     {
+      "after_changes": 226344,
+      "accuracy": 0.951,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 624.936,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.24168747559038
+     },
+     {
+      "after_changes": 264068,
+      "accuracy": 0.9537000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 616.656,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.206583794063995
+     },
+     {
+      "after_changes": 301792,
+      "accuracy": 0.9506,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 618.175,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.17519176499806
+     },
+     {
+      "after_changes": 339516,
+      "accuracy": 0.9480000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 617.51,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.1494676577915
+     },
+     {
+      "after_changes": 377241,
+      "accuracy": 0.9469,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 616.382,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 36.113190258316145
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 2,
+     "no_links_in": 2,
+     "mean_links": 35.85598658318268
+    },
+    "target": 0.95,
+    "change_seconds": 498.0623459815979,
+    "memory_after": 1069587880,
+    "fresh_accuracy": 0.9456,
+    "fresh_checks": 611.543,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 3,
+     "no_links_in": 3,
+     "mean_links": 35.705704798208735
+    },
+    "fresh_memory": 1068338024,
+    "drift": 0.0012999999999999678,
+    "memory_after_vs_fresh": 1.001169906875841
+   }
+  },
+  {
+   "check": "laion: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.60 (95.09% after 285,129 changes, fresh 95.69%); memory 1.001x",
+   "data": {
+    "dataset": "laion",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 285129,
+    "checkpoints": [
+     {
+      "after_changes": 28512,
+      "accuracy": 0.9535,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2136.229,
+      "start": 0,
+      "unreachable": 423,
+      "no_links_in": 347,
+      "mean_links": 48.503033371174965
+     },
+     {
+      "after_changes": 57024,
+      "accuracy": 0.9507999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2126.486,
+      "start": 0,
+      "unreachable": 431,
+      "no_links_in": 355,
+      "mean_links": 48.36059834165467
+     },
+     {
+      "after_changes": 85536,
+      "accuracy": 0.9478,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2120.606,
+      "start": 0,
+      "unreachable": 443,
+      "no_links_in": 367,
+      "mean_links": 48.34577451531773
+     },
+     {
+      "after_changes": 114048,
+      "accuracy": 0.9458,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2102.997,
+      "start": 0,
+      "unreachable": 438,
+      "no_links_in": 364,
+      "mean_links": 48.1983349038846
+     },
+     {
+      "after_changes": 142560,
+      "accuracy": 0.9499000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2105.273,
+      "start": 0,
+      "unreachable": 435,
+      "no_links_in": 364,
+      "mean_links": 48.17949155573844
+     },
+     {
+      "after_changes": 171072,
+      "accuracy": 0.9507999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2099.284,
+      "start": 0,
+      "unreachable": 438,
+      "no_links_in": 369,
+      "mean_links": 48.06996578053009
+     },
+     {
+      "after_changes": 199584,
+      "accuracy": 0.9498,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2088.08,
+      "start": 0,
+      "unreachable": 446,
+      "no_links_in": 378,
+      "mean_links": 48.05662470469001
+     },
+     {
+      "after_changes": 228096,
+      "accuracy": 0.9542999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2076.606,
+      "start": 0,
+      "unreachable": 445,
+      "no_links_in": 378,
+      "mean_links": 47.926371934647904
+     },
+     {
+      "after_changes": 256608,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2077.083,
+      "start": 0,
+      "unreachable": 447,
+      "no_links_in": 382,
+      "mean_links": 47.89920907020145
+     },
+     {
+      "after_changes": 285129,
+      "accuracy": 0.9509000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2059.71,
+      "start": 0,
+      "unreachable": 453,
+      "no_links_in": 390,
+      "mean_links": 47.78018034026863
+     }
+    ],
+    "picks": {
+     "r": 48,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 25,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 374,
+     "no_links_in": 297,
+     "mean_links": 48.277264102746955
+    },
+    "target": 0.95,
+    "change_seconds": 491.8223762512207,
+    "memory_after": 661242712,
+    "fresh_accuracy": 0.9569000000000001,
+    "fresh_checks": 2097.059,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 437,
+     "no_links_in": 412,
+     "mean_links": 47.91928878642666
+    },
+    "fresh_memory": 660355684,
+    "drift": -0.006000000000000005,
+    "memory_after_vs_fresh": 1.0013432579161383
+   }
+  },
+  {
+   "check": "yi: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.42 (95.55% after 53,538 changes, fresh 95.97%); memory 1.006x",
+   "data": {
+    "dataset": "yi",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 53538,
+    "checkpoints": [
+     {
+      "after_changes": 5353,
+      "accuracy": 0.9563,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1378.597,
+      "start": 0,
+      "unreachable": 12,
+      "no_links_in": 12,
+      "mean_links": 28.716978428917585
+     },
+     {
+      "after_changes": 10706,
+      "accuracy": 0.9554,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1361.188,
+      "start": 0,
+      "unreachable": 14,
+      "no_links_in": 14,
+      "mean_links": 28.640251423445424
+     },
+     {
+      "after_changes": 16059,
+      "accuracy": 0.9601000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1380.788,
+      "start": 0,
+      "unreachable": 18,
+      "no_links_in": 18,
+      "mean_links": 28.56651863294072
+     },
+     {
+      "after_changes": 21412,
+      "accuracy": 0.9587,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1392.567,
+      "start": 0,
+      "unreachable": 21,
+      "no_links_in": 21,
+      "mean_links": 28.481144124555314
+     },
+     {
+      "after_changes": 26765,
+      "accuracy": 0.9555,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1388.026,
+      "start": 0,
+      "unreachable": 22,
+      "no_links_in": 22,
+      "mean_links": 28.474058014354068
+     },
+     {
+      "after_changes": 32118,
+      "accuracy": 0.9570000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1391.561,
+      "start": 0,
+      "unreachable": 22,
+      "no_links_in": 22,
+      "mean_links": 28.40625836951038
+     },
+     {
+      "after_changes": 37471,
+      "accuracy": 0.9574999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1353.491,
+      "start": 0,
+      "unreachable": 23,
+      "no_links_in": 23,
+      "mean_links": 28.3180038225205
+     },
+     {
+      "after_changes": 42824,
+      "accuracy": 0.9582,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1440.873,
+      "start": 1,
+      "unreachable": 24,
+      "no_links_in": 24,
+      "mean_links": 28.27084176509779
+     },
+     {
+      "after_changes": 48177,
+      "accuracy": 0.959,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1425.377,
+      "start": 1,
+      "unreachable": 26,
+      "no_links_in": 26,
+      "mean_links": 28.168993648025907
+     },
+     {
+      "after_changes": 53538,
+      "accuracy": 0.9555,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1416.801,
+      "start": 1,
+      "unreachable": 26,
+      "no_links_in": 26,
+      "mean_links": 28.13500202359827
+     }
+    ],
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 10,
+     "no_links_in": 10,
+     "mean_links": 28.66593817128981
+    },
+    "target": 0.96,
+    "change_seconds": 47.62656617164612,
+    "memory_after": 51091217,
+    "fresh_accuracy": 0.9597,
+    "fresh_checks": 1440.702,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 30,
+     "no_links_in": 30,
+     "mean_links": 27.909461100214813
+    },
+    "fresh_memory": 50786969,
+    "drift": -0.0041999999999999815,
+    "memory_after_vs_fresh": 1.0059906705596076
+   }
+  },
+  {
+   "check": "gist: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift +1.02 (96.40% after 279,015 changes, fresh 95.38%); memory 1.001x",
+   "data": {
+    "dataset": "gist",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 279015,
+    "checkpoints": [
+     {
+      "after_changes": 27901,
+      "accuracy": 0.953,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3521.652,
+      "start": 0,
+      "unreachable": 1057,
+      "no_links_in": 1043,
+      "mean_links": 46.39980859826305
+     },
+     {
+      "after_changes": 55802,
+      "accuracy": 0.9568,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3495.423,
+      "start": 0,
+      "unreachable": 1127,
+      "no_links_in": 1111,
+      "mean_links": 46.395933664588256
+     },
+     {
+      "after_changes": 83703,
+      "accuracy": 0.9599,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3448.782,
+      "start": 0,
+      "unreachable": 1227,
+      "no_links_in": 1210,
+      "mean_links": 46.33577395735897
+     },
+     {
+      "after_changes": 111604,
+      "accuracy": 0.9603999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3428.523,
+      "start": 0,
+      "unreachable": 1293,
+      "no_links_in": 1272,
+      "mean_links": 46.21282295461579
+     },
+     {
+      "after_changes": 139505,
+      "accuracy": 0.9631000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3405.875,
+      "start": 0,
+      "unreachable": 1376,
+      "no_links_in": 1354,
+      "mean_links": 46.049158014989864
+     },
+     {
+      "after_changes": 167406,
+      "accuracy": 0.9644999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3390.012,
+      "start": 0,
+      "unreachable": 1459,
+      "no_links_in": 1431,
+      "mean_links": 45.857611688878
+     },
+     {
+      "after_changes": 195307,
+      "accuracy": 0.9625999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3381.061,
+      "start": 0,
+      "unreachable": 1538,
+      "no_links_in": 1512,
+      "mean_links": 45.61978552579866
+     },
+     {
+      "after_changes": 223208,
+      "accuracy": 0.9635,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3364.756,
+      "start": 0,
+      "unreachable": 1623,
+      "no_links_in": 1599,
+      "mean_links": 45.34155926711004
+     },
+     {
+      "after_changes": 251109,
+      "accuracy": 0.9647,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3342.751,
+      "start": 0,
+      "unreachable": 1708,
+      "no_links_in": 1682,
+      "mean_links": 45.07474468217291
+     },
+     {
+      "after_changes": 279015,
+      "accuracy": 0.9640000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3344.179,
+      "start": 0,
+      "unreachable": 1800,
+      "no_links_in": 1772,
+      "mean_links": 44.804858759087026
+     }
+    ],
+    "picks": {
+     "r": 64,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 25,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 995,
+     "no_links_in": 981,
+     "mean_links": 46.16933498199022
+    },
+    "target": 0.95,
+    "change_seconds": 754.3667206764221,
+    "memory_after": 1093044104,
+    "fresh_accuracy": 0.9538,
+    "fresh_checks": 3016.99,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 3922,
+     "no_links_in": 3896,
+     "mean_links": 37.90177827954292
+    },
+    "fresh_memory": 1091506688,
+    "drift": 0.010200000000000098,
+    "memory_after_vs_fresh": 1.001408526412987
+   }
+  },
+  {
+   "check": "nytimes: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.35 (95.25% after 76,599 changes, fresh 95.60%); memory 1.005x",
+   "data": {
+    "dataset": "nytimes",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 76599,
+    "checkpoints": [
+     {
+      "after_changes": 7659,
+      "accuracy": 0.9525,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3882.715,
+      "start": 0,
+      "unreachable": 65,
+      "no_links_in": 65,
+      "mean_links": 108.45328754363514
+     },
+     {
+      "after_changes": 15318,
+      "accuracy": 0.9550000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3948.226,
+      "start": 0,
+      "unreachable": 67,
+      "no_links_in": 67,
+      "mean_links": 108.67430849304576
+     },
+     {
+      "after_changes": 22977,
+      "accuracy": 0.9555,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3854.375,
+      "start": 0,
+      "unreachable": 76,
+      "no_links_in": 76,
+      "mean_links": 108.65214137793015
+     },
+     {
+      "after_changes": 30636,
+      "accuracy": 0.9525,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3895.152,
+      "start": 0,
+      "unreachable": 78,
+      "no_links_in": 78,
+      "mean_links": 108.65835944299391
+     },
+     {
+      "after_changes": 38295,
+      "accuracy": 0.9515,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3851.166,
+      "start": 0,
+      "unreachable": 77,
+      "no_links_in": 77,
+      "mean_links": 108.71006787330317
+     },
+     {
+      "after_changes": 45954,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3875.443,
+      "start": 0,
+      "unreachable": 79,
+      "no_links_in": 79,
+      "mean_links": 108.8074579310705
+     },
+     {
+      "after_changes": 53613,
+      "accuracy": 0.9515,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3934.92,
+      "start": 55,
+      "unreachable": 78,
+      "no_links_in": 78,
+      "mean_links": 108.53551056636775
+     },
+     {
+      "after_changes": 61272,
+      "accuracy": 0.9496,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3859.449,
+      "start": 55,
+      "unreachable": 80,
+      "no_links_in": 78,
+      "mean_links": 108.68539536098177
+     },
+     {
+      "after_changes": 68931,
+      "accuracy": 0.951,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3846.655,
+      "start": 55,
+      "unreachable": 78,
+      "no_links_in": 76,
+      "mean_links": 108.76805986001324
+     },
+     {
+      "after_changes": 76599,
+      "accuracy": 0.9525,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3914.394,
+      "start": 55,
+      "unreachable": 80,
+      "no_links_in": 78,
+      "mean_links": 108.5361155837939
+     }
+    ],
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 70,
+     "no_links_in": 70,
+     "mean_links": 106.36144305670395
+    },
+    "target": 0.95,
+    "change_seconds": 162.31353998184204,
+    "memory_after": 146834600,
+    "fresh_accuracy": 0.9560000000000001,
+    "fresh_checks": 3791.926,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 70,
+     "no_links_in": 70,
+     "mean_links": 106.07332782105401
+    },
+    "fresh_memory": 146146448,
+    "drift": -0.0035000000000000586,
+    "memory_after_vs_fresh": 1.0047086467677955
+   }
+  },
+  {
+   "check": "imagenet: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.90 (94.95% after 365,133 changes, fresh 95.85%); memory 1.001x",
+   "data": {
+    "dataset": "imagenet",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 365133,
+    "checkpoints": [
+     {
+      "after_changes": 36513,
+      "accuracy": 0.9564,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1431.733,
+      "start": 0,
+      "unreachable": 6,
+      "no_links_in": 6,
+      "mean_links": 71.16326495214656
+     },
+     {
+      "after_changes": 73026,
+      "accuracy": 0.9541000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1403.242,
+      "start": 0,
+      "unreachable": 13,
+      "no_links_in": 13,
+      "mean_links": 70.95345003833376
+     },
+     {
+      "after_changes": 109539,
+      "accuracy": 0.9548,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1382.538,
+      "start": 0,
+      "unreachable": 20,
+      "no_links_in": 20,
+      "mean_links": 70.70817611096203
+     },
+     {
+      "after_changes": 146052,
+      "accuracy": 0.9537000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1442.479,
+      "start": 0,
+      "unreachable": 28,
+      "no_links_in": 28,
+      "mean_links": 70.44884272780374
+     },
+     {
+      "after_changes": 182565,
+      "accuracy": 0.9534,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1391.616,
+      "start": 0,
+      "unreachable": 32,
+      "no_links_in": 32,
+      "mean_links": 70.18303062834107
+     },
+     {
+      "after_changes": 219078,
+      "accuracy": 0.9529,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1377.779,
+      "start": 0,
+      "unreachable": 40,
+      "no_links_in": 40,
+      "mean_links": 69.86985951235543
+     },
+     {
+      "after_changes": 255591,
+      "accuracy": 0.9456,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1404.031,
+      "start": 0,
+      "unreachable": 47,
+      "no_links_in": 47,
+      "mean_links": 69.58200580463804
+     },
+     {
+      "after_changes": 292104,
+      "accuracy": 0.9499000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1429.601,
+      "start": 1,
+      "unreachable": 55,
+      "no_links_in": 55,
+      "mean_links": 68.87103797898243
+     },
+     {
+      "after_changes": 328617,
+      "accuracy": 0.9549,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1398.192,
+      "start": 1,
+      "unreachable": 57,
+      "no_links_in": 57,
+      "mean_links": 68.57450935822897
+     },
+     {
+      "after_changes": 365133,
+      "accuracy": 0.9494999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1405.517,
+      "start": 1,
+      "unreachable": 65,
+      "no_links_in": 65,
+      "mean_links": 68.29778126306603
+     }
+    ],
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 25,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 3,
+     "no_links_in": 3,
+     "mean_links": 71.35601397848087
+    },
+    "target": 0.96,
+    "change_seconds": 957.4815900325775,
+    "memory_after": 1259039160,
+    "fresh_accuracy": 0.9585000000000001,
+    "fresh_checks": 1359.607,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 1,
+     "no_links_in": 1,
+     "mean_links": 69.7906633022883
+    },
+    "fresh_memory": 1257516912,
+    "drift": -0.00900000000000023,
+    "memory_after_vs_fresh": 1.001210518908711
+   }
+  },
+  {
+   "check": "llama2: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.69 (95.61% after 73,224 changes, fresh 96.30%); memory 1.005x",
+   "data": {
+    "dataset": "llama2",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 73224,
+    "checkpoints": [
+     {
+      "after_changes": 7322,
+      "accuracy": 0.9534,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1215.186,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 26.98339685879133
+     },
+     {
+      "after_changes": 14644,
+      "accuracy": 0.9547000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1218.038,
+      "start": 0,
+      "unreachable": 1,
+      "no_links_in": 1,
+      "mean_links": 27.111662022619242
+     },
+     {
+      "after_changes": 21966,
+      "accuracy": 0.9553,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1235.081,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 27.05602387440462
+     },
+     {
+      "after_changes": 29288,
+      "accuracy": 0.9545,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1227.458,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 27.10061470841163
+     },
+     {
+      "after_changes": 36610,
+      "accuracy": 0.9582,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1227.638,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 27.063002089146
+     },
+     {
+      "after_changes": 43932,
+      "accuracy": 0.9555,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1225.346,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 27.02840849615197
+     },
+     {
+      "after_changes": 51254,
+      "accuracy": 0.9555999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1218.638,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 26.990205671789877
+     },
+     {
+      "after_changes": 58576,
+      "accuracy": 0.9548,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1231.046,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 27.008083261689343
+     },
+     {
+      "after_changes": 65898,
+      "accuracy": 0.9541999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1221.471,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 27.04423401573513
+     },
+     {
+      "after_changes": 73224,
+      "accuracy": 0.9561,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1225.659,
+      "start": 0,
+      "unreachable": 2,
+      "no_links_in": 2,
+      "mean_links": 26.966594891358284
+     }
+    ],
+    "picks": {
+     "r": 24,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 1,
+     "no_links_in": 1,
+     "mean_links": 26.537040156236486
+    },
+    "target": 0.96,
+    "change_seconds": 73.03566122055054,
+    "memory_after": 60518056,
+    "fresh_accuracy": 0.9630000000000001,
+    "fresh_checks": 1622.191,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 4,
+     "no_links_in": 4,
+     "mean_links": 26.502683607460384
+    },
+    "fresh_memory": 60223335,
+    "drift": -0.006900000000000128,
+    "memory_after_vs_fresh": 1.0048938007169481
+   }
+  },
+  {
+   "check": "glove100: drift under 1 point, nothing deleted or outdated returned, memory within 5%",
+   "pass": true,
+   "detail": "drift -0.10 (95.60% after 331,317 changes, fresh 95.70%); memory 1.001x",
+   "data": {
+    "dataset": "glove100",
+    "size": "full",
+    "extra": {
+     "repair": "occlude",
+     "n_replace": 8
+    },
+    "changes": 331317,
+    "checkpoints": [
+     {
+      "after_changes": 33131,
+      "accuracy": 0.9525,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7961.11,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.13766727900861
+     },
+     {
+      "after_changes": 66262,
+      "accuracy": 0.9515,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7935.357,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.27723171667728
+     },
+     {
+      "after_changes": 99393,
+      "accuracy": 0.9537000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7897.402,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.25648590955639
+     },
+     {
+      "after_changes": 132524,
+      "accuracy": 0.9537000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7830.455,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.26905959041959
+     },
+     {
+      "after_changes": 165655,
+      "accuracy": 0.9555,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7832.646,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.18782346161505
+     },
+     {
+      "after_changes": 198786,
+      "accuracy": 0.9551000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7789.855,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.16389920888591
+     },
+     {
+      "after_changes": 231917,
+      "accuracy": 0.9557,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7786.824,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.07726512885401
+     },
+     {
+      "after_changes": 265048,
+      "accuracy": 0.9574,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7784.369,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 106.02167316251352
+     },
+     {
+      "after_changes": 298179,
+      "accuracy": 0.9560000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7696.165,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 105.96444047025122
+     },
+     {
+      "after_changes": 331317,
+      "accuracy": 0.9560000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 7737.13,
+      "start": 0,
+      "unreachable": 0,
+      "no_links_in": 0,
+      "mean_links": 105.86983047436993
+     }
+    ],
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "map_before": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 104.97236078273555
+    },
+    "target": 0.95,
+    "change_seconds": 412.79397082328796,
+    "memory_after": 569353364,
+    "fresh_accuracy": 0.9570000000000001,
+    "fresh_checks": 7479.957,
+    "fresh_map": {
+     "start": 0,
+     "unreachable": 0,
+     "no_links_in": 0,
+     "mean_links": 104.48686352432215
+    },
+    "fresh_memory": 568539408,
+    "drift": -0.0010000000000000009,
+    "memory_after_vs_fresh": 1.001431661532247
+   }
+  }
+ ]
+}

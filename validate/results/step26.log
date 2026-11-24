@@ -1,0 +1,12 @@
+PASS  gooaq: no more than 2% slower than without the extra links  part 3 43,864/s (522 checks); without extra links 43,894/s (522); part 2 42,140/s (527); 1.00x from the extra links, 1.04x from part 3. Popular links not tried (answers do not bunch up); 0 popular items, 0 extra links; picked 32 links, slack 1.2, 4-bit copies, re-check 15; 560 bytes per item; build 65.6 s
+PASS  gooaq: the 95% target gives at least 94%  96.00% on the tuning questions
+PASS  glove: no more than 2% slower than without the extra links  part 3 11,303/s (5,217 checks); without extra links 11,306/s (5,217); part 2 11,155/s (5,217); 1.00x from the extra links, 1.01x from part 3. Popular links not tried (answers do not bunch up); 0 popular items, 0 extra links; picked 96 links, slack 1.3, 4-bit copies, re-check 50; 620 bytes per item; build 50.9 s
+PASS  glove: the 95% target gives at least 94%  95.76% on the tuning questions
+PASS  yandex: no more than 2% slower than without the extra links  part 3 50,488/s (908 checks); without extra links 50,410/s (908); part 2 47,864/s (928); 1.00x from the extra links, 1.05x from part 3. Popular links not tried (answers do not bunch up); 0 popular items, 0 extra links; picked 48 links, slack 1.3, 8-bit copies, re-check 15; 460 bytes per item; build 33.7 s
+PASS  yandex: the 95% target gives at least 94%  95.74% on the tuning questions
+PASS  llama: at least 1.3x faster than part 2's index  part 3 120,046/s (567 checks); without extra links 52,148/s (1,015); part 2 55,188/s (959); 2.30x from the extra links, 2.18x from part 3. Popular links kept: popular links on 133,032/s; popular links off 54,549/s; 3,321 popular items, 104,191 extra links; picked 24 links, slack 1.2, 8-bit copies, re-check 50; 273 bytes per item; build 18.4 s
+PASS  llama: the 95% target gives at least 94%  95.29% on the tuning questions
+PASS  landmark: no more than 2% slower than without the extra links  part 3 70,264/s (282 checks); without extra links 70,356/s (282); part 2 70,246/s (282); 1.00x from the extra links, 1.00x from part 3. Popular links not tried (answers do not bunch up); 0 popular items, 0 extra links; picked 24 links, slack 1.0, 8-bit copies, re-check 50; 904 bytes per item; build 38.6 s
+PASS  landmark: the 95% target gives at least 94%  95.05% on the tuning questions
+
+step26: ALL PASS (10/10) in 361.4 s

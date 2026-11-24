@@ -1,0 +1,16 @@
+PASS  glove: reloaded (ram) gives identical answers, distances and checks  folder 106 MB
+PASS  glove: reloaded (ssd) gives identical answers, distances and checks  folder 106 MB
+PASS  glove: a damaged folder is refused  links.u32 has 7380000 bytes, expected 14760000: the folder is damaged or from another index
+PASS  glove: after 3,000 changes, the reloaded copy still matches the original  question links redone at change 3,000: False
+PASS  glove: 8 Python threads searching at once give the same answers as one call  7.2x the speed of one thread: the searches really run side by side
+PASS  glove: 1,000 changes made while 4 threads keep searching: no errors, and exactly the index made with nobody searching  3488 searches of 100 questions ran during the changes; errors: none
+PASS  yandex: reloaded (ram) gives identical answers, distances and checks  folder 122 MB
+PASS  yandex: reloaded (ssd) gives identical answers, distances and checks  folder 122 MB
+PASS  yandex: a damaged folder is refused  links.u32 has 7380000 bytes, expected 14760000: the folder is damaged or from another index
+PASS  yandex: after 3,000 changes, the reloaded copy still matches the original  question links redone at change 3,000: True
+PASS  llama: reloaded (ram) gives identical answers, distances and checks  folder 84 MB
+PASS  llama: reloaded (ssd) gives identical answers, distances and checks  folder 84 MB
+PASS  llama: a damaged folder is refused  links.u32 has 7380000 bytes, expected 14760000: the folder is damaged or from another index
+PASS  llama: after 3,000 changes, the reloaded copy still matches the original  question links redone at change 3,000: True
+
+step10: ALL PASS (14/14) in 53.9 s

@@ -1,0 +1,17 @@
+PASS  gooaq, prototype's order: checks at 95% within 1%  ours 540 vs prototype 540 (0.00% apart)
+PASS  gooaq, our own order: checks at 95% within 5%  ours 545 vs prototype 540 (0.9% apart)
+      gooaq: built in 20.9 s; 3,705 build checks per item (prototype 3,697); links per item 36.0 (prototype 36.0)
+PASS  glove, prototype's order: checks at 95% within 1%  ours 7,293 vs prototype 7,292 (0.00% apart)
+PASS  glove, our own order: checks at 95% within 5%  ours 7,120 vs prototype 7,292 (2.4% apart)
+      glove: built in 7.1 s; 4,525 build checks per item (prototype 4,520); links per item 36.0 (prototype 36.0)
+PASS  yandex, prototype's order: checks at 95% within 1%  ours 990 vs prototype 990 (0.00% apart)
+PASS  yandex, our own order: checks at 95% within 5%  ours 998 vs prototype 990 (0.8% apart)
+      yandex: built in 5.4 s; 2,540 build checks per item (prototype 2,542); links per item 35.2 (prototype 35.2)
+PASS  llama, prototype's order: never reaches 95%, like the prototype  best 62.52% vs prototype 62.52% (pass: within 0.2 points)
+PASS  llama, our own order: never reaches 95%, like the prototype  best 61.48% (prototype 62.52%; this varies with the order)
+      llama: built in 2.6 s; 2,542 build checks per item (prototype 2,478); links per item 19.3 (prototype 18.8)
+PASS  landmark, prototype's order: checks at 95% within 1%  ours 381 vs prototype 381 (0.00% apart)
+PASS  landmark, our own order: checks at 95% within 5%  ours 386 vs prototype 381 (1.3% apart)
+      landmark: built in 13.1 s; 2,114 build checks per item (prototype 2,108); links per item 30.9 (prototype 30.9)
+
+step3: ALL PASS (10/10) in 105.1 s

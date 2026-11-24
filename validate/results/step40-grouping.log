@@ -1,0 +1,5 @@
+PASS  glove at full size: 10 rounds, 64 rows per centre  built in 18 s; found in the opened buckets: 2% of them 87.93%, 4% of them 92.36%, 7% of them 95.12%, 10% of them 96.58%; 2,918/s at 95% (125,808 scored)
+PASS  glove at full size: 20 rounds, 256 rows per centre  built in 87 s; found in the opened buckets: 2% of them 88.25%, 4% of them 92.76%, 7% of them 95.56%, 10% of them 96.99%; 3,458/s at 95% (80,551 scored)
+PASS  glove at full size: 30 rounds, 1000 rows per centre  built in 154 s; found in the opened buckets: 2% of them 88.83%, 4% of them 93.14%, 7% of them 95.95%, 10% of them 97.15%; 3,482/s at 95% (88,114 scored)
+
+step40-grouping: ALL PASS (3/3) in 969.6 s

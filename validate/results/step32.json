@@ -1,0 +1,1297 @@
+{
+ "step": "step32",
+ "pass": false,
+ "seconds": 10768.9,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 28",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "gooaq: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "1,381,323 items, 414,399 changes in 462 s; target 0.94; before 96.09%, after 96.32%, fresh build 96.49%: drift -0.17 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 96.55%; builds 578 s and 297 s",
+   "data": {
+    "dataset": "gooaq",
+    "items": 1381323,
+    "changes": 414399,
+    "checkpoints": [
+     {
+      "after_changes": 41439,
+      "accuracy": 0.9612,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 550.231
+     },
+     {
+      "after_changes": 82878,
+      "accuracy": 0.9609,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 545.854
+     },
+     {
+      "after_changes": 124317,
+      "accuracy": 0.9592,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 545.487
+     },
+     {
+      "after_changes": 165756,
+      "accuracy": 0.9585000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 535.008
+     },
+     {
+      "after_changes": 207195,
+      "accuracy": 0.9587,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 536.462
+     },
+     {
+      "after_changes": 248634,
+      "accuracy": 0.9583,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 539.679
+     },
+     {
+      "after_changes": 290073,
+      "accuracy": 0.9587999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 540.986
+     },
+     {
+      "after_changes": 331512,
+      "accuracy": 0.9630000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 541.815
+     },
+     {
+      "after_changes": 372951,
+      "accuracy": 0.9614,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 539.394
+     },
+     {
+      "after_changes": 414399,
+      "accuracy": 0.9632,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 531.953
+     }
+    ],
+    "initial_build_seconds": 578.1755239963531,
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "target": 0.94,
+    "accuracy_before": 0.9609,
+    "checks_before": 547.946,
+    "change_seconds": 461.77866315841675,
+    "change_checks_per_change": 5122.963952615716,
+    "memory_after": 696740808,
+    "after_relearn": {
+     "accuracy": 0.9654999999999999,
+     "checks": 535.037
+    },
+    "fresh_build_seconds": 297.1458349227905,
+    "fresh_accuracy": 0.9648999999999999,
+    "fresh_checks": 554.142,
+    "fresh_memory": 696186408,
+    "drift": -0.0016999999999999238,
+    "memory_after_vs_fresh": 1.000796338442735
+   }
+  },
+  {
+   "check": "glove: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "1,112,939 items, 333,882 changes in 554 s; target 0.95; before 94.90%, after 94.89%, fresh build 94.94%: drift -0.05 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 95.24%; builds 386 s and 206 s",
+   "data": {
+    "dataset": "glove",
+    "items": 1112939,
+    "changes": 333882,
+    "checkpoints": [
+     {
+      "after_changes": 33388,
+      "accuracy": 0.9478,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12716.769
+     },
+     {
+      "after_changes": 66776,
+      "accuracy": 0.9484,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12685.814
+     },
+     {
+      "after_changes": 100164,
+      "accuracy": 0.9503,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12475.125
+     },
+     {
+      "after_changes": 133552,
+      "accuracy": 0.9502,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12429.102
+     },
+     {
+      "after_changes": 166940,
+      "accuracy": 0.95,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12244.541
+     },
+     {
+      "after_changes": 200328,
+      "accuracy": 0.9475,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12209.258
+     },
+     {
+      "after_changes": 233716,
+      "accuracy": 0.9502,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12081.306
+     },
+     {
+      "after_changes": 267104,
+      "accuracy": 0.9502,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 12053.898
+     },
+     {
+      "after_changes": 300492,
+      "accuracy": 0.9484,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 11970.299
+     },
+     {
+      "after_changes": 333882,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 11947.018
+     }
+    ],
+    "initial_build_seconds": 386.3202610015869,
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "target": 0.95,
+    "accuracy_before": 0.9490000000000001,
+    "checks_before": 12704.47,
+    "change_seconds": 554.0296578407288,
+    "change_checks_per_change": 21012.479894094322,
+    "memory_after": 709999400,
+    "after_relearn": {
+     "accuracy": 0.9523999999999999,
+     "checks": 12355.85
+    },
+    "fresh_build_seconds": 206.1947078704834,
+    "fresh_accuracy": 0.9494,
+    "fresh_checks": 11678.065,
+    "fresh_memory": 709164668,
+    "drift": -0.0004999999999999449,
+    "memory_after_vs_fresh": 1.0011770637168855
+   }
+  },
+  {
+   "check": "yandex: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "950,000 items, 285,000 changes in 275 s; target 0.96; before 95.53%, after 94.79%, fresh build 95.24%: drift -0.45 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 95.33%; builds 165 s and 72 s",
+   "data": {
+    "dataset": "yandex",
+    "items": 950000,
+    "changes": 285000,
+    "checkpoints": [
+     {
+      "after_changes": 28500,
+      "accuracy": 0.9596,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1935.643
+     },
+     {
+      "after_changes": 57000,
+      "accuracy": 0.9551000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1920.925
+     },
+     {
+      "after_changes": 85500,
+      "accuracy": 0.9608000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1892.495
+     },
+     {
+      "after_changes": 114000,
+      "accuracy": 0.9566000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1902.464
+     },
+     {
+      "after_changes": 142500,
+      "accuracy": 0.9551999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1910.98
+     },
+     {
+      "after_changes": 171000,
+      "accuracy": 0.9548,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1898.375
+     },
+     {
+      "after_changes": 199500,
+      "accuracy": 0.9505000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1853.551
+     },
+     {
+      "after_changes": 228000,
+      "accuracy": 0.9516,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1865.546
+     },
+     {
+      "after_changes": 256500,
+      "accuracy": 0.9493,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1837.269
+     },
+     {
+      "after_changes": 285000,
+      "accuracy": 0.9479,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1831.311
+     }
+    ],
+    "initial_build_seconds": 164.9062910079956,
+    "picks": {
+     "r": 64,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "target": 0.96,
+    "accuracy_before": 0.9553,
+    "checks_before": 1959.84,
+    "change_seconds": 275.4374520778656,
+    "change_checks_per_change": 37431.269929824564,
+    "memory_after": 465772264,
+    "after_relearn": {
+     "accuracy": 0.9532999999999999,
+     "checks": 1958.408
+    },
+    "fresh_build_seconds": 72.30471420288086,
+    "fresh_accuracy": 0.9523999999999999,
+    "fresh_checks": 1963.511,
+    "fresh_memory": 465120008,
+    "drift": -0.0044999999999999485,
+    "memory_after_vs_fresh": 1.0014023391571665
+   }
+  },
+  {
+   "check": "llama: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "244,075 items, 73,224 changes in 55 s; target 0.95; before 95.19%, after 94.99%, fresh build 95.34%: drift -0.35 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.005x; table learned again: 95.17%; builds 26 s and 5 s",
+   "data": {
+    "dataset": "llama",
+    "items": 244075,
+    "changes": 73224,
+    "checkpoints": [
+     {
+      "after_changes": 7322,
+      "accuracy": 0.9479,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 628.91
+     },
+     {
+      "after_changes": 14644,
+      "accuracy": 0.9385,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 613.724
+     },
+     {
+      "after_changes": 21966,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 619.294
+     },
+     {
+      "after_changes": 29288,
+      "accuracy": 0.9423,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 624.3
+     },
+     {
+      "after_changes": 36610,
+      "accuracy": 0.9505000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 642.76
+     },
+     {
+      "after_changes": 43932,
+      "accuracy": 0.9487,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 651.3
+     },
+     {
+      "after_changes": 51254,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 646.839
+     },
+     {
+      "after_changes": 58576,
+      "accuracy": 0.9515,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 613.693
+     },
+     {
+      "after_changes": 65898,
+      "accuracy": 0.9433,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 596.488
+     },
+     {
+      "after_changes": 73224,
+      "accuracy": 0.9499000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 634.234
+     }
+    ],
+    "initial_build_seconds": 26.130863189697266,
+    "picks": {
+     "r": 24,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "target": 0.95,
+    "accuracy_before": 0.9519,
+    "checks_before": 622.535,
+    "change_seconds": 55.036232233047485,
+    "change_checks_per_change": 22148.739702829673,
+    "memory_after": 59881660,
+    "after_relearn": {
+     "accuracy": 0.9517,
+     "checks": 646.275
+    },
+    "fresh_build_seconds": 5.101300954818726,
+    "fresh_accuracy": 0.9534,
+    "fresh_checks": 630.567,
+    "fresh_memory": 59605867,
+    "drift": -0.0034999999999999476,
+    "memory_after_vs_fresh": 1.0046269438543691
+   }
+  },
+  {
+   "check": "landmark: changes at full size, Fix 7's pass rule",
+   "pass": false,
+   "detail": "702,770 items, 210,831 changes in 126 s; target 0.88; before 94.93%, after 94.13%, fresh build 95.21%: drift -1.08 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.002x; table learned again: 94.13%; builds 259 s and 97 s",
+   "data": {
+    "dataset": "landmark",
+    "items": 702770,
+    "changes": 210831,
+    "checkpoints": [
+     {
+      "after_changes": 21083,
+      "accuracy": 0.9452999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 337.058
+     },
+     {
+      "after_changes": 42166,
+      "accuracy": 0.944,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 338.241
+     },
+     {
+      "after_changes": 63249,
+      "accuracy": 0.9445,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 338.766
+     },
+     {
+      "after_changes": 84332,
+      "accuracy": 0.9423,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.827
+     },
+     {
+      "after_changes": 105415,
+      "accuracy": 0.9428000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 339.772
+     },
+     {
+      "after_changes": 126498,
+      "accuracy": 0.9375,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 336.096
+     },
+     {
+      "after_changes": 147581,
+      "accuracy": 0.9259999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 339.893
+     },
+     {
+      "after_changes": 168664,
+      "accuracy": 0.9471,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 332.846
+     },
+     {
+      "after_changes": 189747,
+      "accuracy": 0.9442,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 337.226
+     },
+     {
+      "after_changes": 210831,
+      "accuracy": 0.9413,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 335.294
+     }
+    ],
+    "initial_build_seconds": 258.74667167663574,
+    "picks": {
+     "r": 24,
+     "alpha": 1.0,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "target": 0.88,
+    "accuracy_before": 0.9493,
+    "checks_before": 339.041,
+    "change_seconds": 126.41638994216919,
+    "change_checks_per_change": 2666.1845174571104,
+    "memory_after": 572762656,
+    "after_relearn": {
+     "accuracy": 0.9413,
+     "checks": 335.294
+    },
+    "fresh_build_seconds": 97.47384405136108,
+    "fresh_accuracy": 0.9521000000000001,
+    "fresh_checks": 336.46,
+    "fresh_memory": 571773680,
+    "drift": -0.010800000000000032,
+    "memory_after_vs_fresh": 1.001729663387094
+   }
+  },
+  {
+   "check": "arxiv: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "1,257,461 items, 377,241 changes in 461 s; target 0.95; before 95.31%, after 94.88%, fresh build 94.56%: drift +0.32 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 94.44%; builds 497 s and 271 s",
+   "data": {
+    "dataset": "arxiv",
+    "items": 1257461,
+    "changes": 377241,
+    "checkpoints": [
+     {
+      "after_changes": 37724,
+      "accuracy": 0.952,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 621.451
+     },
+     {
+      "after_changes": 75448,
+      "accuracy": 0.9490999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 613.735
+     },
+     {
+      "after_changes": 113172,
+      "accuracy": 0.9560000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 613.177
+     },
+     {
+      "after_changes": 150896,
+      "accuracy": 0.9512,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 610.726
+     },
+     {
+      "after_changes": 188620,
+      "accuracy": 0.9496,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 610.325
+     },
+     {
+      "after_changes": 226344,
+      "accuracy": 0.9502,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 608.281
+     },
+     {
+      "after_changes": 264068,
+      "accuracy": 0.9522,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 606.931
+     },
+     {
+      "after_changes": 301792,
+      "accuracy": 0.9537000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 597.03
+     },
+     {
+      "after_changes": 339516,
+      "accuracy": 0.9496,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 600.139
+     },
+     {
+      "after_changes": 377241,
+      "accuracy": 0.9488,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 597.705
+     }
+    ],
+    "initial_build_seconds": 497.40443181991577,
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "target": 0.95,
+    "accuracy_before": 0.9531000000000001,
+    "checks_before": 621.809,
+    "change_seconds": 460.6684422492981,
+    "change_checks_per_change": 5445.254614424201,
+    "memory_after": 1069587880,
+    "after_relearn": {
+     "accuracy": 0.9444000000000001,
+     "checks": 580.313
+    },
+    "fresh_build_seconds": 270.6073479652405,
+    "fresh_accuracy": 0.9456,
+    "fresh_checks": 611.543,
+    "fresh_memory": 1068338024,
+    "drift": 0.0031999999999999806,
+    "memory_after_vs_fresh": 1.001169906875841
+   }
+  },
+  {
+   "check": "laion: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "950,426 items, 285,129 changes in 766 s; target 0.95; before 94.84%, after 94.65%, fresh build 95.13%: drift -0.48 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 94.87%; builds 435 s and 223 s",
+   "data": {
+    "dataset": "laion",
+    "items": 950426,
+    "changes": 285129,
+    "checkpoints": [
+     {
+      "after_changes": 28512,
+      "accuracy": 0.9474,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2415.611
+     },
+     {
+      "after_changes": 57024,
+      "accuracy": 0.9462999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2414.502
+     },
+     {
+      "after_changes": 85536,
+      "accuracy": 0.9465,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2392.791
+     },
+     {
+      "after_changes": 114048,
+      "accuracy": 0.9459,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2376.34
+     },
+     {
+      "after_changes": 142560,
+      "accuracy": 0.9448000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2360.912
+     },
+     {
+      "after_changes": 171072,
+      "accuracy": 0.9470000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2341.054
+     },
+     {
+      "after_changes": 199584,
+      "accuracy": 0.9477,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2343.791
+     },
+     {
+      "after_changes": 228096,
+      "accuracy": 0.9486000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2309.163
+     },
+     {
+      "after_changes": 256608,
+      "accuracy": 0.9452999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2308.203
+     },
+     {
+      "after_changes": 285129,
+      "accuracy": 0.9465,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 2292.343
+     }
+    ],
+    "initial_build_seconds": 435.41383481025696,
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "target": 0.95,
+    "accuracy_before": 0.9484,
+    "checks_before": 2434.618,
+    "change_seconds": 766.4376749992371,
+    "change_checks_per_change": 53368.85815893859,
+    "memory_after": 873662648,
+    "after_relearn": {
+     "accuracy": 0.9487,
+     "checks": 2339.122
+    },
+    "fresh_build_seconds": 223.15775179862976,
+    "fresh_accuracy": 0.9513,
+    "fresh_checks": 2383.793,
+    "fresh_memory": 872490668,
+    "drift": -0.0048000000000000265,
+    "memory_after_vs_fresh": 1.001343257920095
+   }
+  },
+  {
+   "check": "yi: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "178,451 items, 53,538 changes in 53 s; target 0.96; before 96.11%, after 95.53%, fresh build 95.97%: drift -0.44 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.006x; table learned again: 95.84%; builds 29 s and 4 s",
+   "data": {
+    "dataset": "yi",
+    "items": 178451,
+    "changes": 53538,
+    "checkpoints": [
+     {
+      "after_changes": 5353,
+      "accuracy": 0.9567,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1384.32
+     },
+     {
+      "after_changes": 10706,
+      "accuracy": 0.9557,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1367.138
+     },
+     {
+      "after_changes": 16059,
+      "accuracy": 0.9597,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1375.779
+     },
+     {
+      "after_changes": 21412,
+      "accuracy": 0.9589000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1389.46
+     },
+     {
+      "after_changes": 26765,
+      "accuracy": 0.9557,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1397.642
+     },
+     {
+      "after_changes": 32118,
+      "accuracy": 0.9561999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1403.464
+     },
+     {
+      "after_changes": 37471,
+      "accuracy": 0.958,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1347.985
+     },
+     {
+      "after_changes": 42824,
+      "accuracy": 0.9574,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1421.055
+     },
+     {
+      "after_changes": 48177,
+      "accuracy": 0.9592,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1399.467
+     },
+     {
+      "after_changes": 53538,
+      "accuracy": 0.9553,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1417.057
+     }
+    ],
+    "initial_build_seconds": 28.95080018043518,
+    "picks": {
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "target": 0.96,
+    "accuracy_before": 0.9611000000000001,
+    "checks_before": 1442.261,
+    "change_seconds": 52.68790006637573,
+    "change_checks_per_change": 22285.29102693414,
+    "memory_after": 51089753,
+    "after_relearn": {
+     "accuracy": 0.9583999999999999,
+     "checks": 1518.775
+    },
+    "fresh_build_seconds": 3.6762161254882812,
+    "fresh_accuracy": 0.9597,
+    "fresh_checks": 1440.702,
+    "fresh_memory": 50786969,
+    "drift": -0.0043999999999999595,
+    "memory_after_vs_fresh": 1.005961844267572
+   }
+  },
+  {
+   "check": "gist: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "930,050 items, 279,015 changes in 680 s; target 0.95; before 95.00%, after 96.52%, fresh build 95.38%: drift +1.14 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 95.48%; builds 708 s and 369 s",
+   "data": {
+    "dataset": "gist",
+    "items": 930050,
+    "changes": 279015,
+    "checkpoints": [
+     {
+      "after_changes": 27901,
+      "accuracy": 0.9534,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3489.014
+     },
+     {
+      "after_changes": 55802,
+      "accuracy": 0.9554,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3464.898
+     },
+     {
+      "after_changes": 83703,
+      "accuracy": 0.9597,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3406.232
+     },
+     {
+      "after_changes": 111604,
+      "accuracy": 0.9603999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3382.449
+     },
+     {
+      "after_changes": 139505,
+      "accuracy": 0.9629,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3369.721
+     },
+     {
+      "after_changes": 167406,
+      "accuracy": 0.9647,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3345.164
+     },
+     {
+      "after_changes": 195307,
+      "accuracy": 0.9638,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3331.534
+     },
+     {
+      "after_changes": 223208,
+      "accuracy": 0.9628,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3304.263
+     },
+     {
+      "after_changes": 251109,
+      "accuracy": 0.9651,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3292.689
+     },
+     {
+      "after_changes": 279015,
+      "accuracy": 0.9652,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3281.177
+     }
+    ],
+    "initial_build_seconds": 707.8518221378326,
+    "picks": {
+     "r": 64,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "target": 0.95,
+    "accuracy_before": 0.95,
+    "checks_before": 3532.062,
+    "change_seconds": 680.4994189739227,
+    "change_checks_per_change": 11264.64902245399,
+    "memory_after": 1093044104,
+    "after_relearn": {
+     "accuracy": 0.9548,
+     "checks": 2844.192
+    },
+    "fresh_build_seconds": 369.14980697631836,
+    "fresh_accuracy": 0.9538,
+    "fresh_checks": 3006.99,
+    "fresh_memory": 1091506688,
+    "drift": 0.011399999999999966,
+    "memory_after_vs_fresh": 1.001408526412987
+   }
+  },
+  {
+   "check": "nytimes: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "255,323 items, 76,599 changes in 117 s; target 0.95; before 95.33%, after 95.54%, fresh build 95.60%: drift -0.06 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.005x; table learned again: 95.64%; builds 145 s and 56 s",
+   "data": {
+    "dataset": "nytimes",
+    "items": 255323,
+    "changes": 76599,
+    "checkpoints": [
+     {
+      "after_changes": 7659,
+      "accuracy": 0.9522,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3817.206
+     },
+     {
+      "after_changes": 15318,
+      "accuracy": 0.9531000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3844.002
+     },
+     {
+      "after_changes": 22977,
+      "accuracy": 0.9544,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3859.044
+     },
+     {
+      "after_changes": 30636,
+      "accuracy": 0.9536,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3845.849
+     },
+     {
+      "after_changes": 38295,
+      "accuracy": 0.9529,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3730.529
+     },
+     {
+      "after_changes": 45954,
+      "accuracy": 0.9532,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3775.179
+     },
+     {
+      "after_changes": 53613,
+      "accuracy": 0.9526999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3769.008
+     },
+     {
+      "after_changes": 61272,
+      "accuracy": 0.9522999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3757.034
+     },
+     {
+      "after_changes": 68931,
+      "accuracy": 0.954,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3746.648
+     },
+     {
+      "after_changes": 76599,
+      "accuracy": 0.9554,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 3769.042
+     }
+    ],
+    "initial_build_seconds": 144.51571393013,
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 4,
+     "rerank": 50,
+     "question_links": "off",
+     "popular_links": "off"
+    },
+    "target": 0.95,
+    "accuracy_before": 0.9532999999999999,
+    "checks_before": 3813.787,
+    "change_seconds": 117.45386290550232,
+    "change_checks_per_change": 21171.105693285812,
+    "memory_after": 146834600,
+    "after_relearn": {
+     "accuracy": 0.9564,
+     "checks": 3853.181
+    },
+    "fresh_build_seconds": 55.51112413406372,
+    "fresh_accuracy": 0.9560000000000001,
+    "fresh_checks": 3791.926,
+    "fresh_memory": 146146448,
+    "drift": -0.0006000000000000449,
+    "memory_after_vs_fresh": 1.0047086467677955
+   }
+  },
+  {
+   "check": "imagenet: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "1,217,109 items, 365,133 changes in 818 s; target 0.96; before 95.77%, after 95.04%, fresh build 95.85%: drift -0.81 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.001x; table learned again: 95.80%; builds 533 s and 291 s",
+   "data": {
+    "dataset": "imagenet",
+    "items": 1217109,
+    "changes": 365133,
+    "checkpoints": [
+     {
+      "after_changes": 36513,
+      "accuracy": 0.9561999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1412.076
+     },
+     {
+      "after_changes": 73026,
+      "accuracy": 0.9522,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1401.361
+     },
+     {
+      "after_changes": 109539,
+      "accuracy": 0.9555999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1373.744
+     },
+     {
+      "after_changes": 146052,
+      "accuracy": 0.9499000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1417.828
+     },
+     {
+      "after_changes": 182565,
+      "accuracy": 0.9460000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1387.515
+     },
+     {
+      "after_changes": 219078,
+      "accuracy": 0.953,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1339.943
+     },
+     {
+      "after_changes": 255591,
+      "accuracy": 0.9481999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1360.2
+     },
+     {
+      "after_changes": 292104,
+      "accuracy": 0.9480999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1389.521
+     },
+     {
+      "after_changes": 328617,
+      "accuracy": 0.9513999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1362.738
+     },
+     {
+      "after_changes": 365133,
+      "accuracy": 0.9503999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1343.107
+     }
+    ],
+    "initial_build_seconds": 533.0136971473694,
+    "picks": {
+     "r": 96,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 15,
+     "question_links": "on",
+     "popular_links": "off"
+    },
+    "target": 0.96,
+    "accuracy_before": 0.9577,
+    "checks_before": 1376.752,
+    "change_seconds": 818.0309829711914,
+    "change_checks_per_change": 35165.68630882446,
+    "memory_after": 1259039160,
+    "after_relearn": {
+     "accuracy": 0.958,
+     "checks": 1427.851
+    },
+    "fresh_build_seconds": 290.7170259952545,
+    "fresh_accuracy": 0.9585000000000001,
+    "fresh_checks": 1349.607,
+    "fresh_memory": 1257516912,
+    "drift": -0.008100000000000218,
+    "memory_after_vs_fresh": 1.001210518908711
+   }
+  },
+  {
+   "check": "llama2: changes at full size, Fix 7's pass rule",
+   "pass": true,
+   "detail": "244,075 items, 73,224 changes in 79 s; target 0.96; before 95.86%, after 95.62%, fresh build 96.30%: drift -0.68 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.005x; table learned again: 95.98%; builds 34 s and 7 s",
+   "data": {
+    "dataset": "llama2",
+    "items": 244075,
+    "changes": 73224,
+    "checkpoints": [
+     {
+      "after_changes": 7322,
+      "accuracy": 0.9534,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1206.969
+     },
+     {
+      "after_changes": 14644,
+      "accuracy": 0.9557,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1223.981
+     },
+     {
+      "after_changes": 21966,
+      "accuracy": 0.9555,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1223.979
+     },
+     {
+      "after_changes": 29288,
+      "accuracy": 0.954,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1228.737
+     },
+     {
+      "after_changes": 36610,
+      "accuracy": 0.958,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1224.658
+     },
+     {
+      "after_changes": 43932,
+      "accuracy": 0.9561999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1222.494
+     },
+     {
+      "after_changes": 51254,
+      "accuracy": 0.9563,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1222.216
+     },
+     {
+      "after_changes": 58576,
+      "accuracy": 0.9547000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1226.339
+     },
+     {
+      "after_changes": 65898,
+      "accuracy": 0.9550000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1221.734
+     },
+     {
+      "after_changes": 73224,
+      "accuracy": 0.9561999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1220.004
+     }
+    ],
+    "initial_build_seconds": 34.413718938827515,
+    "picks": {
+     "r": 24,
+     "alpha": 1.3,
+     "code_bits": 8,
+     "rerank": 50,
+     "question_links": "on",
+     "popular_links": "on"
+    },
+    "target": 0.96,
+    "accuracy_before": 0.9586,
+    "checks_before": 1267.444,
+    "change_seconds": 79.33983492851257,
+    "change_checks_per_change": 25157.918920026223,
+    "memory_after": 60516436,
+    "after_relearn": {
+     "accuracy": 0.9598000000000001,
+     "checks": 1342.681
+    },
+    "fresh_build_seconds": 6.587553024291992,
+    "fresh_accuracy": 0.9630000000000001,
+    "fresh_checks": 1622.191,
+    "fresh_memory": 60223335,
+    "drift": -0.006800000000000139,
+    "memory_after_vs_fresh": 1.0048669008449964
+   }
+  }
+ ]
+}

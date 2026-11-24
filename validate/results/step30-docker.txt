@@ -1,0 +1,2 @@
+Docker VM: 8 cores, 66251366400 bytes
+ScaNN image: sha256:c60c4798a02c6dbb617466e637541757a361b4dc41a9f6e2403cbe531ead4dc6

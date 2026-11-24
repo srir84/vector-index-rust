@@ -1,0 +1,13 @@
+[package]
+name = "vindex"
+description = "A fast, memory-lean vector search index (link map + learned effort + question links + 1-byte copies)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+rayon = "1.12"
+memmap2 = "0.9"
+# part 2's records (usage stats) are saved as readable JSON next to the index
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }

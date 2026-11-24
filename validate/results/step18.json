@@ -1,0 +1,1497 @@
+{
+ "step": "step18",
+ "pass": true,
+ "seconds": 422.9,
+ "checks": [
+  {
+   "check": "gooaq: the self-picked choice is within 10% of the best",
+   "pass": true,
+   "detail": "picked 32 links, slack 1.2: 24,235/s; best 32 links, slack 1.3: 24,319/s (100% of it); 32 links, slack 1.2: 24,235/s (1.00x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 52.0 s with tuning (29.6 s of it, 8 trials) against 18.7 s (2.8x); memory 944 bytes per item (starting setting: 944)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 28400.420357107796,
+       "checks": 510.981060869565,
+       "bytes_per_item": 944.0,
+       "seconds": 3.633487834
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27593.46268417531,
+       "checks": 526.0078749999999,
+       "bytes_per_item": 904.0,
+       "seconds": 3.072197666
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 26536.647003365055,
+       "checks": 625.002,
+       "bytes_per_item": 1028.0,
+       "seconds": 3.487792625
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 20035.78056479196,
+       "checks": 786.624,
+       "bytes_per_item": 1112.0,
+       "seconds": 4.028277166
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 15382.731946581585,
+       "checks": 1095.968,
+       "bytes_per_item": 1276.0,
+       "seconds": 5.301156417
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 24121.56804190204,
+       "checks": 591.5983736263737,
+       "bytes_per_item": 944.0,
+       "seconds": 3.24906675
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27018.068410558695,
+       "checks": 543.8931980198018,
+       "bytes_per_item": 944.0,
+       "seconds": 3.374481
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27423.936678891416,
+       "checks": 510.9730347826085,
+       "bytes_per_item": 944.0,
+       "seconds": 3.411909708
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen": 0,
+     "seconds": 29.55873825
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "searches_per_s": 19266.01809851368,
+      "checks": 551.3279036144575,
+      "build_s": 14.947869833093137,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "searches_per_s": 19643.512831337688,
+      "checks": 534.6284226804124,
+      "build_s": 15.775647166883573,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "searches_per_s": 20274.989833127936,
+      "checks": 512.420462686567,
+      "build_s": 15.397607208928093,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "searches_per_s": 20380.76764523316,
+      "checks": 512.4843432835819,
+      "build_s": 16.20999575010501,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "searches_per_s": 18640.266705407084,
+      "checks": 585.6740909090904,
+      "build_s": 17.956435791915283,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "searches_per_s": 20012.460832166333,
+      "checks": 566.0054531249999,
+      "build_s": 17.985002167057246,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "searches_per_s": 20441.84242319004,
+      "checks": 528.8824216867469,
+      "build_s": 18.725060083903372,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "searches_per_s": 20841.7887833217,
+      "checks": 528.7063132530118,
+      "build_s": 17.837784542003646,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "searches_per_s": 17638.290105546883,
+      "checks": 627.1554222222218,
+      "build_s": 19.964056540979072,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "searches_per_s": 16893.68429380002,
+      "checks": 677.7704687499995,
+      "build_s": 24.713375665945932,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "searches_per_s": 18550.000570541033,
+      "checks": 647.986,
+      "build_s": 23.21642354200594,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "searches_per_s": 19133.90640257437,
+      "checks": 648.033,
+      "build_s": 22.294583042152226,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "searches_per_s": 17563.469954262906,
+      "checks": 670.9542386363634,
+      "build_s": 21.233403082937002,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "searches_per_s": 16094.986177190849,
+      "checks": 802.369,
+      "build_s": 28.709790708962828,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "searches_per_s": 15393.500229363823,
+      "checks": 816.393,
+      "build_s": 27.14624054194428,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "searches_per_s": 14764.442519374126,
+      "checks": 819.501,
+      "build_s": 28.75872866716236,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "searches_per_s": 16937.69040200989,
+      "checks": 709.4940442477878,
+      "build_s": 25.346937750000507,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "searches_per_s": 13261.339026771602,
+      "checks": 982.826,
+      "build_s": 34.35540779191069,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "searches_per_s": 12089.675179952123,
+      "checks": 1097.304,
+      "build_s": 39.39895079215057,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "searches_per_s": 11586.917679244469,
+      "checks": 1126.027,
+      "build_s": 39.87196466582827,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     }
+    ],
+    "head_to_head": {
+     "32/1.2/8": 24234.748108563013,
+     "32/1.3/8": 24318.821701810863,
+     "24/1.3/8": 23626.432002618447
+    },
+    "build_s": 51.97132295789197
+   }
+  },
+  {
+   "check": "glove: the self-picked choice is within 10% of the best",
+   "pass": true,
+   "detail": "picked 96 links, slack 1.3: 7,125/s; best 96 links, slack 1.3: 7,125/s (100% of it); 32 links, slack 1.2: 5,486/s (1.30x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 37.2 s with tuning (23.3 s of it, 8 trials) against 5.3 s (7.0x); memory 708 bytes per item (starting setting: 376)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 11263.593969964575,
+       "checks": 2894.8265624999985,
+       "bytes_per_item": 376.0,
+       "seconds": 2.085149542
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 10247.460669133568,
+       "checks": 2943.7431052631564,
+       "bytes_per_item": 336.0,
+       "seconds": 1.550093833
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12485.820434503274,
+       "checks": 2840.0982884615373,
+       "bytes_per_item": 460.0,
+       "seconds": 2.077881167
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13543.449736779661,
+       "checks": 2695.766304347825,
+       "bytes_per_item": 544.0,
+       "seconds": 2.026062792
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13842.034038951131,
+       "checks": 2818.4140188679244,
+       "bytes_per_item": 708.0,
+       "seconds": 2.272362291
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 11601.142453487402,
+       "checks": 3173.667106194689,
+       "bytes_per_item": 708.0,
+       "seconds": 2.030021
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13631.148117893223,
+       "checks": 2911.2392857142854,
+       "bytes_per_item": 708.0,
+       "seconds": 2.146670625
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 14127.542770302312,
+       "checks": 2804.875792207791,
+       "bytes_per_item": 708.0,
+       "seconds": 2.312528166
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen": 7,
+     "seconds": 23.316904459
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "searches_per_s": 4617.4285891851405,
+      "checks": 6047.135798507453,
+      "build_s": 5.3961599168833345,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "searches_per_s": 4792.979875371917,
+      "checks": 5853.289729166663,
+      "build_s": 5.40233587496914,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "searches_per_s": 4679.419591561298,
+      "checks": 5969.957869565207,
+      "build_s": 5.406879208050668,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "searches_per_s": 4749.846868352796,
+      "checks": 5950.734319148937,
+      "build_s": 5.566022833110765,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "searches_per_s": 5462.431675267374,
+      "checks": 5515.664974683544,
+      "build_s": 5.413080499973148,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "searches_per_s": 5658.034666804397,
+      "checks": 5429.778823529411,
+      "build_s": 5.486174416961148,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "searches_per_s": 5582.658216196149,
+      "checks": 5509.790315789469,
+      "build_s": 5.343426208943129,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "searches_per_s": 5583.255733742402,
+      "checks": 5523.528199999994,
+      "build_s": 5.375627332832664,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "searches_per_s": 5782.440705795454,
+      "checks": 5605.859086021502,
+      "build_s": 6.307269875193015,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "searches_per_s": 6364.6731168706965,
+      "checks": 5124.808347826087,
+      "build_s": 6.734661208000034,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "searches_per_s": 6255.9242292425215,
+      "checks": 5127.566833333328,
+      "build_s": 6.594170958036557,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "searches_per_s": 6185.15512295927,
+      "checks": 5152.677878378375,
+      "build_s": 6.589896833989769,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "searches_per_s": 5658.709921158398,
+      "checks": 5770.231054054055,
+      "build_s": 6.808885165955871,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "searches_per_s": 6822.6592304286405,
+      "checks": 5017.163941176465,
+      "build_s": 8.030296833952889,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "searches_per_s": 6939.377197504663,
+      "checks": 4920.925152941175,
+      "build_s": 7.8824014170095325,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "searches_per_s": 6776.454860304964,
+      "checks": 4948.208706521736,
+      "build_s": 8.379022208042443,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "searches_per_s": 5840.5195423045625,
+      "checks": 5861.808839285709,
+      "build_s": 7.6726186668965966,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "searches_per_s": 6553.907382268768,
+      "checks": 5188.228738255031,
+      "build_s": 11.282688208855689,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "searches_per_s": 7066.497036346773,
+      "checks": 4996.1579999999985,
+      "build_s": 11.433621500153095,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "searches_per_s": 7090.6992415423365,
+      "checks": 4961.3560810810795,
+      "build_s": 11.691551083000377,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     }
+    ],
+    "head_to_head": {
+     "96/1.3/8": 7124.741803257516,
+     "32/1.2/8": 5485.941741183731,
+     "96/1.2/8": 7119.560938252874,
+     "64/1.2/8": 6866.514873202357
+    },
+    "build_s": 37.15452287509106
+   }
+  },
+  {
+   "check": "yandex: the self-picked choice is within 10% of the best",
+   "pass": true,
+   "detail": "picked 32 links, slack 1.2: 33,126/s; best 48 links, slack 1.2: 33,983/s (97% of it); 32 links, slack 1.2: 33,126/s (1.00x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 17.9 s with tuning (12.7 s of it, 8 trials) against 4.3 s (4.2x); memory 376 bytes per item (starting setting: 376)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 48997.96031725453,
+       "checks": 659.621330645161,
+       "bytes_per_item": 376.0,
+       "seconds": 1.575183541
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 43349.967840575126,
+       "checks": 671.2502424242424,
+       "bytes_per_item": 336.0,
+       "seconds": 1.389271916
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 47315.869113660745,
+       "checks": 687.7381282051279,
+       "bytes_per_item": 460.0,
+       "seconds": 1.661450459
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 46656.837894780445,
+       "checks": 776.7285454545454,
+       "bytes_per_item": 544.0,
+       "seconds": 1.799370208
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 45137.60763908872,
+       "checks": 859.844,
+       "bytes_per_item": 708.0,
+       "seconds": 1.9200515
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 41510.34277532623,
+       "checks": 713.3339173553717,
+       "bytes_per_item": 376.0,
+       "seconds": 1.345811042
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 48773.517174975976,
+       "checks": 648.6153294117646,
+       "bytes_per_item": 376.0,
+       "seconds": 1.522299292
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 48533.43348142628,
+       "checks": 669.2744374999993,
+       "bytes_per_item": 376.0,
+       "seconds": 1.5164887500000002
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen": 0,
+     "seconds": 12.730036375
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "searches_per_s": 26420.086635076863,
+      "checks": 907.5618382352936,
+      "build_s": 3.491790750063956,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "searches_per_s": 29213.83439584957,
+      "checks": 868.9324420289852,
+      "build_s": 3.7920500410255045,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "searches_per_s": 29656.186536947822,
+      "checks": 854.3360749999997,
+      "build_s": 4.029179750010371,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "searches_per_s": 29442.85778103162,
+      "checks": 862.0245815602842,
+      "build_s": 3.764529542066157,
+      "bytes_per_item": 336.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "searches_per_s": 27366.685964291428,
+      "checks": 926.3749615384604,
+      "build_s": 3.824764958117157,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "searches_per_s": 30297.77226974891,
+      "checks": 892.3153221476505,
+      "build_s": 4.6190450000576675,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "searches_per_s": 32067.463953794082,
+      "checks": 872.1535679012343,
+      "build_s": 4.251352083869278,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "searches_per_s": 30546.56962581149,
+      "checks": 890.8671057692303,
+      "build_s": 4.228655082872137,
+      "bytes_per_item": 376.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "searches_per_s": 25802.65412372262,
+      "checks": 940.6104266666667,
+      "build_s": 4.2582652911078185,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "searches_per_s": 28592.572141234727,
+      "checks": 953.4372295081968,
+      "build_s": 4.941569000016898,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "searches_per_s": 31216.868899141507,
+      "checks": 926.4489545454545,
+      "build_s": 5.341376458993182,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "searches_per_s": 32842.47375945967,
+      "checks": 928.2442187499996,
+      "build_s": 6.221622999990359,
+      "bytes_per_item": 460.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "searches_per_s": 24887.194270197044,
+      "checks": 965.046,
+      "build_s": 4.061391625087708,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "searches_per_s": 28396.54060010682,
+      "checks": 990.2045797101448,
+      "build_s": 5.26462100003846,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "searches_per_s": 29439.839660648253,
+      "checks": 1049.9018562091499,
+      "build_s": 6.246943624923006,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "searches_per_s": 30017.208915782896,
+      "checks": 1042.9788153846155,
+      "build_s": 6.659884791821241,
+      "bytes_per_item": 544.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "searches_per_s": 24414.152410690192,
+      "checks": 976.3280176991146,
+      "build_s": 4.564572416944429,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "searches_per_s": 28561.02447848502,
+      "checks": 1053.906846153846,
+      "build_s": 5.684688667068258,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "searches_per_s": 28911.485492418393,
+      "checks": 1150.5801502890163,
+      "build_s": 7.094656041124836,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "searches_per_s": 28373.77620322347,
+      "checks": 1186.8030869565218,
+      "build_s": 8.03735804092139,
+      "bytes_per_item": 708.00008,
+      "code_bits": 8
+     }
+    ],
+    "head_to_head": {
+     "32/1.2/8": 33125.9501730329,
+     "48/1.3/8": 33897.995671245815,
+     "48/1.2/8": 33983.45619584359
+    },
+    "build_s": 17.934482333017513
+   }
+  },
+  {
+   "check": "llama: the self-picked choice is within 10% of the best",
+   "pass": true,
+   "detail": "picked 24 links, slack 1.3: 40,425/s; best 32 links, slack 1.3: 41,821/s (97% of it); 32 links, slack 1.2: 32,424/s (1.25x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 16.4 s with tuning (14.2 s of it, 8 trials) against 2.5 s (6.5x); memory 264 bytes per item (starting setting: 304)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 50347.100895203694,
+       "checks": 860.5718623853206,
+       "bytes_per_item": 304.0,
+       "seconds": 1.252556125
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 59153.4239161572,
+       "checks": 693.2167087378638,
+       "bytes_per_item": 264.0,
+       "seconds": 1.179537875
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 40752.555636385034,
+       "checks": 1072.9280291262135,
+       "bytes_per_item": 388.0,
+       "seconds": 1.3731775
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 41389.39551950047,
+       "checks": 1163.2899710144927,
+       "bytes_per_item": 472.0,
+       "seconds": 1.384277959
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 37969.0411551146,
+       "checks": 1249.2151785714284,
+       "bytes_per_item": 636.0,
+       "seconds": 1.444175333
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 41108.59878030347,
+       "checks": 832.0651428571427,
+       "bytes_per_item": 264.0,
+       "seconds": 1.234120625
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 56346.23750670994,
+       "checks": 726.6508767123286,
+       "bytes_per_item": 264.0,
+       "seconds": 1.168814625
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 62445.45695896217,
+       "checks": 652.0474854368928,
+       "bytes_per_item": 264.0,
+       "seconds": 1.157956875
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen": 7,
+     "seconds": 14.195601
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "searches_per_s": 28632.13413041611,
+      "checks": 1268.8711153846143,
+      "build_s": 1.9699347920250148,
+      "bytes_per_item": 264.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "searches_per_s": 34276.52115082485,
+      "checks": 1110.1929374999993,
+      "build_s": 2.1269520001951605,
+      "bytes_per_item": 264.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "searches_per_s": 39125.71252948457,
+      "checks": 1016.1622056074765,
+      "build_s": 2.121537541039288,
+      "bytes_per_item": 264.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "searches_per_s": 41006.432228099846,
+      "checks": 958.9267333333331,
+      "build_s": 2.0637722501996905,
+      "bytes_per_item": 264.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "searches_per_s": 25128.36081699426,
+      "checks": 1400.4074339622646,
+      "build_s": 2.402771041961387,
+      "bytes_per_item": 304.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "searches_per_s": 32086.917540236165,
+      "checks": 1275.6553786407765,
+      "build_s": 2.2798686660826206,
+      "bytes_per_item": 304.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "searches_per_s": 30407.97705352449,
+      "checks": 1274.678999999999,
+      "build_s": 2.5159768748562783,
+      "bytes_per_item": 304.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "searches_per_s": 41932.492322551676,
+      "checks": 1089.1323846153844,
+      "build_s": 2.5101982918567955,
+      "bytes_per_item": 304.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "searches_per_s": 23906.216144803824,
+      "checks": 1476.737623853211,
+      "build_s": 2.6671914579346776,
+      "bytes_per_item": 388.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "searches_per_s": 29438.426815977655,
+      "checks": 1502.452891304348,
+      "build_s": 2.7162355419714004,
+      "bytes_per_item": 388.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "searches_per_s": 27461.53324556858,
+      "checks": 1613.403969230768,
+      "build_s": 2.6144552920013666,
+      "bytes_per_item": 388.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "searches_per_s": 32379.02543643388,
+      "checks": 1504.292414285714,
+      "build_s": 2.714414707850665,
+      "bytes_per_item": 388.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "searches_per_s": 24633.27360085341,
+      "checks": 1475.9704999999988,
+      "build_s": 2.3180840839631855,
+      "bytes_per_item": 472.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "searches_per_s": 28913.93683958711,
+      "checks": 1571.2347457627106,
+      "build_s": 2.4958799169398844,
+      "bytes_per_item": 472.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "searches_per_s": 29137.94508056737,
+      "checks": 1679.96114953271,
+      "build_s": 2.8260124169755727,
+      "bytes_per_item": 472.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "searches_per_s": 28119.575046370286,
+      "checks": 1783.3700517241377,
+      "build_s": 3.1870027501136065,
+      "bytes_per_item": 472.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "searches_per_s": 23052.569024766988,
+      "checks": 1541.787,
+      "build_s": 2.2080325421411544,
+      "bytes_per_item": 636.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "searches_per_s": 26611.785891081425,
+      "checks": 1653.9403695652165,
+      "build_s": 2.59346141689457,
+      "bytes_per_item": 636.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "searches_per_s": 26880.76175636055,
+      "checks": 1820.9566435643555,
+      "build_s": 3.0351417080964893,
+      "bytes_per_item": 636.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "searches_per_s": 24321.241099279207,
+      "checks": 2102.07056701031,
+      "build_s": 3.645526292035356,
+      "bytes_per_item": 636.00008,
+      "code_bits": 8
+     }
+    ],
+    "head_to_head": {
+     "24/1.3/8": 40425.360785130775,
+     "32/1.2/8": 32424.295432776802,
+     "32/1.3/8": 41821.296710025286,
+     "24/1.2/8": 38228.907130262975
+    },
+    "build_s": 16.449549790937454
+   }
+  },
+  {
+   "check": "landmark: the self-picked choice is within 10% of the best",
+   "pass": true,
+   "detail": "picked 24 links, slack 1.0: 45,799/s; best 24 links, slack 1.0: 45,799/s (100% of it); 32 links, slack 1.2: 34,313/s (1.33x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 30.9 s with tuning (18.6 s of it, 8 trials) against 11.9 s (2.6x); memory 904 bytes per item (starting setting: 944)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 43974.696959369576,
+       "checks": 354.41,
+       "bytes_per_item": 944.0,
+       "seconds": 2.248902625
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 50137.46037097529,
+       "checks": 300.659,
+       "bytes_per_item": 904.0,
+       "seconds": 1.935921042
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 34670.34461239097,
+       "checks": 449.858,
+       "bytes_per_item": 1028.0,
+       "seconds": 2.2001844999999998
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 30300.798450279806,
+       "checks": 513.361,
+       "bytes_per_item": 1112.0,
+       "seconds": 2.318938042
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27884.582700667008,
+       "checks": 591.502,
+       "bytes_per_item": 1276.0,
+       "seconds": 2.354263542
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 59122.35349377341,
+       "checks": 248.888,
+       "bytes_per_item": 904.0,
+       "seconds": 1.691466917
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 47063.10549685494,
+       "checks": 293.224,
+       "bytes_per_item": 904.0,
+       "seconds": 1.8892811250000001
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 49537.873562008404,
+       "checks": 306.439,
+       "bytes_per_item": 904.0,
+       "seconds": 1.9579214999999999
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.0,
+     "chosen_code_bits": 8,
+     "chosen": 5,
+     "seconds": 18.634675209
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "searches_per_s": 41660.05714561797,
+      "checks": 281.549,
+      "build_s": 10.356649458175525,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "searches_per_s": 36649.34986063909,
+      "checks": 323.425,
+      "build_s": 11.026689250022173,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "searches_per_s": 35744.2901453058,
+      "checks": 333.087,
+      "build_s": 11.287634458160028,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "searches_per_s": 34481.43450983127,
+      "checks": 337.772,
+      "build_s": 11.384728416102007,
+      "bytes_per_item": 904.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "searches_per_s": 37878.52702843538,
+      "checks": 313.507,
+      "build_s": 10.450127290794626,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "searches_per_s": 32465.712181234765,
+      "checks": 374.051,
+      "build_s": 11.546209125081077,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "searches_per_s": 30504.12728088319,
+      "checks": 397.333,
+      "build_s": 11.934922749875113,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "searches_per_s": 29729.71504660153,
+      "checks": 407.416,
+      "build_s": 13.052955375052989,
+      "bytes_per_item": 944.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "searches_per_s": 34837.940920655405,
+      "checks": 348.712,
+      "build_s": 10.896992000052705,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "searches_per_s": 26997.438649576874,
+      "checks": 443.526,
+      "build_s": 12.463152667041868,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "searches_per_s": 25709.09227520123,
+      "checks": 487.652,
+      "build_s": 13.720601999899372,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "searches_per_s": 23605.952573204962,
+      "checks": 527.461,
+      "build_s": 15.020063166040927,
+      "bytes_per_item": 1028.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "searches_per_s": 32892.536817873246,
+      "checks": 379.152,
+      "build_s": 11.266719833016396,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "searches_per_s": 25655.107174081768,
+      "checks": 494.961,
+      "build_s": 13.249896666966379,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "searches_per_s": 22847.37596124607,
+      "checks": 560.979,
+      "build_s": 14.866955750156194,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "searches_per_s": 20732.05380228007,
+      "checks": 622.229,
+      "build_s": 16.298541124910116,
+      "bytes_per_item": 1112.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "searches_per_s": 32197.426074680956,
+      "checks": 390.026,
+      "build_s": 11.328717875061557,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "searches_per_s": 23468.448452196262,
+      "checks": 550.297,
+      "build_s": 14.076869084034115,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "searches_per_s": 19835.295378541956,
+      "checks": 656.087,
+      "build_s": 16.169014292070642,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "searches_per_s": 17423.316532325643,
+      "checks": 760.813,
+      "build_s": 17.778861250029877,
+      "bytes_per_item": 1276.00008,
+      "code_bits": 8
+     }
+    ],
+    "head_to_head": {
+     "24/1.0/8": 45799.11690190899,
+     "32/1.2/8": 34312.90619210627,
+     "32/1.0/8": 42171.30307552871,
+     "24/1.1/8": 40891.456496269275
+    },
+    "build_s": 30.867728292010725
+   }
+  },
+  {
+   "check": "glove: a memory limit keeps the choice within it",
+   "pass": true,
+   "detail": "limit 376 bytes per item: picked 32 links, slack 1.2, 376 bytes per item; 5 choices tried",
+   "data": null
+  },
+  {
+   "check": "glove: the tuning record comes back after save and load",
+   "pass": true,
+   "detail": "same record and answers",
+   "data": null
+  }
+ ]
+}

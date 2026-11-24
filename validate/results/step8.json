@@ -1,0 +1,205 @@
+{
+ "step": "step8",
+ "pass": true,
+ "seconds": 22.0,
+ "checks": [
+  {
+   "check": "yandex, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 854 vs prototype 854 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8436,
+      "checks": 474.412
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8582000000000001,
+      "checks": 507.204
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.8824,
+      "checks": 550.444
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9,
+      "checks": 601.802
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9103999999999999,
+      "checks": 634.102
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9224,
+      "checks": 682.608
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9375,
+      "checks": 763.117
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9526999999999999,
+      "checks": 874.219
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9656,
+      "checks": 1020.091
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.983,
+      "checks": 1456.534
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9912000000000001,
+      "checks": 2067.178
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 863 vs prototype 854 (1.0% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8371000000000001,
+      "checks": 470.079
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8551,
+      "checks": 503.833
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.8831,
+      "checks": 555.776
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.8917999999999999,
+      "checks": 576.082
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9112,
+      "checks": 639.748
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9212,
+      "checks": 677.721
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9377000000000001,
+      "checks": 769.864
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9511,
+      "checks": 871.734
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9662000000000001,
+      "checks": 1034.933
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9872,
+      "checks": 1525.332
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9924,
+      "checks": 1994.829
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 1,223 vs prototype 1,223 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8789999999999999,
+      "checks": 836.49
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8936,
+      "checks": 881.248
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9154,
+      "checks": 981.912
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.924,
+      "checks": 1029.763
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9381,
+      "checks": 1107.957
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9480000000000001,
+      "checks": 1205.961
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9587999999999999,
+      "checks": 1300.606
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9695,
+      "checks": 1459.122
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9791000000000001,
+      "checks": 1701.754
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9888999999999999,
+      "checks": 2220.111
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9943,
+      "checks": 3012.836
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama, our own order: prototype inside our seed spread, or averages over seeds within 5%",
+   "pass": true,
+   "detail": "prototype 1,223 (average 1,223); ours over seeds 7, 1, 2, 3: 1,287, 1,272, 1,289, 1,269 (average 1,279, +4.5%)",
+   "data": null
+  }
+ ]
+}

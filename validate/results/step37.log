@@ -1,0 +1,38 @@
+PASS  gooaq: 3 fresh builds pick the same settings, so the same index  picks {'r': 32, 'alpha': 1.2, 'code_bits': 4, 'rerank': 15, 'question_links': False, 'popular_links': False}; checks per search 517.79, 517.79, 517.79
+PASS  gooaq: the 3 builds within 3% of each other, head to head  42,426/s, 42,585/s, 42,300/s: 0.7% apart
+PASS  gooaq: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 42,300/s against 42,426/s (32/1.2/4b/rr15): 0.3% slower
+PASS  glove: 3 fresh builds pick the same settings, so the same index  picks {'r': 96, 'alpha': 1.3, 'code_bits': 4, 'rerank': 50, 'question_links': False, 'popular_links': False}; checks per search 5,655.38, 5,655.38, 5,655.38
+PASS  glove: the 3 builds within 3% of each other, head to head  10,189/s, 10,256/s, 10,290/s: 1.0% apart
+PASS  glove: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 10,189/s against 10,189/s (96/1.3/4b/rr50): -0.0% faster
+PASS  yandex: 3 fresh builds pick the same settings, so the same index  picks {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}; checks per search 964.90, 964.90, 964.90
+PASS  yandex: the 3 builds within 3% of each other, head to head  43,171/s, 43,416/s, 43,504/s: 0.8% apart
+PASS  yandex: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 43,171/s against 42,657/s (48/1.2/8b/rr15), 43,171/s (48/1.3/8b/rr15): -0.0% faster
+PASS  llama: 3 fresh builds pick the same settings, so the same index  picks {'r': 24, 'alpha': 1.3, 'code_bits': 8, 'rerank': 50, 'question_links': True, 'popular_links': True}; checks per search 571.30, 571.30, 571.30
+PASS  llama: the 3 builds within 3% of each other, head to head  116,501/s, 116,898/s, 116,848/s: 0.3% apart
+PASS  llama: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 116,501/s against 116,501/s (24/1.3/8b/rr50), 116,164/s (24/1.2/8b/rr50): -0.0% faster
+PASS  landmark: 3 fresh builds pick the same settings, so the same index  picks {'r': 24, 'alpha': 1.0, 'code_bits': 8, 'rerank': 50, 'question_links': False, 'popular_links': False}; checks per search 277.67, 277.67, 277.67
+PASS  landmark: the 3 builds within 3% of each other, head to head  71,848/s, 71,714/s, 71,883/s: 0.2% apart
+PASS  landmark: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 71,714/s against 71,848/s (24/1.0/8b/rr50): 0.2% slower
+PASS  arxiv: 3 fresh builds pick the same settings, so the same index  picks {'r': 32, 'alpha': 1.2, 'code_bits': 8, 'rerank': 50, 'question_links': False, 'popular_links': False}; checks per search 507.89, 507.89, 507.89
+PASS  arxiv: the 3 builds within 3% of each other, head to head  42,109/s, 42,362/s, 42,258/s: 0.6% apart
+PASS  arxiv: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 42,109/s against 42,109/s (32/1.2/8b/rr50): -0.0% faster
+PASS  laion: 3 fresh builds pick the same settings, so the same index  picks {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}; checks per search 1,181.50, 1,181.50, 1,181.50
+PASS  laion: the 3 builds within 3% of each other, head to head  24,319/s, 24,186/s, 24,369/s: 0.8% apart
+PASS  laion: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 24,186/s against 19,838/s (32/1.2/8b/rr15), 24,319/s (48/1.3/8b/rr15), 20,075/s (48/1.2/8b/rr15): 0.6% slower
+PASS  yi: 3 fresh builds pick the same settings, so the same index  picks {'r': 32, 'alpha': 1.2, 'code_bits': 8, 'rerank': 50, 'question_links': True, 'popular_links': True}; checks per search 968.87, 968.87, 968.87
+PASS  yi: the 3 builds within 3% of each other, head to head  50,929/s, 51,087/s, 51,064/s: 0.3% apart
+PASS  yi: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 50,929/s against 50,929/s (32/1.2/8b/rr50), 51,381/s (32/1.3/8b/rr50): 0.9% slower
+PASS  gist: 3 fresh builds pick the same settings, so the same index  picks {'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': False, 'popular_links': False}; checks per search 1,496.95, 1,496.95, 1,496.95
+PASS  gist: the 3 builds within 3% of each other, head to head  13,142/s, 13,162/s, 13,108/s: 0.4% apart
+PASS  gist: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 13,108/s against 13,249/s (96/1.2/8b/rr15), 13,097/s (32/1.2/8b/rr15), 13,142/s (48/1.3/8b/rr15): 1.1% slower
+PASS  nytimes: 3 fresh builds pick the same settings, so the same index  picks {'r': 96, 'alpha': 1.3, 'code_bits': 8, 'rerank': 25, 'question_links': False, 'popular_links': False}; checks per search 4,155.84, 4,155.84, 4,155.84
+PASS  nytimes: the 3 builds within 3% of each other, head to head  11,539/s, 11,488/s, 11,539/s: 0.4% apart
+PASS  nytimes: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 11,488/s against 11,288/s (96/1.3/8b/rr15), 11,095/s (96/1.2/8b/rr50), 11,499/s (96/1.2/8b/rr15): 0.1% slower
+FAIL  imagenet: 3 fresh builds pick the same settings, so the same index  picks [{'r': 32, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}, {'r': 32, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15, 'question_links': True, 'popular_links': False}, {'r': 32, 'alpha': 1.2, 'code_bits': 4, 'rerank': 50, 'question_links': True, 'popular_links': False}]; checks per search 609.39, 609.39, 674.74
+FAIL  imagenet: the 3 builds within 3% of each other, head to head  33,662/s, 33,985/s, 31,339/s: 8.4% apart
+FAIL  imagenet: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 31,339/s against 31,339/s (32/1.2/4b/rr50), 33,662/s (32/1.3/8b/rr15): 7.4% slower
+PASS  llama2: 3 fresh builds pick the same settings, so the same index  picks {'r': 32, 'alpha': 1.2, 'code_bits': 8, 'rerank': 50, 'question_links': True, 'popular_links': True}; checks per search 867.38, 867.38, 867.38
+PASS  llama2: the 3 builds within 3% of each other, head to head  81,003/s, 81,336/s, 81,286/s: 0.4% apart
+PASS  llama2: the slowest build no more than 3% slower, head to head, than the fastest pick made before the fix  slowest now 81,003/s against 81,003/s (32/1.2/8b/rr50): -0.0% faster
+
+step37: SOME FAILED (33/36) in 4187.3 s

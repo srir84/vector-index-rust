@@ -1,0 +1,2586 @@
+{
+ "step": "step21",
+ "pass": false,
+ "seconds": 615.3,
+ "checks": [
+  {
+   "check": "gooaq: 16-bit questions keep accuracy at the targets (within half a point)",
+   "pass": true,
+   "detail": "target 90%: 93.45% -> 93.45%; target 95%: 95.56% -> 95.56%; target 99%: 99.13% -> 99.13%",
+   "data": null
+  },
+  {
+   "check": "gooaq: 16-bit questions at least 10% faster (one core, at 95%)",
+   "pass": true,
+   "detail": "24,241 -> 35,841 searches/s (1.48x); checks per search 529 -> 529",
+   "data": null
+  },
+  {
+   "check": "glove: 16-bit questions keep accuracy at the targets (within half a point)",
+   "pass": true,
+   "detail": "target 90%: 90.56% -> 90.56%; target 95%: 95.32% -> 95.32%; target 99%: 99.04% -> 99.04%",
+   "data": null
+  },
+  {
+   "check": "glove: 16-bit questions at least 10% faster (one core, at 95%)",
+   "pass": true,
+   "detail": "5,561 -> 7,399 searches/s (1.33x); checks per search 5,510 -> 5,510",
+   "data": null
+  },
+  {
+   "check": "yandex: 16-bit questions keep accuracy at the targets (within half a point)",
+   "pass": true,
+   "detail": "target 90%: 91.20% -> 91.22%; target 95%: 95.07% -> 95.07%; target 99%: 99.16% -> 99.16%",
+   "data": null
+  },
+  {
+   "check": "yandex: 16-bit questions at least 10% faster (one core, at 95%)",
+   "pass": true,
+   "detail": "32,716 -> 42,385 searches/s (1.30x); checks per search 872 -> 872",
+   "data": null
+  },
+  {
+   "check": "llama: 16-bit questions keep accuracy at the targets (within half a point)",
+   "pass": true,
+   "detail": "target 90%: 90.58% -> 90.56%; target 95%: 94.99% -> 94.74%; target 99%: 98.92% -> 98.92%",
+   "data": null
+  },
+  {
+   "check": "llama: 16-bit questions at least 10% faster (one core, at 95%)",
+   "pass": true,
+   "detail": "32,986 -> 41,636 searches/s (1.26x); checks per search 1,275 -> 1,275",
+   "data": null
+  },
+  {
+   "check": "landmark: 16-bit questions keep accuracy at the targets (within half a point)",
+   "pass": true,
+   "detail": "target 90%: 98.08% -> 98.08%; target 95%: 98.08% -> 98.08%; target 99%: 98.53% -> 98.53%",
+   "data": null
+  },
+  {
+   "check": "landmark: 16-bit questions at least 10% faster (one core, at 95%)",
+   "pass": true,
+   "detail": "34,562 -> 53,176 searches/s (1.54x); checks per search 397 -> 397",
+   "data": null
+  },
+  {
+   "check": "gooaq: 4-bit copies: the learned effort lands within 1 point of 95%",
+   "pass": false,
+   "detail": "target 95% gives 96.02%; 560 bytes per item",
+   "data": null
+  },
+  {
+   "check": "glove: 4-bit copies: the learned effort lands within 1 point of 95%",
+   "pass": true,
+   "detail": "target 95% gives 95.08%; 288 bytes per item",
+   "data": null
+  },
+  {
+   "check": "yandex: 4-bit copies: the learned effort lands within 1 point of 95%",
+   "pass": true,
+   "detail": "target 95% gives 95.71%; 288 bytes per item",
+   "data": null
+  },
+  {
+   "check": "llama: 4-bit copies: never reach 95% here, so the tuning must not pick them",
+   "pass": true,
+   "detail": "best 91.33% at any target; 240 bytes per item",
+   "data": null
+  },
+  {
+   "check": "landmark: 4-bit copies: the learned effort lands within 1 point of 95%",
+   "pass": false,
+   "detail": "target 95% gives 97.26%; 560 bytes per item",
+   "data": null
+  },
+  {
+   "check": "gooaq: the self-picked choice (4-bit copies allowed) is within 10% of the best",
+   "pass": true,
+   "detail": "picked 32 links, slack 1.2, 4-bit copies: 40,164/s; best 32 links, slack 1.3, 4-bit copies: 40,480/s (99% of it); 32 links, slack 1.2: 36,213/s (1.11x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 54.0 s with tuning (28.3 s of it, 10 trials) against 19.7 s (2.7x); memory 560 bytes per item (starting setting: 944)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 49668.70166604863,
+       "checks": 510.9167826086955,
+       "bytes_per_item": 944.0,
+       "seconds": 3.337737041
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 43033.63361243301,
+       "checks": 526.0078749999999,
+       "bytes_per_item": 904.0,
+       "seconds": 2.950264959
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 46228.59409220573,
+       "checks": 624.974,
+       "bytes_per_item": 1028.0,
+       "seconds": 3.408446708
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 36481.73237446207,
+       "checks": 786.595,
+       "bytes_per_item": 1112.0,
+       "seconds": 3.9031139169999998
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 28636.40594014514,
+       "checks": 1095.926,
+       "bytes_per_item": 1276.0,
+       "seconds": 5.127366292
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 38101.36086629559,
+       "checks": 591.6013736263736,
+       "bytes_per_item": 944.0,
+       "seconds": 3.107325875
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 46847.64138618776,
+       "checks": 543.9629009900989,
+       "bytes_per_item": 944.0,
+       "seconds": 3.239618416
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 47008.97053683662,
+       "checks": 510.90875652173895,
+       "bytes_per_item": 944.0,
+       "seconds": 3.2292935
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 37309.14894122919,
+       "checks": 525.0472580645159,
+       "bytes_per_item": 944.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 41234.813685692905,
+       "checks": 534.1361428571428,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 4,
+     "chosen": 0,
+     "seconds": 28.30337125
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 32330.27126336362,
+      "checks": 551.0409036144574,
+      "build_s": 16.441888249944896,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 35268.057912075965,
+      "checks": 559.3921298701296,
+      "build_s": 16.596091749845073,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 33236.491791518994,
+      "checks": 534.5635,
+      "build_s": 17.155881042126566,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 36218.82189234177,
+      "checks": 540.3909365079365,
+      "build_s": 16.99466845788993,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 34156.51735991057,
+      "checks": 512.239462686567,
+      "build_s": 17.02861566701904,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 37401.23867503281,
+      "checks": 517.7444545454547,
+      "build_s": 17.07214645901695,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 34087.95377787232,
+      "checks": 512.3023432835819,
+      "build_s": 17.008611291181296,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 37400.85226320774,
+      "checks": 517.8271818181819,
+      "build_s": 17.1344026660081,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 32052.54704442587,
+      "checks": 585.7831203007515,
+      "build_s": 18.873527166899294,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 35040.82755526127,
+      "checks": 593.8206131386859,
+      "build_s": 18.979957666946575,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 34411.793360764925,
+      "checks": 565.989984375,
+      "build_s": 19.94152545905672,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 38358.47978662486,
+      "checks": 568.7429999999999,
+      "build_s": 20.095571083948016,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 36299.20420423178,
+      "checks": 528.8934216867469,
+      "build_s": 19.703316874802113,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 40708.99316227786,
+      "checks": 527.2367435897432,
+      "build_s": 19.673372333869338,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 36318.06982683638,
+      "checks": 528.7173132530119,
+      "build_s": 20.151418375084177,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 40894.273357144746,
+      "checks": 527.0677435897436,
+      "build_s": 19.822141624987125,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 31257.03782234789,
+      "checks": 627.2763111111107,
+      "build_s": 20.98606879194267,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 36147.800435994126,
+      "checks": 623.5664698795179,
+      "build_s": 21.05221616709605,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 32807.42805263431,
+      "checks": 677.7704687499995,
+      "build_s": 25.12533187493682,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 34919.60735248442,
+      "checks": 687.1838235294117,
+      "build_s": 25.174250457901508,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 32678.433322145564,
+      "checks": 647.986,
+      "build_s": 24.698361959075555,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 37887.93662725889,
+      "checks": 657.4052702702702,
+      "build_s": 24.821577291935682,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 34515.62420601634,
+      "checks": 648.033,
+      "build_s": 24.296264542033896,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 37831.42415074676,
+      "checks": 657.1422657657657,
+      "build_s": 24.198590207844973,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 31424.12820516683,
+      "checks": 670.9718636363634,
+      "build_s": 22.85611500008963,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 35550.10529013899,
+      "checks": 674.7806279069767,
+      "build_s": 23.08576254104264,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 29097.414385198856,
+      "checks": 802.369,
+      "build_s": 29.795505749993026,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 32532.354765609525,
+      "checks": 806.4166666666666,
+      "build_s": 30.244603750063106,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 28428.99407627332,
+      "checks": 816.393,
+      "build_s": 29.36153750005178,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 30164.659773236603,
+      "checks": 815.8942155172414,
+      "build_s": 30.022612083004788,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 28158.658390811222,
+      "checks": 819.501,
+      "build_s": 30.805285792099312,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 32358.933781324205,
+      "checks": 816.5185350877193,
+      "build_s": 29.66834424994886,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 29782.405177543278,
+      "checks": 709.4940442477878,
+      "build_s": 24.211696000071242,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 34369.76279417152,
+      "checks": 706.9057352941174,
+      "build_s": 24.78867316688411,
+      "bytes_per_item": 892.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 24033.764400179858,
+      "checks": 982.826,
+      "build_s": 34.963397833984345,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 26434.55286222297,
+      "checks": 984.66,
+      "build_s": 35.44843599991873,
+      "bytes_per_item": 892.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 21516.7847428633,
+      "checks": 1097.304,
+      "build_s": 41.52952675009146,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 25052.741192470607,
+      "checks": 1099.174,
+      "build_s": 39.996259707957506,
+      "bytes_per_item": 892.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 21382.228764288142,
+      "checks": 1126.027,
+      "build_s": 42.46200420893729,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 24140.44307966561,
+      "checks": 1128.183,
+      "build_s": 41.932333833072335,
+      "bytes_per_item": 892.00008
+     }
+    ],
+    "head_to_head": {
+     "32/1.2/4": 40163.8769714311,
+     "32/1.2/8": 36213.319609806014,
+     "32/1.3/4": 40480.39637850775,
+     "32/1.1/4": 38106.31407472515
+    },
+    "build_s": 54.00184279214591
+   }
+  },
+  {
+   "check": "glove: the self-picked choice (4-bit copies allowed) is within 10% of the best",
+   "pass": true,
+   "detail": "picked 96 links, slack 1.3, 4-bit copies: 10,117/s; best 96 links, slack 1.2, 4-bit copies: 10,635/s (95% of it); 32 links, slack 1.2: 7,484/s (1.35x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 39.0 s with tuning (19.6 s of it, 10 trials) against 6.4 s (6.1x); memory 620 bytes per item (starting setting: 376)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 15429.97651860388,
+       "checks": 2894.0610624999986,
+       "bytes_per_item": 376.0,
+       "seconds": 1.753833292
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13689.43069398021,
+       "checks": 2943.6664605263145,
+       "bytes_per_item": 336.0,
+       "seconds": 1.735760333
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 17560.490007845645,
+       "checks": 2840.1288653846145,
+       "bytes_per_item": 460.0,
+       "seconds": 1.668255542
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 18837.881275645635,
+       "checks": 2695.658391304347,
+       "bytes_per_item": 544.0,
+       "seconds": 1.6556804999999999
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 20189.987212060187,
+       "checks": 2818.4383584905663,
+       "bytes_per_item": 708.0,
+       "seconds": 1.9731581660000002
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 16257.394748296318,
+       "checks": 3173.5163362831845,
+       "bytes_per_item": 708.0,
+       "seconds": 1.642072625
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 19834.60630183695,
+       "checks": 2912.0133571428564,
+       "bytes_per_item": 708.0,
+       "seconds": 1.891091708
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 20413.140757829497,
+       "checks": 2804.8486753246743,
+       "bytes_per_item": 708.0,
+       "seconds": 1.988411208
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 8905.867580591303,
+       "checks": 5614.944318181812,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 9490.075289776527,
+       "checks": 5741.892011363634,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 4,
+     "chosen": 7,
+     "seconds": 19.612613875
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 5910.42318546985,
+      "checks": 6047.220962686557,
+      "build_s": 6.222687792032957,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 5882.450517841788,
+      "checks": 6239.320898734171,
+      "build_s": 6.111762541113421,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 6218.29834093782,
+      "checks": 5846.198291666663,
+      "build_s": 6.226337250089273,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 6042.380594532691,
+      "checks": 6147.7056321839,
+      "build_s": 6.101023124996573,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 6073.62183933105,
+      "checks": 5971.935226086946,
+      "build_s": 6.228032624814659,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 5952.68133513571,
+      "checks": 6206.393922330094,
+      "build_s": 5.9913784170057625,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 6000.752241225939,
+      "checks": 5952.72782795699,
+      "build_s": 6.121459499932826,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 6040.191033885536,
+      "checks": 6229.007285714284,
+      "build_s": 6.090790499933064,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 7442.41963111955,
+      "checks": 5516.023886075948,
+      "build_s": 6.380030750064179,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 7014.800228261756,
+      "checks": 6019.455105263159,
+      "build_s": 6.6559219169430435,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 7510.256788377499,
+      "checks": 5425.715411764704,
+      "build_s": 6.424462749855593,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 7404.511039391274,
+      "checks": 5692.053894736831,
+      "build_s": 6.343225332908332,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 7484.551047558294,
+      "checks": 5509.594421052627,
+      "build_s": 6.430505207972601,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 7424.527652312096,
+      "checks": 5801.737263157901,
+      "build_s": 6.3191920830868185,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 7462.54144272862,
+      "checks": 5522.3342151898705,
+      "build_s": 6.284992750035599,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 7329.255049180031,
+      "checks": 5829.583740740736,
+      "build_s": 6.244455208070576,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 7775.668773013021,
+      "checks": 5604.750107526877,
+      "build_s": 7.462536749895662,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 7813.368798167218,
+      "checks": 5873.247630769224,
+      "build_s": 7.500032208161429,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 8552.49615362499,
+      "checks": 5126.546391304349,
+      "build_s": 7.967230458976701,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 8496.905407987697,
+      "checks": 5436.359533980577,
+      "build_s": 7.88198595889844,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 8424.614644847736,
+      "checks": 5127.431222222217,
+      "build_s": 7.929102166090161,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 8564.66663935658,
+      "checks": 5322.64010344827,
+      "build_s": 9.264279541093856,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 8348.134518140128,
+      "checks": 5151.679839999997,
+      "build_s": 7.817268416984007,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 8603.949823774,
+      "checks": 5359.855111111106,
+      "build_s": 7.999836541945115,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 7627.06163013256,
+      "checks": 5770.344972972974,
+      "build_s": 8.266000375151634,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 7679.366931232983,
+      "checks": 6074.757392523357,
+      "build_s": 8.169938791077584,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 9409.241140192851,
+      "checks": 5017.181117647053,
+      "build_s": 9.630156333791092,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 9420.908686055016,
+      "checks": 5359.529409090907,
+      "build_s": 9.716565957991406,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 9581.652500116774,
+      "checks": 4919.594380952378,
+      "build_s": 9.425079499837011,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 9714.334647450843,
+      "checks": 5170.950961038961,
+      "build_s": 9.433848499786109,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 9496.383692880569,
+      "checks": 4946.2606666666625,
+      "build_s": 9.606102333171293,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 9753.118860001712,
+      "checks": 5206.995714285713,
+      "build_s": 9.446879166876897,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 8093.075412274252,
+      "checks": 5861.738214285709,
+      "build_s": 8.987478333991021,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 8214.412558195398,
+      "checks": 6154.670460176991,
+      "build_s": 9.043789625167847,
+      "bytes_per_item": 620.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 9897.570069166626,
+      "checks": 5171.295394366194,
+      "build_s": 12.322863791836426,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 10418.80490383583,
+      "checks": 5306.4608770491795,
+      "build_s": 12.243808124912903,
+      "bytes_per_item": 620.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 10035.783941583966,
+      "checks": 4994.19146153846,
+      "build_s": 12.633420125115663,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 10590.693384227588,
+      "checks": 5176.259781818175,
+      "build_s": 12.535473166964948,
+      "bytes_per_item": 620.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 9779.739580761878,
+      "checks": 4961.254540540539,
+      "build_s": 13.263886458938941,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 10130.28873205277,
+      "checks": 5216.997615384614,
+      "build_s": 13.84255229192786,
+      "bytes_per_item": 620.00008
+     }
+    ],
+    "head_to_head": {
+     "96/1.3/4": 10117.06759524415,
+     "32/1.2/8": 7484.107058169617,
+     "96/1.2/4": 10634.504751597236,
+     "96/1.1/4": 10498.687673280314
+    },
+    "build_s": 39.03741475008428
+   }
+  },
+  {
+   "check": "yandex: the self-picked choice (4-bit copies allowed) is within 10% of the best",
+   "pass": true,
+   "detail": "picked 48 links, slack 1.2: 46,401/s; best 48 links, slack 1.2: 46,401/s (100% of it); 32 links, slack 1.2: 43,736/s (1.06x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 27.4 s with tuning (16.4 s of it, 10 trials) against 5.2 s (5.3x); memory 460 bytes per item (starting setting: 376)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 66895.42158774493,
+       "checks": 660.0738719999997,
+       "bytes_per_item": 376.0,
+       "seconds": 1.387742292
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 55688.555212413106,
+       "checks": 671.2706212121212,
+       "bytes_per_item": 336.0,
+       "seconds": 1.352635292
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 73647.74208762405,
+       "checks": 687.7401282051278,
+       "bytes_per_item": 460.0,
+       "seconds": 1.57410075
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 67776.22468836009,
+       "checks": 776.7285454545454,
+       "bytes_per_item": 544.0,
+       "seconds": 1.770942917
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 63858.9993294805,
+       "checks": 859.999,
+       "bytes_per_item": 708.0,
+       "seconds": 1.860453708
+      },
+      {
+       "r": 48,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 53903.20440189942,
+       "checks": 728.5086990291256,
+       "bytes_per_item": 460.0,
+       "seconds": 1.4088236250000001
+      },
+      {
+       "r": 48,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 65775.78759330806,
+       "checks": 718.9481681415924,
+       "bytes_per_item": 460.0,
+       "seconds": 1.507307458
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 69584.2569893385,
+       "checks": 672.4020909090906,
+       "bytes_per_item": 460.0,
+       "seconds": 1.5720969999999999
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 57702.95723855197,
+       "checks": 761.1622597402593,
+       "bytes_per_item": 460.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 54245.14321154677,
+       "checks": 881.0249550173011,
+       "bytes_per_item": 372.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 48,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen": 2,
+     "seconds": 16.36586275
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 35418.504684648426,
+      "checks": 907.4594117647055,
+      "build_s": 4.277020332869142,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 33623.48898783006,
+      "checks": 1021.4928321167872,
+      "build_s": 4.257050917018205,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 40116.589913504344,
+      "checks": 868.9413985507243,
+      "build_s": 4.602097249822691,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 38752.80906539582,
+      "checks": 969.3616771653543,
+      "build_s": 4.677452832926065,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 40229.54027749754,
+      "checks": 854.3357249999997,
+      "build_s": 4.488824291853234,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 37011.64332385431,
+      "checks": 961.199737931034,
+      "build_s": 4.559855500003323,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 38239.88036237398,
+      "checks": 862.0258865248231,
+      "build_s": 4.5831034171860665,
+      "bytes_per_item": 336.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 37113.90815596467,
+      "checks": 982.9105704697985,
+      "build_s": 4.552196625154465,
+      "bytes_per_item": 248.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 34961.03078590905,
+      "checks": 926.7681372549023,
+      "build_s": 4.4797529589850456,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 32241.795953795234,
+      "checks": 1049.3392571428558,
+      "build_s": 4.514678499894217,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 40234.34689715122,
+      "checks": 892.340805369127,
+      "build_s": 5.148410999914631,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 39052.77670351803,
+      "checks": 991.476074074074,
+      "build_s": 5.271877707913518,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 44080.59579875977,
+      "checks": 872.1535679012343,
+      "build_s": 5.170014665927738,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 36656.25145163223,
+      "checks": 958.3704090909082,
+      "build_s": 5.198486458044499,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 41818.55487638471,
+      "checks": 892.6465555555549,
+      "build_s": 5.143968125106767,
+      "bytes_per_item": 376.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 39566.08039110194,
+      "checks": 966.7285714285708,
+      "build_s": 5.271051124902442,
+      "bytes_per_item": 288.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 34273.131199319745,
+      "checks": 940.6171333333334,
+      "build_s": 4.783708084141836,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 32508.724230559354,
+      "checks": 1042.3235851063826,
+      "build_s": 4.932740499963984,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 40881.5144735229,
+      "checks": 953.457631147541,
+      "build_s": 5.969725332921371,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 38722.43810046409,
+      "checks": 1074.9254430379738,
+      "build_s": 6.075493833050132,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 46669.16534682701,
+      "checks": 926.4530909090907,
+      "build_s": 6.46978820906952,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 42506.5295793275,
+      "checks": 1041.3995769230776,
+      "build_s": 6.519055583048612,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 46253.13484387229,
+      "checks": 928.2467499999996,
+      "build_s": 6.716002833098173,
+      "bytes_per_item": 460.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 42942.38030574025,
+      "checks": 1045.2904765624996,
+      "build_s": 6.721059582894668,
+      "bytes_per_item": 372.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 32440.98552506571,
+      "checks": 965.056,
+      "build_s": 4.983881958061829,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 31911.82185469215,
+      "checks": 1057.4292021276588,
+      "build_s": 5.027182457968593,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 41290.26470153696,
+      "checks": 989.9970289855071,
+      "build_s": 6.455750917084515,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 35991.10852186123,
+      "checks": 1109.671,
+      "build_s": 6.574401458958164,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 41514.37977965077,
+      "checks": 1049.819150326797,
+      "build_s": 7.439193290891126,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 38838.1268027582,
+      "checks": 1173.7190379746833,
+      "build_s": 7.483220582827926,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 41436.298904653304,
+      "checks": 1042.984630769231,
+      "build_s": 7.965526292100549,
+      "bytes_per_item": 544.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 38049.20753371748,
+      "checks": 1285.9165803571414,
+      "build_s": 8.037110292119905,
+      "bytes_per_item": 456.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 31598.32974952526,
+      "checks": 976.8665624999995,
+      "build_s": 5.097766709048301,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 31322.49649872962,
+      "checks": 1067.7381839080454,
+      "build_s": 5.207519582938403,
+      "bytes_per_item": 620.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 38763.44981787815,
+      "checks": 1053.9463846153844,
+      "build_s": 6.9641743341926485,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 36719.8952159136,
+      "checks": 1177.1217142857142,
+      "build_s": 6.9459395001176745,
+      "bytes_per_item": 620.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 40347.573658711095,
+      "checks": 1150.4976184971088,
+      "build_s": 8.19931587507017,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 37036.65547727713,
+      "checks": 1330.5406503496502,
+      "build_s": 8.65722691686824,
+      "bytes_per_item": 620.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 40362.48526608976,
+      "checks": 1186.9278260869564,
+      "build_s": 9.76169175002724,
+      "bytes_per_item": 708.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 36198.05548621296,
+      "checks": 1434.9025522388056,
+      "build_s": 9.60728383413516,
+      "bytes_per_item": 620.00008
+     }
+    ],
+    "head_to_head": {
+     "48/1.2/8": 46400.83745465991,
+     "32/1.2/8": 43735.56614501411,
+     "48/1.3/8": 46370.54998098074
+    },
+    "build_s": 27.350529915886
+   }
+  },
+  {
+   "check": "llama: the self-picked choice (4-bit copies allowed) is within 10% of the best",
+   "pass": true,
+   "detail": "picked 24 links, slack 1.3: 51,236/s; best 32 links, slack 1.3: 55,089/s (93% of it); 32 links, slack 1.2: 41,655/s (1.23x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 17.3 s with tuning (14.1 s of it, 10 trials) against 2.4 s (7.3x); memory 264 bytes per item (starting setting: 304)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 64349.83667088339,
+       "checks": 859.4851018518516,
+       "bytes_per_item": 304.0,
+       "seconds": 1.2540065409999999
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 74002.61652108416,
+       "checks": 691.8092857142856,
+       "bytes_per_item": 264.0,
+       "seconds": 1.157186208
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 52410.72716689233,
+       "checks": 1072.2474563106796,
+       "bytes_per_item": 388.0,
+       "seconds": 1.250746959
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 54961.08644361084,
+       "checks": 1163.1327101449274,
+       "bytes_per_item": 472.0,
+       "seconds": 1.371240042
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 49798.49838590717,
+       "checks": 1249.1646725663716,
+       "bytes_per_item": 636.0,
+       "seconds": 1.434955875
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 51385.47850188627,
+       "checks": 831.9207115384615,
+       "bytes_per_item": 264.0,
+       "seconds": 1.220443958
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 70495.17292600693,
+       "checks": 726.1393783783783,
+       "bytes_per_item": 264.0,
+       "seconds": 1.138219334
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 78549.37533315661,
+       "checks": 651.995252427184,
+       "bytes_per_item": 264.0,
+       "seconds": 1.16765725
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 946.377545454545,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 200.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen": 7,
+     "seconds": 14.063364083
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 34692.37746525474,
+      "checks": 1267.769759615384,
+      "build_s": 1.9995821248739958,
+      "bytes_per_item": 264.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 2.821737375110388,
+      "bytes_per_item": 200.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 41687.78340362936,
+      "checks": 1111.695,
+      "build_s": 2.1377778749447316,
+      "bytes_per_item": 264.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 2.944055041996762,
+      "bytes_per_item": 200.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 48544.685155349536,
+      "checks": 1015.3895714285705,
+      "build_s": 2.1613182090222836,
+      "bytes_per_item": 264.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 2.9548042081296444,
+      "bytes_per_item": 200.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 51123.77326457813,
+      "checks": 958.9045999999997,
+      "build_s": 2.107837124960497,
+      "bytes_per_item": 264.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 2.9679330410435796,
+      "bytes_per_item": 200.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 32235.735188760653,
+      "checks": 1400.1333018867929,
+      "build_s": 2.1348830421920866,
+      "bytes_per_item": 304.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 2.915320625063032,
+      "bytes_per_item": 240.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 42787.19322074624,
+      "checks": 1278.0888173076914,
+      "build_s": 2.3347661250736564,
+      "bytes_per_item": 304.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.2361799168866128,
+      "bytes_per_item": 240.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 40353.732365417025,
+      "checks": 1275.011333333333,
+      "build_s": 2.3804855830967426,
+      "bytes_per_item": 304.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.3239501661155373,
+      "bytes_per_item": 240.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 55452.370598560454,
+      "checks": 1088.9861545454544,
+      "build_s": 2.435771791031584,
+      "bytes_per_item": 304.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.351274791872129,
+      "bytes_per_item": 240.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 30013.094265312728,
+      "checks": 1476.6032385321103,
+      "build_s": 2.279708791989833,
+      "bytes_per_item": 388.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.1162607499863952,
+      "bytes_per_item": 324.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 38007.532331612754,
+      "checks": 1506.4182234042548,
+      "build_s": 2.687084457837045,
+      "bytes_per_item": 388.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.6239898749627173,
+      "bytes_per_item": 324.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 35839.29781890766,
+      "checks": 1613.2925076923066,
+      "build_s": 2.827566167106852,
+      "bytes_per_item": 388.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.9298629169352353,
+      "bytes_per_item": 324.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 42815.46422030553,
+      "checks": 1503.741798561151,
+      "build_s": 2.9517229159828275,
+      "bytes_per_item": 388.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 4.007977457949892,
+      "bytes_per_item": 324.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 29490.002693531736,
+      "checks": 1475.7321775700923,
+      "build_s": 2.3709420829545707,
+      "bytes_per_item": 472.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.248652500100434,
+      "bytes_per_item": 408.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 37188.89608743327,
+      "checks": 1572.5988983050843,
+      "build_s": 2.879145458107814,
+      "bytes_per_item": 472.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.8561651250347495,
+      "bytes_per_item": 408.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 38640.33889045283,
+      "checks": 1680.7549158878503,
+      "build_s": 3.114816749934107,
+      "bytes_per_item": 472.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 4.251296124886721,
+      "bytes_per_item": 408.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 37342.6118028297,
+      "checks": 1786.2053749999993,
+      "build_s": 3.470950209069997,
+      "bytes_per_item": 472.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 4.722222791984677,
+      "bytes_per_item": 408.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 27586.249171106476,
+      "checks": 1541.913,
+      "build_s": 2.4106134998146445,
+      "bytes_per_item": 636.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.228102667024359,
+      "bytes_per_item": 572.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 34377.1240528654,
+      "checks": 1653.8628791208782,
+      "build_s": 2.928301583044231,
+      "bytes_per_item": 636.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 3.997247999999672,
+      "bytes_per_item": 572.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 36011.99152005804,
+      "checks": 1821.6892079207914,
+      "build_s": 3.5043091669213027,
+      "bytes_per_item": 636.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 4.67328487499617,
+      "bytes_per_item": 572.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 32571.029571601186,
+      "checks": 2102.0391958762893,
+      "build_s": 4.080445416038856,
+      "bytes_per_item": 636.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": null,
+      "checks": null,
+      "build_s": 5.48083549994044,
+      "bytes_per_item": 572.00008
+     }
+    ],
+    "head_to_head": {
+     "24/1.3/8": 51235.71637741053,
+     "32/1.2/8": 41655.289195927966,
+     "32/1.3/8": 55089.06652929268,
+     "24/1.2/8": 48556.73248433223
+    },
+    "build_s": 17.302015624940395
+   }
+  },
+  {
+   "check": "landmark: the self-picked choice (4-bit copies allowed) is within 10% of the best",
+   "pass": true,
+   "detail": "picked 24 links, slack 1.0: 68,441/s; best 24 links, slack 1.0: 68,441/s (100% of it); 32 links, slack 1.2: 53,485/s (1.28x from tuning). Timed head-to-head, 5 rounds: the pick, the starting setting and the grid's top 3. Build 33.9 s with tuning (18.0 s of it, 10 trials) against 14.0 s (2.4x); memory 904 bytes per item (starting setting: 944)",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 73353.54048722469,
+       "checks": 354.41,
+       "bytes_per_item": 944.0,
+       "seconds": 2.182434958
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 78143.24243529039,
+       "checks": 300.659,
+       "bytes_per_item": 904.0,
+       "seconds": 1.844803083
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 58571.538002585396,
+       "checks": 449.858,
+       "bytes_per_item": 1028.0,
+       "seconds": 2.169431
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 54850.3729545624,
+       "checks": 513.361,
+       "bytes_per_item": 1112.0,
+       "seconds": 2.194689208
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 48657.30175798831,
+       "checks": 591.502,
+       "bytes_per_item": 1276.0,
+       "seconds": 2.318844958
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 93256.79975738311,
+       "checks": 248.902,
+       "bytes_per_item": 904.0,
+       "seconds": 1.645957792
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 78915.846880394,
+       "checks": 293.221,
+       "bytes_per_item": 904.0,
+       "seconds": 1.889496375
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 77923.37478967264,
+       "checks": 306.434,
+       "bytes_per_item": 904.0,
+       "seconds": 1.9331820419999999
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 71828.76023559834,
+       "checks": 278.734,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 67887.51568508027,
+       "checks": 305.33278160919537,
+       "bytes_per_item": 520.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.0,
+     "chosen_code_bits": 8,
+     "chosen": 5,
+     "seconds": 17.997453875
+    },
+    "grid": [
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 68813.05126591749,
+      "checks": 281.544,
+      "build_s": 11.328736125025898,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 63202.89944104942,
+      "checks": 316.62705882352947,
+      "build_s": 11.48425312503241,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 61888.998850570606,
+      "checks": 323.425,
+      "build_s": 12.381806625053287,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 62124.87201249574,
+      "checks": 335.38140594059405,
+      "build_s": 12.467605167068541,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 60720.52895469663,
+      "checks": 333.087,
+      "build_s": 12.739998125005513,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 61425.03090580541,
+      "checks": 343.5174833887043,
+      "build_s": 12.724964583991095,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 59921.25091811357,
+      "checks": 337.772,
+      "build_s": 12.772413792088628,
+      "bytes_per_item": 904.00008
+     },
+     {
+      "r": 24,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 59969.42674513265,
+      "checks": 349.95492013311144,
+      "build_s": 12.9421554999426,
+      "bytes_per_item": 520.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 62970.74724809874,
+      "checks": 313.507,
+      "build_s": 11.715636083856225,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 59450.670796963816,
+      "checks": 337.98643835616434,
+      "build_s": 11.880605374928564,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 55798.404779360244,
+      "checks": 374.051,
+      "build_s": 13.11490683304146,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 56056.03706008798,
+      "checks": 390.70789552238807,
+      "build_s": 13.305244124960154,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 53120.46051819807,
+      "checks": 397.331,
+      "build_s": 13.951121666934341,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 54044.94529271098,
+      "checks": 413.5615417348609,
+      "build_s": 13.831977458205074,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 50302.738662399584,
+      "checks": 407.422,
+      "build_s": 14.654425000073388,
+      "bytes_per_item": 944.00008
+     },
+     {
+      "r": 32,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 52618.79069936825,
+      "checks": 425.05064085667215,
+      "build_s": 14.482579665957019,
+      "bytes_per_item": 560.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 59202.89886433295,
+      "checks": 348.712,
+      "build_s": 12.36522649996914,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 58820.104508717086,
+      "checks": 361.59038144329895,
+      "build_s": 12.479662208119407,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 49611.774141787726,
+      "checks": 443.524,
+      "build_s": 14.33463295805268,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 50050.308853939576,
+      "checks": 460.5834567307692,
+      "build_s": 14.267265332862735,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 45655.27537713687,
+      "checks": 487.645,
+      "build_s": 15.375814416911453,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 46823.965511677,
+      "checks": 500.1780985691574,
+      "build_s": 15.444849582854658,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 41959.31350725314,
+      "checks": 527.451,
+      "build_s": 17.806234000017866,
+      "bytes_per_item": 1028.00008
+     },
+     {
+      "r": 48,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 44477.36472951815,
+      "checks": 541.8238253968253,
+      "build_s": 18.804655499989167,
+      "bytes_per_item": 644.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 55853.27227299867,
+      "checks": 379.152,
+      "build_s": 13.28449087496847,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 54981.23445505055,
+      "checks": 390.81992746113986,
+      "build_s": 12.979616957949474,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 43405.01787423073,
+      "checks": 494.959,
+      "build_s": 14.988614625064656,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 45376.04350098286,
+      "checks": 510.7949523809524,
+      "build_s": 15.253540458157659,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 40390.14806539169,
+      "checks": 560.97,
+      "build_s": 16.770861541153863,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 41412.76300773879,
+      "checks": 574.0045476190476,
+      "build_s": 17.027225417084992,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 37455.92021703457,
+      "checks": 622.214,
+      "build_s": 18.49421374988742,
+      "bytes_per_item": 1112.00008
+     },
+     {
+      "r": 64,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 39092.83475093907,
+      "checks": 636.2201849529781,
+      "build_s": 18.164650208083913,
+      "bytes_per_item": 728.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 8,
+      "searches_per_s": 53891.40874695748,
+      "checks": 390.026,
+      "build_s": 13.241369250230491,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.0,
+      "code_bits": 4,
+      "searches_per_s": 53628.74477155076,
+      "checks": 402.8286438356164,
+      "build_s": 13.117404834134504,
+      "bytes_per_item": 892.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 8,
+      "searches_per_s": 42059.60488375249,
+      "checks": 550.295,
+      "build_s": 15.673710332950577,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.1,
+      "code_bits": 4,
+      "searches_per_s": 42526.12576710205,
+      "checks": 567.5414725274725,
+      "build_s": 15.881944249849766,
+      "bytes_per_item": 892.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 8,
+      "searches_per_s": 36217.399844824606,
+      "checks": 656.088,
+      "build_s": 17.563856583088636,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.2,
+      "code_bits": 4,
+      "searches_per_s": 37626.3416084525,
+      "checks": 669.6102380952381,
+      "build_s": 17.548375708051026,
+      "bytes_per_item": 892.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 8,
+      "searches_per_s": 31550.319612533796,
+      "checks": 760.804,
+      "build_s": 19.762148499954492,
+      "bytes_per_item": 1276.00008
+     },
+     {
+      "r": 96,
+      "alpha": 1.3,
+      "code_bits": 4,
+      "searches_per_s": 33448.85051366648,
+      "checks": 772.273560509554,
+      "build_s": 19.825986832845956,
+      "bytes_per_item": 892.00008
+     }
+    ],
+    "head_to_head": {
+     "24/1.0/8": 68441.06126523277,
+     "32/1.2/8": 53485.0227366275,
+     "24/1.0/4": 62867.39129732192,
+     "32/1.0/8": 63364.27328490195
+    },
+    "build_s": 33.85366583405994
+   }
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "step": "step1",
+ "pass": true,
+ "seconds": 0.7,
+ "checks": [
+  {
+   "check": "gooaq: full-number distances",
+   "pass": true,
+   "detail": "worst error 8.2e-08 (numpy 32-bit: 8.2e-07; limit 1.0e-05)",
+   "data": null
+  },
+  {
+   "check": "gooaq: copies match numpy and decode within half a step",
+   "pass": true,
+   "detail": "same codes 1.00000, worst overshoot 1.5e-08",
+   "data": null
+  },
+  {
+   "check": "gooaq: 1-byte distances",
+   "pass": true,
+   "detail": "worst error 1.6e-07 (limit 1e-4)",
+   "data": null
+  },
+  {
+   "check": "glove: full-number distances",
+   "pass": true,
+   "detail": "worst error 1.4e-07 (numpy 32-bit: 3.3e-07; limit 1.0e-05)",
+   "data": null
+  },
+  {
+   "check": "glove: copies match numpy and decode within half a step",
+   "pass": true,
+   "detail": "same codes 1.00000, worst overshoot 1.2e-08",
+   "data": null
+  },
+  {
+   "check": "glove: 1-byte distances",
+   "pass": true,
+   "detail": "worst error 4.2e-07 (limit 1e-4)",
+   "data": null
+  },
+  {
+   "check": "yandex: full-number distances",
+   "pass": true,
+   "detail": "worst error 1.3e-07 (numpy 32-bit: 3.1e-07; limit 1.0e-05)",
+   "data": null
+  },
+  {
+   "check": "yandex: copies match numpy and decode within half a step",
+   "pass": true,
+   "detail": "same codes 1.00000, worst overshoot 1.2e-08",
+   "data": null
+  },
+  {
+   "check": "yandex: 1-byte distances",
+   "pass": true,
+   "detail": "worst error 3.2e-07 (limit 1e-4)",
+   "data": null
+  },
+  {
+   "check": "llama: full-number distances",
+   "pass": true,
+   "detail": "worst error 2.6e-05 (numpy 32-bit: 3.9e-05; limit 7.7e-05)",
+   "data": null
+  },
+  {
+   "check": "llama: copies match numpy and decode within half a step",
+   "pass": true,
+   "detail": "same codes 1.00000, worst overshoot -2.8e-07",
+   "data": null
+  },
+  {
+   "check": "llama: 1-byte distances",
+   "pass": true,
+   "detail": "worst error 4.7e-05 (limit 1e-4)",
+   "data": null
+  },
+  {
+   "check": "landmark: full-number distances",
+   "pass": true,
+   "detail": "worst error 1.5e-07 (numpy 32-bit: 1.7e-06; limit 1.0e-05)",
+   "data": null
+  },
+  {
+   "check": "landmark: copies match numpy and decode within half a step",
+   "pass": true,
+   "detail": "same codes 1.00000, worst overshoot 5.7e-09",
+   "data": null
+  },
+  {
+   "check": "landmark: 1-byte distances",
+   "pass": true,
+   "detail": "worst error 6.2e-07 (limit 1e-4)",
+   "data": null
+  }
+ ]
+}

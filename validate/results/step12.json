@@ -1,0 +1,157 @@
+{
+ "step": "step12",
+ "pass": true,
+ "seconds": 89.0,
+ "checks": [
+  {
+   "check": "gooaq: same build work, and the same items, distances and checks at every effort",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "gooaq: at least 10% faster at 95% (one core) than before tuning",
+   "pass": true,
+   "detail": "9,169 -> 20,472 searches/s (2.23x); all cores 74,816 -> 174,692; typical 0.118 -> 0.055 ms, slow 0.226 -> 0.105 ms; build 27.3 -> 19.7 s",
+   "data": {
+    "before": {
+     "build_checks": 421717167,
+     "build_seconds": 27.293915033340454,
+     "qps95": 9169.269191938927,
+     "checks95": 519.1255862068964,
+     "qps_all": 74816.46303601352,
+     "median_ms": 0.11781195644289255,
+     "p99_ms": 0.22642244817689056
+    },
+    "after": {
+     "qps95": 20471.6839724529,
+     "checks95": 519.1255862068964,
+     "qps_all": 174691.55605766596,
+     "median_ms": 0.05450006574392319,
+     "p99_ms": 0.10464959079399702,
+     "build_seconds": 19.716528177261353
+    }
+   }
+  },
+  {
+   "check": "glove: same build work, and the same items, distances and checks at every effort",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "glove: at least 10% faster at 95% (one core) than before tuning",
+   "pass": true,
+   "detail": "2,195 -> 4,661 searches/s (2.12x); all cores 26,131 -> 50,482; typical 0.505 -> 0.252 ms, slow 1.208 -> 0.573 ms; build 7.5 -> 5.6 s",
+   "data": {
+    "before": {
+     "build_checks": 503655858,
+     "build_seconds": 7.5464489459991455,
+     "qps95": 2195.235718716972,
+     "checks95": 5807.4619210526225,
+     "qps_all": 26130.526019403234,
+     "median_ms": 0.5045620491728187,
+     "p99_ms": 1.2079718196764588
+    },
+    "after": {
+     "qps95": 4660.969081037254,
+     "checks95": 5807.4619210526225,
+     "qps_all": 50482.10419287099,
+     "median_ms": 0.2517295069992542,
+     "p99_ms": 0.5725657031871377,
+     "build_seconds": 5.64260196685791
+    }
+   }
+  },
+  {
+   "check": "yandex: same build work, and the same items, distances and checks at every effort",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "yandex: at least 10% faster at 95% (one core) than before tuning",
+   "pass": true,
+   "detail": "12,387 -> 28,079 searches/s (2.27x); all cores 150,877 -> 184,386; typical 0.106 -> 0.043 ms, slow 0.185 -> 0.080 ms; build 5.9 -> 5.1 s",
+   "data": {
+    "before": {
+     "build_checks": 433937727,
+     "build_seconds": 5.911113977432251,
+     "qps95": 12386.790626137217,
+     "checks95": 906.5169298245619,
+     "qps_all": 150876.98471929447,
+     "median_ms": 0.10591652244329453,
+     "p99_ms": 0.18479385180398822
+    },
+    "after": {
+     "qps95": 28079.437931319473,
+     "checks95": 906.5169298245619,
+     "qps_all": 184385.59765365286,
+     "median_ms": 0.043270993046462536,
+     "p99_ms": 0.08012619102373719,
+     "build_seconds": 5.093134880065918
+    }
+   }
+  },
+  {
+   "check": "llama: same build work, and the same items, distances and checks at every effort",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "llama: at least 10% faster at 95% (one core) than before tuning",
+   "pass": true,
+   "detail": "22,600 -> 31,303 searches/s (1.39x); all cores 207,075 -> 341,229; typical 0.073 -> 0.039 ms, slow 0.103 -> 0.052 ms; build 3.6 -> 4.8 s",
+   "data": {
+    "before": {
+     "build_checks": 511330997,
+     "build_seconds": 3.5871829986572266,
+     "qps95": 22600.028260476218,
+     "checks95": 1282.001633333333,
+     "qps_all": 207075.05373144374,
+     "median_ms": 0.07295864634215832,
+     "p99_ms": 0.10301758535206317
+    },
+    "after": {
+     "qps95": 31303.330396883674,
+     "checks95": 1282.001633333333,
+     "qps_all": 341229.0357850687,
+     "median_ms": 0.03891694359481335,
+     "p99_ms": 0.051958439871668816,
+     "build_seconds": 4.818328857421875
+    }
+   }
+  },
+  {
+   "check": "landmark: same build work, and the same items, distances and checks at every effort",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "landmark: at least 10% faster at 95% (one core) than before tuning",
+   "pass": true,
+   "detail": "13,732 -> 28,250 searches/s (2.06x); all cores 119,332 -> 235,970; typical 0.094 -> 0.041 ms, slow 0.170 -> 0.063 ms; build 18.8 -> 14.3 s",
+   "data": {
+    "before": {
+     "build_checks": 262649780,
+     "build_seconds": 18.813572883605957,
+     "qps95": 13731.807489732048,
+     "checks95": 398.54,
+     "qps_all": 119331.7420460968,
+     "median_ms": 0.0942709157243371,
+     "p99_ms": 0.16991944983601567
+    },
+    "after": {
+     "qps95": 28249.652081015774,
+     "checks95": 398.54,
+     "qps_all": 235969.645996136,
+     "median_ms": 0.040790997445583344,
+     "p99_ms": 0.06304165115579963,
+     "build_seconds": 14.300008773803711
+    }
+   }
+  }
+ ]
+}

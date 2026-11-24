@@ -1,0 +1,104 @@
+{
+ "step": "step4",
+ "pass": true,
+ "seconds": 20.6,
+ "checks": [
+  {
+   "check": "llama, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 6,845 vs prototype 6,845 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "L": 10,
+      "accuracy": 0.2718,
+      "checks": 481.464
+     },
+     {
+      "L": 15,
+      "accuracy": 0.3432,
+      "checks": 614.995
+     },
+     {
+      "L": 20,
+      "accuracy": 0.3952,
+      "checks": 740.092
+     },
+     {
+      "L": 30,
+      "accuracy": 0.48200000000000004,
+      "checks": 987.179
+     },
+     {
+      "L": 40,
+      "accuracy": 0.5521,
+      "checks": 1227.768
+     },
+     {
+      "L": 50,
+      "accuracy": 0.6002,
+      "checks": 1439.754
+     },
+     {
+      "L": 70,
+      "accuracy": 0.6808,
+      "checks": 1861.06
+     },
+     {
+      "L": 100,
+      "accuracy": 0.7663,
+      "checks": 2442.708
+     },
+     {
+      "L": 150,
+      "accuracy": 0.8384,
+      "checks": 3330.16
+     },
+     {
+      "L": 200,
+      "accuracy": 0.8827,
+      "checks": 4163.205
+     },
+     {
+      "L": 300,
+      "accuracy": 0.9298,
+      "checks": 5691.578
+     },
+     {
+      "L": 400,
+      "accuracy": 0.9544,
+      "checks": 7096.126
+     },
+     {
+      "L": 600,
+      "accuracy": 0.9762000000000001,
+      "checks": 9632.883
+     },
+     {
+      "L": 800,
+      "accuracy": 0.9852000000000001,
+      "checks": 11886.456
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama, our own order: prototype inside our seed spread, or averages over seeds within 5%",
+   "pass": true,
+   "detail": "prototype 6,845 (average 6,845); ours over seeds 7, 1, 2, 3: 5,945, 6,761, 7,270, 6,999 (average 6,744, -1.5%)",
+   "data": null
+  },
+  {
+   "check": "the build used the flipped copies",
+   "pass": true,
+   "detail": "flipped",
+   "data": null
+  },
+  {
+   "check": "items with no links in: under 10",
+   "pass": true,
+   "detail": "ours 1 (prototype 3; before the flip about 60,000)",
+   "data": null
+  }
+ ]
+}

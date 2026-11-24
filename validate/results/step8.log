@@ -1,0 +1,6 @@
+PASS  yandex, prototype's order: checks at 95% within 1%  ours 854 vs prototype 854 (0.00% apart)
+PASS  yandex, our own order: checks at 95% within 5%  ours 863 vs prototype 854 (1.0% apart)
+PASS  llama, prototype's order: checks at 95% within 1%  ours 1,223 vs prototype 1,223 (0.00% apart)
+PASS  llama, our own order: prototype inside our seed spread, or averages over seeds within 5%  prototype 1,223 (average 1,223); ours over seeds 7, 1, 2, 3: 1,287, 1,272, 1,289, 1,269 (average 1,279, +4.5%)
+
+step8: ALL PASS (4/4) in 22.0 s

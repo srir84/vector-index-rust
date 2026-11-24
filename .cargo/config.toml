@@ -1,0 +1,3 @@
+# Use every instruction the build machine's chip has (Apple M-series: NEON with dot-product instructions).
+[build]
+rustflags = ["-C", "target-cpu=native"]

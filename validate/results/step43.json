@@ -1,0 +1,158 @@
+{
+ "step": "step43",
+ "pass": true,
+ "seconds": 0.1,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 42",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "REPORT.md part 5's tables: every cell matches the results files",
+   "pass": true,
+   "detail": "17 rows checked",
+   "data": null
+  },
+  {
+   "check": "every other number in REPORT.md part 5 and WRITE-UP.md comes from the results files or the code",
+   "pass": true,
+   "detail": "REPORT.md part 5: all accounted for; WRITE-UP.md: all accounted for",
+   "data": {
+    "unexplained": {
+     "REPORT.md part 5": [],
+     "WRITE-UP.md": []
+    },
+    "derived": {
+     "rule": [
+      "2%",
+      "1.5%",
+      "20",
+      "5%"
+     ],
+     "wins": [
+      "1.08",
+      "2.19",
+      "11",
+      "13"
+     ],
+     "losses": [
+      "1.36",
+      "1.37",
+      "0.73",
+      "0.73",
+      "0.93",
+      "7.1",
+      "0.99"
+     ],
+     "HNSW": [
+      "6.84",
+      "17.36"
+     ],
+     "steady": [
+      "11",
+      "12",
+      "5",
+      "8",
+      "1.0%",
+      "11.3%",
+      "8.3%",
+      "3.4%",
+      "6.1%",
+      "3.2%",
+      "0.6%",
+      "0.14%",
+      "3.5%",
+      "17%",
+      "0.83"
+     ],
+     "yandex": [
+      "2,127",
+      "1,733",
+      "96",
+      "1.2",
+      "48"
+     ],
+     "same picks": [
+      "0.96",
+      "1.06",
+      "0.96",
+      "4.34",
+      "7",
+      "2"
+     ],
+     "accuracy": [
+      "94.68%",
+      "96.24%"
+     ],
+     "changes": [
+      "\u22120.46",
+      "+0.09",
+      "\u22120.64",
+      "\u22120.37",
+      "\u22120.63",
+      "+0.13",
+      "\u22120.60",
+      "\u22120.42",
+      "+1.02",
+      "\u22120.35",
+      "\u22120.90",
+      "\u22120.69",
+      "\u22120.10",
+      "\u22121.08",
+      "1.001",
+      "1.006",
+      "0.29"
+     ],
+     "memory": [
+      "1,508",
+      "3,460",
+      "1,260",
+      "3,376",
+      "96",
+      "48",
+      "48",
+      "32",
+      "0.17",
+      "0.70",
+      "2",
+      "23"
+     ],
+     "buckets": [
+      "1.02",
+      "1.17",
+      "0.88"
+     ],
+     "expectations": [
+      "8",
+      "4",
+      "2",
+      "1"
+     ],
+     "CoreNN": [
+      "17.1",
+      "76%"
+     ],
+     "time": [
+      "90",
+      "3.3",
+      "47"
+     ]
+    }
+   }
+  },
+  {
+   "check": "nothing is left unfinished (no placeholders)",
+   "pass": true,
+   "detail": "none",
+   "data": null
+  },
+  {
+   "check": "no raw diagram is left, and every picture shown exists",
+   "pass": true,
+   "detail": "3 pictures: diagrams/speed-part5.png, diagrams/WRITE-UP-d1-8a3011f6.png, diagrams/speed-part5.png",
+   "data": null
+  }
+ ]
+}

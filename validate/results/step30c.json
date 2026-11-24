@@ -1,0 +1,405 @@
+{
+ "step": "step30c",
+ "pass": true,
+ "seconds": 909.9,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 28",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "gooaq: with step 29's picks fixed, the same accuracy and work as step 29",
+   "pass": true,
+   "detail": "settings r=32, alpha=1.2, code_bits=4, rerank=50; 39,342/s at 95% (1 core) against step 29's 39,116/s (1.01x), checks per search 523 (step 29: 523)",
+   "data": {
+    "dataset": "gooaq",
+    "settings": {
+     "effort_apart": true,
+     "tune": "off",
+     "renumber": true,
+     "question_bits": 16,
+     "popular_links": "off",
+     "r": 32,
+     "alpha": 1.2,
+     "code_bits": 4,
+     "rerank": 50
+    },
+    "a": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9239,
+       "sec": 2.424058294855058e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9239,
+       "sec": 2.3741916054859757e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9536,
+       "sec": 2.5724666891619564e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9536,
+       "sec": 2.5580875109881162e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9570000000000001,
+       "sec": 2.6900207856670023e-05,
+       "checks": 548.687
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.968,
+       "sec": 3.0118499882519244e-05,
+       "checks": 578.377
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9757,
+       "sec": 3.1144291860982775e-05,
+       "checks": 617.815
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9795,
+       "sec": 3.568033291958273e-05,
+       "checks": 650.426
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9853999999999999,
+       "sec": 4.0991290938109156e-05,
+       "checks": 709.982
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9929,
+       "sec": 5.347862490452826e-05,
+       "checks": 850.438
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9972,
+       "sec": 7.249554083682597e-05,
+       "checks": 1399.817
+      }
+     ],
+     "qps95": 39341.555409352506,
+     "status95": "ok",
+     "checks95": 523.3134545454545,
+     "target": 0.92,
+     "accuracy_at_target": 0.9536,
+     "qps_all": 267943.8627443213,
+     "median_ms": 0.030687428079545498,
+     "p99_ms": 0.05487848306074738,
+     "other_programs_cores": [
+      1.7429999999999999,
+      1.641
+     ],
+     "build_seconds": 364.67261266708374
+    },
+    "recorded_qps95": 39116.17669608273
+   }
+  },
+  {
+   "check": "gooaq: with renumbering off, the same accuracy and work; only the memory layout changes",
+   "pass": true,
+   "detail": "renumbering on 39,342/s, off 37,634/s, so the layout gives 1.05x on one core (1.13x on all cores); other programs using 2.7 cores at most",
+   "data": {
+    "dataset": "gooaq",
+    "b": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9239,
+       "sec": 2.611600002273917e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9239,
+       "sec": 2.600537519901991e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9536,
+       "sec": 2.666404191404581e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9536,
+       "sec": 2.6634250069037078e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9570000000000001,
+       "sec": 2.7530624996870757e-05,
+       "checks": 548.687
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.968,
+       "sec": 3.058770811185241e-05,
+       "checks": 578.377
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9757,
+       "sec": 3.2221625093370676e-05,
+       "checks": 617.815
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9795,
+       "sec": 3.6227749893441794e-05,
+       "checks": 650.426
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9853999999999999,
+       "sec": 4.101637518033385e-05,
+       "checks": 709.982
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9929,
+       "sec": 5.1694666035473345e-05,
+       "checks": 850.438
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9972,
+       "sec": 7.490941695868969e-05,
+       "checks": 1399.817
+      }
+     ],
+     "qps95": 37634.40391378413,
+     "status95": "ok",
+     "checks95": 523.3134545454545,
+     "target": 0.92,
+     "accuracy_at_target": 0.9536,
+     "qps_all": 236183.27213601267,
+     "median_ms": 0.031458097510039806,
+     "p99_ms": 0.055422785226255655,
+     "other_programs_cores": [
+      2.697,
+      2.185
+     ],
+     "build_seconds": 363.9744908809662
+    },
+    "gain": 1.0453614596760785,
+    "gain_all": 1.134474344101806
+   }
+  },
+  {
+   "check": "yandex: with step 29's picks fixed, the same accuracy and work as step 29",
+   "pass": true,
+   "detail": "settings r=48, alpha=1.2, code_bits=8, rerank=15; 17,880/s at 95% (1 core) against step 29's 18,057/s (0.99x), checks per search 1,733 (step 29: 1,733)",
+   "data": {
+    "dataset": "yandex",
+    "settings": {
+     "effort_apart": true,
+     "tune": "off",
+     "renumber": true,
+     "question_bits": 16,
+     "popular_links": "off",
+     "r": 48,
+     "alpha": 1.2,
+     "code_bits": 8,
+     "rerank": 15
+    },
+    "a": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8772,
+       "sec": 3.651370783336461e-05,
+       "checks": 1066.781
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9012,
+       "sec": 3.5221833037212494e-05,
+       "checks": 1185.668
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9208000000000001,
+       "sec": 4.109770804643631e-05,
+       "checks": 1352.352
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9334,
+       "sec": 4.8920084023848174e-05,
+       "checks": 1504.129
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9425000000000001,
+       "sec": 5.466816597618162e-05,
+       "checks": 1635.558
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9507999999999999,
+       "sec": 5.606379080563783e-05,
+       "checks": 1743.674
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9599,
+       "sec": 6.634549982845783e-05,
+       "checks": 1955.783
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9678000000000001,
+       "sec": 7.33928750269115e-05,
+       "checks": 2232.951
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9776,
+       "sec": 9.141958295367658e-05,
+       "checks": 2719.617
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9868,
+       "sec": 0.000122615166939795,
+       "checks": 3699.358
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9933,
+       "sec": 0.00017222737497650086,
+       "checks": 5341.233
+      }
+     ],
+     "qps95": 17879.724710059185,
+     "status95": "ok",
+     "checks95": 1733.2531807228925,
+     "target": 0.95,
+     "accuracy_at_target": 0.9507999999999999,
+     "qps_all": 157492.71507224094,
+     "median_ms": 0.05831243470311165,
+     "p99_ms": 0.15741911251097918,
+     "other_programs_cores": [
+      2.693,
+      1.7469999999999999
+     ],
+     "build_seconds": 81.01623010635376
+    },
+    "recorded_qps95": 18057.22413708974
+   }
+  },
+  {
+   "check": "yandex: with renumbering off, the same accuracy and work; only the memory layout changes",
+   "pass": true,
+   "detail": "renumbering on 17,880/s, off 17,228/s, so the layout gives 1.04x on one core (1.13x on all cores); other programs using 2.7 cores at most",
+   "data": {
+    "dataset": "yandex",
+    "b": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8772,
+       "sec": 3.4968500025570396e-05,
+       "checks": 1066.781
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9012,
+       "sec": 3.897679201327264e-05,
+       "checks": 1185.668
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9208000000000001,
+       "sec": 4.650845797732473e-05,
+       "checks": 1352.352
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9334,
+       "sec": 4.966325010173023e-05,
+       "checks": 1504.129
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9425000000000001,
+       "sec": 5.5375542026013134e-05,
+       "checks": 1635.558
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9507999999999999,
+       "sec": 5.8330750092864034e-05,
+       "checks": 1743.674
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9599,
+       "sec": 6.893308297730982e-05,
+       "checks": 1955.783
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9678000000000001,
+       "sec": 7.634720811620354e-05,
+       "checks": 2232.951
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9776,
+       "sec": 9.33247918728739e-05,
+       "checks": 2719.617
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9868,
+       "sec": 0.000126662208000198,
+       "checks": 3699.358
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9933,
+       "sec": 0.0001841730000451207,
+       "checks": 5341.233
+      }
+     ],
+     "qps95": 17227.74243504204,
+     "status95": "ok",
+     "checks95": 1733.2531807228925,
+     "target": 0.95,
+     "accuracy_at_target": 0.9507999999999999,
+     "qps_all": 139852.80391702845,
+     "median_ms": 0.06489595398306847,
+     "p99_ms": 0.1725690229795873,
+     "other_programs_cores": [
+      0.32799999999999996,
+      1.5830000000000002
+     ],
+     "build_seconds": 79.51352000236511
+    },
+    "gain": 1.0378449049534768,
+    "gain_all": 1.1261319806335657
+   }
+  }
+ ]
+}

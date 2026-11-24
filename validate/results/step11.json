@@ -1,0 +1,802 @@
+{
+ "step": "step11",
+ "pass": true,
+ "seconds": 99.2,
+ "checks": [
+  {
+   "check": "gooaq: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 20,362/s at 95% (1 core; 519 checks); all cores 159,652/s; typical 0.055 ms, slow 0.111 ms; build 19.2 s; 944 bytes/item; other programs using 2.1 -> 3.2 cores\n            HNSW          3,543/s   3,233 bytes/item  build 9 s\n            DiskANN       8,679/s   3,240 bytes/item  build 8 s\n            CoreNN        1,502/s   7,286 bytes/item  build 268 s\n            Glass        39,839/s   4,096 bytes/item  build 11 s\n            ScaNN        11,137/s   3,523 bytes/item  build 10 s\n            RoarGraph     6,796/s   3,183 bytes/item  build 8 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9356,
+       "sec": 4.3834959156811234e-05,
+       "checks": 483.391
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9356,
+       "sec": 4.586254083551467e-05,
+       "checks": 483.391
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9356,
+       "sec": 4.255591705441475e-05,
+       "checks": 483.391
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9461,
+       "sec": 4.5749666867777706e-05,
+       "checks": 505.134
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9519,
+       "sec": 5.06950409617275e-05,
+       "checks": 525.942
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9593999999999999,
+       "sec": 5.333954212255776e-05,
+       "checks": 552.184
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9682999999999999,
+       "sec": 5.871358304284513e-05,
+       "checks": 604.602
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9759,
+       "sec": 6.297274981625378e-05,
+       "checks": 664.111
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9822,
+       "sec": 7.352020801045001e-05,
+       "checks": 744.767
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9913000000000001,
+       "sec": 9.474579198285937e-05,
+       "checks": 960.696
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9963,
+       "sec": 0.00013410383299924434,
+       "checks": 1238.377
+      }
+     ],
+     "qps95": 20361.630467368166,
+     "status95": "ok",
+     "checks95": 519.1255862068964,
+     "target": 0.95,
+     "accuracy_at_target": 0.9593999999999999,
+     "qps_all": 159651.95593721152,
+     "median_ms": 0.05537504330277443,
+     "p99_ms": 0.11104946490377186,
+     "other_programs_cores": [
+      2.086,
+      3.241
+     ]
+    },
+    "build_seconds": 19.237562894821167,
+    "bytes_per_item": 944.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2599.9778115780296,
+     "qps_all": 16133.390915139891,
+     "median_ms_cold": 0.6476454436779022,
+     "p99_ms_cold": 1.1238782876171163,
+     "bytes_per_item_counted": 944.00008,
+     "bytes_per_item_measured": 1003.03136,
+     "ram_bytes_per_item_measured": 4076.17872,
+     "folder_mb": 401.707424
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 3543.2283644431186,
+      "status": "ok",
+      "best": 0.9869999999999999,
+      "bytes_per_item": 3232.65528,
+      "qps_all": 32083.11728544553,
+      "build_s": 9.464724249904975
+     },
+     "diskann": {
+      "qps95": 8679.311748248823,
+      "status": "ok",
+      "best": 0.9877,
+      "bytes_per_item": 3240.0,
+      "qps_all": 36263.417464461854,
+      "build_s": 8.122946
+     },
+     "corenn": {
+      "qps95": 1501.9824292477126,
+      "status": "below_min_effort",
+      "best": 0.9833000000000001,
+      "bytes_per_item": 7286.12864,
+      "qps_all": 14265.564181593272,
+      "build_s": 267.59767358296085
+     },
+     "glass": {
+      "qps95": 39838.87682903835,
+      "status": "ok",
+      "best": 0.9894999999999999,
+      "bytes_per_item": 4096.0,
+      "qps_all": 231816.86684299994,
+      "build_s": 10.956222958862782
+     },
+     "scann": {
+      "qps95": 11136.900798502103,
+      "status": "ok",
+      "best": 0.9997,
+      "bytes_per_item": 3522.51657,
+      "qps_all": 72242.59062206376,
+      "build_s": 9.745559588000106
+     },
+     "roargraph": {
+      "qps95": 6795.802503164434,
+      "status": "ok",
+      "best": 0.9836,
+      "bytes_per_item": 3183.33736,
+      "qps_all": 38593.21405483039,
+      "build_s": 7.53569
+     }
+    }
+   }
+  },
+  {
+   "check": "gooaq: the SSD mode gives the same answers, reading the full numbers from the SSD",
+   "pass": true,
+   "detail": "2,600/s one core, 16,133/s all cores (file dropped from the cache before each batch); one question from a cold cache: typical 0.65 ms, slow 1.12 ms; memory 944 bytes/item counted, 1,003 measured (with the full numbers in memory: 4,076 measured)",
+   "data": null
+  },
+  {
+   "check": "glove: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 4,941/s at 95% (1 core; 5,807 checks); all cores 56,957/s; typical 0.231 ms, slow 0.432 ms; build 5.6 s; 376 bytes/item; other programs using 0.9 -> 2.5 cores\n            HNSW            790/s   1,088 bytes/item  build 11 s\n            DiskANN       3,307/s   1,300 bytes/item  build 14 s\n            CoreNN          349/s   5,570 bytes/item  build 178 s\n            Glass         8,345/s   1,472 bytes/item  build 7 s\n            ScaNN        12,650/s     920 bytes/item  build 2 s\n            RoarGraph     1,745/s   1,077 bytes/item  build 15 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8766,
+       "sec": 9.792837500572205e-05,
+       "checks": 2827.219
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9013,
+       "sec": 0.00011860929196700454,
+       "checks": 3444.714
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9151,
+       "sec": 0.00014298804220743477,
+       "checks": 4027.429
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9285,
+       "sec": 0.00016369475005194545,
+       "checks": 4563.766
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9433,
+       "sec": 0.00018957741698250174,
+       "checks": 5272.511
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9509000000000001,
+       "sec": 0.00020411633281037212,
+       "checks": 5879.321
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9630000000000001,
+       "sec": 0.000271168707869947,
+       "checks": 6968.404
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9701000000000001,
+       "sec": 0.00028688404196873307,
+       "checks": 7876.724
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9804,
+       "sec": 0.0003591723751742393,
+       "checks": 9780.456
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894000000000001,
+       "sec": 0.0005379534170497209,
+       "checks": 13367.374
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9944000000000001,
+       "sec": 0.0007262268750928342,
+       "checks": 17085.594
+      }
+     ],
+     "qps95": 4940.84281724895,
+     "status95": "ok",
+     "checks95": 5807.4619210526225,
+     "target": 0.95,
+     "accuracy_at_target": 0.9509000000000001,
+     "qps_all": 56956.66053143502,
+     "median_ms": 0.23062503896653652,
+     "p99_ms": 0.431584280449897,
+     "other_programs_cores": [
+      0.898,
+      2.475
+     ]
+    },
+    "build_seconds": 5.591555833816528,
+    "bytes_per_item": 376.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 3060.2365488950186,
+     "qps_all": 23791.279262616947,
+     "median_ms_cold": 0.9755415376275778,
+     "p99_ms_cold": 1.9090570090338588,
+     "bytes_per_item_counted": 376.00008,
+     "bytes_per_item_measured": 410.7476,
+     "ram_bytes_per_item_measured": 1211.92544,
+     "folder_mb": 117.704104
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 789.8755973973701,
+      "status": "ok",
+      "best": 0.9898999999999999,
+      "bytes_per_item": 1088.32432,
+      "qps_all": 7126.8514074780815,
+      "build_s": 10.72161179210525
+     },
+     "diskann": {
+      "qps95": 3307.3689258466306,
+      "status": "ok",
+      "best": 0.9846999999999999,
+      "bytes_per_item": 1300.0,
+      "qps_all": 9585.889570552148,
+      "build_s": 14.082488
+     },
+     "corenn": {
+      "qps95": 349.4369262948989,
+      "status": "ok",
+      "best": 0.9798,
+      "bytes_per_item": 5570.06848,
+      "qps_all": 2608.6573750608445,
+      "build_s": 177.61043920798693
+     },
+     "glass": {
+      "qps95": 8344.98340433807,
+      "status": "ok",
+      "best": 0.9877,
+      "bytes_per_item": 1472.0,
+      "qps_all": 77448.08537768835,
+      "build_s": 6.5859925001859665
+     },
+     "scann": {
+      "qps95": 12649.840505958646,
+      "status": "ok",
+      "best": 0.9997999999999999,
+      "bytes_per_item": 920.43185,
+      "qps_all": 95533.41176183491,
+      "build_s": 2.4551436680003462
+     },
+     "roargraph": {
+      "qps95": 1745.3854887057312,
+      "status": "ok",
+      "best": 0.9853,
+      "bytes_per_item": 1077.12716,
+      "qps_all": 14564.450189893485,
+      "build_s": 14.6451
+     }
+    }
+   }
+  },
+  {
+   "check": "glove: the SSD mode gives the same answers, reading the full numbers from the SSD",
+   "pass": true,
+   "detail": "3,060/s one core, 23,791/s all cores (file dropped from the cache before each batch); one question from a cold cache: typical 0.98 ms, slow 1.91 ms; memory 376 bytes/item counted, 411 measured (with the full numbers in memory: 1,212 measured)",
+   "data": null
+  },
+  {
+   "check": "yandex: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 28,330/s at 95% (1 core; 907 checks); all cores 294,692/s; typical 0.042 ms, slow 0.077 ms; build 5.0 s; 376 bytes/item; other programs using 1.6 -> 2.6 cores\n            HNSW          5,118/s     961 bytes/item  build 6 s\n            DiskANN      18,032/s     968 bytes/item  build 7 s\n            CoreNN        1,998/s   4,599 bytes/item  build 71 s\n            Glass        45,403/s   1,344 bytes/item  build 2 s\n            ScaNN        30,163/s     920 bytes/item  build 2 s\n            RoarGraph    11,496/s     921 bytes/item  build 5 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8352,
+       "sec": 1.65154580026865e-05,
+       "checks": 473.706
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8529,
+       "sec": 1.8759124912321566e-05,
+       "checks": 509.032
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.8757999999999999,
+       "sec": 2.054179203696549e-05,
+       "checks": 558.664
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.8843,
+       "sec": 2.4005125043913722e-05,
+       "checks": 580.528
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9042,
+       "sec": 2.90328748524189e-05,
+       "checks": 647.319
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9166000000000001,
+       "sec": 2.5584334041923284e-05,
+       "checks": 689.049
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9318,
+       "sec": 3.062004107050598e-05,
+       "checks": 782.183
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9484999999999999,
+       "sec": 3.46734169870615e-05,
+       "checks": 891.53
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9656,
+       "sec": 4.1798916878178716e-05,
+       "checks": 1062.381
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9853,
+       "sec": 6.70771251898259e-05,
+       "checks": 1575.943
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9903000000000001,
+       "sec": 8.260987489484251e-05,
+       "checks": 2025.63
+      }
+     ],
+     "qps95": 28329.847145835785,
+     "status95": "ok",
+     "checks95": 906.5169298245619,
+     "target": 0.97,
+     "accuracy_at_target": 0.9484999999999999,
+     "qps_all": 294691.85570486955,
+     "median_ms": 0.04222895950078964,
+     "p99_ms": 0.07696672808378933,
+     "other_programs_cores": [
+      1.589,
+      2.6189999999999998
+     ]
+    },
+    "build_seconds": 5.005937814712524,
+    "bytes_per_item": 376.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 7181.414519558975,
+     "qps_all": 29542.352500410845,
+     "median_ms_cold": 0.7379789603874087,
+     "p99_ms_cold": 1.2455323967151335,
+     "bytes_per_item_counted": 376.00008,
+     "bytes_per_item_measured": 571.1472,
+     "ram_bytes_per_item_measured": 1371.5056,
+     "folder_mb": 133.703152
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 5118.471851684303,
+      "status": "ok",
+      "best": 0.9843,
+      "bytes_per_item": 960.65528,
+      "qps_all": 59204.87857428053,
+      "build_s": 5.5896902499953285
+     },
+     "diskann": {
+      "qps95": 18031.901927600888,
+      "status": "ok",
+      "best": 0.9776999999999999,
+      "bytes_per_item": 968.0,
+      "qps_all": 57900.52689479474,
+      "build_s": 6.623298
+     },
+     "corenn": {
+      "qps95": 1997.6111585822691,
+      "status": "ok",
+      "best": 0.9799,
+      "bytes_per_item": 4598.82496,
+      "qps_all": 14704.77408043038,
+      "build_s": 70.91963716701139
+     },
+     "glass": {
+      "qps95": 45403.0920897068,
+      "status": "ok",
+      "best": 0.9833000000000001,
+      "bytes_per_item": 1344.0,
+      "qps_all": 432635.19509578333,
+      "build_s": 2.4740144580136985
+     },
+     "scann": {
+      "qps95": 30163.16336238979,
+      "status": "ok",
+      "best": 0.9999,
+      "bytes_per_item": 920.43185,
+      "qps_all": 199145.3081628205,
+      "build_s": 2.4360221260003527
+     },
+     "roargraph": {
+      "qps95": 11495.970651806992,
+      "status": "ok",
+      "best": 0.976,
+      "bytes_per_item": 921.26352,
+      "qps_all": 109412.18304658224,
+      "build_s": 4.809
+     }
+    }
+   }
+  },
+  {
+   "check": "yandex: the SSD mode gives the same answers, reading the full numbers from the SSD",
+   "pass": true,
+   "detail": "7,181/s one core, 29,542/s all cores (file dropped from the cache before each batch); one question from a cold cache: typical 0.74 ms, slow 1.25 ms; memory 376 bytes/item counted, 571 measured (with the full numbers in memory: 1,372 measured)",
+   "data": null
+  },
+  {
+   "check": "llama: reaches 95% (HNSW, DiskANN and CoreNN never do)",
+   "pass": true,
+   "detail": "ours 30,867/s at 95% (1 core; 1,282 checks); all cores 321,087/s; typical 0.039 ms, slow 0.051 ms; build 2.6 s; 304 bytes/item; other programs using 2.0 -> 3.5 cores\n            HNSW      never 95% (best 41%)     928 bytes/item  build 9 s\n            DiskANN   never 95% (best 94%)   1,012 bytes/item  build 6 s\n            CoreNN    never 95% (best 51%)   2,227 bytes/item  build 33 s\n            Glass     never 95% (best 38%)   1,024 bytes/item  build 3 s\n            ScaNN        11,891/s     655 bytes/item  build 3 s\n            RoarGraph    76,990/s     528 bytes/item  build 1 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8813000000000001,
+       "sec": 2.2270833142101765e-05,
+       "checks": 927.044
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8996999999999999,
+       "sec": 2.424295782111585e-05,
+       "checks": 979.207
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9189,
+       "sec": 2.8321041027083995e-05,
+       "checks": 1079.615
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9292999999999999,
+       "sec": 2.8749542078003286e-05,
+       "checks": 1129.634
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9376,
+       "sec": 2.9601542046293616e-05,
+       "checks": 1178.637
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9497,
+       "sec": 3.2328458968549967e-05,
+       "checks": 1279.056
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9587,
+       "sec": 3.43877908308059e-05,
+       "checks": 1367.425
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9673999999999999,
+       "sec": 3.989070910029113e-05,
+       "checks": 1529.315
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9792,
+       "sec": 4.7412791987881065e-05,
+       "checks": 1775.937
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894999999999999,
+       "sec": 6.619316688738764e-05,
+       "checks": 2387.181
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9941000000000001,
+       "sec": 8.232308295555413e-05,
+       "checks": 3075.701
+      }
+     ],
+     "qps95": 30866.957109273288,
+     "status95": "ok",
+     "checks95": 1282.001633333333,
+     "target": 0.96,
+     "accuracy_at_target": 0.9587,
+     "qps_all": 321087.3615463745,
+     "median_ms": 0.038541154935956,
+     "p99_ms": 0.051044144202023745,
+     "other_programs_cores": [
+      1.9980000000000002,
+      3.5380000000000003
+     ]
+    },
+    "build_seconds": 2.5611679553985596,
+    "bytes_per_item": 304.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 9260.856332268377,
+     "qps_all": 53782.95932499681,
+     "median_ms_cold": 0.5735624581575394,
+     "p99_ms_cold": 1.036857008002689,
+     "bytes_per_item_counted": 304.00008,
+     "bytes_per_item_measured": 441.05776,
+     "ram_bytes_per_item_measured": 1467.84376,
+     "folder_mb": 91.942712
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.41150000000000003,
+      "bytes_per_item": 928.32376,
+      "qps_all": 9188.765935038004,
+      "build_s": 9.495482290978543
+     },
+     "diskann": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.9351,
+      "bytes_per_item": 1012.0,
+      "qps_all": 923.6202960018323,
+      "build_s": 5.870518
+     },
+     "corenn": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.5115000000000001,
+      "bytes_per_item": 2227.4048,
+      "qps_all": 278.1145893790608,
+      "build_s": 32.554528667009436
+     },
+     "glass": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.3834,
+      "bytes_per_item": 1024.0,
+      "qps_all": 8562.807651610927,
+      "build_s": 3.0384352079126984
+     },
+     "scann": {
+      "qps95": 11890.826438646835,
+      "status": "ok",
+      "best": 0.9970000000000001,
+      "bytes_per_item": 654.6535,
+      "qps_all": 104241.77503452018,
+      "build_s": 2.770629750999433
+     },
+     "roargraph": {
+      "qps95": 76989.7026272736,
+      "status": "below_min_effort",
+      "best": 0.9811,
+      "bytes_per_item": 527.7028,
+      "qps_all": 660501.9815059445,
+      "build_s": 1.28393
+     }
+    }
+   }
+  },
+  {
+   "check": "llama: the SSD mode gives the same answers, reading the full numbers from the SSD",
+   "pass": true,
+   "detail": "9,261/s one core, 53,783/s all cores (file dropped from the cache before each batch); one question from a cold cache: typical 0.57 ms, slow 1.04 ms; memory 304 bytes/item counted, 441 measured (with the full numbers in memory: 1,468 measured)",
+   "data": null
+  },
+  {
+   "check": "landmark: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 28,370/s at 95% (1 core; 399 checks); all cores 257,804/s; typical 0.040 ms, slow 0.061 ms; build 14.1 s; 944 bytes/item; other programs using 1.6 -> 2.6 cores\n            HNSW          7,200/s   3,233 bytes/item  build 5 s\n            DiskANN      16,567/s   3,240 bytes/item  build 4 s\n            CoreNN        1,637/s   7,383 bytes/item  build 107 s\n            Glass        60,587/s   3,968 bytes/item  build 5 s\n            ScaNN        23,436/s   3,479 bytes/item  build 6 s\n            RoarGraph    12,914/s   3,155 bytes/item  build 9 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.5930999787524345e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.747862507589162e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.820675006136298e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.524887491948903e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.538283403031528e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.536220802925527e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.630004194565117e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.5596083849668504e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9875999999999999,
+       "sec": 3.5285999998450276e-05,
+       "checks": 398.54
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9913000000000001,
+       "sec": 3.9820292033255103e-05,
+       "checks": 414.522
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9961,
+       "sec": 4.727320908568799e-05,
+       "checks": 475.449
+      }
+     ],
+     "qps95": 28369.699806988792,
+     "status95": "below_min_effort",
+     "checks95": 398.54,
+     "target": 0.88,
+     "accuracy_at_target": 0.9875999999999999,
+     "qps_all": 257803.99004382823,
+     "median_ms": 0.03991695120930672,
+     "p99_ms": 0.061335868667811155,
+     "other_programs_cores": [
+      1.6340000000000001,
+      2.614
+     ]
+    },
+    "build_seconds": 14.100368976593018,
+    "bytes_per_item": 944.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 3145.211263904107,
+     "qps_all": 22507.77888648721,
+     "median_ms_cold": 0.39977103006094694,
+     "p99_ms_cold": 0.8333756867796179,
+     "bytes_per_item_counted": 944.00008,
+     "bytes_per_item_measured": 1003.03136,
+     "ram_bytes_per_item_measured": 4075.35952,
+     "folder_mb": 401.70688
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 7200.18403956872,
+      "status": "ok",
+      "best": 0.9946999999999999,
+      "bytes_per_item": 3232.65528,
+      "qps_all": 70505.28941849626,
+      "build_s": 5.330186459003016
+     },
+     "diskann": {
+      "qps95": 16567.26308813784,
+      "status": "below_min_effort",
+      "best": 0.9897,
+      "bytes_per_item": 3240.0,
+      "qps_all": 81241.36810463888,
+      "build_s": 4.108991
+     },
+     "corenn": {
+      "qps95": 1637.4423004473108,
+      "status": "below_min_effort",
+      "best": 0.9978999999999999,
+      "bytes_per_item": 7383.12192,
+      "qps_all": 15601.161673886407,
+      "build_s": 107.4599369999487
+     },
+     "glass": {
+      "qps95": 60587.08722334431,
+      "status": "below_min_effort",
+      "best": 0.9824999999999999,
+      "bytes_per_item": 3968.0,
+      "qps_all": 429876.4394589741,
+      "build_s": 4.604822250083089
+     },
+     "scann": {
+      "qps95": 23435.762452679526,
+      "status": "ok",
+      "best": 0.9991,
+      "bytes_per_item": 3479.36854,
+      "qps_all": 149748.23578542253,
+      "build_s": 5.594363793999946
+     },
+     "roargraph": {
+      "qps95": 12913.890180277906,
+      "status": "below_min_effort",
+      "best": 0.9868,
+      "bytes_per_item": 3155.07308,
+      "qps_all": 75787.23612589593,
+      "build_s": 8.59535
+     }
+    }
+   }
+  },
+  {
+   "check": "landmark: the SSD mode gives the same answers, reading the full numbers from the SSD",
+   "pass": true,
+   "detail": "3,145/s one core, 22,508/s all cores (file dropped from the cache before each batch); one question from a cold cache: typical 0.40 ms, slow 0.83 ms; memory 944 bytes/item counted, 1,003 measured (with the full numbers in memory: 4,075 measured)",
+   "data": null
+  }
+ ]
+}

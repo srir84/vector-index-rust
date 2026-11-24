@@ -1,0 +1,8 @@
+target/
+.venv/
+__pycache__/
+validate/results/*.tmp
+# The demo's prepared data (14 GB), GooAQ's downloaded text and its own environment: made by demo/README.md's steps
+demo/work/
+demo/data/
+.DS_Store

@@ -1,0 +1,7 @@
+PASS  the code is as frozen in step 28  unchanged
+PASS  gooaq: with step 29's picks fixed, the same accuracy and work as step 29  settings r=32, alpha=1.2, code_bits=4, rerank=50; 39,342/s at 95% (1 core) against step 29's 39,116/s (1.01x), checks per search 523 (step 29: 523)
+PASS  gooaq: with renumbering off, the same accuracy and work; only the memory layout changes  renumbering on 39,342/s, off 37,634/s, so the layout gives 1.05x on one core (1.13x on all cores); other programs using 2.7 cores at most
+PASS  yandex: with step 29's picks fixed, the same accuracy and work as step 29  settings r=48, alpha=1.2, code_bits=8, rerank=15; 17,880/s at 95% (1 core) against step 29's 18,057/s (0.99x), checks per search 1,733 (step 29: 1,733)
+PASS  yandex: with renumbering off, the same accuracy and work; only the memory layout changes  renumbering on 17,880/s, off 17,228/s, so the layout gives 1.04x on one core (1.13x on all cores); other programs using 2.7 cores at most
+
+step30c: ALL PASS (5/5) in 909.9 s

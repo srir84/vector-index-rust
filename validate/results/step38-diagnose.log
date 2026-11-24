@@ -1,0 +1,56 @@
+landmark, as it is: drift -1.08 (after 94.13%, fresh 95.21%); target 0.88; checks 335 (fresh 336); unreachable 179 -> 562 (fresh 241); links per item 16.6 -> 17.5 (fresh 16.3); memory 1.002x fresh
+     21,083: 94.53%, checks 337, start 0, unreachable 214, no links in 210
+     42,166: 94.40%, checks 338, start 0, unreachable 246, no links in 242
+     63,249: 94.45%, checks 339, start 0, unreachable 276, no links in 272
+     84,332: 94.23%, checks 333, start 0, unreachable 310, no links in 306
+    105,415: 94.28%, checks 340, start 0, unreachable 353, no links in 347
+    126,498: 93.75%, checks 336, start 0, unreachable 398, no links in 390
+    147,581: 92.60%, checks 340, start 0, unreachable 425, no links in 419
+    168,664: 94.71%, checks 333, start 0, unreachable 474, no links in 460
+    189,747: 94.42%, checks 337, start 0, unreachable 506, no links in 492
+    210,831: 94.13%, checks 335, start 0, unreachable 562, no links in 550
+landmark, no cleanup: drift -1.01 (after 94.20%, fresh 95.21%); target 0.88; checks 335 (fresh 336); unreachable 179 -> 568 (fresh 241); links per item 16.6 -> 17.6 (fresh 16.3); memory 1.111x fresh
+     21,083: 94.53%, checks 337, start 0, unreachable 214, no links in 210
+     42,166: 94.39%, checks 338, start 0, unreachable 246, no links in 242
+     63,249: 94.43%, checks 339, start 0, unreachable 276, no links in 272
+     84,332: 94.22%, checks 333, start 0, unreachable 310, no links in 306
+    105,415: 94.28%, checks 340, start 0, unreachable 353, no links in 347
+    126,498: 93.73%, checks 336, start 0, unreachable 399, no links in 391
+    147,581: 92.54%, checks 339, start 0, unreachable 427, no links in 421
+    168,664: 94.67%, checks 333, start 0, unreachable 476, no links in 462
+    189,747: 94.37%, checks 337, start 0, unreachable 510, no links in 496
+    210,831: 94.20%, checks 335, start 0, unreachable 568, no links in 556
+landmark, more replacement links: drift -1.68 (after 93.53%, fresh 95.21%); target 0.88; checks 336 (fresh 336); unreachable 179 -> 564 (fresh 241); links per item 16.6 -> 16.7 (fresh 16.3); memory 1.002x fresh
+     21,083: 94.88%, checks 339, start 0, unreachable 227, no links in 223
+     42,166: 94.10%, checks 342, start 0, unreachable 262, no links in 258
+     63,249: 93.04%, checks 339, start 0, unreachable 306, no links in 302
+     84,332: 93.10%, checks 333, start 0, unreachable 346, no links in 340
+    105,415: 93.18%, checks 337, start 0, unreachable 377, no links in 369
+    126,498: 93.44%, checks 332, start 0, unreachable 429, no links in 417
+    147,581: 92.84%, checks 335, start 0, unreachable 458, no links in 448
+    168,664: 93.52%, checks 331, start 0, unreachable 494, no links in 480
+    189,747: 94.04%, checks 337, start 0, unreachable 529, no links in 515
+    210,831: 93.53%, checks 336, start 0, unreachable 564, no links in 552
+landmark, no learning from use: drift -1.08 (after 94.13%, fresh 95.21%); target 0.88; checks 335 (fresh 336); unreachable 179 -> 562 (fresh 241); links per item 16.6 -> 17.5 (fresh 16.3); memory 1.002x fresh
+     21,083: 94.53%, checks 337, start 0, unreachable 214, no links in 210
+     42,166: 94.40%, checks 338, start 0, unreachable 246, no links in 242
+     63,249: 94.45%, checks 339, start 0, unreachable 276, no links in 272
+     84,332: 94.23%, checks 333, start 0, unreachable 310, no links in 306
+    105,415: 94.28%, checks 340, start 0, unreachable 353, no links in 347
+    126,498: 93.75%, checks 336, start 0, unreachable 398, no links in 390
+    147,581: 92.60%, checks 340, start 0, unreachable 425, no links in 419
+    168,664: 94.71%, checks 333, start 0, unreachable 474, no links in 460
+    189,747: 94.42%, checks 337, start 0, unreachable 506, no links in 492
+    210,831: 94.13%, checks 335, start 0, unreachable 562, no links in 550
+sample gooaq: drift +0.62 (after 95.82%, fresh 95.20%); target 0.94; checks 529 (fresh 535); unreachable 0 -> 0 (fresh 0); links per item 36.0 -> 35.8 (fresh 36.0); memory 1.012x fresh
+sample glove: drift +0.66 (after 94.91%, fresh 94.25%); target 0.95; checks 5362 (fresh 5129); unreachable 0 -> 0 (fresh 0); links per item 107.8 -> 108.1 (fresh 107.6); memory 1.012x fresh
+sample yandex: drift -0.27 (after 95.75%, fresh 96.02%); target 0.96; checks 902 (fresh 964); unreachable 0 -> 2 (fresh 0); links per item 31.6 -> 30.2 (fresh 31.5); memory 1.011x fresh
+sample llama: drift -0.42 (after 95.53%, fresh 95.95%); target 0.95; checks 568 (fresh 537); unreachable 1 -> 4 (fresh 4); links per item 26.1 -> 25.7 (fresh 25.8); memory 1.011x fresh
+sample landmark: drift +0.42 (after 96.59%, fresh 96.17%); target 0.96; checks 283 (fresh 291); unreachable 25 -> 56 (fresh 49); links per item 15.9 -> 17.1 (fresh 15.6); memory 1.012x fresh
+sample arxiv: drift +0.03 (after 95.06%, fresh 95.03%); target 0.95; checks 478 (fresh 514); unreachable 0 -> 0 (fresh 0); links per item 35.9 -> 35.2 (fresh 35.8); memory 1.011x fresh
+sample laion: drift -0.09 (after 94.87%, fresh 94.96%); target 0.95; checks 1170 (fresh 1192); unreachable 28 -> 35 (fresh 26); links per item 46.3 -> 44.2 (fresh 46.0); memory 1.011x fresh
+sample yi: drift -0.31 (after 95.61%, fresh 95.92%); target 0.96; checks 1127 (fresh 1233); unreachable 37 -> 169 (fresh 85); links per item 15.0 -> 17.0 (fresh 14.3); memory 1.012x fresh
+sample gist: drift +1.12 (after 96.31%, fresh 95.19%); target 0.95; checks 1387 (fresh 1340); unreachable 91 -> 180 (fresh 269); links per item 43.7 -> 44.5 (fresh 37.9); memory 1.012x fresh
+sample nytimes: drift +0.04 (after 95.36%, fresh 95.32%); target 0.95; checks 3829 (fresh 3833); unreachable 14 -> 18 (fresh 9); links per item 108.1 -> 108.7 (fresh 107.9); memory 1.012x fresh
+sample imagenet: drift +0.38 (after 95.84%, fresh 95.46%); target 0.96; checks 626 (fresh 707); unreachable 3 -> 5 (fresh 3); links per item 32.0 -> 31.1 (fresh 32.0); memory 1.012x fresh
+sample llama2: drift -0.11 (after 94.76%, fresh 94.87%); target 0.95; checks 812 (fresh 854); unreachable 0 -> 1 (fresh 1); links per item 33.0 -> 32.4 (fresh 32.6); memory 1.012x fresh

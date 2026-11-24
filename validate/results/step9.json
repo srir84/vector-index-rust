@@ -1,0 +1,977 @@
+{
+ "step": "step9",
+ "pass": true,
+ "seconds": 415.4,
+ "checks": [
+  {
+   "check": "gooaq, prototype's order: same target, accuracy and drift as the prototype's re-run",
+   "pass": true,
+   "detail": "target 0.95 (0.95); before 95.66% (95.66%); after 95.83% (95.83%); fresh 95.68% (95.68%); drift +0.15 (+0.15) points; work per change 5,741 (5,741)",
+   "data": {
+    "dataset": "gooaq",
+    "order": "prototype",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9566000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 535.801
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9571,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 535.99
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9570000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 541.537
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9593,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 539.994
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9561999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 534.193
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9549,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 535.911
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9573,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 527.793
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9564,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 530.107
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9573,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 520.635
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9583,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 520.483
+     }
+    ],
+    "initial_build_seconds": 16.368272066116333,
+    "target": 0.95,
+    "accuracy_before": 0.9566000000000001,
+    "checks_before": 539.635,
+    "change_seconds": 40.844208002090454,
+    "change_checks_per_change": 5740.624366666667,
+    "memory_after": 85988024,
+    "after_relearn": {
+     "accuracy": 0.9589000000000001,
+     "checks": 521.94
+    },
+    "fresh_accuracy": 0.9568,
+    "fresh_checks": 551.477,
+    "fresh_memory": 84960008,
+    "drift": 0.0015000000000000568,
+    "memory_after_vs_fresh": 1.0120999988606405
+   }
+  },
+  {
+   "check": "gooaq, our own order: Fix 7's pass rule",
+   "pass": true,
+   "detail": "drift +0.55 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 40 s for 30,000 changes; table learned again: 95.92%",
+   "data": {
+    "dataset": "gooaq",
+    "order": "own",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9582,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 546.343
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9571999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 541.247
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9559,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 552.795
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9587,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 542.283
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9585000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 542.502
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9570000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 537.521
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9547000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 539.578
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9568,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 538.717
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9598000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 536.524
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9602,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 533.341
+     }
+    ],
+    "initial_build_seconds": 16.086830854415894,
+    "target": 0.95,
+    "accuracy_before": 0.9577,
+    "checks_before": 549.991,
+    "change_seconds": 39.667503118515015,
+    "change_checks_per_change": 5733.7365,
+    "memory_after": 85988024,
+    "after_relearn": {
+     "accuracy": 0.9592,
+     "checks": 522.59
+    },
+    "fresh_accuracy": 0.9547000000000001,
+    "fresh_checks": 542.859,
+    "fresh_memory": 84960008,
+    "drift": 0.005499999999999949,
+    "memory_after_vs_fresh": 1.0120999988606405
+   }
+  },
+  {
+   "check": "glove, prototype's order: same target, accuracy and drift as the prototype's re-run",
+   "pass": true,
+   "detail": "target 0.96 (0.96); before 95.90% (95.90%); after 95.41% (95.43%); fresh 96.12% (96.13%); drift -0.71 (-0.70) points; work per change 6,938 (6,937)",
+   "data": {
+    "dataset": "glove",
+    "order": "prototype",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9570000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6363.081
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9564999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6399.21
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9568,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6302.252
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9558,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6246.594
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9564999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6197.731
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9563,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6159.902
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9553,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6116.52
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9557,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6129.401
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9541000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6065.603
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9541000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 6009.375
+     }
+    ],
+    "initial_build_seconds": 4.5929741859436035,
+    "target": 0.96,
+    "accuracy_before": 0.959,
+    "checks_before": 6456.427,
+    "change_seconds": 18.501941919326782,
+    "change_checks_per_change": 6937.6697,
+    "memory_after": 34246088,
+    "after_relearn": {
+     "accuracy": 0.9551999999999999,
+     "checks": 6129.751
+    },
+    "fresh_accuracy": 0.9612,
+    "fresh_checks": 6208.381,
+    "fresh_memory": 33840008,
+    "drift": -0.007099999999999995,
+    "memory_after_vs_fresh": 1.0119999971631213
+   }
+  },
+  {
+   "check": "glove, our own order: Fix 7's pass rule",
+   "pass": true,
+   "detail": "drift -0.30 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 18 s for 30,000 changes; table learned again: 94.69%",
+   "data": {
+    "dataset": "glove",
+    "order": "own",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9480000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5656.11
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9490999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5617.962
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9496,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5590.317
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9497,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5507.601
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9529,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5493.034
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9511,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5447.034
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9471999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5393.313
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9480000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5418.616
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9459,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5389.923
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9471,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 5341.969
+     }
+    ],
+    "initial_build_seconds": 4.8100175857543945,
+    "target": 0.95,
+    "accuracy_before": 0.9494,
+    "checks_before": 5716.905,
+    "change_seconds": 18.13587784767151,
+    "change_checks_per_change": 6941.613833333334,
+    "memory_after": 34246088,
+    "after_relearn": {
+     "accuracy": 0.9469,
+     "checks": 5341.132
+    },
+    "fresh_accuracy": 0.9501,
+    "fresh_checks": 5185.462,
+    "fresh_memory": 33840008,
+    "drift": -0.0029999999999998916,
+    "memory_after_vs_fresh": 1.0119999971631213
+   }
+  },
+  {
+   "check": "yandex, prototype's order: same target, accuracy and drift as the prototype's re-run",
+   "pass": true,
+   "detail": "target 0.98 (0.98); before 96.40% (96.40%); after 96.11% (96.11%); fresh 96.87% (96.87%); drift -0.76 (-0.76) points; work per change 24,678 (24,678)",
+   "data": {
+    "dataset": "yandex",
+    "order": "prototype",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9650000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1038.267
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9644,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1039.288
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.962,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1026.608
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9634,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1017.267
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9652,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1011.103
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9631000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1006.728
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9641,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1006.244
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9632999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1003.544
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9627000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1001.189
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9611000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 993.03
+     }
+    ],
+    "initial_build_seconds": 3.874746799468994,
+    "target": 0.98,
+    "accuracy_before": 0.9640000000000001,
+    "checks_before": 1040.209,
+    "change_seconds": 15.31352186203003,
+    "change_checks_per_change": 24677.635766666666,
+    "memory_after": 34224280,
+    "after_relearn": {
+     "accuracy": 0.9608000000000001,
+     "checks": 985.838
+    },
+    "fresh_accuracy": 0.9686999999999999,
+    "fresh_checks": 1076.432,
+    "fresh_memory": 33840008,
+    "drift": -0.007599999999999829,
+    "memory_after_vs_fresh": 1.0113555528710276
+   }
+  },
+  {
+   "check": "yandex, our own order: Fix 7's pass rule",
+   "pass": true,
+   "detail": "drift -0.32 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 16 s for 30,000 changes; table learned again: 96.42%",
+   "data": {
+    "dataset": "yandex",
+    "order": "own",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9644,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1047.737
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9663,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1044.834
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9667999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1037.735
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9685,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1033.083
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9669000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1025.528
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9659000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1018.666
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9643,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1014.859
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9646000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1011.563
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9642,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1008.845
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9635999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1005.121
+     }
+    ],
+    "initial_build_seconds": 3.903977155685425,
+    "target": 0.98,
+    "accuracy_before": 0.9627000000000001,
+    "checks_before": 1052.45,
+    "change_seconds": 15.53130292892456,
+    "change_checks_per_change": 24670.193,
+    "memory_after": 34224280,
+    "after_relearn": {
+     "accuracy": 0.9642,
+     "checks": 1013.259
+    },
+    "fresh_accuracy": 0.9667999999999999,
+    "fresh_checks": 1059.178,
+    "fresh_memory": 33840008,
+    "drift": -0.0031999999999999806,
+    "memory_after_vs_fresh": 1.0113555528710276
+   }
+  },
+  {
+   "check": "llama, prototype's order: same target, accuracy and drift as the prototype's re-run",
+   "pass": true,
+   "detail": "target 0.95 (0.95); before 94.98% (94.98%); after 95.11% (95.11%); fresh 94.79% (94.79%); drift +0.32 (+0.32) points; work per change 29,107 (29,107)",
+   "data": {
+    "dataset": "llama",
+    "order": "prototype",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9502,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1212.48
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9531000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1206.923
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9517,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1201.773
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9496,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1211.699
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9489000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1179.996
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9526,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1178.224
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9522999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1175.387
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9511,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1186.303
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9506,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1180.149
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9511,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1179.641
+     }
+    ],
+    "initial_build_seconds": 2.082005023956299,
+    "target": 0.95,
+    "accuracy_before": 0.9498,
+    "checks_before": 1222.463,
+    "change_seconds": 13.816845178604126,
+    "change_checks_per_change": 29106.719533333333,
+    "memory_after": 27674344,
+    "after_relearn": {
+     "accuracy": 0.9479,
+     "checks": 1154.784
+    },
+    "fresh_accuracy": 0.9479,
+    "fresh_checks": 1179.516,
+    "fresh_memory": 27360008,
+    "drift": 0.0031999999999999806,
+    "memory_after_vs_fresh": 1.0114888855295656
+   }
+  },
+  {
+   "check": "llama, our own order: Fix 7's pass rule",
+   "pass": true,
+   "detail": "drift +0.38 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 13 s for 30,000 changes; table learned again: 95.72%",
+   "data": {
+    "dataset": "llama",
+    "order": "own",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9657,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1285.01
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9644,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1290.533
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9642,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1285.348
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9621000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1264.205
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9614,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1265.805
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9634,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1272.554
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9632999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1281.299
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9625999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1291.866
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9625,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1239.853
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9627000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 1289.763
+     }
+    ],
+    "initial_build_seconds": 2.0483548641204834,
+    "target": 0.96,
+    "accuracy_before": 0.9595,
+    "checks_before": 1298.339,
+    "change_seconds": 13.174208879470825,
+    "change_checks_per_change": 29108.272733333335,
+    "memory_after": 27674344,
+    "after_relearn": {
+     "accuracy": 0.9571999999999999,
+     "checks": 1248.012
+    },
+    "fresh_accuracy": 0.9589000000000001,
+    "fresh_checks": 1288.139,
+    "fresh_memory": 27360008,
+    "drift": 0.0038000000000000256,
+    "memory_after_vs_fresh": 1.0114888855295656
+   }
+  },
+  {
+   "check": "landmark, prototype's order: same target, accuracy and drift as the prototype's re-run",
+   "pass": true,
+   "detail": "target 0.88 (0.88); before 98.70% (98.70%); after 98.67% (98.67%); fresh 98.61% (98.61%); drift +0.06 (+0.06) points; work per change 3,386 (3,386)",
+   "data": {
+    "dataset": "landmark",
+    "order": "prototype",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9882,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 397.262
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9877,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 387.394
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9859,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 386.255
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9878,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 380.911
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9879,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 385.552
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9883,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 381.668
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9862,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 377.585
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9871000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 375.688
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9883,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 379.703
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9867000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 374.352
+     }
+    ],
+    "initial_build_seconds": 10.576662063598633,
+    "target": 0.88,
+    "accuracy_before": 0.9869999999999999,
+    "checks_before": 395.583,
+    "change_seconds": 25.620630025863647,
+    "change_checks_per_change": 3386.2496666666666,
+    "memory_after": 85970088,
+    "after_relearn": {
+     "accuracy": 0.9867000000000001,
+     "checks": 374.352
+    },
+    "fresh_accuracy": 0.9861000000000001,
+    "fresh_checks": 404.197,
+    "fresh_memory": 84960008,
+    "drift": 0.0006000000000000449,
+    "memory_after_vs_fresh": 1.0118888877694079
+   }
+  },
+  {
+   "check": "landmark, our own order: Fix 7's pass rule",
+   "pass": true,
+   "detail": "drift -0.41 points; deleted returned 0; old numbers returned 0; memory vs fresh 1.01x; 28 s for 30,000 changes; table learned again: 98.44%",
+   "data": {
+    "dataset": "landmark",
+    "order": "own",
+    "checkpoints": [
+     {
+      "after_changes": 3000,
+      "accuracy": 0.9879,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 389.805
+     },
+     {
+      "after_changes": 6000,
+      "accuracy": 0.9880000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 387.595
+     },
+     {
+      "after_changes": 9000,
+      "accuracy": 0.9880000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 385.808
+     },
+     {
+      "after_changes": 12000,
+      "accuracy": 0.9864,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 385.621
+     },
+     {
+      "after_changes": 15000,
+      "accuracy": 0.9865999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 385.523
+     },
+     {
+      "after_changes": 18000,
+      "accuracy": 0.9871000000000001,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 379.511
+     },
+     {
+      "after_changes": 21000,
+      "accuracy": 0.9846999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 376.58
+     },
+     {
+      "after_changes": 24000,
+      "accuracy": 0.9843999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 378.245
+     },
+     {
+      "after_changes": 27000,
+      "accuracy": 0.9814999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 380.666
+     },
+     {
+      "after_changes": 30000,
+      "accuracy": 0.9843999999999999,
+      "deleted_returned": 0,
+      "stale_returned": 0,
+      "checks": 373.108
+     }
+    ],
+    "initial_build_seconds": 10.703840017318726,
+    "target": 0.88,
+    "accuracy_before": 0.9893000000000001,
+    "checks_before": 392.756,
+    "change_seconds": 27.6721248626709,
+    "change_checks_per_change": 3386.457,
+    "memory_after": 85970088,
+    "after_relearn": {
+     "accuracy": 0.9843999999999999,
+     "checks": 373.108
+    },
+    "fresh_accuracy": 0.9884999999999999,
+    "fresh_checks": 402.754,
+    "fresh_memory": 84960008,
+    "drift": -0.0040999999999999925,
+    "memory_after_vs_fresh": 1.0118888877694079
+   }
+  }
+ ]
+}

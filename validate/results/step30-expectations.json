@@ -1,0 +1,57 @@
+[
+ {
+  "expected": "Our speed falls 1.5-3x on the eight big datasets, less on the four smaller ones",
+  "right": false,
+  "what happened": "gooaq 1.14x; glove 3.46x; yandex 2.55x; llama 1.10x; landmark 1.47x; arxiv 1.32x; laion 2.27x; yi 1.48x; gist 3.21x; nytimes 0.93x; imagenet 2.25x; llama2 1.45x"
+ },
+ {
+  "expected": "Our ratio to Glass stays within about 15% of the samples'",
+  "right": false,
+  "what happened": "gooaq 1.48x (sample 1.11x); landmark 1.40x (sample 1.18x); laion 2.20x (sample 1.32x); gist 1.37x (sample 1.35x); nytimes 1.49x (sample 1.32x); yandex 1.30x (sample 1.01x); arxiv 1.39x (sample 1.01x); imagenet 1.60x (sample 0.97x)"
+ },
+ {
+  "expected": "Still ahead of Glass on GooAQ, Landmark, LAION, GIST1M and NYTimes",
+  "right": true,
+  "what happened": "gooaq 1.48x; landmark 1.40x; laion 2.20x; gist 1.37x; nytimes 1.49x"
+ },
+ {
+  "expected": "Level with Glass on Yandex, arXiv and ImageNet (within 5%)",
+  "right": false,
+  "what happened": "yandex 1.30x; arxiv 1.39x; imagenet 1.60x"
+ },
+ {
+  "expected": "Still ahead of RoarGraph on the three attention datasets, by 1.3x or more",
+  "right": true,
+  "what happened": "llama 1.83x; yi 1.82x; llama2 1.84x"
+ },
+ {
+  "expected": "ScaNN still ahead on GloVe, by less than in the samples (1.25x)",
+  "right": false,
+  "what happened": "ours 0.74x ScaNN's speed (ScaNN 1.35x ours)"
+ },
+ {
+  "expected": "On NYTimes, ScaNN still slower than Glass",
+  "right": true,
+  "what happened": "ScaNN 4,264/s, Glass 8,523/s"
+ },
+ {
+  "expected": "At least 5x faster than HNSW wherever it reaches 95%; it never does on the three attention datasets",
+  "right": true,
+  "what happened": "gooaq 12.1x; glove 9.9x; yandex 8.3x; llama never; landmark 9.4x; arxiv 11.1x; laion 13.3x; yi never; gist 13.2x; nytimes 18.1x; imagenet 14.7x; llama2 never"
+ },
+ {
+  "expected": "Memory per item within 10% of the samples'; 0.15-0.6x HNSW's with the full numbers in a file",
+  "right": false,
+  "what happened": "gooaq 560 (sample 560, 0.17x HNSW); glove 708 (sample 620, 0.58x HNSW); yandex 460 (sample 460, 0.42x HNSW); llama 271 (sample 273, 0.29x HNSW); landmark 904 (sample 904, 0.28x HNSW); arxiv 560 (sample 944, 0.17x HNSW); laion 772 (sample 688, 0.33x HNSW); yi 315 (sample 320, 0.34x HNSW); gist 1,304 (sample 1,136, 0.32x HNSW); nytimes 636 (sample 764, 0.44x HNSW); imagenet 816 (sample 496, 0.30x HNSW); llama2 314 (sample 318, 0.34x HNSW)"
+ },
+ {
+  "expected": "The extra links switch on only on the three attention datasets",
+  "right": true,
+  "what happened": "on for: llama, yi, llama2"
+ },
+ {
+  "expected": "Builds take 10-25x the samples' time on the big datasets, 5-25 minutes",
+  "right": false,
+  "what happened": "gooaq 10.6 min (10x); glove 6.8 min (8x); yandex 2.8 min (5x); landmark 4.7 min (7x); arxiv 9.3 min (10x); laion 6.4 min (6x); gist 13.2 min (10x); imagenet 7.4 min (6x)"
+ }
+]

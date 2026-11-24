@@ -1,0 +1,17 @@
+PASS  gooaq, prototype's order: checks at 95% within 1%  ours 507 vs prototype 507 (0.00% apart)
+PASS  gooaq, our own order: checks at 95% within 5%  ours 508 vs prototype 507 (0.3% apart)
+PASS  gooaq: the hardest group gets at least the easiest group's effort  table for 95%, hardest group first: [20, 15, 15, 10, 10, 10, 10, 10]
+PASS  glove, prototype's order: checks at 95% within 1%  ours 5,622 vs prototype 5,622 (0.00% apart)
+PASS  glove, our own order: checks at 95% within 5%  ours 5,482 vs prototype 5,622 (2.5% apart)
+PASS  glove: the hardest group gets at least the easiest group's effort  table for 95%, hardest group first: [400, 400, 300, 300, 150, 100, 70, 50]
+PASS  yandex, prototype's order: checks at 95% within 1%  ours 870 vs prototype 870 (0.00% apart)
+PASS  yandex, our own order: checks at 95% within 5%  ours 899 vs prototype 870 (3.4% apart)
+PASS  yandex: the hardest group gets at least the easiest group's effort  table for 95%, hardest group first: [50, 40, 30, 40, 30, 30, 20, 15]
+PASS  llama, prototype's order: checks at 95% within 1%  ours 6,820 vs prototype 6,820 (0.00% apart)
+PASS  llama, our own order: prototype inside our seed spread, or averages over seeds within 5%  prototype 6,820 (average 6,820); ours over seeds 7, 1, 2, 3: 5,956, 6,803, 7,255, 7,033 (average 6,762, -0.9%)
+PASS  llama: the hardest group gets at least the easiest group's effort  table for 95%, hardest group first: [400, 400, 300, 300, 300, 300, 300, 300]
+PASS  landmark, prototype's order: checks at 95% within 1%  ours 381 vs prototype 381 (0.00% apart)
+PASS  landmark, our own order: checks at 95% within 5%  ours 386 vs prototype 381 (1.3% apart)
+PASS  landmark: the hardest group gets at least the easiest group's effort  table for 95%, hardest group first: [10, 10, 10, 10, 10, 10, 10, 10]
+
+step5: ALL PASS (15/15) in 197.4 s

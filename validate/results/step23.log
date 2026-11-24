@@ -1,0 +1,15 @@
+PASS  nytimes: file matches its server's checksum  piece checksum dec76e37150d602463a8ac07e1044c44-38, sha256 6ad5d2cde6d6a6f2... (0.32 GB)
+PASS  imagenet: file matches the published checksum  sha256 84f1fb99ba8611a3... (4.22 GB)
+PASS  llama head 15_18: both files match the published checksums  K_15_18.npy dfa5b9a294dcd966..., Q_15_18.npy 888648dd0db968c8...
+PASS  llama head 12_15: both files match the published checksums  K_12_15.npy 0eb97418ce740735..., Q_12_15.npy 3761f5aa21801c25...
+PASS  llama2: the head is the one the spec's draw names  random.Random(23).choice over the 19 heads that are not Llama's gives 15_18
+PASS  llama2: the file is the head made by VIBE's rule  items, test and extra questions equal the rule run again on the raw head (256,921 / 1,000 / 255,921)
+PASS  the rule, run on Llama's own head, gives VIBE's Llama file exactly  layer 12, head 15: items, test and extra questions identical (256,921 items)
+PASS  nytimes: prepared like the five  268,761 items, 256 numbers, formula cos; test questions 1,000 (of 10,000 in the file); questions from items set aside (removed from the items); our top 10 agree with the file's on 92.53% counting ties (91.64% without), +7.47% set aside as questions; answers differing beyond ties: 0; all-zero rows 0 (left out: 239), exact duplicates 40,793
+PASS  imagenet: prepared like the five  1,281,167 items, 640 numbers, formula cos; test questions 1,000 (of 1,000 in the file); questions from file's extra question sample; our top 10 agree with the file's on 100.00% counting ties (100.00% without), +0.00% set aside as questions; answers differing beyond ties: 0; all-zero rows 0 (left out: 0), exact duplicates 5,950
+PASS  llama2: prepared like the five  256,921 items, 128 numbers, formula ip; test questions 1,000 (of 1,000 in the file); questions from file's extra question sample; our top 10 agree with our own float64 run's (the file has none of its own) on 100.00% counting ties (100.00% without), +0.00% set aside as questions; answers differing beyond ties: 0; all-zero rows 0 (left out: 0), exact duplicates 0
+PASS  our loader refuses all seven held-back datasets  14/14 refused
+PASS  the experiments' loader refuses all seven  7/7 refused
+PASS  nothing has been run on the three  no result names them
+
+step23: ALL PASS (13/13) in 11.0 s

@@ -1,0 +1,54 @@
+{
+ "step": "step31",
+ "pass": true,
+ "seconds": 0.0,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 28",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "GIST1M against CoreNN on its author's settings: the sentence",
+   "pass": true,
+   "detail": "On GIST1M, the dataset CoreNN's author tested on, our index answers 17.1x as many questions per second as CoreNN at 95% of the true top 10 (one core), and uses 76% less memory with the full numbers on SSD (9% less with them in memory too).\n      ours 3,980/s, CoreNN 233/s at 95% (one core, test questions; CoreNN's settings {'links': 64, 'build': 128, 'slack': 1.1}, effort 50); memory per item: CoreNN 5,696 (process, after its build; 5,880 on disk), ours 1,358 with the full numbers on SSD, 5,198 with them in memory too; build: CoreNN 41 min, ours 13 min",
+   "data": {
+    "sentence": "On GIST1M, the dataset CoreNN's author tested on, our index answers 17.1x as many questions per second as CoreNN at 95% of the true top 10 (one core), and uses 76% less memory with the full numbers on SSD (9% less with them in memory too).",
+    "speed_ratio": 17.090123529193164,
+    "memory_less_ssd": 0.7616385359630675,
+    "memory_less_ram": 0.08743031608192764,
+    "corenn": {
+     "qps95": 232.8663915329045,
+     "best": 0.9896,
+     "status": "ok",
+     "bytes_per_item": 5695.690917262513,
+     "qps_all": 2447.389789652859,
+     "build_s": 2474.172025916865,
+     "params": {
+      "links": 64,
+      "build": 128,
+      "slack": 1.1
+     },
+     "n_items": 979000
+    },
+    "ours": {
+     "qps95": 3979.7153970947984,
+     "ssd": {
+      "same_answers": true,
+      "cached_share_after_drop": 0.0,
+      "qps": 1261.7569456767517,
+      "qps_all": 11562.448048677335,
+      "median_ms_cold": 0.9007295593619347,
+      "p99_ms_cold": 1.4041892904788251,
+      "bytes_per_item_counted": 1304.0000081716037,
+      "bytes_per_item_measured": 1357.6332257405516,
+      "ram_bytes_per_item_measured": 5197.714860061287,
+      "folder_mb": 5036.971192
+     },
+     "build_seconds": 792.2557961940765
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+PASS  gooaq: same build work, and the same items, distances and checks at every effort  identical
+PASS  gooaq: at least 10% faster at 95% (one core) than before tuning  9,169 -> 20,472 searches/s (2.23x); all cores 74,816 -> 174,692; typical 0.118 -> 0.055 ms, slow 0.226 -> 0.105 ms; build 27.3 -> 19.7 s
+PASS  glove: same build work, and the same items, distances and checks at every effort  identical
+PASS  glove: at least 10% faster at 95% (one core) than before tuning  2,195 -> 4,661 searches/s (2.12x); all cores 26,131 -> 50,482; typical 0.505 -> 0.252 ms, slow 1.208 -> 0.573 ms; build 7.5 -> 5.6 s
+PASS  yandex: same build work, and the same items, distances and checks at every effort  identical
+PASS  yandex: at least 10% faster at 95% (one core) than before tuning  12,387 -> 28,079 searches/s (2.27x); all cores 150,877 -> 184,386; typical 0.106 -> 0.043 ms, slow 0.185 -> 0.080 ms; build 5.9 -> 5.1 s
+PASS  llama: same build work, and the same items, distances and checks at every effort  identical
+PASS  llama: at least 10% faster at 95% (one core) than before tuning  22,600 -> 31,303 searches/s (1.39x); all cores 207,075 -> 341,229; typical 0.073 -> 0.039 ms, slow 0.103 -> 0.052 ms; build 3.6 -> 4.8 s
+PASS  landmark: same build work, and the same items, distances and checks at every effort  identical
+PASS  landmark: at least 10% faster at 95% (one core) than before tuning  13,732 -> 28,250 searches/s (2.06x); all cores 119,332 -> 235,970; typical 0.094 -> 0.041 ms, slow 0.170 -> 0.063 ms; build 18.8 -> 14.3 s
+
+step12: ALL PASS (10/10) in 89.0 s

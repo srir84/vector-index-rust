@@ -1,0 +1,16 @@
+PASS  yandex: with effort_apart the 95% target lands within 1 point  95.07% at 879 checks per search; sharing the links' questions: 92.12% at 678
+PASS  llama: with effort_apart the 95% target lands within 1 point  94.99% at 1,274 checks per search; sharing the links' questions: 94.81% at 1,272
+PASS  gooaq: no question links, so effort_apart changes nothing  identical answers
+PASS  glove: no question links, so effort_apart changes nothing  identical answers
+PASS  landmark: no question links, so effort_apart changes nothing  identical answers
+PASS  yandex: sample questions taken from the items, then real use: back to within 1 point  before 82.29% at 490 checks; spot checks saw 82.28% ± 0.86%; relearned on its own: True; after 94.58% at 915 checks (question links off)
+PASS  llama: sample questions taken from the items, then real use: back to within 1 point  before 85.62% at 3,535 checks; spot checks saw 85.57% ± 0.57%; relearned on its own: True; after 95.29% at 6,188 checks (question links off)
+PASS  gooaq: right sample questions: no relearn on its own; forced, under 1 point  spot checks saw 95.71% ± 0.32%; relearned on its own: False; forced on 2000 questions: 95.56% at 549 checks -> 94.76% at 520
+PASS  glove: right sample questions: no relearn on its own; forced, under 1 point  spot checks saw 95.16% ± 0.35%; relearned on its own: False; forced on 2000 questions: 95.32% at 5,728 checks -> 95.21% at 5,675
+PASS  yandex: right sample questions: no relearn on its own; forced, under 1 point  spot checks saw 95.15% ± 0.40%; relearned on its own: False; forced on 2000 questions: 95.09% at 891 checks -> 94.67% at 866
+PASS  llama: right sample questions: no relearn on its own; forced, under 1 point  spot checks saw 95.12% ± 0.27%; relearned on its own: False; forced on 2000 questions: 94.98% at 1,243 checks -> 95.00% at 1,249
+PASS  landmark: right sample questions: no relearn on its own; forced, under 1 point  spot checks saw 98.41% ± 0.25%; relearned on its own: False; forced on 2000 questions: 98.08% at 397 checks -> 98.08% at 397
+PASS  glove: searches run while the table is learned again  204 batches of 200 searched during the relearn on 2000 questions; errors: none
+PASS  glove: the relearned table comes back after save and load  same tables and answers
+
+step17: ALL PASS (14/14) in 161.2 s

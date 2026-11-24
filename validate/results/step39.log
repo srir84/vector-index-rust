@@ -1,0 +1,8 @@
+PASS  glove: scanning every bucket and re-checking every item finds the true top 10  100.00% of the true top 10 on 200 tuning questions (200 with the same ids in the same order; ties may swap); 333 buckets built in 0.4 s
+      glove: links: 11,454/s at 95% (5,217 checks); buckets: pool 50: 0/s (0 scored); pool 100: 8,055/s (29,434 scored); pool 200: 7,552/s (24,875 scored); pool 400: 5,872/s (24,194 scored); best 0.70x the links
+PASS  glove: speeds recorded  links: 11,454/s at 95% (5,217 checks); buckets: pool 50: 0/s (0 scored); pool 100: 8,055/s (29,434 scored); pool 200: 7,552/s (24,875 scored); pool 400: 5,872/s (24,194 scored); best 0.70x the links
+PASS  nytimes: scanning every bucket and re-checking every item finds the true top 10  100.00% of the true top 10 on 200 tuning questions (143 with the same ids in the same order; ties may swap); 333 buckets built in 0.4 s
+      nytimes: links: 11,994/s at 95% (4,029 checks); buckets: pool 50: 3,270/s (73,371 scored); pool 100: 4,219/s (51,864 scored); pool 200: 4,090/s (47,155 scored); pool 400: 3,414/s (46,029 scored); best 0.35x the links
+PASS  nytimes: speeds recorded  links: 11,994/s at 95% (4,029 checks); buckets: pool 50: 3,270/s (73,371 scored); pool 100: 4,219/s (51,864 scored); pool 200: 4,090/s (47,155 scored); pool 400: 3,414/s (46,029 scored); best 0.35x the links
+
+step39: ALL PASS (4/4) in 355.8 s

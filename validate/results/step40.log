@@ -1,0 +1,12 @@
+      glove: 300 per bucket, weight 1.0: pool 50: 0/s (0 scored); pool 100: 7,713/s (29,434 scored); pool 200: 7,306/s (24,875 scored)
+      glove: 300 per bucket, weight default: pool 50: 5,626/s (49,022 scored); pool 100: 8,381/s (26,922 scored); pool 200: 7,476/s (24,312 scored)
+      glove: 100 per bucket, weight 1.0: pool 50: 0/s (0 scored); pool 100: 9,037/s (19,762 scored); pool 200: 7,998/s (17,761 scored)
+      glove: 100 per bucket, weight default: pool 50: 0/s (0 scored); pool 100: 9,454/s (18,903 scored); pool 200: 8,049/s (17,626 scored)
+FAIL  glove: the best bucket search against the link walk at 95% (tuning questions)  links 11,022/s at 95% (5,217 checks); best buckets: 100 per bucket, weight default, pool 100: 9,454/s (18,903 scored), 0.86x the links
+      nytimes: 300 per bucket, weight 1.0: pool 50: 3,173/s (73,371 scored); pool 100: 4,090/s (51,864 scored); pool 200: 3,935/s (47,155 scored)
+      nytimes: 300 per bucket, weight default: pool 50: 3,622/s (65,259 scored); pool 100: 4,228/s (50,178 scored); pool 200: 3,957/s (46,893 scored)
+      nytimes: 100 per bucket, weight 1.0: pool 50: 0/s (0 scored); pool 100: 0/s (0 scored); pool 200: 0/s (0 scored)
+      nytimes: 100 per bucket, weight default: pool 50: 0/s (0 scored); pool 100: 0/s (0 scored); pool 200: 0/s (0 scored)
+PASS  nytimes: the best bucket search against the link walk at 95% (tuning questions)  links 11,594/s at 95% (4,029 checks); best buckets: 300 per bucket, weight default, pool 100: 4,228/s (50,178 scored), 0.36x the links
+
+step40: SOME FAILED (1/2) in 655.6 s

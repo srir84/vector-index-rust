@@ -1,0 +1,24 @@
+PASS  glove: the build's own searches are not counted  calls 0, questions 0
+PASS  glove: counts equal what the searches returned  16 threads: 500 questions, 2,831,311 checks; one thread: 500 questions, 25,000 re-checks (50 each); 8 Python threads: 800 calls, 3,053,001 checks (returned 3,053,001)
+PASS  glove: the time counted is the time spent  53.0 ms counted over 53.2 ms of wall clock (100%); typical 0.105 ms, slow 0.160 ms per question
+PASS  glove: the sample questions fill the 8 hardness bins equally  bins (hardest first): [375, 375, 375, 375, 375, 375, 375, 375]
+PASS  glove: 'questions unlike items' in use agrees with the build's test  in use 0.98, at build 0.99 (pass: within 15%)
+PASS  yandex: the build's own searches are not counted  calls 0, questions 0
+PASS  yandex: counts equal what the searches returned  16 threads: 500 questions, 339,306 checks; one thread: 500 questions, 25,000 re-checks (50 each); 8 Python threads: 800 calls, 787,537 checks (returned 787,537)
+PASS  yandex: the time counted is the time spent  37.2 ms counted over 37.5 ms of wall clock (99%); typical 0.072 ms, slow 0.116 ms per question
+PASS  yandex: the sample questions fill the 8 hardness bins equally  bins (hardest first): [375, 375, 375, 375, 375, 375, 375, 375]
+PASS  yandex: 'questions unlike items' in use agrees with the build's test  in use 2.01, at build 2.05 (pass: within 15%)
+PASS  llama: the build's own searches are not counted  calls 0, questions 0
+PASS  llama: counts equal what the searches returned  16 threads: 500 questions, 633,672 checks; one thread: 500 questions, 25,000 re-checks (50 each); 8 Python threads: 800 calls, 1,125,918 checks (returned 1,125,918)
+PASS  llama: the time counted is the time spent  28.4 ms counted over 28.6 ms of wall clock (100%); typical 0.057 ms, slow 0.076 ms per question
+PASS  llama: the sample questions fill the 8 hardness bins equally  bins (hardest first): [375, 375, 375, 375, 375, 375, 375, 375]
+PASS  llama: 'questions unlike items' in use agrees with the build's test  in use 25.80, at build 24.79 (pass: same side of the 1.5 switch)
+PASS  gooaq: build and answers identical to step 12's recording  identical
+PASS  glove: build and answers identical to step 12's recording  identical
+PASS  yandex: build and answers identical to step 12's recording  identical
+PASS  llama: build and answers identical to step 12's recording  identical
+PASS  landmark: build and answers identical to step 12's recording  identical
+PASS  llama: the counters cost under 1% (one core)  30,983 searches/s with, 31,004 without (+0.07%; middle of 9 turns each)
+PASS  landmark: the counters cost under 1% (one core)  27,569 searches/s with, 27,625 without (+0.20%; middle of 9 turns each)
+
+step15: ALL PASS (22/22) in 88.4 s

@@ -1,0 +1,8 @@
+{
+ "chip": "Apple M3 Max",
+ "cores": 16,
+ "performance_cores": 12,
+ "memory_gb": 128,
+ "macos": "27.0.1",
+ "recorded": "2026-11-06, during the part 4 runs (steps 29-32)"
+}

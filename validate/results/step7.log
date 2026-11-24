@@ -1,0 +1,17 @@
+PASS  gooaq, prototype's order: checks at 95% within 1%  ours 524 vs prototype 524 (0.00% apart)
+PASS  gooaq, our own order: checks at 95% within 5%  ours 529 vs prototype 524 (1.0% apart)
+PASS  gooaq: memory per item within 1% of the prototype's  ours 944 bytes (links 168, copies 768, other 8) vs prototype 944
+PASS  glove, prototype's order: checks at 95% within 1%  ours 5,735 vs prototype 5,734 (0.00% apart)
+PASS  glove, our own order: checks at 95% within 5%  ours 5,510 vs prototype 5,734 (3.9% apart)
+PASS  glove: memory per item within 1% of the prototype's  ours 376 bytes (links 168, copies 200, other 8) vs prototype 376
+PASS  yandex, prototype's order: checks at 95% within 1%  ours 854 vs prototype 854 (0.00% apart)
+PASS  yandex, our own order: checks at 95% within 5%  ours 847 vs prototype 854 (0.8% apart)
+PASS  yandex: memory per item within 1% of the prototype's  ours 376 bytes (links 168, copies 200, other 8) vs prototype 376
+PASS  llama, prototype's order: checks at 95% within 1%  ours 1,318 vs prototype 1,318 (0.00% apart)
+PASS  llama, our own order: checks at 95% within 5%  ours 1,381 vs prototype 1,318 (4.8% apart)
+PASS  llama: memory per item within 1% of the prototype's  ours 304 bytes (links 168, copies 128, other 8) vs prototype 304
+PASS  landmark, prototype's order: checks at 95% within 1%  ours 392 vs prototype 392 (0.00% apart)
+PASS  landmark, our own order: checks at 95% within 5%  ours 397 vs prototype 392 (1.4% apart)
+PASS  landmark: memory per item within 1% of the prototype's  ours 944 bytes (links 168, copies 768, other 8) vs prototype 944
+
+step7: ALL PASS (15/15) in 160.8 s

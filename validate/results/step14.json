@@ -1,0 +1,266 @@
+{
+ "step": "step14",
+ "pass": true,
+ "seconds": 27.8,
+ "checks": [
+  {
+   "check": "arxiv: file matches the published checksum",
+   "pass": true,
+   "detail": "sha256 8be0993b978b0d0e... (4.14 GB)",
+   "data": null
+  },
+  {
+   "check": "laion: file matches the published checksum",
+   "pass": true,
+   "detail": "sha256 a152088cefc13ac9... (4.50 GB)",
+   "data": null
+  },
+  {
+   "check": "yi: file matches the published checksum",
+   "pass": true,
+   "detail": "sha256 23d76fdbb0808909... (0.27 GB)",
+   "data": null
+  },
+  {
+   "check": "gist: file matches its server's checksum",
+   "pass": true,
+   "detail": "piece checksum 34da1d8a80764582ee4b0c0839b7c32a-459, sha256 8e95831936bfdbfa... (3.84 GB)",
+   "data": null
+  },
+  {
+   "check": "arxiv: prepared like the five",
+   "pass": true,
+   "detail": "1,323,643 items, 768 numbers, formula cos; questions from items set aside (removed from the items); our top 10 agree with the file's on 98.37% (+1.63% set aside as questions); answers differing beyond ties: 0; all-zero rows 0, exact duplicates 10",
+   "data": {
+    "card": {
+     "items_full": 1323643,
+     "questions": {
+      "test": 1000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "items set aside (removed from the items)"
+     },
+     "agreement_with_vibe_top10_full": 0.9837,
+     "vibe_top10_items_we_set_aside_as_questions": 0.016300000000000002,
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 1,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 1,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 1,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "laion: prepared like the five",
+   "pass": true,
+   "detail": "1,000,448 items, 512 numbers, formula cos; questions from file's extra question sample; our top 10 agree with the file's on 99.99% (+0.00% set aside as questions); answers differing beyond ties: 0; all-zero rows 0, exact duplicates 5,330",
+   "data": {
+    "card": {
+     "items_full": 1000448,
+     "questions": {
+      "test": 1000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "file's extra question sample"
+     },
+     "agreement_with_vibe_top10_full": 0.9999,
+     "vibe_top10_items_we_set_aside_as_questions": 0.0,
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 1,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "yi: prepared like the five",
+   "pass": true,
+   "detail": "187,843 items, 128 numbers, formula ip; questions from file's extra question sample; our top 10 agree with the file's on 100.00% (+0.00% set aside as questions); answers differing beyond ties: 0; all-zero rows 0, exact duplicates 0",
+   "data": {
+    "card": {
+     "items_full": 187843,
+     "questions": {
+      "test": 1000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "file's extra question sample"
+     },
+     "agreement_with_vibe_top10_full": 1.0,
+     "vibe_top10_items_we_set_aside_as_questions": 0.0,
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 0,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "gist: prepared like the five",
+   "pass": true,
+   "detail": "979,000 items, 960 numbers, formula l2; questions from items set aside (removed from the items); our top 10 agree with the file's on 97.68% (+2.27% set aside as questions); answers differing beyond ties: 0; all-zero rows 10, exact duplicates 17,306",
+   "data": {
+    "card": {
+     "items_full": 979000,
+     "questions": {
+      "test": 1000,
+      "tune": 1000,
+      "train": 20000,
+      "train_source": "items set aside (removed from the items)"
+     },
+     "agreement_with_vibe_top10_full": 0.9768000000000001,
+     "vibe_top10_items_we_set_aside_as_questions": 0.0227,
+     "precision_check": {
+      "slice_test": {
+       "questions_with_any_difference": 4,
+       "of_which_not_explained_by_ties": 0
+      },
+      "slice_tune": {
+       "questions_with_any_difference": 4,
+       "of_which_not_explained_by_ties": 0
+      },
+      "full_test": {
+       "questions_with_any_difference": 8,
+       "of_which_not_explained_by_ties": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "check": "our loader refuses every held-back dataset",
+   "pass": true,
+   "detail": "8/8 refused",
+   "data": null
+  },
+  {
+   "check": "the experiments' loader refuses every held-back dataset",
+   "pass": true,
+   "detail": "4/4 refused",
+   "data": null
+  },
+  {
+   "check": "nothing has been run on a held-back dataset but step 22",
+   "pass": true,
+   "detail": "no result names them outside step 22's runs",
+   "data": null
+  },
+  {
+   "check": "straight-line distance on Llama's numbers: a fixed list size reaches 99%",
+   "pass": true,
+   "detail": "list 10: 96.01%; list 15: 99.71%",
+   "data": {
+    "curve": [
+     {
+      "L": 10,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "L": 15,
+      "accuracy": 0.9971,
+      "checks": 557.145
+     }
+    ]
+   }
+  },
+  {
+   "check": "straight-line: the learned effort lands near its target",
+   "pass": true,
+   "detail": "target 95% gives 96.01%, 99% gives 99.39% (pass: at least 93.5% and 98%)",
+   "data": {
+    "targets": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9601000000000001,
+      "checks": 520.661
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9733,
+      "checks": 533.597
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.983,
+      "checks": 541.035
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9939,
+      "checks": 553.08
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9971,
+      "checks": 557.145
+     }
+    ]
+   }
+  },
+  {
+   "check": "straight-line: returned distances equal numpy's",
+   "pass": true,
+   "detail": "largest gap 1.8e-07 (pass: 1e-4)",
+   "data": null
+  }
+ ]
+}

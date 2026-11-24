@@ -1,0 +1,37 @@
+[
+ {
+  "expected": "GloVe-100: ScaNN is the fastest rival, then Glass",
+  "right": true,
+  "what happened": "fastest: ScaNN"
+ },
+ {
+  "expected": "GloVe-100: ours within 10% of ScaNN (0.9-1.1x)",
+  "right": false,
+  "what happened": "0.73x ScaNN"
+ },
+ {
+  "expected": "GloVe-100: at least 5x HNSW",
+  "right": true,
+  "what happened": "7.1x HNSW"
+ },
+ {
+  "expected": "GloVe-100: the change test passes",
+  "right": true,
+  "what happened": "drift -0.10"
+ },
+ {
+  "expected": "GloVe: 1.25-1.5x part 4's speed, within 10% of ScaNN",
+  "right": false,
+  "what happened": "0.99x part 4, 0.73x ScaNN: the bucket search was not built in"
+ },
+ {
+  "expected": "The bucket search is picked on GloVe and GloVe-100 and on none of the other eleven",
+  "right": false,
+  "what happened": "not built in (step 41)"
+ },
+ {
+  "expected": "The other eleven: still ahead of the fastest rival",
+  "right": true,
+  "what happened": "gooaq 1.49x, yandex 1.08x, llama 1.75x, landmark 1.34x, arxiv 1.36x, laion 2.19x, yi 1.82x, gist 1.35x, nytimes 1.43x, imagenet 1.70x, llama2 1.95x"
+ }
+]

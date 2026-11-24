@@ -1,0 +1,235 @@
+{
+ "step": "step6",
+ "pass": true,
+ "seconds": 59.7,
+ "checks": [
+  {
+   "check": "gooaq: question links off",
+   "pass": true,
+   "detail": "ratio 0.98 (prototype 0.93); 0 items got question links",
+   "data": null
+  },
+  {
+   "check": "glove: question links off",
+   "pass": true,
+   "detail": "ratio 0.99 (prototype 0.99); 0 items got question links",
+   "data": null
+  },
+  {
+   "check": "yandex, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 801 vs prototype 801 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8422000000000001,
+      "checks": 458.499
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8591,
+      "checks": 486.772
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.8817,
+      "checks": 529.227
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.8987999999999999,
+      "checks": 570.722
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.908,
+      "checks": 602.562
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9215,
+      "checks": 652.106
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9396000000000001,
+      "checks": 722.106
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9517,
+      "checks": 814.1
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9675,
+      "checks": 987.504
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9831,
+      "checks": 1423.9
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9914999999999999,
+      "checks": 2052.547
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 810 vs prototype 801 (1.1% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8391,
+      "checks": 453.306
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8571,
+      "checks": 482.425
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.8845000000000001,
+      "checks": 533.288
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.8965,
+      "checks": 564.706
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9124000000000001,
+      "checks": 606.123
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9221,
+      "checks": 646.888
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9375,
+      "checks": 714.86
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9526,
+      "checks": 829.817
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9692000000000001,
+      "checks": 1020.651
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9885999999999999,
+      "checks": 1505.671
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9946999999999999,
+      "checks": 2366.456
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex: question links on",
+   "pass": true,
+   "detail": "ratio 2.05 (prototype 2.08); 94,986 items got question links",
+   "data": null
+  },
+  {
+   "check": "llama, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 1,263 vs prototype 1,263 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8752000000000001,
+      "checks": 829.564
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8965,
+      "checks": 906.394
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9151999999999999,
+      "checks": 1003.126
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9244999999999999,
+      "checks": 1049.142
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9351,
+      "checks": 1123.86
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9457000000000001,
+      "checks": 1210.135
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9574,
+      "checks": 1352.841
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9673,
+      "checks": 1519.57
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9753000000000001,
+      "checks": 1732.519
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9887,
+      "checks": 2345.642
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9941000000000001,
+      "checks": 3162.728
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama, our own order: prototype inside our seed spread, or averages over seeds within 5%",
+   "pass": true,
+   "detail": "prototype 1,263, 1,294, 1,241, 1,261 (average 1,265); ours over seeds 7, 1, 2, 3: 1,332, 1,304, 1,336, 1,312 (average 1,321, +4.5%)",
+   "data": null
+  },
+  {
+   "check": "llama: question links on",
+   "pass": true,
+   "detail": "ratio 24.79 (prototype 24.80); 7,803 items got question links",
+   "data": null
+  },
+  {
+   "check": "landmark: question links off",
+   "pass": true,
+   "detail": "ratio 1.03 (prototype 1.00); 0 items got question links",
+   "data": null
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+PASS  gooaq: full-number distances  worst error 8.2e-08 (numpy 32-bit: 8.2e-07; limit 1.0e-05)
+PASS  gooaq: copies match numpy and decode within half a step  same codes 1.00000, worst overshoot 1.5e-08
+PASS  gooaq: 1-byte distances  worst error 1.6e-07 (limit 1e-4)
+PASS  glove: full-number distances  worst error 1.4e-07 (numpy 32-bit: 3.3e-07; limit 1.0e-05)
+PASS  glove: copies match numpy and decode within half a step  same codes 1.00000, worst overshoot 1.2e-08
+PASS  glove: 1-byte distances  worst error 4.2e-07 (limit 1e-4)
+PASS  yandex: full-number distances  worst error 1.3e-07 (numpy 32-bit: 3.1e-07; limit 1.0e-05)
+PASS  yandex: copies match numpy and decode within half a step  same codes 1.00000, worst overshoot 1.2e-08
+PASS  yandex: 1-byte distances  worst error 3.2e-07 (limit 1e-4)
+PASS  llama: full-number distances  worst error 2.6e-05 (numpy 32-bit: 3.9e-05; limit 7.7e-05)
+PASS  llama: copies match numpy and decode within half a step  same codes 1.00000, worst overshoot -2.8e-07
+PASS  llama: 1-byte distances  worst error 4.7e-05 (limit 1e-4)
+PASS  landmark: full-number distances  worst error 1.5e-07 (numpy 32-bit: 1.7e-06; limit 1.0e-05)
+PASS  landmark: copies match numpy and decode within half a step  same codes 1.00000, worst overshoot 5.7e-09
+PASS  landmark: 1-byte distances  worst error 6.2e-07 (limit 1e-4)
+
+step1: ALL PASS (15/15) in 0.7 s

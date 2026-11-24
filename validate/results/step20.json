@@ -1,0 +1,73 @@
+{
+ "step": "step20",
+ "pass": false,
+ "seconds": 68.8,
+ "checks": [
+  {
+   "check": "gooaq: renumbered, build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "gooaq: no slower than before (within 3%)",
+   "pass": true,
+   "detail": "24,815 searches/s at 95% against 21,388 (1.16x); checks 529 (before 529)",
+   "data": null
+  },
+  {
+   "check": "glove: renumbered, build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "glove: no slower than before (within 3%)",
+   "pass": true,
+   "detail": "5,655 searches/s at 95% against 5,540 (1.02x); checks 5,510 (before 5,510)",
+   "data": null
+  },
+  {
+   "check": "yandex: renumbered, build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "yandex: no slower than before (within 3%)",
+   "pass": true,
+   "detail": "35,061 searches/s at 95% against 33,011 (1.06x); checks 863 (before 863)",
+   "data": null
+  },
+  {
+   "check": "llama: renumbered, build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "llama: no slower than before (within 3%)",
+   "pass": true,
+   "detail": "35,268 searches/s at 95% against 32,900 (1.07x); checks 1,287 (before 1,287)",
+   "data": null
+  },
+  {
+   "check": "landmark: renumbered, build and answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "landmark: no slower than before (within 3%)",
+   "pass": true,
+   "detail": "34,905 searches/s at 95% against 30,311 (1.15x); checks 397 (before 397)",
+   "data": null
+  },
+  {
+   "check": "all five: at least 10% faster on average",
+   "pass": false,
+   "detail": "1.09x on average (gooaq 1.16x, glove 1.02x, yandex 1.06x, llama 1.07x, landmark 1.15x)",
+   "data": null
+  }
+ ]
+}

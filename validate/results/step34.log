@@ -1,0 +1,14 @@
+PASS  the code is as frozen in step 28  unchanged
+W1107 05:35:45.511000 53128 .venv/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9797.33it/s]
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:277: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-53128-d2p__guf'}
+  warnings.warn(
+W1107 05:35:56.634000 53126 .venv/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 29716.14it/s]
+PASS  each text the demo shows is the one its numbers were made from  1,082 different items shown for 100 questions; the model on their texts gives numbers within 1.00000 (lowest), 1.000000 (middle) of the items'
+PASS  for 100 questions, the demo's answers are the index's own (vindex and HNSW, same order)  vindex differs on 0, HNSW on 0; the server's question numbers are the model's to within 0.0e+00; target 0.92, HNSW effort 20 ({'links': 32, 'build': 400, 'slack': 0}); 100 questions answered in 1.5 s
+PASS  GooAQ's licence allows showing its text, and the page credits it and says it is not for commercial use  LICENSE: Apache License 2.0; its README: "should not be used for any commercial purposes"; the page credits GooAQ by AllenAI, the licence and the request
+PASS  at least 99% of the items have their answer text  1,453,978 of 1,454,024 (99.997%)
+      times shown (middle over the 100 questions): vindex 0.018 ms, HNSW 0.225 ms, question to numbers 5.7 ms
+
+step34: ALL PASS (5/5) in 19.7 s

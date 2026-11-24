@@ -1,0 +1,25 @@
+PASS  gooaq: every question spot-checked gives the true-answer files' accuracy  target 0.95: 95.56% (files 95.56%, 1000 checked); list 100: 99.76% (files 99.76%, 1000 checked)
+PASS  glove: every question spot-checked gives the true-answer files' accuracy  target 0.95: 95.32% (files 95.32%, 1000 checked); list 100: 87.11% (files 87.11%, 1000 checked)
+PASS  yandex: every question spot-checked gives the true-answer files' accuracy  target 0.95: 92.12% (files 92.12%, 1000 checked); list 100: 98.86% (files 98.86%, 1000 checked)
+PASS  llama: every question spot-checked gives the true-answer files' accuracy  target 0.95: 94.81% (files 94.81%, 1000 checked); list 100: 98.76% (files 98.76%, 1000 checked)
+PASS  landmark: every question spot-checked gives the true-answer files' accuracy  target 0.95: 98.08% (files 98.08%, 1000 checked); list 100: 99.95% (files 99.95%, 1000 checked)
+PASS  gooaq: real accuracy inside the margin in 96 of 100 samples  real 95.56%; about 50 questions checked per sample; typical margin ±2.76%
+PASS  glove: real accuracy inside the margin in 98 of 100 samples  real 95.32%; about 50 questions checked per sample; typical margin ±2.62%
+PASS  yandex: real accuracy inside the margin in 94 of 100 samples  real 92.12%; about 50 questions checked per sample; typical margin ±4.30%
+PASS  llama: real accuracy inside the margin in 97 of 100 samples  real 94.81%; about 50 questions checked per sample; typical margin ±2.19%
+PASS  landmark: real accuracy inside the margin in 96 of 100 samples  real 98.08%; about 50 questions checked per sample; typical margin ±2.45%
+PASS  all five: real accuracy inside the margin in 92% to 98% of the 500 samples  481 of 500 (96.2%)
+PASS  gooaq: spot checks at the default budget cost under 2% of search time  0.72% of 1.03 s of searching (2 questions checked; 1.82% of the checks)
+PASS  glove: spot checks at the default budget cost under 2% of search time  0.46% of 4.40 s of searching (22 questions checked; 1.92% of the checks)
+PASS  yandex: spot checks at the default budget cost under 2% of search time  0.43% of 0.55 s of searching (2 questions checked; 1.48% of the checks)
+PASS  llama: spot checks at the default budget cost under 2% of search time  0.45% of 0.65 s of searching (5 questions checked; 1.97% of the checks)
+PASS  landmark: spot checks at the default budget cost under 2% of search time  1.10% of 0.70 s of searching (1 questions checked; 1.26% of the checks)
+PASS  gooaq: build and answers identical to step 12's recording  identical
+PASS  glove: build and answers identical to step 12's recording  identical
+PASS  yandex: build and answers identical to step 12's recording  identical
+PASS  llama: build and answers identical to step 12's recording  identical
+PASS  landmark: build and answers identical to step 12's recording  identical
+PASS  glove: searches run while spot checks run, with the same answers  60 rounds of 1,000 searches from 4 threads during 75837 spot-check runs (1,603 questions checked); errors: none
+PASS  glove: spot-check counts come back after save and load  1 kinds of search, 160,300,000 checks spent
+
+step16: ALL PASS (23/23) in 258.3 s

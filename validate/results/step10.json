@@ -1,0 +1,91 @@
+{
+ "step": "step10",
+ "pass": true,
+ "seconds": 53.9,
+ "checks": [
+  {
+   "check": "glove: reloaded (ram) gives identical answers, distances and checks",
+   "pass": true,
+   "detail": "folder 106 MB",
+   "data": null
+  },
+  {
+   "check": "glove: reloaded (ssd) gives identical answers, distances and checks",
+   "pass": true,
+   "detail": "folder 106 MB",
+   "data": null
+  },
+  {
+   "check": "glove: a damaged folder is refused",
+   "pass": true,
+   "detail": "links.u32 has 7380000 bytes, expected 14760000: the folder is damaged or from another index",
+   "data": null
+  },
+  {
+   "check": "glove: after 3,000 changes, the reloaded copy still matches the original",
+   "pass": true,
+   "detail": "question links redone at change 3,000: False",
+   "data": null
+  },
+  {
+   "check": "glove: 8 Python threads searching at once give the same answers as one call",
+   "pass": true,
+   "detail": "7.2x the speed of one thread: the searches really run side by side",
+   "data": null
+  },
+  {
+   "check": "glove: 1,000 changes made while 4 threads keep searching: no errors, and exactly the index made with nobody searching",
+   "pass": true,
+   "detail": "3488 searches of 100 questions ran during the changes; errors: none",
+   "data": null
+  },
+  {
+   "check": "yandex: reloaded (ram) gives identical answers, distances and checks",
+   "pass": true,
+   "detail": "folder 122 MB",
+   "data": null
+  },
+  {
+   "check": "yandex: reloaded (ssd) gives identical answers, distances and checks",
+   "pass": true,
+   "detail": "folder 122 MB",
+   "data": null
+  },
+  {
+   "check": "yandex: a damaged folder is refused",
+   "pass": true,
+   "detail": "links.u32 has 7380000 bytes, expected 14760000: the folder is damaged or from another index",
+   "data": null
+  },
+  {
+   "check": "yandex: after 3,000 changes, the reloaded copy still matches the original",
+   "pass": true,
+   "detail": "question links redone at change 3,000: True",
+   "data": null
+  },
+  {
+   "check": "llama: reloaded (ram) gives identical answers, distances and checks",
+   "pass": true,
+   "detail": "folder 84 MB",
+   "data": null
+  },
+  {
+   "check": "llama: reloaded (ssd) gives identical answers, distances and checks",
+   "pass": true,
+   "detail": "folder 84 MB",
+   "data": null
+  },
+  {
+   "check": "llama: a damaged folder is refused",
+   "pass": true,
+   "detail": "links.u32 has 7380000 bytes, expected 14760000: the folder is damaged or from another index",
+   "data": null
+  },
+  {
+   "check": "llama: after 3,000 changes, the reloaded copy still matches the original",
+   "pass": true,
+   "detail": "question links redone at change 3,000: True",
+   "data": null
+  }
+ ]
+}

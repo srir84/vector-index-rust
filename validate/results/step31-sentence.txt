@@ -1,0 +1,1 @@
+On GIST1M, the dataset CoreNN's author tested on, our index answers 17.1x as many questions per second as CoreNN at 95% of the true top 10 (one core), and uses 76% less memory with the full numbers on SSD (9% less with them in memory too).

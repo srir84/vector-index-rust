@@ -1,0 +1,91 @@
+{
+ "step": "step17",
+ "pass": true,
+ "seconds": 161.2,
+ "checks": [
+  {
+   "check": "yandex: with effort_apart the 95% target lands within 1 point",
+   "pass": true,
+   "detail": "95.07% at 879 checks per search; sharing the links' questions: 92.12% at 678",
+   "data": null
+  },
+  {
+   "check": "llama: with effort_apart the 95% target lands within 1 point",
+   "pass": true,
+   "detail": "94.99% at 1,274 checks per search; sharing the links' questions: 94.81% at 1,272",
+   "data": null
+  },
+  {
+   "check": "gooaq: no question links, so effort_apart changes nothing",
+   "pass": true,
+   "detail": "identical answers",
+   "data": null
+  },
+  {
+   "check": "glove: no question links, so effort_apart changes nothing",
+   "pass": true,
+   "detail": "identical answers",
+   "data": null
+  },
+  {
+   "check": "landmark: no question links, so effort_apart changes nothing",
+   "pass": true,
+   "detail": "identical answers",
+   "data": null
+  },
+  {
+   "check": "yandex: sample questions taken from the items, then real use: back to within 1 point",
+   "pass": true,
+   "detail": "before 82.29% at 490 checks; spot checks saw 82.28% \u00b1 0.86%; relearned on its own: True; after 94.58% at 915 checks (question links off)",
+   "data": null
+  },
+  {
+   "check": "llama: sample questions taken from the items, then real use: back to within 1 point",
+   "pass": true,
+   "detail": "before 85.62% at 3,535 checks; spot checks saw 85.57% \u00b1 0.57%; relearned on its own: True; after 95.29% at 6,188 checks (question links off)",
+   "data": null
+  },
+  {
+   "check": "gooaq: right sample questions: no relearn on its own; forced, under 1 point",
+   "pass": true,
+   "detail": "spot checks saw 95.71% \u00b1 0.32%; relearned on its own: False; forced on 2000 questions: 95.56% at 549 checks -> 94.76% at 520",
+   "data": null
+  },
+  {
+   "check": "glove: right sample questions: no relearn on its own; forced, under 1 point",
+   "pass": true,
+   "detail": "spot checks saw 95.16% \u00b1 0.35%; relearned on its own: False; forced on 2000 questions: 95.32% at 5,728 checks -> 95.21% at 5,675",
+   "data": null
+  },
+  {
+   "check": "yandex: right sample questions: no relearn on its own; forced, under 1 point",
+   "pass": true,
+   "detail": "spot checks saw 95.15% \u00b1 0.40%; relearned on its own: False; forced on 2000 questions: 95.09% at 891 checks -> 94.67% at 866",
+   "data": null
+  },
+  {
+   "check": "llama: right sample questions: no relearn on its own; forced, under 1 point",
+   "pass": true,
+   "detail": "spot checks saw 95.12% \u00b1 0.27%; relearned on its own: False; forced on 2000 questions: 94.98% at 1,243 checks -> 95.00% at 1,249",
+   "data": null
+  },
+  {
+   "check": "landmark: right sample questions: no relearn on its own; forced, under 1 point",
+   "pass": true,
+   "detail": "spot checks saw 98.41% \u00b1 0.25%; relearned on its own: False; forced on 2000 questions: 98.08% at 397 checks -> 98.08% at 397",
+   "data": null
+  },
+  {
+   "check": "glove: searches run while the table is learned again",
+   "pass": true,
+   "detail": "204 batches of 200 searched during the relearn on 2000 questions; errors: none",
+   "data": null
+  },
+  {
+   "check": "glove: the relearned table comes back after save and load",
+   "pass": true,
+   "detail": "same tables and answers",
+   "data": null
+  }
+ ]
+}

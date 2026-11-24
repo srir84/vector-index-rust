@@ -1,0 +1,79 @@
+{
+ "step": "step19",
+ "pass": false,
+ "seconds": 797.4,
+ "checks": [
+  {
+   "check": "glove built with 16 links: more links are suggested",
+   "pass": true,
+   "detail": "Rebuild with 64 links per item (now 16): about 2.9x faster at 95% accuracy. A trial on 100000 of the items with 2000 spot-checked questions: 2178 searches/s as the index is now, 6329 with the change, one core. Memory 544 bytes per item (now 292).",
+   "data": null
+  },
+  {
+   "check": "glove: 16 links: the suggested rebuild gains what the trial said, within 15%",
+   "pass": true,
+   "detail": "trial 2.91x, measured 2.78x (2,469 -> 6,855 searches/s at 95%, one core); suggested: Rebuild with 64 links per item (now 16): about 2.9x faster at 95% accuracy.",
+   "data": null
+  },
+  {
+   "check": "yandex with sample questions taken from the items: real questions noted as unlike the items",
+   "pass": true,
+   "detail": "In use, a question's best answer is 2.0 times as far as items are from each other (question links turn on above 1.5); the build's sample questions gave 1.0. Rebuilding with the spot-checked questions as sample questions would turn them on.",
+   "data": null
+  },
+  {
+   "check": "yandex: no rebuild suggested, and the note's rebuild really gains under 15%",
+   "pass": true,
+   "detail": "measured 0.97x (29,849 -> 29,086 searches/s at 95%, one core)",
+   "data": null
+  },
+  {
+   "check": "llama with sample questions taken from the items: real questions noted as unlike the items",
+   "pass": true,
+   "detail": "In use, a question's best answer is 25.8 times as far as items are from each other (question links turn on above 1.5); the build's sample questions gave 1.0. Rebuilding with the spot-checked questions as sample questions would turn them on.",
+   "data": null
+  },
+  {
+   "check": "llama: sample questions from the items: the suggested rebuild gains what the trial said, within 15%",
+   "pass": false,
+   "detail": "trial 4.37x, measured 3.62x (5,903 -> 21,391 searches/s at 95%, one core); suggested: Rebuild with 64 links per item (now 32) and the spot-checked questions as sample questions, which turn question links on: about 4.4x faster at 95% accuracy.",
+   "data": null
+  },
+  {
+   "check": "gooaq, tuned at build: no rebuild suggested",
+   "pass": true,
+   "detail": "built with 32 links, slack 1.2; notes: none",
+   "data": null
+  },
+  {
+   "check": "glove, tuned at build: no rebuild suggested",
+   "pass": true,
+   "detail": "built with 96 links, slack 1.2; notes: none",
+   "data": null
+  },
+  {
+   "check": "yandex, tuned at build: no rebuild suggested",
+   "pass": true,
+   "detail": "built with 32 links, slack 1.2; notes: none",
+   "data": null
+  },
+  {
+   "check": "llama, tuned at build: no rebuild suggested",
+   "pass": true,
+   "detail": "built with 24 links, slack 1.3; notes: none",
+   "data": null
+  },
+  {
+   "check": "landmark, tuned at build: no rebuild suggested",
+   "pass": true,
+   "detail": "built with 24 links, slack 1.0; notes: none",
+   "data": null
+  },
+  {
+   "check": "yandex with a quarter of its items deleted: a note to rebuild for memory",
+   "pass": true,
+   "detail": "25000 of 100000 slots (25%) hold deleted items: about 9 MB that adds will only partly reuse.",
+   "data": null
+  }
+ ]
+}

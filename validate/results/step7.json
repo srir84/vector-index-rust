@@ -1,0 +1,677 @@
+{
+ "step": "step7",
+ "pass": true,
+ "seconds": 160.8,
+ "checks": [
+  {
+   "check": "gooaq, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 524 vs prototype 524 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9369,
+      "checks": 486.206
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9369,
+      "checks": 486.206
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9369,
+      "checks": 486.206
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9442,
+      "checks": 505.868
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9490999999999999,
+      "checks": 520.178
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9578,
+      "checks": 554.452
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9658,
+      "checks": 591.758
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9765,
+      "checks": 664.075
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9837,
+      "checks": 760.071
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9926,
+      "checks": 941.763
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9965999999999999,
+      "checks": 1226.817
+     }
+    ]
+   }
+  },
+  {
+   "check": "gooaq, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 529 vs prototype 524 (1.0% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9345000000000001,
+      "checks": 480.013
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9345000000000001,
+      "checks": 480.013
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9345000000000001,
+      "checks": 480.013
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9425000000000001,
+      "checks": 500.807
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9473,
+      "checks": 519.031
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9555999999999999,
+      "checks": 549.315
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9658,
+      "checks": 600.38
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9731,
+      "checks": 655.528
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9795999999999999,
+      "checks": 748.99
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9913000000000001,
+      "checks": 951.986
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9949999999999999,
+      "checks": 1240.198
+     }
+    ]
+   }
+  },
+  {
+   "check": "gooaq: memory per item within 1% of the prototype's",
+   "pass": true,
+   "detail": "ours 944 bytes (links 168, copies 768, other 8) vs prototype 944",
+   "data": null
+  },
+  {
+   "check": "glove, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 5,735 vs prototype 5,734 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8812,
+      "checks": 2778.609
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8966,
+      "checks": 3213.345
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9185000000000001,
+      "checks": 3908.088
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9273,
+      "checks": 4335.998
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9356,
+      "checks": 4855.839
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9474,
+      "checks": 5493.167
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9574999999999999,
+      "checks": 6431.326
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9683999999999999,
+      "checks": 7441.467
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9799,
+      "checks": 9633.37
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9901,
+      "checks": 13002.424
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9944000000000001,
+      "checks": 16748.35
+     }
+    ]
+   }
+  },
+  {
+   "check": "glove, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 5,510 vs prototype 5,734 (3.9% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8835000000000001,
+      "checks": 2788.021
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9056,
+      "checks": 3360.395
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9218999999999999,
+      "checks": 3980.475
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9307000000000001,
+      "checks": 4425.216
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9456,
+      "checks": 5209.169
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9532,
+      "checks": 5728.424
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9642,
+      "checks": 6883.197
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9696,
+      "checks": 7633.658
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9813000000000001,
+      "checks": 9690.696
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9904,
+      "checks": 13123.327
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9945,
+      "checks": 16850.652
+     }
+    ]
+   }
+  },
+  {
+   "check": "glove: memory per item within 1% of the prototype's",
+   "pass": true,
+   "detail": "ours 376 bytes (links 168, copies 200, other 8) vs prototype 376",
+   "data": null
+  },
+  {
+   "check": "yandex, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 854 vs prototype 854 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8439,
+      "checks": 474.261
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8583000000000001,
+      "checks": 507.094
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.8824,
+      "checks": 550.419
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9003,
+      "checks": 602.09
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9138999999999999,
+      "checks": 645.226
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9225,
+      "checks": 682.636
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9375,
+      "checks": 762.886
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9528000000000001,
+      "checks": 873.944
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9658,
+      "checks": 1020.378
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9829000000000001,
+      "checks": 1456.558
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9914,
+      "checks": 2200.204
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 847 vs prototype 854 (0.8% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8385,
+      "checks": 469.962
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8568,
+      "checks": 504.038
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.8846999999999999,
+      "checks": 555.493
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.8975,
+      "checks": 586.647
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.913,
+      "checks": 639.405
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9228,
+      "checks": 677.666
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9385,
+      "checks": 758.794
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9545999999999999,
+      "checks": 882.469
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9688000000000001,
+      "checks": 1055.044
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9882,
+      "checks": 1522.273
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9943,
+      "checks": 2155.316
+     }
+    ]
+   }
+  },
+  {
+   "check": "yandex: memory per item within 1% of the prototype's",
+   "pass": true,
+   "detail": "ours 376 bytes (links 168, copies 200, other 8) vs prototype 376",
+   "data": null
+  },
+  {
+   "check": "llama, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 1,318 vs prototype 1,318 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8724000000000001,
+      "checks": 866.454
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8952,
+      "checks": 949.299
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9132999999999999,
+      "checks": 1039.427
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9227000000000001,
+      "checks": 1088.573
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9339999999999999,
+      "checks": 1171.287
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9456,
+      "checks": 1262.74
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9563,
+      "checks": 1396.1
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9654,
+      "checks": 1526.042
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9755,
+      "checks": 1775.41
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9888,
+      "checks": 2406.46
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9941000000000001,
+      "checks": 3217.464
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 1,381 vs prototype 1,318 (4.8% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.8814,
+      "checks": 954.548
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.8948,
+      "checks": 1017.183
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9194000000000001,
+      "checks": 1132.369
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9292,
+      "checks": 1183.4
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.933,
+      "checks": 1233.92
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9445,
+      "checks": 1326.287
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9573,
+      "checks": 1454.484
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9654999999999999,
+      "checks": 1591.998
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9778,
+      "checks": 1849.78
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9884000000000001,
+      "checks": 2405.218
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9954000000000001,
+      "checks": 3296.597
+     }
+    ]
+   }
+  },
+  {
+   "check": "llama: memory per item within 1% of the prototype's",
+   "pass": true,
+   "detail": "ours 304 bytes (links 168, copies 128, other 8) vs prototype 304",
+   "data": null
+  },
+  {
+   "check": "landmark, prototype's order: checks at 95% within 1%",
+   "pass": true,
+   "detail": "ours 392 vs prototype 392 (0.00% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9833000000000001,
+      "checks": 391.883
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9877,
+      "checks": 410.475
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9926999999999999,
+      "checks": 460.467
+     }
+    ]
+   }
+  },
+  {
+   "check": "landmark, our own order: checks at 95% within 5%",
+   "pass": true,
+   "detail": "ours 397 vs prototype 392 (1.4% apart)",
+   "data": {
+    "curve": [
+     {
+      "target": 0.88,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.9,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.92,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.93,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.94,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.95,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.96,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.97,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.98,
+      "accuracy": 0.9808,
+      "checks": 397.333
+     },
+     {
+      "target": 0.99,
+      "accuracy": 0.9853,
+      "checks": 416.336
+     },
+     {
+      "target": 0.995,
+      "accuracy": 0.9914999999999999,
+      "checks": 475.488
+     }
+    ]
+   }
+  },
+  {
+   "check": "landmark: memory per item within 1% of the prototype's",
+   "pass": true,
+   "detail": "ours 944 bytes (links 168, copies 768, other 8) vs prototype 944",
+   "data": null
+  }
+ ]
+}

@@ -1,0 +1,997 @@
+{
+ "step": "step24",
+ "pass": true,
+ "seconds": 576.3,
+ "checks": [
+  {
+   "check": "gooaq: built with the picked count and no tuning, the same answers",
+   "pass": true,
+   "detail": "32 links, slack 1.2, 4-bit copies, re-check 15: answers equal at list sizes 30 and 100 and at the 95% target",
+   "data": null
+  },
+  {
+   "check": "gooaq: the picked re-check count is within 3% of the best count",
+   "pass": true,
+   "detail": "picked 15: 42,001/s; best 15: 42,033/s (99.9%); 10: 13,009; 15: 42,033; 25: 40,612; 50: 40,701; 100: 40,485; 50 (part 2): 1.03x",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 49837.79557608687,
+       "checks": 510.9167826086955,
+       "bytes_per_item": 944.0,
+       "seconds": 3.38491225
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 42996.9729771958,
+       "checks": 526.0078749999999,
+       "bytes_per_item": 904.0,
+       "seconds": 2.985037708
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 46364.41205710986,
+       "checks": 624.974,
+       "bytes_per_item": 1028.0,
+       "seconds": 3.348091958
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 37104.70468082621,
+       "checks": 786.595,
+       "bytes_per_item": 1112.0,
+       "seconds": 3.879977041
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27490.04432009089,
+       "checks": 1095.926,
+       "bytes_per_item": 1276.0,
+       "seconds": 5.096898959
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 39598.25211692062,
+       "checks": 591.6013736263736,
+       "bytes_per_item": 944.0,
+       "seconds": 3.104086041
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 46959.92059573251,
+       "checks": 543.9629009900989,
+       "bytes_per_item": 944.0,
+       "seconds": 3.236914375
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 49758.81739959009,
+       "checks": 510.90875652173895,
+       "bytes_per_item": 944.0,
+       "seconds": 3.2114605
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 37503.98601588149,
+       "checks": 525.0472580645159,
+       "bytes_per_item": 944.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 41176.152225933234,
+       "checks": 534.1361428571428,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 42877.63232752475,
+       "checks": 528.8454285714284,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 41454.44247643433,
+       "checks": 534.1361428571428,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 41170.84541966197,
+       "checks": 534.1361428571428,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 4,
+     "chosen_rerank": 15,
+     "chosen": 0,
+     "seconds": 32.472968667
+    },
+    "searches_per_s": {
+     "picked": 42001.35013262981,
+     "10": 13009.227562018008,
+     "15": 42033.15671887962,
+     "25": 40611.99704811101,
+     "50": 40701.22319919429,
+     "100": 40485.28627626845
+    },
+    "picked": 15,
+    "build_s": 66.08867054083385
+   }
+  },
+  {
+   "check": "gooaq: the 95% target gives at least 94%",
+   "pass": true,
+   "detail": "96.00% on the tuning questions",
+   "data": null
+  },
+  {
+   "check": "glove: built with the picked count and no tuning, the same answers",
+   "pass": true,
+   "detail": "96 links, slack 1.3, 4-bit copies, re-check 50: answers equal at list sizes 30 and 100 and at the 95% target",
+   "data": null
+  },
+  {
+   "check": "glove: the picked re-check count is within 3% of the best count",
+   "pass": true,
+   "detail": "picked 50: 9,960/s; best 50: 10,058/s (99.0%); 10: never 95%; 15: never 95%; 25: 8,646; 50: 10,058; 100: 9,882; 50 (part 2): 0.99x",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 15365.834375351393,
+       "checks": 2894.0610624999986,
+       "bytes_per_item": 376.0,
+       "seconds": 1.677707625
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13729.895476080697,
+       "checks": 2943.6664605263145,
+       "bytes_per_item": 336.0,
+       "seconds": 1.730758875
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 17655.097308166216,
+       "checks": 2840.1288653846145,
+       "bytes_per_item": 460.0,
+       "seconds": 1.6051188330000001
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 18860.313100057785,
+       "checks": 2695.658391304347,
+       "bytes_per_item": 544.0,
+       "seconds": 1.741485958
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 20202.53614252775,
+       "checks": 2818.4383584905663,
+       "bytes_per_item": 708.0,
+       "seconds": 1.88709725
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 16236.60945050066,
+       "checks": 3173.5163362831845,
+       "bytes_per_item": 708.0,
+       "seconds": 1.6156987919999999
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 19713.96444325021,
+       "checks": 2912.0133571428564,
+       "bytes_per_item": 708.0,
+       "seconds": 1.8314107499999999
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 20332.431562766273,
+       "checks": 2804.8486753246743,
+       "bytes_per_item": 708.0,
+       "seconds": 1.8736455410000001
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 8859.290243591819,
+       "checks": 5614.944318181812,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 9446.923199721188,
+       "checks": 5741.892011363634,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 8251.79311817281,
+       "checks": 6777.437738317747,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 9464.067993036648,
+       "checks": 5741.892011363634,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 4,
+     "chosen_rerank": 50,
+     "chosen": 7,
+     "seconds": 19.299827459
+    },
+    "searches_per_s": {
+     "picked": 9959.898936587551,
+     "10": null,
+     "15": null,
+     "25": 8646.341982588217,
+     "50": 10058.098027590166,
+     "100": 9882.24283630397
+    },
+    "picked": 50,
+    "build_s": 49.668858542107046
+   }
+  },
+  {
+   "check": "glove: the 95% target gives at least 94%",
+   "pass": true,
+   "detail": "95.76% on the tuning questions",
+   "data": null
+  },
+  {
+   "check": "yandex: built with the picked count and no tuning, the same answers",
+   "pass": true,
+   "detail": "48 links, slack 1.3, 8-bit copies, re-check 15: answers equal at list sizes 30 and 100 and at the 95% target",
+   "data": null
+  },
+  {
+   "check": "yandex: the picked re-check count is within 3% of the best count",
+   "pass": true,
+   "detail": "picked 15: 48,052/s; best 15: 48,292/s (99.5%); 10: 47,769; 15: 48,292; 25: 47,315; 50: 45,930; 100: 46,037; 50 (part 2): 1.05x",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 66723.83951090397,
+       "checks": 660.0738719999997,
+       "bytes_per_item": 376.0,
+       "seconds": 1.430890125
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 56579.376458301944,
+       "checks": 671.2706212121212,
+       "bytes_per_item": 336.0,
+       "seconds": 1.356747791
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 70253.68389087818,
+       "checks": 687.7401282051278,
+       "bytes_per_item": 460.0,
+       "seconds": 1.5383261670000001
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 67635.42716023182,
+       "checks": 776.7285454545454,
+       "bytes_per_item": 544.0,
+       "seconds": 1.679237584
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 63577.795193451464,
+       "checks": 859.999,
+       "bytes_per_item": 708.0,
+       "seconds": 1.808830458
+      },
+      {
+       "r": 48,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 54139.075672291765,
+       "checks": 728.5086990291256,
+       "bytes_per_item": 460.0,
+       "seconds": 1.3947105
+      },
+      {
+       "r": 48,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 66699.3938846527,
+       "checks": 718.9481681415924,
+       "bytes_per_item": 460.0,
+       "seconds": 1.466263208
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 74400.15589145831,
+       "checks": 672.4020909090906,
+       "bytes_per_item": 460.0,
+       "seconds": 1.590163167
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 61506.58592161253,
+       "checks": 729.9797586206893,
+       "bytes_per_item": 460.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 53973.23143829481,
+       "checks": 897.1458399999998,
+       "bytes_per_item": 372.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 63675.84831796043,
+       "checks": 718.4625172413789,
+       "bytes_per_item": 460.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 62450.8619326399,
+       "checks": 726.6694137931031,
+       "bytes_per_item": 460.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 61729.32052601197,
+       "checks": 729.9797586206893,
+       "bytes_per_item": 460.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 48,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 15,
+     "chosen": 7,
+     "seconds": 16.165907292
+    },
+    "searches_per_s": {
+     "picked": 48052.13510933445,
+     "10": 47769.20107985566,
+     "15": 48292.46870712341,
+     "25": 47314.6184125421,
+     "50": 45930.029009825754,
+     "100": 46036.57488041321
+    },
+    "picked": 15,
+    "build_s": 33.73428295808844
+   }
+  },
+  {
+   "check": "yandex: the 95% target gives at least 94%",
+   "pass": true,
+   "detail": "95.74% on the tuning questions",
+   "data": null
+  },
+  {
+   "check": "llama: built with the picked count and no tuning, the same answers",
+   "pass": true,
+   "detail": "24 links, slack 1.3, 8-bit copies, re-check 15: answers equal at list sizes 30 and 100 and at the 95% target",
+   "data": null
+  },
+  {
+   "check": "llama: the picked re-check count is within 3% of the best count",
+   "pass": true,
+   "detail": "picked 15: 53,210/s; best 15: 53,291/s (99.8%); 10: 33,667; 15: 53,291; 25: 52,531; 50: 50,855; 100: 50,955; 50 (part 2): 1.05x",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 64286.965301312535,
+       "checks": 859.4851018518516,
+       "bytes_per_item": 304.0,
+       "seconds": 1.214192958
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 74400.38046335132,
+       "checks": 691.8092857142856,
+       "bytes_per_item": 264.0,
+       "seconds": 1.153694708
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 54466.360774982764,
+       "checks": 1072.2474563106796,
+       "bytes_per_item": 388.0,
+       "seconds": 1.317628542
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 54860.16914161477,
+       "checks": 1163.1327101449274,
+       "bytes_per_item": 472.0,
+       "seconds": 1.359534875
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 51190.86483538346,
+       "checks": 1249.1646725663716,
+       "bytes_per_item": 636.0,
+       "seconds": 1.4078832079999999
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 51646.3638241564,
+       "checks": 831.9207115384615,
+       "bytes_per_item": 264.0,
+       "seconds": 1.2275285
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 71456.78575787006,
+       "checks": 726.1393783783783,
+       "bytes_per_item": 264.0,
+       "seconds": 1.181123959
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 78516.38194278868,
+       "checks": 651.995252427184,
+       "bytes_per_item": 264.0,
+       "seconds": 1.150505333
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 946.377545454545,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 200.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 54251.720545915385,
+       "checks": 914.3421818181813,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 53802.10278227366,
+       "checks": 923.6502727272723,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 52085.190941657536,
+       "checks": 946.377545454545,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 15,
+     "chosen": 7,
+     "seconds": 14.08610075
+    },
+    "searches_per_s": {
+     "picked": 53209.96447313245,
+     "10": 33667.45748882582,
+     "15": 53290.97297765183,
+     "25": 52530.9764675205,
+     "50": 50854.95824577402,
+     "100": 50954.66701700335
+    },
+    "picked": 15,
+    "build_s": 23.97811745805666
+   }
+  },
+  {
+   "check": "llama: the 95% target gives at least 94%",
+   "pass": true,
+   "detail": "95.07% on the tuning questions",
+   "data": null
+  },
+  {
+   "check": "landmark: built with the picked count and no tuning, the same answers",
+   "pass": true,
+   "detail": "24 links, slack 1.0, 8-bit copies, re-check 50: answers equal at list sizes 30 and 100 and at the 95% target",
+   "data": null
+  },
+  {
+   "check": "landmark: the picked re-check count is within 3% of the best count",
+   "pass": true,
+   "detail": "picked 50: 67,924/s; best 10: 68,738/s (98.8%); 10: 68,738; 15: 68,237; 25: 68,107; 50: 68,138; 100: 68,224; 50 (part 2): 1.00x",
+   "data": {
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 72990.57646820726,
+       "checks": 354.41,
+       "bytes_per_item": 944.0,
+       "seconds": 2.111421417
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 77864.54656782646,
+       "checks": 300.659,
+       "bytes_per_item": 904.0,
+       "seconds": 1.843821375
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 57464.246464153075,
+       "checks": 449.858,
+       "bytes_per_item": 1028.0,
+       "seconds": 2.234744
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 52582.64000756265,
+       "checks": 513.361,
+       "bytes_per_item": 1112.0,
+       "seconds": 2.221828209
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 46876.48349421358,
+       "checks": 591.502,
+       "bytes_per_item": 1276.0,
+       "seconds": 2.3957655
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 93593.36078648454,
+       "checks": 248.902,
+       "bytes_per_item": 904.0,
+       "seconds": 1.677066167
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 82424.65838688207,
+       "checks": 293.221,
+       "bytes_per_item": 904.0,
+       "seconds": 1.778174458
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 80032.24156017139,
+       "checks": 306.434,
+       "bytes_per_item": 904.0,
+       "seconds": 1.880868833
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 71943.73999532366,
+       "checks": 278.734,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 67337.92763258332,
+       "checks": 305.33278160919537,
+       "bytes_per_item": 520.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 72314.9408235992,
+       "checks": 278.734,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 71753.32956078244,
+       "checks": 278.734,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 71771.75705640626,
+       "checks": 278.734,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.0,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 50,
+     "chosen": 5,
+     "seconds": 17.96267425
+    },
+    "searches_per_s": {
+     "picked": 67923.6918002937,
+     "10": 68738.01031826527,
+     "15": 68236.82446590345,
+     "25": 68106.67845140536,
+     "50": 68138.33511804583,
+     "100": 68224.09004736044
+    },
+    "picked": 50,
+    "build_s": 38.55031850002706
+   }
+  },
+  {
+   "check": "landmark: the 95% target gives at least 94%",
+   "pass": true,
+   "detail": "95.05% on the tuning questions",
+   "data": null
+  }
+ ]
+}

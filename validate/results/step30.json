@@ -1,0 +1,1479 @@
+{
+ "step": "step30",
+ "pass": true,
+ "seconds": 0.1,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 28",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "gooaq: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 39,116/s at 95% (1 core), 560 bytes/item, build 639 s\n            HNSW          3,221/s (12.14x)   3,233 bytes/item  build 485 s\n            Glass        26,512/s (1.48x)   3,968 bytes/item  build 236 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9239,
+       "sec": 2.400095807388425e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9239,
+       "sec": 2.361358399502933e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9536,
+       "sec": 2.6395459193736316e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9536,
+       "sec": 2.5780582800507544e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9570000000000001,
+       "sec": 2.655812492594123e-05,
+       "checks": 548.687
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.968,
+       "sec": 2.9235207941383124e-05,
+       "checks": 578.377
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9757,
+       "sec": 3.208066592924297e-05,
+       "checks": 617.815
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9795,
+       "sec": 3.517570812255144e-05,
+       "checks": 650.426
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9853999999999999,
+       "sec": 4.090374987572432e-05,
+       "checks": 709.982
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9929,
+       "sec": 5.084670917131007e-05,
+       "checks": 850.438
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9972,
+       "sec": 7.403287501074374e-05,
+       "checks": 1399.817
+      }
+     ],
+     "qps95": 39116.17669608273,
+     "status95": "ok",
+     "checks95": 523.3134545454545,
+     "target": 0.92,
+     "accuracy_at_target": 0.9536,
+     "qps_all": 258183.84681351818,
+     "median_ms": 0.032708398066461086,
+     "p99_ms": 0.060918037779629224,
+     "other_programs_cores": [
+      0.925,
+      1.886
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 3221.21563901196,
+      "best": 0.9848000000000001,
+      "status": "ok",
+      "bytes_per_item": 3232.5195870219472,
+      "qps_all": 34737.24861313006,
+      "build_s": 485.02306354092434,
+      "params": {
+       "links": 32,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1454024
+     },
+     "glass": {
+      "qps95": 26511.68423281133,
+      "best": 0.984,
+      "status": "ok",
+      "bytes_per_item": 3968.0,
+      "qps_all": 226988.99610273575,
+      "build_s": 235.54944745800458,
+      "params": {
+       "links": 32,
+       "build": 200,
+       "slack": 0
+      },
+      "n_items": 1454024
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "glove: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 2,936/s at 95% (1 core), 708 bytes/item, build 411 s\n            HNSW            297/s (9.89x)   1,216 bytes/item  build 543 s\n            ScaNN         3,956/s (0.74x)     909 bytes/item  build 39 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8731,
+       "sec": 0.000135927083902061,
+       "checks": 5238.154
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9006000000000001,
+       "sec": 0.00017116137500852347,
+       "checks": 6566.906
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9183,
+       "sec": 0.0002195530419703573,
+       "checks": 8353.164
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9309,
+       "sec": 0.0002636950828600675,
+       "checks": 9672.867
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9403,
+       "sec": 0.00029826195794157683,
+       "checks": 11165.72
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9541000000000001,
+       "sec": 0.0003585577909834683,
+       "checks": 13294.105
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9646000000000001,
+       "sec": 0.0004488770419266075,
+       "checks": 16076.698
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9737,
+       "sec": 0.0005632742079906166,
+       "checks": 19938.904
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9837,
+       "sec": 0.0007523022501263768,
+       "checks": 26714.75
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9943,
+       "sec": 0.001284821999957785,
+       "checks": 43269.692
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9965999999999999,
+       "sec": 0.0017880259160883724,
+       "checks": 59782.538
+      }
+     ],
+     "qps95": 2935.6176919778327,
+     "status95": "ok",
+     "checks95": 12661.758731884043,
+     "target": 0.95,
+     "accuracy_at_target": 0.9541000000000001,
+     "qps_all": 22368.362180945565,
+     "median_ms": 0.2659375313669443,
+     "p99_ms": 0.9748241351917386,
+     "other_programs_cores": [
+      0.888,
+      1.054
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 296.91347417040726,
+      "best": 0.9804,
+      "status": "ok",
+      "bytes_per_item": 1216.14213402486,
+      "qps_all": 2581.1364088430623,
+      "build_s": 542.9528624999803,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1171514
+     },
+     "scann": {
+      "qps95": 3955.9657394556107,
+      "best": 0.9997999999999999,
+      "status": "ok",
+      "bytes_per_item": 908.8804265249925,
+      "qps_all": 28270.815299595823,
+      "build_s": 38.529115808999904,
+      "params": {
+       "leaves": 3515,
+       "dims_per_block": 2
+      },
+      "n_items": 1171514
+     }
+    },
+    "fastest_rival": "scann"
+   }
+  },
+  {
+   "check": "yandex: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 18,057/s at 95% (1 core), 460 bytes/item, build 166 s\n            HNSW          2,187/s (8.26x)   1,088 bytes/item  build 124 s\n            Glass        13,872/s (1.30x)   1,472 bytes/item  build 88 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8772,
+       "sec": 3.022341593168676e-05,
+       "checks": 1066.781
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9012,
+       "sec": 3.499966696836054e-05,
+       "checks": 1185.668
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9208000000000001,
+       "sec": 3.9886957965791224e-05,
+       "checks": 1352.352
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9334,
+       "sec": 4.708741698414087e-05,
+       "checks": 1504.129
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9425000000000001,
+       "sec": 5.32384580001235e-05,
+       "checks": 1635.558
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9507999999999999,
+       "sec": 5.560787511058152e-05,
+       "checks": 1743.674
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9599,
+       "sec": 7.050875015556813e-05,
+       "checks": 1955.783
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9678000000000001,
+       "sec": 7.368754199706018e-05,
+       "checks": 2232.951
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9776,
+       "sec": 8.906558412127197e-05,
+       "checks": 2719.617
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9868,
+       "sec": 0.00012206720793619753,
+       "checks": 3699.358
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9933,
+       "sec": 0.0001717746250797063,
+       "checks": 5341.233
+      }
+     ],
+     "qps95": 18057.22413708974,
+     "status95": "ok",
+     "checks95": 1733.2531807228925,
+     "target": 0.95,
+     "accuracy_at_target": 0.9507999999999999,
+     "qps_all": 161209.06805848266,
+     "median_ms": 0.06050011143088341,
+     "p99_ms": 0.1644951524212956,
+     "other_programs_cores": [
+      0.998,
+      1.4420000000000002
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 2187.2048225008784,
+      "best": 0.9822,
+      "status": "ok",
+      "bytes_per_item": 1088.244064,
+      "qps_all": 20057.91722633702,
+      "build_s": 123.67496574996039,
+      "params": {
+       "links": 64,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1000000
+     },
+     "glass": {
+      "qps95": 13871.72217165627,
+      "best": 0.9861000000000001,
+      "status": "ok",
+      "bytes_per_item": 1472.0,
+      "qps_all": 123229.8463296335,
+      "build_s": 88.04997987486422,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1000000
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "llama: reaches 95% (HNSW never does)",
+   "pass": true,
+   "detail": "ours 104,715/s at 95% (1 core), 271 bytes/item, build 29 s\n            HNSW      never 95% (best 30.0%)     928 bytes/item  build 27 s\n            RoarGraph    57,226/s (1.83x)     522 bytes/item  build 3 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9221,
+       "sec": 7.811957970261574e-06,
+       "checks": 552.376
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9221,
+       "sec": 7.5834579765796665e-06,
+       "checks": 552.376
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9221,
+       "sec": 7.526540895923972e-06,
+       "checks": 552.376
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9348000000000001,
+       "sec": 8.485875092446803e-06,
+       "checks": 573.107
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9414,
+       "sec": 8.851415943354369e-06,
+       "checks": 615.114
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9490000000000001,
+       "sec": 9.366000071167945e-06,
+       "checks": 660.25
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9624,
+       "sec": 1.1828000191599131e-05,
+       "checks": 759.8
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9726000000000001,
+       "sec": 1.4612708007916809e-05,
+       "checks": 920.968
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9804999999999999,
+       "sec": 2.0273417001590133e-05,
+       "checks": 1177.123
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9897,
+       "sec": 4.1781999869272114e-05,
+       "checks": 2048.29
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9949999999999999,
+       "sec": 8.302791696041823e-05,
+       "checks": 3834.881
+      }
+     ],
+     "qps95": 104714.98680534563,
+     "status95": "ok",
+     "checks95": 667.6791044776112,
+     "target": 0.96,
+     "accuracy_at_target": 0.9624,
+     "qps_all": 690945.5514672288,
+     "median_ms": 0.014249933883547783,
+     "p99_ms": 0.02145873615518212,
+     "other_programs_cores": [
+      1.092,
+      1.85
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": null,
+      "best": 0.3001,
+      "status": "never",
+      "bytes_per_item": 928.211099910089,
+      "qps_all": 8247.23283933255,
+      "build_s": 27.387401040876284,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 256921
+     },
+     "roargraph": {
+      "qps95": 57225.63106642557,
+      "best": 0.9829000000000001,
+      "status": "ok",
+      "bytes_per_item": 522.2062346012976,
+      "qps_all": 457657.31627003796,
+      "build_s": 3.30664,
+      "params": {
+       "links": 96,
+       "build": 100,
+       "slack": 0
+      },
+      "n_items": 256921
+     }
+    },
+    "fastest_rival": "roargraph"
+   }
+  },
+  {
+   "check": "landmark: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 48,733/s at 95% (1 core), 904 bytes/item, build 283 s\n            HNSW          5,194/s (9.38x)   3,233 bytes/item  build 164 s\n            Glass        34,762/s (1.40x)   3,968 bytes/item  build 83 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9416,
+       "sec": 1.9752125022932887e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9416,
+       "sec": 1.931695803068578e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9416,
+       "sec": 1.9250207813456656e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9416,
+       "sec": 1.9363709026947618e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9416,
+       "sec": 1.9174542045220733e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9559,
+       "sec": 2.105916594155133e-05,
+       "checks": 358.019
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9559,
+       "sec": 2.1368958055973052e-05,
+       "checks": 358.019
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9694,
+       "sec": 2.395149995572865e-05,
+       "checks": 387.047
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9785,
+       "sec": 2.5532083120197058e-05,
+       "checks": 419.217
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9882,
+       "sec": 3.438691701740027e-05,
+       "checks": 496.862
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9929,
+       "sec": 3.892195806838572e-05,
+       "checks": 588.963
+      }
+     ],
+     "qps95": 48733.18734758184,
+     "status95": "ok",
+     "checks95": 352.09424475524474,
+     "target": 0.95,
+     "accuracy_at_target": 0.9559,
+     "qps_all": 220308.81611809012,
+     "median_ms": 0.025082961656153202,
+     "p99_ms": 0.04593440564349292,
+     "other_programs_cores": [
+      1.989,
+      0.905
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 5193.699014662485,
+      "best": 0.9922000000000001,
+      "status": "ok",
+      "bytes_per_item": 3232.5263349991956,
+      "qps_all": 51404.412097624416,
+      "build_s": 164.28122212504968,
+      "params": {
+       "links": 32,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 739757
+     },
+     "glass": {
+      "qps95": 34761.9027138294,
+      "best": 0.9841,
+      "status": "below_min_effort",
+      "bytes_per_item": 3968.0,
+      "qps_all": 302751.2079477485,
+      "build_s": 83.41967020812444,
+      "params": {
+       "links": 32,
+       "build": 200,
+       "slack": 0
+      },
+      "n_items": 739757
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "arxiv: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 30,005/s at 95% (1 core), 560 bytes/item, build 561 s\n            HNSW          2,694/s (11.14x)   3,233 bytes/item  build 144 s\n            Glass        21,627/s (1.39x)   3,968 bytes/item  build 121 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9248,
+       "sec": 2.957999985665083e-05,
+       "checks": 587.063
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9307000000000001,
+       "sec": 2.9437417164444925e-05,
+       "checks": 613.687
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9362,
+       "sec": 3.082141699269414e-05,
+       "checks": 652.065
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9416,
+       "sec": 3.118458413518965e-05,
+       "checks": 665.658
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9446,
+       "sec": 3.1948375049978494e-05,
+       "checks": 678.983
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9578,
+       "sec": 3.53193748742342e-05,
+       "checks": 715.425
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9640000000000001,
+       "sec": 3.682987508364022e-05,
+       "checks": 754.649
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9739000000000001,
+       "sec": 4.241641703993082e-05,
+       "checks": 831.766
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.984,
+       "sec": 5.036637512966991e-05,
+       "checks": 952.451
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9921,
+       "sec": 6.349229183979332e-05,
+       "checks": 1155.454
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9958,
+       "sec": 7.905554096214473e-05,
+       "checks": 1552.978
+      }
+     ],
+     "qps95": 30005.322554786446,
+     "status95": "ok",
+     "checks95": 693.8910909090907,
+     "target": 0.95,
+     "accuracy_at_target": 0.9578,
+     "qps_all": 206800.3052675015,
+     "median_ms": 0.040520564652979374,
+     "p99_ms": 0.06696174619719386,
+     "other_programs_cores": [
+      2.8489999999999998,
+      1.501
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 2693.780469956383,
+      "best": 0.9800000000000001,
+      "status": "ok",
+      "bytes_per_item": 3232.5231168827245,
+      "qps_all": 26899.58769663991,
+      "build_s": 144.41330245882273,
+      "params": {
+       "links": 32,
+       "build": 100,
+       "slack": 0
+      },
+      "n_items": 1323643
+     },
+     "glass": {
+      "qps95": 21626.843421447596,
+      "best": 0.9775,
+      "status": "ok",
+      "bytes_per_item": 3968.0,
+      "qps_all": 174226.1358068792,
+      "build_s": 120.96852341690101,
+      "params": {
+       "links": 32,
+       "build": 100,
+       "slack": 0
+      },
+      "n_items": 1323643
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "laion: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 10,628/s at 95% (1 core), 772 bytes/item, build 385 s\n            HNSW            801/s (13.28x)   2,336 bytes/item  build 308 s\n            Glass         4,833/s (2.20x)   2,816 bytes/item  build 279 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8728999999999999,
+       "sec": 4.819108406081796e-05,
+       "checks": 1203.212
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8946,
+       "sec": 5.472216685302555e-05,
+       "checks": 1370.209
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9137000000000001,
+       "sec": 6.58923340961337e-05,
+       "checks": 1606.803
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9269000000000001,
+       "sec": 7.253624987788498e-05,
+       "checks": 1815.91
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9372999999999999,
+       "sec": 7.878104201518e-05,
+       "checks": 2012.717
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9499000000000001,
+       "sec": 9.395183296874165e-05,
+       "checks": 2277.401
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9608000000000001,
+       "sec": 0.00010876879189163446,
+       "checks": 2645.92
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9688000000000001,
+       "sec": 0.00013219654117710888,
+       "checks": 3228.295
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9788,
+       "sec": 0.00016758724977262318,
+       "checks": 4240.651
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894000000000001,
+       "sec": 0.00030143345799297095,
+       "checks": 7303.292
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9949,
+       "sec": 0.000496724917087704,
+       "checks": 12030.428
+      }
+     ],
+     "qps95": 10628.374094806806,
+     "status95": "ok",
+     "checks95": 2280.7819082568762,
+     "target": 0.95,
+     "accuracy_at_target": 0.9499000000000001,
+     "qps_all": 75201.39807379652,
+     "median_ms": 0.09897910058498383,
+     "p99_ms": 0.19614345394074917,
+     "other_programs_cores": [
+      2.142,
+      0.847
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 800.5487712874552,
+      "best": 0.9753000000000001,
+      "status": "ok",
+      "bytes_per_item": 2336.245198151228,
+      "qps_all": 6701.44156626355,
+      "build_s": 307.8060837909579,
+      "params": {
+       "links": 64,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1000448
+     },
+     "glass": {
+      "qps95": 4833.382712843314,
+      "best": 0.9814999999999999,
+      "status": "ok",
+      "bytes_per_item": 2816.0,
+      "qps_all": 65338.65803080291,
+      "build_s": 279.0913387921173,
+      "params": {
+       "links": 64,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1000448
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "yi: reaches 95% (HNSW never does)",
+   "pass": true,
+   "detail": "ours 44,290/s at 95% (1 core), 315 bytes/item, build 31 s\n            HNSW      never 95% (best 49.0%)     928 bytes/item  build 15 s\n            RoarGraph    24,371/s (1.82x)     534 bytes/item  build 4 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8869,
+       "sec": 1.1347084073349834e-05,
+       "checks": 769.236
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9013,
+       "sec": 1.1943583842366935e-05,
+       "checks": 845.614
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9170999999999999,
+       "sec": 1.444308296777308e-05,
+       "checks": 953.79
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9259999999999999,
+       "sec": 1.7230166122317314e-05,
+       "checks": 1044.035
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9381999999999999,
+       "sec": 1.8204082967713477e-05,
+       "checks": 1168.508
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9498,
+       "sec": 2.2442916873842477e-05,
+       "checks": 1337.414
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9576,
+       "sec": 2.772175008431077e-05,
+       "checks": 1541.642
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9692999999999999,
+       "sec": 3.4197415923699736e-05,
+       "checks": 1879.205
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9797,
+       "sec": 5.145349982194602e-05,
+       "checks": 2569.34
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.991,
+       "sec": 9.27035838831216e-05,
+       "checks": 4225.42
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9959,
+       "sec": 0.0001902034590020776,
+       "checks": 7413.434
+      }
+     ],
+     "qps95": 44290.36991742998,
+     "status95": "ok",
+     "checks95": 1342.6506153846149,
+     "target": 0.95,
+     "accuracy_at_target": 0.9498,
+     "qps_all": 433432.0323949265,
+     "median_ms": 0.028937356546521187,
+     "p99_ms": 0.04683670122176408,
+     "other_programs_cores": [
+      2.153,
+      1.953
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": null,
+      "best": 0.4897,
+      "status": "never",
+      "bytes_per_item": 928.223782626981,
+      "qps_all": 6918.908909881113,
+      "build_s": 15.25305691617541,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 187843
+     },
+     "roargraph": {
+      "qps95": 24371.489835891287,
+      "best": 0.9710000000000001,
+      "status": "ok",
+      "bytes_per_item": 534.2544997684237,
+      "qps_all": 222723.3497591804,
+      "build_s": 3.81602,
+      "params": {
+       "links": 96,
+       "build": 200,
+       "slack": 0
+      },
+      "n_items": 187843
+     }
+    },
+    "fastest_rival": "roargraph"
+   }
+  },
+  {
+   "check": "gist: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 3,980/s at 95% (1 core), 1,304 bytes/item, build 792 s\n            HNSW            302/s (13.18x)   4,128 bytes/item  build 628 s\n            Glass         2,905/s (1.37x)   5,184 bytes/item  build 611 s\n            CoreNN          233/s (17.09x)   5,696 bytes/item  build 2474 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8781000000000001,
+       "sec": 0.00014302258309908212,
+       "checks": 2191.24
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.897,
+       "sec": 0.00015722199995070696,
+       "checks": 2446.251
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9185000000000001,
+       "sec": 0.00018472308316268027,
+       "checks": 2820.709
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9263999999999999,
+       "sec": 0.00019684858294203878,
+       "checks": 3024.502
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9418,
+       "sec": 0.0002421172079630196,
+       "checks": 3426.02
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9461999999999999,
+       "sec": 0.0002400743749458343,
+       "checks": 3656.557
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9571,
+       "sec": 0.00026838345895521343,
+       "checks": 4081.669
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.97,
+       "sec": 0.0003106851249467581,
+       "checks": 4786.32
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9813000000000001,
+       "sec": 0.00039435449987649916,
+       "checks": 5987.775
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894000000000001,
+       "sec": 0.0005539968749508262,
+       "checks": 8465.769
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9941000000000001,
+       "sec": 0.0007625909999478608,
+       "checks": 11821.344
+      }
+     ],
+     "qps95": 3979.7153970947984,
+     "status95": "ok",
+     "checks95": 3804.761183486239,
+     "target": 0.96,
+     "accuracy_at_target": 0.9571,
+     "qps_all": 14320.304561021725,
+     "median_ms": 0.2726874081417918,
+     "p99_ms": 0.5526330810971558,
+     "other_programs_cores": [
+      1.2069999999999999,
+      2.175
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 301.9633342212372,
+      "best": 0.9829000000000001,
+      "status": "ok",
+      "bytes_per_item": 4128.244629213483,
+      "qps_all": 3064.0857362800757,
+      "build_s": 627.6131874590646,
+      "params": {
+       "links": 64,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 979000
+     },
+     "glass": {
+      "qps95": 2905.0096818821494,
+      "best": 0.9802,
+      "status": "ok",
+      "bytes_per_item": 5184.0,
+      "qps_all": 20248.311512503955,
+      "build_s": 611.4516759170219,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 979000
+     },
+     "corenn": {
+      "qps95": 232.8663915329045,
+      "best": 0.9896,
+      "status": "ok",
+      "bytes_per_item": 5695.690917262513,
+      "qps_all": 2447.389789652859,
+      "build_s": 2474.172025916865,
+      "params": {
+       "links": 64,
+       "build": 128,
+       "slack": 1.1
+      },
+      "n_items": 979000
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "nytimes: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 12,702/s at 95% (1 core), 636 bytes/item, build 158 s\n            HNSW            701/s (18.12x)   1,440 bytes/item  build 69 s\n            Glass         8,523/s (1.49x)   1,664 bytes/item  build 73 s\n            ScaNN         4,264/s (2.98x)   1,177 bytes/item  build 11 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8917999999999999,
+       "sec": 3.0809707939624785e-05,
+       "checks": 1821.086
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9085000000000001,
+       "sec": 3.944154200144112e-05,
+       "checks": 2029.591
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9265000000000001,
+       "sec": 5.18071660771966e-05,
+       "checks": 2464.763
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9304,
+       "sec": 5.551808304153383e-05,
+       "checks": 2684.499
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9394,
+       "sec": 6.35154580231756e-05,
+       "checks": 2974.628
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9509000000000001,
+       "sec": 8.001874992623925e-05,
+       "checks": 3578.478
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.96,
+       "sec": 9.556254209019244e-05,
+       "checks": 4262.974
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9730000000000001,
+       "sec": 0.00012806858308613301,
+       "checks": 5559.702
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9798,
+       "sec": 0.00014713625004515051,
+       "checks": 6869.602
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9901,
+       "sec": 0.0002329124161042273,
+       "checks": 10584.514
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9954000000000001,
+       "sec": 0.0003542416251730174,
+       "checks": 18568.893
+      }
+     ],
+     "qps95": 12702.09219996083,
+     "status95": "ok",
+     "checks95": 3531.2201739130373,
+     "target": 0.95,
+     "accuracy_at_target": 0.9509000000000001,
+     "qps_all": 135643.0267757584,
+     "median_ms": 0.06904196925461292,
+     "p99_ms": 0.29010457219555974,
+     "other_programs_cores": [
+      1.0610000000000002,
+      1.839
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 700.8923389979828,
+      "best": 0.9727,
+      "status": "ok",
+      "bytes_per_item": 1440.2202998202865,
+      "qps_all": 6529.32770050303,
+      "build_s": 69.38908579200506,
+      "params": {
+       "links": 96,
+       "build": 200,
+       "slack": 0
+      },
+      "n_items": 268761
+     },
+     "glass": {
+      "qps95": 8522.728737502839,
+      "best": 0.9798,
+      "status": "ok",
+      "bytes_per_item": 1664.0,
+      "qps_all": 90747.18965223152,
+      "build_s": 73.0277096668724,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 268761
+     },
+     "scann": {
+      "qps95": 4264.119772265142,
+      "best": 1.0,
+      "status": "ok",
+      "bytes_per_item": 1176.7929312660692,
+      "qps_all": 30310.72279726182,
+      "build_s": 10.576415463000103,
+      "params": {
+       "leaves": 2688,
+       "dims_per_block": 2
+      },
+      "n_items": 268761
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "imagenet: faster than HNSW at 95%",
+   "pass": true,
+   "detail": "ours 14,499/s at 95% (1 core), 816 bytes/item, build 444 s\n            HNSW            985/s (14.72x)   2,721 bytes/item  build 244 s\n            Glass         9,068/s (1.60x)   3,584 bytes/item  build 338 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8855000000000001,
+       "sec": 4.169299989007413e-05,
+       "checks": 786.663
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8942,
+       "sec": 4.456554213538766e-05,
+       "checks": 831.454
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9134,
+       "sec": 5.015783291310072e-05,
+       "checks": 928.599
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9334,
+       "sec": 5.47926661092788e-05,
+       "checks": 1018.893
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9420999999999999,
+       "sec": 6.134166708216072e-05,
+       "checks": 1103.302
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9555999999999999,
+       "sec": 7.437908393330872e-05,
+       "checks": 1268.277
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9625,
+       "sec": 7.766174990683794e-05,
+       "checks": 1343.902
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9714,
+       "sec": 9.132054098881782e-05,
+       "checks": 1577.562
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9791000000000001,
+       "sec": 0.00011717983288690448,
+       "checks": 1900.624
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9880000000000001,
+       "sec": 0.00015241158404387533,
+       "checks": 2641.598
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9924,
+       "sec": 0.00024864195799455046,
+       "checks": 4138.013
+      }
+     ],
+     "qps95": 14498.853590003753,
+     "status95": "ok",
+     "checks95": 1199.8429259259265,
+     "target": 0.96,
+     "accuracy_at_target": 0.9625,
+     "qps_all": 95362.97491761475,
+     "median_ms": 0.06893789395689964,
+     "p99_ms": 0.24524376261979342,
+     "other_programs_cores": [
+      3.0869999999999997,
+      2.58
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 985.1892655903108,
+      "best": 0.9822,
+      "status": "ok",
+      "bytes_per_item": 2720.5221270919405,
+      "qps_all": 10559.564524275174,
+      "build_s": 244.14159854105674,
+      "params": {
+       "links": 32,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1281167
+     },
+     "glass": {
+      "qps95": 9068.300558159159,
+      "best": 0.9744999999999999,
+      "status": "ok",
+      "bytes_per_item": 3584.0,
+      "qps_all": 82564.45210908125,
+      "build_s": 337.7271370419767,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 1281167
+     }
+    },
+    "fastest_rival": "glass"
+   }
+  },
+  {
+   "check": "llama2: reaches 95% (HNSW never does)",
+   "pass": true,
+   "detail": "ours 54,188/s at 95% (1 core), 314 bytes/item, build 37 s\n            HNSW      never 95% (best 26.9%)     928 bytes/item  build 24 s\n            RoarGraph    29,507/s (1.84x)     530 bytes/item  build 6 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8859,
+       "sec": 9.274041978642345e-06,
+       "checks": 705.204
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8986000000000001,
+       "sec": 1.040941709652543e-05,
+       "checks": 748.986
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9193,
+       "sec": 1.1436874978244305e-05,
+       "checks": 876.254
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9281,
+       "sec": 1.353058312088251e-05,
+       "checks": 955.981
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9398,
+       "sec": 1.741679199039936e-05,
+       "checks": 1093.739
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9525,
+       "sec": 1.8708374816924332e-05,
+       "checks": 1256.717
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9624,
+       "sec": 2.3013207828626038e-05,
+       "checks": 1435.866
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9738,
+       "sec": 2.999129192903638e-05,
+       "checks": 1773.265
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9841,
+       "sec": 3.885291586630046e-05,
+       "checks": 2314.162
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9914999999999999,
+       "sec": 5.798929207958281e-05,
+       "checks": 3399.739
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9955999999999999,
+       "sec": 8.114233403466641e-05,
+       "checks": 4672.205
+      }
+     ],
+     "qps95": 54188.42309787296,
+     "status95": "ok",
+     "checks95": 1224.6347165354325,
+     "target": 0.96,
+     "accuracy_at_target": 0.9624,
+     "qps_all": 453249.35257137334,
+     "median_ms": 0.028333510272204876,
+     "p99_ms": 0.042338124476373196,
+     "other_programs_cores": [
+      3.1010000000000004,
+      2.211
+     ]
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": null,
+      "best": 0.2692,
+      "status": "never",
+      "bytes_per_item": 928.211099910089,
+      "qps_all": 6415.15174368356,
+      "build_s": 23.58140204194933,
+      "params": {
+       "links": 96,
+       "build": 400,
+       "slack": 0
+      },
+      "n_items": 256921
+     },
+     "roargraph": {
+      "qps95": 29506.51063445797,
+      "best": 0.9717,
+      "status": "ok",
+      "bytes_per_item": 529.8105954748736,
+      "qps_all": 271134.3828764538,
+      "build_s": 6.45986,
+      "params": {
+       "links": 96,
+       "build": 200,
+       "slack": 0
+      },
+      "n_items": 256921
+     }
+    },
+    "fastest_rival": "roargraph"
+   }
+  }
+ ]
+}

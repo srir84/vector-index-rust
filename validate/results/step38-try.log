@@ -1,0 +1,3 @@
+landmark, prune: drift -4.96 (after 90.25%, fresh 95.21%); target 0.88; checks 272 (fresh 336); unreachable 179 -> 1047 (fresh 241); links per item 16.6 -> 10.2 (fresh 16.3); memory 1.002x fresh
+landmark, occlude: drift -1.24 (after 93.97%, fresh 95.21%); target 0.88; checks 326 (fresh 336); unreachable 179 -> 470 (fresh 241); links per item 16.6 -> 15.3 (fresh 16.3); memory 1.002x fresh
+landmark, occlude, 8 replacements: drift -0.63 (after 94.58%, fresh 95.21%); target 0.88; checks 332 (fresh 336); unreachable 179 -> 383 (fresh 241); links per item 16.6 -> 15.7 (fresh 16.3); memory 1.002x fresh

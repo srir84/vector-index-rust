@@ -1,0 +1,118 @@
+{
+ "step": "step25",
+ "pass": false,
+ "seconds": 143.6,
+ "checks": [
+  {
+   "check": "gooaq: part 1's design: answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "gooaq: part 3's settings: build and answers identical to the recording",
+   "pass": true,
+   "detail": "{'r': 32, 'alpha': 1.2, 'code_bits': 4, 'rerank': 15}: identical",
+   "data": null
+  },
+  {
+   "check": "gooaq: no more than 2% slower",
+   "pass": true,
+   "detail": "41,988 searches/s at 95% against 41,750 before (1.006x); checks 522 (before 522); one core, the same saved index, 5 rounds each, taking turns",
+   "data": {
+    "sec_before": 2.395218025184253e-05,
+    "sec_now": 2.3816211433514197e-05
+   }
+  },
+  {
+   "check": "glove: part 1's design: answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "glove: part 3's settings: build and answers identical to the recording",
+   "pass": true,
+   "detail": "{'r': 96, 'alpha': 1.3, 'code_bits': 4, 'rerank': 50}: identical",
+   "data": null
+  },
+  {
+   "check": "glove: no more than 2% slower",
+   "pass": true,
+   "detail": "10,344 searches/s at 95% against 10,041 before (1.030x); checks 5,217 (before 5,217); one core, the same saved index, 5 rounds each, taking turns",
+   "data": {
+    "sec_before": 9.959209468971904e-05,
+    "sec_now": 9.667866817142207e-05
+   }
+  },
+  {
+   "check": "yandex: part 1's design: answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "yandex: part 3's settings: build and answers identical to the recording",
+   "pass": true,
+   "detail": "{'r': 48, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15}: identical",
+   "data": null
+  },
+  {
+   "check": "yandex: no more than 2% slower",
+   "pass": true,
+   "detail": "49,213 searches/s at 95% against 48,083 before (1.024x); checks 908 (before 908); one core, the same saved index, 5 rounds each, taking turns",
+   "data": {
+    "sec_before": 2.0797533879266365e-05,
+    "sec_now": 2.0319672901138418e-05
+   }
+  },
+  {
+   "check": "llama: part 1's design: answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "llama: part 3's settings: build and answers identical to the recording",
+   "pass": true,
+   "detail": "{'r': 24, 'alpha': 1.3, 'code_bits': 8, 'rerank': 15}: identical",
+   "data": null
+  },
+  {
+   "check": "llama: no more than 2% slower",
+   "pass": true,
+   "detail": "54,237 searches/s at 95% against 53,246 before (1.019x); checks 925 (before 925); one core, the same saved index, 5 rounds each, taking turns",
+   "data": {
+    "sec_before": 1.878088057079973e-05,
+    "sec_now": 1.843775363899219e-05
+   }
+  },
+  {
+   "check": "landmark: part 1's design: answers identical to step 12's recording",
+   "pass": true,
+   "detail": "identical",
+   "data": null
+  },
+  {
+   "check": "landmark: part 3's settings: build and answers identical to the recording",
+   "pass": true,
+   "detail": "{'r': 24, 'alpha': 1.0, 'code_bits': 8, 'rerank': 50}: identical",
+   "data": null
+  },
+  {
+   "check": "landmark: no more than 2% slower",
+   "pass": true,
+   "detail": "68,479 searches/s at 95% against 67,651 before (1.012x); checks 282 (before 282); one core, the same saved index, 5 rounds each, taking turns",
+   "data": {
+    "sec_before": 1.478182599770234e-05,
+    "sec_now": 1.4602941186989056e-05
+   }
+  },
+  {
+   "check": "all five: at least 5% faster on average",
+   "pass": false,
+   "detail": "1.018x on average (gooaq 1.006x, glove 1.030x, yandex 1.024x, llama 1.019x, landmark 1.012x)",
+   "data": null
+  }
+ ]
+}

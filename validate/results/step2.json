@@ -1,0 +1,43 @@
+{
+ "step": "step2",
+ "pass": true,
+ "seconds": 0.1,
+ "checks": [
+  {
+   "check": "list size 10: same top 10",
+   "pass": true,
+   "detail": "100.00% of 1,000 questions (pass: 99.5%)",
+   "data": null
+  },
+  {
+   "check": "list size 10: same checks",
+   "pass": true,
+   "detail": "ours 555,309 vs prototype 555,309 (0.000% apart; pass: 0.5%)",
+   "data": null
+  },
+  {
+   "check": "list size 50: same top 10",
+   "pass": true,
+   "detail": "100.00% of 1,000 questions (pass: 99.5%)",
+   "data": null
+  },
+  {
+   "check": "list size 50: same checks",
+   "pass": true,
+   "detail": "ours 1,640,115 vs prototype 1,640,115 (0.000% apart; pass: 0.5%)",
+   "data": null
+  },
+  {
+   "check": "list size 200: same top 10",
+   "pass": true,
+   "detail": "100.00% of 1,000 questions (pass: 99.5%)",
+   "data": null
+  },
+  {
+   "check": "list size 200: same checks",
+   "pass": true,
+   "detail": "ours 4,911,919 vs prototype 4,911,919 (0.000% apart; pass: 0.5%)",
+   "data": null
+  }
+ ]
+}

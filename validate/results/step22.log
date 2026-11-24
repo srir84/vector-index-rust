@@ -1,0 +1,74 @@
+PASS  gooaq: faster at 95% than HNSW, DiskANN and CoreNN  ours 41,965/s at 95% (1 core; 521 checks); all cores 285,490/s; typical 0.028 ms, slow 0.051 ms; build 57.9 s; 560 bytes/item; picked 32 links, slack 1.2, 4-bit copies; other programs using 1.0 -> 2.1 cores
+            HNSW          3,543/s   3,233 bytes/item  build 9 s
+            DiskANN       8,679/s   3,240 bytes/item  build 8 s
+            CoreNN        1,502/s   7,286 bytes/item  build 268 s
+            Glass        39,839/s   4,096 bytes/item  build 11 s
+            ScaNN        11,137/s   3,523 bytes/item  build 10 s
+            RoarGraph     6,796/s   3,183 bytes/item  build 8 s
+PASS  gooaq: closer to the fastest rival than part 1  1.05x Glass's speed (part 1: 0.51x)
+PASS  glove: faster at 95% than HNSW, DiskANN and CoreNN  ours 9,457/s at 95% (1 core; 5,655 checks); all cores 103,681/s; typical 0.103 ms, slow 0.247 ms; build 38.8 s; 620 bytes/item; picked 96 links, slack 1.3, 4-bit copies; other programs using 2.0 -> 1.9 cores
+            HNSW            790/s   1,088 bytes/item  build 11 s
+            DiskANN       3,307/s   1,300 bytes/item  build 14 s
+            CoreNN          349/s   5,570 bytes/item  build 178 s
+            Glass         8,345/s   1,472 bytes/item  build 7 s
+            ScaNN        12,650/s     920 bytes/item  build 2 s
+            RoarGraph     1,745/s   1,077 bytes/item  build 15 s
+PASS  glove: closer to the fastest rival than part 1  0.75x ScaNN's speed (part 1: 0.39x)
+PASS  yandex: faster at 95% than HNSW, DiskANN and CoreNN  ours 41,411/s at 95% (1 core; 989 checks); all cores 372,099/s; typical 0.029 ms, slow 0.054 ms; build 26.9 s; 460 bytes/item; picked 48 links, slack 1.3, 8-bit copies; other programs using 2.2 -> 1.2 cores
+            HNSW          5,118/s     961 bytes/item  build 6 s
+            DiskANN      18,032/s     968 bytes/item  build 7 s
+            CoreNN        1,998/s   4,599 bytes/item  build 71 s
+            Glass        45,403/s   1,344 bytes/item  build 2 s
+            ScaNN        30,163/s     920 bytes/item  build 2 s
+            RoarGraph    11,496/s     921 bytes/item  build 5 s
+PASS  yandex: closer to the fastest rival than part 1  0.91x Glass's speed (part 1: 0.62x)
+PASS  llama: reaches 95% (HNSW, DiskANN and CoreNN never do)  ours 45,671/s at 95% (1 core; 1,005 checks); all cores 516,851/s; typical 0.024 ms, slow 0.033 ms; build 16.9 s; 264 bytes/item; picked 24 links, slack 1.3, 8-bit copies; other programs using 0.1 -> 2.0 cores
+            HNSW      never 95% (best 41%)     928 bytes/item  build 9 s
+            DiskANN   never 95% (best 94%)   1,012 bytes/item  build 6 s
+            CoreNN    never 95% (best 51%)   2,227 bytes/item  build 33 s
+            Glass     never 95% (best 38%)   1,024 bytes/item  build 3 s
+            ScaNN        11,891/s     655 bytes/item  build 3 s
+            RoarGraph    76,990/s     528 bytes/item  build 1 s
+PASS  llama: closer to the fastest rival than part 1  0.59x RoarGraph's speed (part 1: 0.40x)
+PASS  landmark: faster at 95% than HNSW, DiskANN and CoreNN  ours 70,100/s at 95% (1 core; 278 checks); all cores 312,199/s; typical 0.018 ms, slow 0.030 ms; build 33.5 s; 904 bytes/item; picked 24 links, slack 1.0, 8-bit copies; other programs using 1.9 -> 1.3 cores
+            HNSW          7,200/s   3,233 bytes/item  build 5 s
+            DiskANN      16,567/s   3,240 bytes/item  build 4 s
+            CoreNN        1,637/s   7,383 bytes/item  build 107 s
+            Glass        60,587/s   3,968 bytes/item  build 5 s
+            ScaNN        23,436/s   3,479 bytes/item  build 6 s
+            RoarGraph    12,914/s   3,155 bytes/item  build 9 s
+PASS  landmark: closer to the fastest rival than part 1  1.16x Glass's speed (part 1: 0.47x)
+PASS  arxiv (held back): faster at 95% than HNSW, DiskANN and CoreNN  ours 41,278/s at 95% (1 core; 508 checks); all cores 189,439/s; typical 0.028 ms, slow 0.045 ms; build 45.3 s; 944 bytes/item; picked 32 links, slack 1.2, 8-bit copies; other programs using 2.1 -> 1.9 cores
+            HNSW          3,560/s   3,233 bytes/item  build 8 s
+            DiskANN       9,095/s   3,240 bytes/item  build 7 s
+            CoreNN        1,480/s   7,277 bytes/item  build 180 s
+            Glass        39,260/s   4,096 bytes/item  build 9 s
+            ScaNN        13,975/s   3,523 bytes/item  build 8 s
+            RoarGraph     7,158/s   3,172 bytes/item  build 7 s
+      arxiv (held back): 1.05x the fastest rival (Glass)
+PASS  laion (held back): faster at 95% than HNSW, DiskANN and CoreNN  ours 20,050/s at 95% (1 core; 1,218 checks); all cores 119,729/s; typical 0.058 ms, slow 0.167 ms; build 58.2 s; 688 bytes/item; picked 32 links, slack 1.2, 8-bit copies; other programs using 1.1 -> 1.0 cores
+            HNSW          1,743/s   2,209 bytes/item  build 16 s
+            DiskANN       4,319/s   2,216 bytes/item  build 5 s
+            CoreNN        1,009/s   6,235 bytes/item  build 87 s
+            Glass        18,279/s   2,944 bytes/item  build 17 s
+            ScaNN        11,196/s   2,350 bytes/item  build 6 s
+            RoarGraph     3,023/s   2,199 bytes/item  build 22 s
+      laion (held back): 1.10x the fastest rival (Glass)
+PASS  yi (held back): reaches 95% (HNSW, DiskANN and CoreNN never do)  ours 34,897/s at 95% (1 core; 1,310 checks); all cores 350,882/s; typical 0.040 ms, slow 0.061 ms; build 17.7 s; 304 bytes/item; picked 32 links, slack 1.3, 8-bit copies; other programs using 0.6 -> 1.8 cores
+            HNSW      never 95% (best 53%)     928 bytes/item  build 8 s
+            DiskANN   never 95% (best 90%)   1,012 bytes/item  build 5 s
+            CoreNN    never 95% (best 35%)   1,925 bytes/item  build 9 s
+            Glass     never 95% (best 43%)   1,024 bytes/item  build 3 s
+            ScaNN         8,005/s     655 bytes/item  build 3 s
+            RoarGraph    31,379/s     546 bytes/item  build 3 s
+      yi (held back): 1.11x the fastest rival (RoarGraph)
+PASS  gist (held back): faster at 95% than HNSW, DiskANN and CoreNN  ours 11,811/s at 95% (1 core; 1,487 checks); all cores 50,031/s; typical 0.090 ms, slow 0.143 ms; build 62.4 s; 1,136 bytes/item; picked 32 links, slack 1.2, 8-bit copies; other programs using 1.1 -> 1.8 cores
+            HNSW            781/s   4,128 bytes/item  build 36 s
+            DiskANN       2,648/s   4,008 bytes/item  build 16 s
+            CoreNN          536/s   8,110 bytes/item  build 96 s
+            Glass         9,479/s   5,184 bytes/item  build 33 s
+            ScaNN         4,614/s   4,348 bytes/item  build 9 s
+            RoarGraph     2,050/s   3,917 bytes/item  build 31 s
+      gist (held back): 1.25x the fastest rival (Glass)
+
+step22: ALL PASS (14/14) in 425.9 s

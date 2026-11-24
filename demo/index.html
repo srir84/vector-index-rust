@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask GooAQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;500&family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=Schibsted+Grotesk:wght@600;700&display=swap">
+<style>
+/* Layout: the question on top, then the answers; a second column for HNSW when it is switched on. */
+:root {
+  --bg: #f4f5f7; --surface: #ffffff; --ink: #15181c; --ink-2: #4b5159; --ink-3: #646b74; --rule: #e0e3e8;
+  --ours: #2a78d6; --rival: #8a9099;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Atkinson Hyperlegible Next", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #101216; --surface: #181b20; --ink: #e8eaed; --ink-2: #b1b7bf; --ink-3: #8b929b; --rule: #2a2f37;
+    --ours: #5197ea; --rival: #6a7079; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-block: 36px 56px; display: grid; gap: 24px; }
+.eyebrow { margin: 0; font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+h1 { margin: 0; font: 700 clamp(28px, 4.5vw, 40px)/1.1 var(--display); letter-spacing: -.01em; text-wrap: balance; }
+.lede { margin: 0; color: var(--ink-2); max-width: 64ch; }
+form { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+input[type=search] { flex: 1 1 22rem; min-width: 0; font: 18px/1.3 var(--body); color: var(--ink); background: var(--surface);
+  border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+input[type=search]:focus-visible, button:focus-visible, .chip:focus-visible, label:focus-within { outline: 2px solid var(--ours); outline-offset: 2px; }
+button { font: 600 16px/1 var(--body); color: #fff; background: var(--ours); border: 0; border-radius: 8px; padding: 14px 20px; cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+.chip { font: 14px/1 var(--body); color: var(--ink-2); background: var(--surface); border: 1px solid var(--rule); border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+.chip:hover { color: var(--ink); }
+label.toggle { display: inline-flex; gap: 8px; align-items: center; color: var(--ink-2); font-size: 15px; cursor: pointer; margin-left: auto; }
+.status { margin: 0; font: 14px/1.5 var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; min-height: 1.5em; }
+.status b { color: var(--ink); font-weight: 500; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 16px; }
+.col { background: var(--surface); border-radius: 10px; padding: 16px 18px; min-width: 0; }
+.col h2 { margin: 0 0 4px; font: 600 17px/1.3 var(--display); display: flex; align-items: center; gap: 10px; }
+.col h2 i { width: 18px; height: 3px; border-radius: 2px; background: var(--ours); }
+.col.hnsw h2 i { background: var(--rival); }
+.col .time { margin: 0 0 8px; font: 13px var(--mono); color: var(--ink-3); }
+ol { margin: 0; padding: 0; list-style: none; counter-reset: r; display: grid; }
+li { counter-increment: r; display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; gap: 4px 10px; padding: 10px 0; border-top: 1px solid var(--rule); }
+li::before { content: counter(r); font: 500 14px/1.5 var(--mono); color: var(--ink-3); }
+li p { margin: 0; overflow-wrap: anywhere; }
+li .sim { font: 12px/1.9 var(--mono); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+li.shared::before { color: var(--ink); }
+footer { color: var(--ink-3); font-size: 13.5px; display: grid; gap: 6px; max-width: 80ch; }
+footer p { margin: 0; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:grid;gap:12px">
+    <p class="eyebrow">vindex &middot; GooAQ demo</p>
+    <h1>Ask <span id="n-items">the</span> Google answers</h1>
+    <p class="lede">Type a question. The model that made GooAQ&rsquo;s numbers turns it into <span id="n-dim">768</span>
+      numbers, and vindex finds the 10 closest answers among all of them, on one processor core.</p>
+  </header>
+  <form id="f" role="search">
+    <label for="q" hidden>Question</label>
+    <input id="q" type="search" autocomplete="off" value="how long should you boil an egg?">
+    <button type="submit">Search</button>
+  </form>
+  <div class="row" id="examples">
+    <button class="chip" type="button">why do cats purr?</button>
+    <button class="chip" type="button">can dogs eat grapes?</button>
+    <button class="chip" type="button">what is the capital of australia?</button>
+    <button class="chip" type="button">how far away is the moon?</button>
+    <label class="toggle"><input type="checkbox" id="both"> Show HNSW beside</label>
+  </div>
+  <p class="status" id="status" aria-live="polite">Loading&hellip;</p>
+  <div class="cols">
+    <section class="col ours"><h2><i></i>vindex</h2><p class="time" id="t-ours"></p><ol id="r-ours"></ol></section>
+    <section class="col hnsw" hidden><h2><i></i>HNSW</h2><p class="time" id="t-hnsw"></p><ol id="r-hnsw"></ol></section>
+  </div>
+  <footer>
+    <p>Answers: GooAQ by AllenAI, under the Apache 2.0 licence, with the request that it not be used for any
+      commercial purpose. This demo runs on your own machine only.</p>
+    <p>Numbers: the all-distilroberta-v1 model. Benchmark file: VIBE&rsquo;s GooAQ (CC BY 4.0). A number beside each
+      answer is its similarity to the question (1 is the same direction). Times are the middle of 25 searches.</p>
+  </footer>
+</div>
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const ms = v => v < 1 ? `${v.toFixed(3)} ms` : `${v.toFixed(1)} ms`;
+  const fill = (ol, rows, other) => {
+    const ids = new Set(other.map(r => r.item));
+    ol.replaceChildren(...rows.map(r => {
+      const li = document.createElement('li');
+      if (ids.has(r.item)) li.className = 'shared';
+      const p = document.createElement('p'); p.textContent = r.text ?? '(no text for this item)';
+      const s = document.createElement('span'); s.className = 'sim'; s.textContent = r.similarity.toFixed(3);
+      li.append(p, s); return li;
+    }));
+  };
+  let last = null;
+  const show = j => {
+    last = j;
+    const both = $('#both').checked;
+    $('.col.hnsw').hidden = !both;
+    fill($('#r-ours'), j.vindex.results, both ? j.hnsw.results : []);
+    fill($('#r-hnsw'), j.hnsw.results, j.vindex.results);
+    $('#t-ours').textContent = `10 answers in ${ms(j.vindex.ms)}`;
+    $('#t-hnsw').textContent = `10 answers in ${ms(j.hnsw.ms)}`;
+    const same = j.vindex.results.filter(r => j.hnsw.results.some(h => h.item === r.item)).length;
+    const st = $('#status'); st.replaceChildren();
+    const add = (label, value) => { const b = document.createElement('b'); b.textContent = value; st.append(label, b, '  '); };
+    add('vindex ', ms(j.vindex.ms));
+    if (both) { add('· HNSW ', ms(j.hnsw.ms)); add('· same answers ', `${same} of 10`); }
+    add('· question to numbers ', ms(j.embed_ms));
+  };
+  const run = async q => {
+    $('#status').textContent = 'Searching…';
+    try {
+      const r = await fetch(`/search?q=${encodeURIComponent(q)}`);
+      if (!r.ok) throw new Error((await r.json()).error || r.statusText);
+      show(await r.json());
+    } catch (e) { $('#status').textContent = `Search failed: ${e.message}. Is demo/server.py running?`; }
+  };
+  $('#f').addEventListener('submit', e => { e.preventDefault(); const q = $('#q').value.trim(); if (q) run(q); });
+  $('#examples').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    $('#q').value = b.textContent; run(b.textContent);
+  });
+  $('#both').addEventListener('change', () => last && show(last));
+  fetch('/info').then(r => r.json()).then(i => {
+    $('#n-items').textContent = i.items.toLocaleString('en-US');
+    $('#n-dim').textContent = i.dim;
+  }).catch(() => {});
+  run($('#q').value);
+})();
+</script>
+</body>
+</html>

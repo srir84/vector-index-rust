@@ -1,0 +1,7 @@
+      glove: 300 per bucket, weight 1.0: pool 50: 0/s (0 scored); pool 100: 10,694/s (30,669 scored); pool 200: 9,276/s (25,900 scored)
+      glove: 300 per bucket, weight default: pool 50: 8,217/s (51,188 scored); pool 100: 11,142/s (28,044 scored); pool 200: 9,095/s (25,312 scored)
+      glove: 100 per bucket, weight 1.0: pool 50: 0/s (0 scored); pool 100: 11,220/s (22,506 scored); pool 200: 9,345/s (20,198 scored)
+      glove: 100 per bucket, weight default: pool 50: 0/s (0 scored); pool 100: 11,445/s (21,522 scored); pool 200: 9,301/s (20,044 scored)
+PASS  glove: the best bucket search against the link walk at 95% (tuning questions)  links 11,171/s at 95% (5,217 checks); best buckets: 100 per bucket, weight default, pool 100: 11,445/s (21,522 scored), 1.02x the links
+
+step40: ALL PASS (1/1) in 306.4 s

@@ -1,0 +1,3946 @@
+{
+ "step": "step42-ours",
+ "pass": true,
+ "seconds": 5401.0,
+ "checks": [
+  {
+   "check": "the code is as frozen in step 42",
+   "pass": true,
+   "detail": "unchanged",
+   "data": null
+  },
+  {
+   "check": "gooaq: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,454,024 items; 39,545/s at 95% (1 core; 523 checks); target 0.92 finds 95.36%; all cores 259,115/s; build 701 s; 560 bytes/item; picked 32 links, slack 1.2, 4-bit copies, re-check 50, popular links off; SSD mode same answers, 1,962/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9239,
+       "sec": 2.3884332971647383e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9239,
+       "sec": 2.3932124953716994e-05,
+       "checks": 507.403
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9536,
+       "sec": 2.576341712847352e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9536,
+       "sec": 2.5474791182205082e-05,
+       "checks": 525.508
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9570000000000001,
+       "sec": 2.6332125067710875e-05,
+       "checks": 548.687
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.968,
+       "sec": 2.9658874962478876e-05,
+       "checks": 578.377
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9757,
+       "sec": 3.12664161901921e-05,
+       "checks": 617.815
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9795,
+       "sec": 3.697662497870624e-05,
+       "checks": 650.426
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9853999999999999,
+       "sec": 4.072212520986795e-05,
+       "checks": 709.982
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9929,
+       "sec": 5.064020911231637e-05,
+       "checks": 850.438
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9972,
+       "sec": 7.252354198135435e-05,
+       "checks": 1399.817
+      }
+     ],
+     "qps95": 39544.75862491962,
+     "status95": "ok",
+     "checks95": 523.3134545454545,
+     "target": 0.92,
+     "accuracy_at_target": 0.9536,
+     "qps_all": 259114.8831232154,
+     "median_ms": 0.029687071219086647,
+     "p99_ms": 0.0540449982509017,
+     "other_programs_cores": [
+      2.234,
+      1.225
+     ]
+    },
+    "build_seconds": 700.6729683876038,
+    "bytes_per_item": 560.0000055019725,
+    "memory": {
+     "items": 1454024,
+     "links_bytes": 244276032,
+     "numbers_bytes": 558345216,
+     "other_bytes": 11632200,
+     "total_bytes": 814253448,
+     "full_numbers_on_ssd_bytes": 4466761728
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 1962.1103384571904,
+     "qps_all": 12800.53251574453,
+     "median_ms_cold": 0.5170829826965928,
+     "p99_ms_cold": 0.9129227581433947,
+     "bytes_per_item_counted": 560.0000055019725,
+     "bytes_per_item_measured": 595.1805087123734,
+     "ram_bytes_per_item_measured": 3667.1072829609416,
+     "folder_mb": 5282.483147
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 37824.21224632391,
+       "checks": 546.6648255033556,
+       "bytes_per_item": 944.0,
+       "seconds": 21.108398459
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 36209.00013177272,
+       "checks": 517.0869420289855,
+       "bytes_per_item": 904.0,
+       "seconds": 17.318933917
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 37555.54858795808,
+       "checks": 644.696,
+       "bytes_per_item": 1028.0,
+       "seconds": 24.329422792
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 30749.823373014544,
+       "checks": 814.604,
+       "bytes_per_item": 1112.0,
+       "seconds": 28.5570815
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 23606.972277713954,
+       "checks": 1107.877,
+       "bytes_per_item": 1276.0,
+       "seconds": 37.506924625
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 37885.28665969237,
+       "checks": 546.3640134228186,
+       "bytes_per_item": 944.0,
+       "seconds": 19.948062917
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 35922.29007323327,
+       "checks": 573.4514999999997,
+       "bytes_per_item": 944.0,
+       "seconds": 20.21322975
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 33147.08735689563,
+       "checks": 591.0012499999998,
+       "bytes_per_item": 944.0,
+       "seconds": 19.503582666
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 34470.4325796246,
+       "checks": 535.0045476190476,
+       "bytes_per_item": 944.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 38229.010684440094,
+       "checks": 550.4195185185185,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 38475.03213007851,
+       "checks": 550.4195185185185,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 38414.46095480281,
+       "checks": 550.4195185185185,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 38334.155456256456,
+       "checks": 542.7954399999998,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 4,
+     "chosen_rerank": 50,
+     "chosen": 0,
+     "seconds": 246.134222166
+    },
+    "stats": {
+     "items": 1454024,
+     "start": 0,
+     "build_checks": 5990067592,
+     "change_checks": 0,
+     "mean_links": 35.60538546819035,
+     "no_links_in": 2,
+     "unreachable": 2,
+     "build_space": "same",
+     "ood_ratio": 0.8239384293556213,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1454024
+    }
+   }
+  },
+  {
+   "check": "glove: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,171,514 items; 2,907/s at 95% (1 core; 12,461 checks); target 0.95 finds 95.45%; all cores 21,503/s; build 560 s; 708 bytes/item; picked 96 links, slack 1.3, 8-bit copies, re-check 25, popular links off; SSD mode same answers, 1,264/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8791,
+       "sec": 0.00013790916698053478,
+       "checks": 5306.683
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9021000000000001,
+       "sec": 0.0001826389168854803,
+       "checks": 6708.928
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9216,
+       "sec": 0.00022555291699245572,
+       "checks": 8283.986
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9356,
+       "sec": 0.00028034475003369154,
+       "checks": 10029.093
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9444000000000001,
+       "sec": 0.0003122641248628497,
+       "checks": 11421.794
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9545,
+       "sec": 0.00036939158313907685,
+       "checks": 13295.434
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9653,
+       "sec": 0.0004718116659205407,
+       "checks": 16339.987
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9731,
+       "sec": 0.0005644878330640495,
+       "checks": 20068.178
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9832000000000001,
+       "sec": 0.0007796065418515354,
+       "checks": 26787.356
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9911,
+       "sec": 0.0011504218748304993,
+       "checks": 37964.634
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9964000000000001,
+       "sec": 0.0016613452909514308,
+       "checks": 54481.511
+      }
+     ],
+     "qps95": 2907.4943864214983,
+     "status95": "ok",
+     "checks95": 12460.643900990079,
+     "target": 0.95,
+     "accuracy_at_target": 0.9545,
+     "qps_all": 21502.601822115816,
+     "median_ms": 0.2945208689197898,
+     "p99_ms": 1.0250727483071387,
+     "other_programs_cores": [
+      2.835,
+      3.06
+     ]
+    },
+    "build_seconds": 560.0088748931885,
+    "bytes_per_item": 708.0000068287703,
+    "memory": {
+     "items": 1171514,
+     "links_bytes": 585757000,
+     "numbers_bytes": 234302800,
+     "other_bytes": 9372120,
+     "total_bytes": 829431920,
+     "full_numbers_on_ssd_bytes": 937211200
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 1264.2233021609618,
+     "qps_all": 9640.753423052447,
+     "median_ms_cold": 0.8877291111275554,
+     "p99_ms_cold": 1.7861044360324732,
+     "bytes_per_item_counted": 708.0000068287703,
+     "bytes_per_item_measured": 746.607538620964,
+     "ram_bytes_per_item_measured": 1546.6518641689302,
+     "folder_mb": 1767.825433
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 7254.54692965865,
+       "checks": 5957.506709090907,
+       "bytes_per_item": 376.0,
+       "seconds": 8.108412584
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 5786.652310573811,
+       "checks": 6550.176215053762,
+       "bytes_per_item": 336.0,
+       "seconds": 7.923359959
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 8103.668769118488,
+       "checks": 5830.241465116279,
+       "bytes_per_item": 460.0,
+       "seconds": 9.217509208
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9064.175350121426,
+       "checks": 5670.375841269833,
+       "bytes_per_item": 544.0,
+       "seconds": 10.777522167
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9503.20429913686,
+       "checks": 5774.888919999996,
+       "bytes_per_item": 708.0,
+       "seconds": 13.917189875
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9574.41474295395,
+       "checks": 5692.761316546759,
+       "bytes_per_item": 708.0,
+       "seconds": 13.946790416
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9570.664400172409,
+       "checks": 5718.124083333332,
+       "bytes_per_item": 708.0,
+       "seconds": 13.991298625
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 8263.139486289923,
+       "checks": 6292.632231884054,
+       "bytes_per_item": 708.0,
+       "seconds": 10.727617959
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 2597.423836908376,
+       "checks": 13766.807199999983,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 2056.6217668531826,
+       "checks": 16763.269627737216,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 2602.7995191067644,
+       "checks": 13766.807199999983,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 2702.6090379430175,
+       "checks": 13741.807199999983,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 2703.8321335770015,
+       "checks": 13731.807199999983,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 25,
+     "chosen": 5,
+     "seconds": 155.942672375
+    },
+    "stats": {
+     "items": 1171514,
+     "start": 0,
+     "build_checks": 15462343437,
+     "change_checks": 0,
+     "mean_links": 105.35067698721484,
+     "no_links_in": 0,
+     "unreachable": 0,
+     "build_space": "same",
+     "ood_ratio": 1.017416000366211,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1171514
+    }
+   }
+  },
+  {
+   "check": "yandex: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,000,000 items; 14,971/s at 95% (1 core; 2,127 checks); target 0.95 finds 94.68%; all cores 131,196/s; build 270 s; 708 bytes/item; picked 96 links, slack 1.2, 8-bit copies, re-check 25, popular links off; SSD mode same answers, 2,251/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8815,
+       "sec": 3.692387486808002e-05,
+       "checks": 1302.66
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9055,
+       "sec": 4.3983582872897384e-05,
+       "checks": 1482.104
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9163,
+       "sec": 4.603687487542629e-05,
+       "checks": 1587.828
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9277,
+       "sec": 5.09035422001034e-05,
+       "checks": 1734.229
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9376,
+       "sec": 6.214112509042024e-05,
+       "checks": 1899.951
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9468,
+       "sec": 6.399595784023403e-05,
+       "checks": 2061.96
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9576,
+       "sec": 7.345012505538762e-05,
+       "checks": 2280.269
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.97,
+       "sec": 9.21966249588877e-05,
+       "checks": 2748.027
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9772000000000001,
+       "sec": 0.00011190395802259446,
+       "checks": 3279.953
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9884000000000001,
+       "sec": 0.00014456425001844764,
+       "checks": 4406.687
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9953,
+       "sec": 0.00020574691682122647,
+       "checks": 6639.479
+      }
+     ],
+     "qps95": 14970.689059159522,
+     "status95": "ok",
+     "checks95": 2126.6441481481475,
+     "target": 0.95,
+     "accuracy_at_target": 0.9468,
+     "qps_all": 131196.30176955374,
+     "median_ms": 0.06974989082664251,
+     "p99_ms": 0.1565147330984473,
+     "other_programs_cores": [
+      2.549,
+      2.356
+     ]
+    },
+    "build_seconds": 269.89432978630066,
+    "bytes_per_item": 708.000008,
+    "memory": {
+     "items": 1000000,
+     "links_bytes": 500000000,
+     "numbers_bytes": 200000000,
+     "other_bytes": 8000008,
+     "total_bytes": 708000008,
+     "full_numbers_on_ssd_bytes": 800000000
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2250.7547101340438,
+     "qps_all": 11745.05585647906,
+     "median_ms_cold": 0.5831251619383693,
+     "p99_ms_cold": 0.9138867026194912,
+     "bytes_per_item_counted": 708.000008,
+     "bytes_per_item_measured": 765.62552,
+     "ram_bytes_per_item_measured": 1565.623472,
+     "folder_mb": 1522.609927
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 37356.89890433891,
+       "checks": 921.2876086956517,
+       "bytes_per_item": 376.0,
+       "seconds": 6.151205333
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 38093.40179489642,
+       "checks": 890.5446465517234,
+       "bytes_per_item": 336.0,
+       "seconds": 5.125545041
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 40965.692125896654,
+       "checks": 993.0421999999995,
+       "bytes_per_item": 460.0,
+       "seconds": 7.134090584
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 36549.463882349875,
+       "checks": 1113.678570247933,
+       "bytes_per_item": 544.0,
+       "seconds": 8.123771333
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 40907.40702284789,
+       "checks": 1161.4215918367343,
+       "bytes_per_item": 708.0,
+       "seconds": 9.001159625
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 39333.5031615396,
+       "checks": 1222.9020571428568,
+       "bytes_per_item": 708.0,
+       "seconds": 10.526078333
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 36015.205838916605,
+       "checks": 1075.5691081081077,
+       "bytes_per_item": 708.0,
+       "seconds": 7.688156459
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 32977.370840462725,
+       "checks": 957.6546304347822,
+       "bytes_per_item": 708.0,
+       "seconds": 5.877219542
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 24097.091008255516,
+       "checks": 1379.7439805825236,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 16470.266520952722,
+       "checks": 1978.985107594936,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 24355.449390236798,
+       "checks": 1379.7439805825236,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 25173.64749249407,
+       "checks": 1363.7439805825236,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 25235.14613710141,
+       "checks": 1353.7439805825236,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 25,
+     "chosen": 4,
+     "seconds": 103.926216375
+    },
+    "stats": {
+     "items": 1000000,
+     "start": 0,
+     "build_checks": 5792481708,
+     "change_checks": 0,
+     "mean_links": 66.399145,
+     "no_links_in": 0,
+     "unreachable": 0,
+     "build_space": "same",
+     "ood_ratio": 2.492553949356079,
+     "question_links": true,
+     "question_link_items": 347469,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1000000
+    }
+   }
+  },
+  {
+   "check": "llama: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "256,921 items; 100,112/s at 95% (1 core; 655 checks); target 0.96 finds 96.21%; all cores 701,528/s; build 56 s; 271 bytes/item; picked 24 links, slack 1.3, 8-bit copies, re-check 50, popular links on (4,549 items); SSD mode same answers, 15,837/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9218,
+       "sec": 7.686582859605551e-06,
+       "checks": 550.452
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9218,
+       "sec": 7.849875139072538e-06,
+       "checks": 550.452
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9218,
+       "sec": 7.649624953046442e-06,
+       "checks": 550.452
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9349000000000001,
+       "sec": 8.621625136584043e-06,
+       "checks": 571.204
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.943,
+       "sec": 9.36787505634129e-06,
+       "checks": 613.837
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.95,
+       "sec": 9.9888329859823e-06,
+       "checks": 654.798
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9621000000000001,
+       "sec": 1.1683625169098377e-05,
+       "checks": 742.868
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9709,
+       "sec": 1.4460166916251183e-05,
+       "checks": 891.774
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9804999999999999,
+       "sec": 2.0436750026419758e-05,
+       "checks": 1149.821
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894999999999999,
+       "sec": 3.511754213832319e-05,
+       "checks": 1828.927
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9955999999999999,
+       "sec": 7.473400002345443e-05,
+       "checks": 3277.721
+      }
+     ],
+     "qps95": 100111.79498178988,
+     "status95": "ok",
+     "checks95": 654.798,
+     "target": 0.96,
+     "accuracy_at_target": 0.9621000000000001,
+     "qps_all": 701528.3955376247,
+     "median_ms": 0.013625016435980797,
+     "p99_ms": 0.020165937021374702,
+     "other_programs_cores": [
+      3.013,
+      4.341
+     ]
+    },
+    "build_seconds": 55.83576011657715,
+    "bytes_per_item": 271.17522117693767,
+    "memory": {
+     "items": 256921,
+     "links_bytes": 34729345,
+     "numbers_bytes": 32885888,
+     "other_bytes": 2055376,
+     "total_bytes": 69670609,
+     "full_numbers_on_ssd_bytes": 131543552
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 15837.444441950913,
+     "qps_all": 114479.24211659151,
+     "median_ms_cold": 0.3088124794885516,
+     "p99_ms_cold": 0.6333313160575911,
+     "bytes_per_item_counted": 271.17522117693767,
+     "bytes_per_item_measured": 354.8201353723518,
+     "ram_bytes_per_item_measured": 1379.103490956364,
+     "folder_mb": 209.15718
+    },
+    "tuning": {
+     "trial_items": 51384,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 147242.25437578972,
+       "checks": 546.25,
+       "bytes_per_item": 304.0,
+       "seconds": 1.437890083
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 168432.9799430773,
+       "checks": 455.675,
+       "bytes_per_item": 264.0,
+       "seconds": 1.247706
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 125705.627800228,
+       "checks": 663.86,
+       "bytes_per_item": 388.0,
+       "seconds": 1.4865056669999999
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 118620.39345631529,
+       "checks": 728.059,
+       "bytes_per_item": 472.0,
+       "seconds": 1.666531333
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 106330.21275931264,
+       "checks": 826.334,
+       "bytes_per_item": 636.0,
+       "seconds": 1.772326666
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 169213.88428840777,
+       "checks": 455.071,
+       "bytes_per_item": 264.0,
+       "seconds": 1.239561791
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 165236.37458402454,
+       "checks": 458.764,
+       "bytes_per_item": 264.0,
+       "seconds": 1.255363041
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 168217.93655604802,
+       "checks": 427.789,
+       "bytes_per_item": 264.0,
+       "seconds": 1.145961625
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, popular links on",
+       "question_links": true,
+       "searches_per_s": 136165.19083326298,
+       "checks": 550.956,
+       "bytes_per_item": 0.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, popular links off",
+       "question_links": true,
+       "searches_per_s": 46716.338754434146,
+       "checks": 1113.5300458715592,
+       "bytes_per_item": 0.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 550.956,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 200.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 136428.52052774007,
+       "checks": 550.956,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 136089.33152570412,
+       "checks": 550.956,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 136546.06722943153,
+       "checks": 550.956,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 50,
+     "chosen": 5,
+     "seconds": 30.379759334
+    },
+    "stats": {
+     "items": 256921,
+     "start": 0,
+     "build_checks": 1004633793,
+     "change_checks": 0,
+     "mean_links": 26.82967916207706,
+     "no_links_in": 3,
+     "unreachable": 3,
+     "build_space": "flipped",
+     "ood_ratio": 26.396076202392578,
+     "question_links": true,
+     "question_link_items": 9031,
+     "popular_items": 4549,
+     "extra_links": 139713,
+     "changes": 0,
+     "slots_used": 256921
+    }
+   }
+  },
+  {
+   "check": "landmark: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "739,757 items; 46,560/s at 95% (1 core; 352 checks); target 0.95 finds 95.59%; all cores 209,327/s; build 309 s; 904 bytes/item; picked 24 links, slack 1.0, 8-bit copies, re-check 50, popular links off; SSD mode same answers, 2,063/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9416,
+       "sec": 2.0895125111564994e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9416,
+       "sec": 2.0482375053688882e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9416,
+       "sec": 2.0117542007938027e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9416,
+       "sec": 2.041199989616871e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9416,
+       "sec": 1.9987625069916247e-05,
+       "checks": 343.659
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9559,
+       "sec": 2.1886999951675533e-05,
+       "checks": 358.019
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9559,
+       "sec": 2.190816681832075e-05,
+       "checks": 358.019
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9694,
+       "sec": 2.4873916059732438e-05,
+       "checks": 387.047
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9785,
+       "sec": 2.6934749912470578e-05,
+       "checks": 419.217
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9882,
+       "sec": 3.6482041934505104e-05,
+       "checks": 496.862
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9929,
+       "sec": 4.009058396331966e-05,
+       "checks": 588.963
+      }
+     ],
+     "qps95": 46559.77964608332,
+     "status95": "ok",
+     "checks95": 352.09424475524474,
+     "target": 0.95,
+     "accuracy_at_target": 0.9559,
+     "qps_all": 209327.2495564373,
+     "median_ms": 0.02383347600698471,
+     "p99_ms": 0.04142781486734747,
+     "other_programs_cores": [
+      3.565,
+      3.313
+     ]
+    },
+    "build_seconds": 309.3259599208832,
+    "bytes_per_item": 904.000010814362,
+    "memory": {
+     "items": 739757,
+     "links_bytes": 94688896,
+     "numbers_bytes": 568133376,
+     "other_bytes": 5918064,
+     "total_bytes": 668740336,
+     "full_numbers_on_ssd_bytes": 2272533504
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2063.42238190027,
+     "qps_all": 13164.707974622577,
+     "median_ms_cold": 0.5330410785973072,
+     "p99_ms_cold": 1.1229295330121989,
+     "bytes_per_item_counted": 904.000010814362,
+     "bytes_per_item_measured": 941.0635113963099,
+     "ram_bytes_per_item_measured": 4013.14241298156,
+     "folder_mb": 2942.027176
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 57175.368096709084,
+       "checks": 389.381,
+       "bytes_per_item": 944.0,
+       "seconds": 15.1617175
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 63616.407313972,
+       "checks": 331.225,
+       "bytes_per_item": 904.0,
+       "seconds": 13.3008685
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 47551.99364705365,
+       "checks": 493.69,
+       "bytes_per_item": 1028.0,
+       "seconds": 15.844432459
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 42493.46957998746,
+       "checks": 566.114,
+       "bytes_per_item": 1112.0,
+       "seconds": 16.55510625
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 37858.00218646999,
+       "checks": 661.506,
+       "bytes_per_item": 1276.0,
+       "seconds": 17.410951
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 63408.42228612307,
+       "checks": 335.655,
+       "bytes_per_item": 904.0,
+       "seconds": 13.297867292
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 64700.22251800067,
+       "checks": 324.661,
+       "bytes_per_item": 904.0,
+       "seconds": 12.640262125
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 72207.89167784707,
+       "checks": 281.335,
+       "bytes_per_item": 904.0,
+       "seconds": 11.821463166000001
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 52175.913463875884,
+       "checks": 345.725,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 42814.23828765848,
+       "checks": 429.1795202952029,
+       "bytes_per_item": 520.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 51587.99164182615,
+       "checks": 345.725,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 49781.82071652747,
+       "checks": 345.725,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 52171.69617943634,
+       "checks": 345.725,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.0,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 50,
+     "chosen": 7,
+     "seconds": 128.06293725
+    },
+    "stats": {
+     "items": 739757,
+     "start": 0,
+     "build_checks": 1727089673,
+     "change_checks": 0,
+     "mean_links": 16.666967666409374,
+     "no_links_in": 248,
+     "unreachable": 254,
+     "build_space": "same",
+     "ood_ratio": 1.0645453929901123,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 739757
+    }
+   }
+  },
+  {
+   "check": "arxiv: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,323,643 items; 29,407/s at 95% (1 core; 694 checks); target 0.95 finds 95.78%; all cores 206,580/s; build 636 s; 560 bytes/item; picked 32 links, slack 1.2, 4-bit copies, re-check 50, popular links off; SSD mode same answers, 1,809/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9248,
+       "sec": 3.0392375076189637e-05,
+       "checks": 587.063
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9307000000000001,
+       "sec": 3.002616693265736e-05,
+       "checks": 613.687
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9362,
+       "sec": 3.162341611459851e-05,
+       "checks": 652.065
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9416,
+       "sec": 3.23567499872297e-05,
+       "checks": 665.658
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9446,
+       "sec": 3.253158298321068e-05,
+       "checks": 678.983
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9578,
+       "sec": 3.613499994389713e-05,
+       "checks": 715.425
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9640000000000001,
+       "sec": 3.730204119347036e-05,
+       "checks": 754.649
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9739000000000001,
+       "sec": 4.3340250151231884e-05,
+       "checks": 831.766
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.984,
+       "sec": 5.275200004689395e-05,
+       "checks": 952.451
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9921,
+       "sec": 6.469170795753599e-05,
+       "checks": 1155.454
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9958,
+       "sec": 8.256504102610052e-05,
+       "checks": 1552.978
+      }
+     ],
+     "qps95": 29406.8277289402,
+     "status95": "ok",
+     "checks95": 693.8910909090907,
+     "target": 0.95,
+     "accuracy_at_target": 0.9578,
+     "qps_all": 206579.55833771787,
+     "median_ms": 0.03947899676859379,
+     "p99_ms": 0.06334828445687889,
+     "other_programs_cores": [
+      3.9,
+      2.24
+     ]
+    },
+    "build_seconds": 636.0577161312103,
+    "bytes_per_item": 560.0000060439257,
+    "memory": {
+     "items": 1323643,
+     "links_bytes": 222372024,
+     "numbers_bytes": 508278912,
+     "other_bytes": 10589152,
+     "total_bytes": 741240088,
+     "full_numbers_on_ssd_bytes": 4066231296
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 1809.4933709232218,
+     "qps_all": 10569.716475963249,
+     "median_ms_cold": 0.6390209309756756,
+     "p99_ms_cold": 1.0724581428803501,
+     "bytes_per_item_counted": 560.0000060439257,
+     "bytes_per_item_measured": 597.6724600213199,
+     "ram_bytes_per_item_measured": 3669.8697337575163,
+     "folder_mb": 4808.808959
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 40838.932405331536,
+       "checks": 512.9788305084743,
+       "bytes_per_item": 944.0,
+       "seconds": 18.035875333
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 40399.90214681001,
+       "checks": 477.09507692307676,
+       "bytes_per_item": 904.0,
+       "seconds": 14.792632625
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 35366.381030427096,
+       "checks": 653.945,
+       "bytes_per_item": 1028.0,
+       "seconds": 19.671685708
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 30462.88345314477,
+       "checks": 794.723,
+       "bytes_per_item": 1112.0,
+       "seconds": 22.428018125
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 24475.185780886277,
+       "checks": 1037.699,
+       "bytes_per_item": 1276.0,
+       "seconds": 26.505283792
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 41276.59291596698,
+       "checks": 511.17160526315786,
+       "bytes_per_item": 944.0,
+       "seconds": 16.757351791
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 39431.98984691925,
+       "checks": 536.161884057971,
+       "bytes_per_item": 944.0,
+       "seconds": 17.013897583
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 35973.82633961233,
+       "checks": 548.2852903225803,
+       "bytes_per_item": 944.0,
+       "seconds": 15.604342125
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 28901.464066065033,
+       "checks": 604.9266338028166,
+       "bytes_per_item": 944.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 31432.156668028907,
+       "checks": 668.0386666666665,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 31649.152637229658,
+       "checks": 668.0386666666665,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 31839.521775234687,
+       "checks": 668.0386666666665,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 29569.207277071557,
+       "checks": 682.4652874999997,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 4,
+     "chosen_rerank": 50,
+     "chosen": 0,
+     "seconds": 192.627336708
+    },
+    "stats": {
+     "items": 1323643,
+     "start": 0,
+     "build_checks": 5378964043,
+     "change_checks": 0,
+     "mean_links": 35.847761820974384,
+     "no_links_in": 4,
+     "unreachable": 4,
+     "build_space": "same",
+     "ood_ratio": 0.9795815944671631,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1323643
+    }
+   }
+  },
+  {
+   "check": "laion: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,000,448 items; 10,566/s at 95% (1 core; 2,291 checks); target 0.95 finds 94.99%; all cores 69,674/s; build 462 s; 772 bytes/item; picked 48 links, slack 1.3, 8-bit copies, re-check 25, popular links off; SSD mode same answers, 2,288/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8728999999999999,
+       "sec": 5.0355874933302405e-05,
+       "checks": 1213.212
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8946,
+       "sec": 5.658841715194285e-05,
+       "checks": 1380.209
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9137000000000001,
+       "sec": 6.84936661273241e-05,
+       "checks": 1616.803
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9269000000000001,
+       "sec": 7.519474998116494e-05,
+       "checks": 1825.91
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9372999999999999,
+       "sec": 8.228666591458022e-05,
+       "checks": 2022.717
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9499000000000001,
+       "sec": 9.445883310399949e-05,
+       "checks": 2287.401
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9608000000000001,
+       "sec": 0.00011465775012038648,
+       "checks": 2655.92
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9688000000000001,
+       "sec": 0.0001380197920370847,
+       "checks": 3238.295
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9788,
+       "sec": 0.000173075582832098,
+       "checks": 4250.651
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894000000000001,
+       "sec": 0.000315357584040612,
+       "checks": 7313.292
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9949,
+       "sec": 0.0005230657909996808,
+       "checks": 12040.428
+      }
+     ],
+     "qps95": 10565.894041524005,
+     "status95": "ok",
+     "checks95": 2290.7819082568762,
+     "target": 0.95,
+     "accuracy_at_target": 0.9499000000000001,
+     "qps_all": 69673.87052929217,
+     "median_ms": 0.10429194662719965,
+     "p99_ms": 0.21030184812843797,
+     "other_programs_cores": [
+      3.075,
+      3.139
+     ]
+    },
+    "build_seconds": 462.2347650527954,
+    "bytes_per_item": 772.0000079964176,
+    "memory": {
+     "items": 1000448,
+     "links_bytes": 252112896,
+     "numbers_bytes": 512229376,
+     "other_bytes": 8003592,
+     "total_bytes": 772345864,
+     "full_numbers_on_ssd_bytes": 2048917504
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2288.4119972946214,
+     "qps_all": 8199.202311000663,
+     "median_ms_cold": 0.47102104872465134,
+     "p99_ms_cold": 0.773807226214556,
+     "bytes_per_item_counted": 772.0000079964176,
+     "bytes_per_item_measured": 852.6367307446264,
+     "ram_bytes_per_item_measured": 2900.7349907241555,
+     "folder_mb": 2857.09266
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 23007.80723362858,
+       "checks": 1174.6837075471694,
+       "bytes_per_item": 688.0,
+       "seconds": 15.266243583
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 20228.591196935424,
+       "checks": 1242.9975802469132,
+       "bytes_per_item": 648.0,
+       "seconds": 12.854551666999999
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 25029.842688502704,
+       "checks": 1193.9164343434336,
+       "bytes_per_item": 772.0,
+       "seconds": 17.471952667
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 23159.227891371716,
+       "checks": 1284.9572702702696,
+       "bytes_per_item": 856.0,
+       "seconds": 19.038806208
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 23204.425120871078,
+       "checks": 1359.9723181818174,
+       "bytes_per_item": 1020.0,
+       "seconds": 20.82403225
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 25449.334157194935,
+       "checks": 1178.7619038461528,
+       "bytes_per_item": 772.0,
+       "seconds": 18.115855167
+      },
+      {
+       "r": 48,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 22538.56682251675,
+       "checks": 1207.4240303030294,
+       "bytes_per_item": 772.0,
+       "seconds": 15.439470916
+      },
+      {
+       "r": 48,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 16751.65566941965,
+       "checks": 1368.9680862068963,
+       "bytes_per_item": 772.0,
+       "seconds": 13.079243917
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 19330.02620961249,
+       "checks": 1225.1165663716802,
+       "bytes_per_item": 772.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 17186.22734660003,
+       "checks": 1429.782301204818,
+       "bytes_per_item": 516.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 19372.179676497643,
+       "checks": 1225.1165663716802,
+       "bytes_per_item": 772.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 20317.125593972018,
+       "checks": 1205.2935575221227,
+       "bytes_per_item": 772.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 20716.74406960172,
+       "checks": 1195.2935575221227,
+       "bytes_per_item": 772.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 48,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 25,
+     "chosen": 5,
+     "seconds": 182.601540208
+    },
+    "stats": {
+     "items": 1000448,
+     "start": 0,
+     "build_checks": 4906769272,
+     "change_checks": 0,
+     "mean_links": 48.460159848387924,
+     "no_links_in": 422,
+     "unreachable": 532,
+     "build_space": "same",
+     "ood_ratio": 4.306209087371826,
+     "question_links": true,
+     "question_link_items": 358831,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1000448
+    }
+   }
+  },
+  {
+   "check": "yi: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "187,843 items; 44,284/s at 95% (1 core; 1,343 checks); target 0.95 finds 94.98%; all cores 450,408/s; build 92 s; 315 bytes/item; picked 32 links, slack 1.3, 8-bit copies, re-check 50, popular links on (11,476 items); SSD mode same answers, 7,902/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8869,
+       "sec": 1.11798329744488e-05,
+       "checks": 769.236
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9013,
+       "sec": 1.177962520159781e-05,
+       "checks": 845.614
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9170999999999999,
+       "sec": 1.4291167026385665e-05,
+       "checks": 953.79
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9259999999999999,
+       "sec": 1.660358300432563e-05,
+       "checks": 1044.035
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9381999999999999,
+       "sec": 1.7928624991327523e-05,
+       "checks": 1168.508
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9498,
+       "sec": 2.2497749887406827e-05,
+       "checks": 1337.414
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9576,
+       "sec": 2.5766792008653282e-05,
+       "checks": 1541.642
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9692999999999999,
+       "sec": 3.4118458861485126e-05,
+       "checks": 1879.205
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9797,
+       "sec": 5.162625014781952e-05,
+       "checks": 2569.34
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.991,
+       "sec": 9.17666251771152e-05,
+       "checks": 4225.42
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9959,
+       "sec": 0.00018663112516514958,
+       "checks": 7413.434
+      }
+     ],
+     "qps95": 44283.89764079066,
+     "status95": "ok",
+     "checks95": 1342.6506153846149,
+     "target": 0.95,
+     "accuracy_at_target": 0.9498,
+     "qps_all": 450408.28547818103,
+     "median_ms": 0.028749927878379822,
+     "p99_ms": 0.046085596550256014,
+     "other_programs_cores": [
+      0.9590000000000001,
+      2.3779999999999997
+     ]
+    },
+    "build_seconds": 92.38919496536255,
+    "bytes_per_item": 315.44450951060196,
+    "memory": {
+     "items": 187843,
+     "links_bytes": 33707387,
+     "numbers_bytes": 24043904,
+     "other_bytes": 1502752,
+     "total_bytes": 59254043,
+     "full_numbers_on_ssd_bytes": 96175616
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 7902.3844992946115,
+     "qps_all": 56440.70923396483,
+     "median_ms_cold": 0.6753125926479697,
+     "p99_ms_cold": 1.0342922783456736,
+     "bytes_per_item_counted": 315.44450951060196,
+     "bytes_per_item_measured": 413.170189999095,
+     "ram_bytes_per_item_measured": 1437.415884541878,
+     "folder_mb": 163.580281
+    },
+    "tuning": {
+     "trial_items": 37568,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 86333.44865956712,
+       "checks": 741.21687804878,
+       "bytes_per_item": 304.0,
+       "seconds": 1.3981522499999999
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 81061.21639218603,
+       "checks": 730.2436129032254,
+       "bytes_per_item": 264.0,
+       "seconds": 1.385441375
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 85306.46467537155,
+       "checks": 764.7947499999998,
+       "bytes_per_item": 388.0,
+       "seconds": 1.447000125
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 80960.41269592359,
+       "checks": 803.6206527777779,
+       "bytes_per_item": 472.0,
+       "seconds": 1.491555084
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 80758.85023457686,
+       "checks": 818.9702234042547,
+       "bytes_per_item": 636.0,
+       "seconds": 1.492766875
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 91419.6013805533,
+       "checks": 725.6562727272726,
+       "bytes_per_item": 304.0,
+       "seconds": 1.377040875
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 81524.70797108141,
+       "checks": 717.825322580645,
+       "bytes_per_item": 304.0,
+       "seconds": 1.285421917
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 69479.83636554361,
+       "checks": 725.4811851851847,
+       "bytes_per_item": 304.0,
+       "seconds": 1.3439434160000001
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, popular links on",
+       "question_links": true,
+       "searches_per_s": 91129.74721589108,
+       "checks": 752.349,
+       "bytes_per_item": 0.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, popular links off",
+       "question_links": true,
+       "searches_per_s": 31173.05327092403,
+       "checks": 1523.9222921348303,
+       "bytes_per_item": 0.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 752.349,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 240.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 94382.17053638204,
+       "checks": 752.349,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 93792.55456130966,
+       "checks": 752.349,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 92344.7423642441,
+       "checks": 751.349,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 50,
+     "chosen": 5,
+     "seconds": 68.167797459
+    },
+    "stats": {
+     "items": 187843,
+     "start": 0,
+     "build_checks": 620487499,
+     "change_checks": 0,
+     "mean_links": 32.24905373104135,
+     "no_links_in": 5,
+     "unreachable": 5,
+     "build_space": "flipped",
+     "ood_ratio": 32.88047409057617,
+     "question_links": true,
+     "question_link_items": 23861,
+     "popular_items": 11476,
+     "extra_links": 302637,
+     "changes": 0,
+     "slots_used": 187843
+    }
+   }
+  },
+  {
+   "check": "gist: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "979,000 items; 3,921/s at 95% (1 core; 3,815 checks); target 0.96 finds 95.71%; all cores 13,823/s; build 903 s; 1,304 bytes/item; picked 64 links, slack 1.2, 8-bit copies, re-check 25, popular links off; SSD mode same answers, 948/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8781000000000001,
+       "sec": 0.0001471026660874486,
+       "checks": 2201.24
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.897,
+       "sec": 0.00015821245801635086,
+       "checks": 2456.251
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9185000000000001,
+       "sec": 0.00018531729117967187,
+       "checks": 2830.709
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9263999999999999,
+       "sec": 0.0002038768329657614,
+       "checks": 3034.502
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9418,
+       "sec": 0.00022824574983678757,
+       "checks": 3436.02
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9461999999999999,
+       "sec": 0.0002428193751256913,
+       "checks": 3666.557
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9571,
+       "sec": 0.0002777954158373177,
+       "checks": 4091.669
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.97,
+       "sec": 0.00032226341706700624,
+       "checks": 4796.32
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9813000000000001,
+       "sec": 0.00041876112483441827,
+       "checks": 5997.775
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9894000000000001,
+       "sec": 0.000586813208879903,
+       "checks": 8475.769
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9941000000000001,
+       "sec": 0.0008022994580678642,
+       "checks": 11831.344
+      }
+     ],
+     "qps95": 3921.3709102589705,
+     "status95": "ok",
+     "checks95": 3814.761183486239,
+     "target": 0.96,
+     "accuracy_at_target": 0.9571,
+     "qps_all": 13823.220506297088,
+     "median_ms": 0.30958291608840227,
+     "p99_ms": 0.5721287126652896,
+     "other_programs_cores": [
+      2.9909999999999997,
+      3.147
+     ]
+    },
+    "build_seconds": 902.7702128887177,
+    "bytes_per_item": 1304.0000081716037,
+    "memory": {
+     "items": 979000,
+     "links_bytes": 328944000,
+     "numbers_bytes": 939840000,
+     "other_bytes": 7832008,
+     "total_bytes": 1276616008,
+     "full_numbers_on_ssd_bytes": 3759360000
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 948.1942987076433,
+     "qps_all": 9177.788698420414,
+     "median_ms_cold": 1.2697915080934763,
+     "p99_ms_cold": 1.9873400870710607,
+     "bytes_per_item_counted": 1304.0000081716037,
+     "bytes_per_item_measured": 1357.6834320735445,
+     "ram_bytes_per_item_measured": 5197.932420837589,
+     "folder_mb": 5036.971201
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12229.684368125061,
+       "checks": 1342.681982608695,
+       "bytes_per_item": 1136.0,
+       "seconds": 24.858499791
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 11706.202734035942,
+       "checks": 1419.264239999999,
+       "bytes_per_item": 1096.0,
+       "seconds": 20.447457791
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12973.932219235887,
+       "checks": 1393.5440666666661,
+       "bytes_per_item": 1220.0,
+       "seconds": 25.899428541
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13195.420276318833,
+       "checks": 1430.824833333333,
+       "bytes_per_item": 1304.0,
+       "seconds": 27.79149925
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12479.654218442927,
+       "checks": 1546.943193548387,
+       "bytes_per_item": 1468.0,
+       "seconds": 32.113690375
+      },
+      {
+       "r": 64,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12787.318204723719,
+       "checks": 1454.7511728395057,
+       "bytes_per_item": 1304.0,
+       "seconds": 30.767175166
+      },
+      {
+       "r": 64,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 11790.801276972545,
+       "checks": 1497.0098780487797,
+       "bytes_per_item": 1304.0,
+       "seconds": 26.856427791
+      },
+      {
+       "r": 64,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9734.647701071952,
+       "checks": 1745.9140458715578,
+       "bytes_per_item": 1304.0,
+       "seconds": 22.062103708
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": null,
+       "checks": 3383.735666666663,
+       "bytes_per_item": 1304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 824.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 4474.045231440009,
+       "checks": 3383.735666666663,
+       "bytes_per_item": 1304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 4597.26930907205,
+       "checks": 3358.735666666663,
+       "bytes_per_item": 1304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 4613.708902115349,
+       "checks": 3348.735666666663,
+       "bytes_per_item": 1304.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 64,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 25,
+     "chosen": 3,
+     "seconds": 271.704974584
+    },
+    "stats": {
+     "items": 979000,
+     "start": 0,
+     "build_checks": 7552812590,
+     "change_checks": 0,
+     "mean_links": 46.29176506639428,
+     "no_links_in": 1192,
+     "unreachable": 1209,
+     "build_space": "same",
+     "ood_ratio": 0.9784908294677734,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 979000
+    }
+   }
+  },
+  {
+   "check": "nytimes: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "268,761 items; 12,169/s at 95% (1 core; 3,517 checks); target 0.95 finds 95.36%; all cores 125,045/s; build 260 s; 636 bytes/item; picked 96 links, slack 1.3, 4-bit copies, re-check 50, popular links off; SSD mode same answers, 2,730/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8936,
+       "sec": 3.36710000410676e-05,
+       "checks": 1827.046
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9103,
+       "sec": 4.411129117943347e-05,
+       "checks": 2029.5
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9292,
+       "sec": 5.511145805940032e-05,
+       "checks": 2465.053
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9378,
+       "sec": 6.576233287341893e-05,
+       "checks": 2875.578
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9387000000000001,
+       "sec": 6.75309170037508e-05,
+       "checks": 2998.419
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9536,
+       "sec": 8.684116695076227e-05,
+       "checks": 3682.518
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9587,
+       "sec": 0.00010585391684435307,
+       "checks": 4244.402
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9723,
+       "sec": 0.000141097541898489,
+       "checks": 5518.363
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9795,
+       "sec": 0.00015643516601994634,
+       "checks": 6874.089
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.99,
+       "sec": 0.0002574552921578288,
+       "checks": 10684.399
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9955,
+       "sec": 0.00040245649986900387,
+       "checks": 19412.225
+      }
+     ],
+     "qps95": 12169.061874765997,
+     "status95": "ok",
+     "checks95": 3517.2323355704666,
+     "target": 0.95,
+     "accuracy_at_target": 0.9536,
+     "qps_all": 125044.9392515705,
+     "median_ms": 0.06816640961915255,
+     "p99_ms": 0.29496842762455344,
+     "other_programs_cores": [
+      2.146,
+      2.021
+     ]
+    },
+    "build_seconds": 259.60238814353943,
+    "bytes_per_item": 636.0000297662235,
+    "memory": {
+     "items": 268761,
+     "links_bytes": 134380500,
+     "numbers_bytes": 34401408,
+     "other_bytes": 2150096,
+     "total_bytes": 170932004,
+     "full_numbers_on_ssd_bytes": 275211264
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2730.3266569250154,
+     "qps_all": 11715.866710152732,
+     "median_ms_cold": 0.6688539870083332,
+     "p99_ms_cold": 1.0004992224276064,
+     "bytes_per_item_counted": 636.0000297662235,
+     "bytes_per_item_measured": 681.0600645182894,
+     "ram_bytes_per_item_measured": 1705.4525917078743,
+     "folder_mb": 446.422764
+    },
+    "tuning": {
+     "trial_items": 53752,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9168.40334318303,
+       "checks": 4620.123759999997,
+       "bytes_per_item": 432.0,
+       "seconds": 5.302377666
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 6973.068679518486,
+       "checks": 5306.885659999997,
+       "bytes_per_item": 392.0,
+       "seconds": 5.10876
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 9844.048506466328,
+       "checks": 4554.8391999999985,
+       "bytes_per_item": 516.0,
+       "seconds": 6.242187459
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 10785.329683997526,
+       "checks": 4406.493608247419,
+       "bytes_per_item": 600.0,
+       "seconds": 7.14667925
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13090.104349204017,
+       "checks": 4315.088410714283,
+       "bytes_per_item": 764.0,
+       "seconds": 9.092648833
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12962.75885424833,
+       "checks": 4318.820858407077,
+       "bytes_per_item": 764.0,
+       "seconds": 9.094718375
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 12883.40952556303,
+       "checks": 4461.358694029848,
+       "bytes_per_item": 764.0,
+       "seconds": 9.2445535
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 10818.972723560288,
+       "checks": 4780.510584269658,
+       "bytes_per_item": 764.0,
+       "seconds": 7.705686792
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 10398.690801252433,
+       "checks": 3623.343868421053,
+       "bytes_per_item": 764.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 11977.323264928284,
+       "checks": 3683.777482014387,
+       "bytes_per_item": 636.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 12188.2848302947,
+       "checks": 3683.777482014387,
+       "bytes_per_item": 636.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 12190.53814573487,
+       "checks": 3768.7789325842687,
+       "bytes_per_item": 636.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 7329.632213069807,
+       "checks": 5737.245699999998,
+       "bytes_per_item": 636.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 4,
+     "chosen_rerank": 50,
+     "chosen": 5,
+     "seconds": 137.740324833
+    },
+    "stats": {
+     "items": 268761,
+     "start": 0,
+     "build_checks": 3529753289,
+     "change_checks": 0,
+     "mean_links": 105.9077470317494,
+     "no_links_in": 73,
+     "unreachable": 75,
+     "build_space": "same",
+     "ood_ratio": 1.0425318479537964,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 268761
+    }
+   }
+  },
+  {
+   "check": "imagenet: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,281,167 items; 15,379/s at 95% (1 core; 1,240 checks); target 0.96 finds 95.37%; all cores 103,042/s; build 538 s; 900 bytes/item; picked 48 links, slack 1.3, 8-bit copies, re-check 15, popular links off; SSD mode same answers, 2,023/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8743000000000001,
+       "sec": 4.210262512788176e-05,
+       "checks": 787.819
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8949,
+       "sec": 4.514429206028581e-05,
+       "checks": 848.377
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9126,
+       "sec": 4.943933291360736e-05,
+       "checks": 932.048
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9215,
+       "sec": 5.2493375027552247e-05,
+       "checks": 978.433
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9323,
+       "sec": 5.583016714081168e-05,
+       "checks": 1048.505
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9427,
+       "sec": 5.9184042038396e-05,
+       "checks": 1156.357
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9537000000000001,
+       "sec": 6.798070785589517e-05,
+       "checks": 1281.988
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9642,
+       "sec": 7.998391706496478e-05,
+       "checks": 1462.781
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9793,
+       "sec": 0.00010638195904903113,
+       "checks": 1846.58
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.986,
+       "sec": 0.00014208570914343,
+       "checks": 2474.978
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9914999999999999,
+       "sec": 0.00021138470782898367,
+       "checks": 3875.062
+      }
+     ],
+     "qps95": 15379.450408279483,
+     "status95": "ok",
+     "checks95": 1239.7302999999988,
+     "target": 0.96,
+     "accuracy_at_target": 0.9537000000000001,
+     "qps_all": 103041.87932161412,
+     "median_ms": 0.0692704925313592,
+     "p99_ms": 0.1875484036281705,
+     "other_programs_cores": [
+      2.7910000000000004,
+      3.056
+     ]
+    },
+    "build_seconds": 538.0423839092255,
+    "bytes_per_item": 900.000006244307,
+    "memory": {
+     "items": 1281167,
+     "links_bytes": 322854084,
+     "numbers_bytes": 819946880,
+     "other_bytes": 10249344,
+     "total_bytes": 1153050308,
+     "full_numbers_on_ssd_bytes": 3279787520
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2023.4255335971466,
+     "qps_all": 14184.707253237675,
+     "median_ms_cold": 0.5627705249935389,
+     "p99_ms_cold": 0.9593597939237952,
+     "bytes_per_item_counted": 900.000006244307,
+     "bytes_per_item_measured": 972.1722023748661,
+     "ram_bytes_per_item_measured": 3532.2317668188457,
+     "folder_mb": 4477.652416
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 35035.57807363597,
+       "checks": 568.810213333333,
+       "bytes_per_item": 816.0,
+       "seconds": 17.985042917
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 33975.90951726043,
+       "checks": 530.879,
+       "bytes_per_item": 776.0,
+       "seconds": 14.770916792
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 35791.24585680181,
+       "checks": 625.9606470588235,
+       "bytes_per_item": 900.0,
+       "seconds": 19.937398167
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 34512.42045171198,
+       "checks": 675.0548604651156,
+       "bytes_per_item": 984.0,
+       "seconds": 22.018916208
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 32364.673999305793,
+       "checks": 754.1074999999995,
+       "bytes_per_item": 1148.0,
+       "seconds": 24.476659709
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 43146.54285077183,
+       "checks": 592.28740625,
+       "bytes_per_item": 900.0,
+       "seconds": 20.660394334
+      },
+      {
+       "r": 48,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 33257.60521277301,
+       "checks": 622.5982567567563,
+       "bytes_per_item": 900.0,
+       "seconds": 18.342739833
+      },
+      {
+       "r": 48,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 27170.968199348972,
+       "checks": 609.7443364485977,
+       "bytes_per_item": 900.0,
+       "seconds": 14.650741709
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 20827.220102045,
+       "checks": 896.330775280898,
+       "bytes_per_item": 900.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 21504.090576900704,
+       "checks": 1001.1923469387751,
+       "bytes_per_item": 580.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 20703.61298084125,
+       "checks": 896.330775280898,
+       "bytes_per_item": 900.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 21573.788912342738,
+       "checks": 880.5554943820218,
+       "bytes_per_item": 900.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 22362.21377432597,
+       "checks": 870.5554943820218,
+       "bytes_per_item": 900.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 48,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 15,
+     "chosen": 5,
+     "seconds": 179.354547875
+    },
+    "stats": {
+     "items": 1281167,
+     "start": 0,
+     "build_checks": 5095902050,
+     "change_checks": 0,
+     "mean_links": 47.72461669712067,
+     "no_links_in": 41,
+     "unreachable": 41,
+     "build_space": "same",
+     "ood_ratio": 5.193940162658691,
+     "question_links": true,
+     "question_link_items": 299763,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1281167
+    }
+   }
+  },
+  {
+   "check": "llama2: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "256,921 items; 57,607/s at 95% (1 core; 1,225 checks); target 0.96 finds 96.24%; all cores 406,277/s; build 100 s; 314 bytes/item; picked 32 links, slack 1.2, 8-bit copies, re-check 50, popular links on (11,607 items); SSD mode same answers, 7,610/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8859,
+       "sec": 9.028499945998192e-06,
+       "checks": 705.204
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8986000000000001,
+       "sec": 1.0148958070203662e-05,
+       "checks": 748.986
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9193,
+       "sec": 1.1240083957090973e-05,
+       "checks": 876.254
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9281,
+       "sec": 1.3314208015799523e-05,
+       "checks": 955.981
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9398,
+       "sec": 1.6140042105689643e-05,
+       "checks": 1093.739
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9525,
+       "sec": 1.7657874850556253e-05,
+       "checks": 1256.717
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9624,
+       "sec": 2.1721832919865848e-05,
+       "checks": 1435.866
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9738,
+       "sec": 2.9574125073850154e-05,
+       "checks": 1773.265
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9841,
+       "sec": 3.876562509685755e-05,
+       "checks": 2314.162
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9914999999999999,
+       "sec": 5.8808125089854e-05,
+       "checks": 3399.739
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9955999999999999,
+       "sec": 8.29228749498725e-05,
+       "checks": 4672.205
+      }
+     ],
+     "qps95": 57606.71006851588,
+     "status95": "ok",
+     "checks95": 1224.6347165354325,
+     "target": 0.96,
+     "accuracy_at_target": 0.9624,
+     "qps_all": 406276.9842572382,
+     "median_ms": 0.029125018045306206,
+     "p99_ms": 0.04412907175719737,
+     "other_programs_cores": [
+      2.204,
+      1.63
+     ]
+    },
+    "build_seconds": 100.09097290039062,
+    "bytes_per_item": 313.6242074411979,
+    "memory": {
+     "items": 256921,
+     "links_bytes": 45635381,
+     "numbers_bytes": 32885888,
+     "other_bytes": 2055376,
+     "total_bytes": 80576645,
+     "full_numbers_on_ssd_bytes": 131543552
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 7609.867476152004,
+     "qps_all": 53775.36682560465,
+     "median_ms_cold": 0.528833013959229,
+     "p99_ms_cold": 0.8014306728728114,
+     "bytes_per_item_counted": 313.6242074411979,
+     "bytes_per_item_measured": 402.13790231238397,
+     "ram_bytes_per_item_measured": 1426.931515913452,
+     "folder_mb": 220.063151
+    },
+    "tuning": {
+     "trial_items": 51384,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 95912.94793139811,
+       "checks": 785.5702083333329,
+       "bytes_per_item": 304.0,
+       "seconds": 1.9399798750000001
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 84795.79688184409,
+       "checks": 743.2603214285712,
+       "bytes_per_item": 264.0,
+       "seconds": 1.757956667
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 86485.15152273705,
+       "checks": 865.2087636363628,
+       "bytes_per_item": 388.0,
+       "seconds": 2.21463675
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 83783.0769244287,
+       "checks": 902.4925312499997,
+       "bytes_per_item": 472.0,
+       "seconds": 2.298497625
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 76779.79806908482,
+       "checks": 993.2427397260271,
+       "bytes_per_item": 636.0,
+       "seconds": 2.462179583
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 94180.80658422527,
+       "checks": 781.0491780821914,
+       "bytes_per_item": 304.0,
+       "seconds": 1.893415
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 100039.90464376999,
+       "checks": 746.6606947368416,
+       "bytes_per_item": 304.0,
+       "seconds": 1.8199625
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 85345.45491303477,
+       "checks": 735.512364864865,
+       "bytes_per_item": 304.0,
+       "seconds": 1.653040667
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, popular links on",
+       "question_links": true,
+       "searches_per_s": 115874.87967527304,
+       "checks": 691.255,
+       "bytes_per_item": 0.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, popular links off",
+       "question_links": true,
+       "searches_per_s": 29653.335027755194,
+       "checks": 1764.1521445783126,
+       "bytes_per_item": 0.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 691.255,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 240.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 117166.21270698919,
+       "checks": 691.255,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 117497.0680564951,
+       "checks": 691.255,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": true,
+       "searches_per_s": 117239.04510790824,
+       "checks": 691.255,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen_rerank": 50,
+     "chosen": 0,
+     "seconds": 81.377522333
+    },
+    "stats": {
+     "items": 256921,
+     "start": 0,
+     "build_checks": 1204434549,
+     "change_checks": 0,
+     "mean_links": 33.72481424251034,
+     "no_links_in": 1,
+     "unreachable": 1,
+     "build_space": "flipped",
+     "ood_ratio": 15.871652603149414,
+     "question_links": true,
+     "question_link_items": 24136,
+     "popular_items": 11607,
+     "extra_links": 297012,
+     "changes": 0,
+     "slots_used": 256921
+    }
+   }
+  },
+  {
+   "check": "glove100: at full size, the 95% target picked on the tuning questions finds at least 94%",
+   "pass": true,
+   "detail": "1,162,514 items; 7,184/s at 95% (1 core; 8,067 checks); target 0.95 finds 95.65%; all cores 57,034/s; build 266 s; 572 bytes/item; picked 96 links, slack 1.3, 4-bit copies, re-check 50, popular links off; SSD mode same answers, 1,839/s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8989,
+       "sec": 6.264683394692838e-05,
+       "checks": 4131.028
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9145,
+       "sec": 7.47802909463644e-05,
+       "checks": 4817.828
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9329000000000001,
+       "sec": 9.852054109796881e-05,
+       "checks": 6075.067
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9337,
+       "sec": 0.00010082400008104741,
+       "checks": 6236.141
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9437,
+       "sec": 0.00011803779192268849,
+       "checks": 7155.908
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9564999999999999,
+       "sec": 0.00016103016608394683,
+       "checks": 9007.787
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9632,
+       "sec": 0.00017390425014309586,
+       "checks": 10250.099
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9726000000000001,
+       "sec": 0.00021902383305132388,
+       "checks": 13185.991
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9811,
+       "sec": 0.0003817525419872254,
+       "checks": 22173.902
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9843999999999999,
+       "sec": 0.0014712162921205164,
+       "checks": 70793.795
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9843999999999999,
+       "sec": 0.001465248332824558,
+       "checks": 70793.795
+      }
+     ],
+     "qps95": 7184.006047783409,
+     "status95": "ok",
+     "checks95": 8067.379695312502,
+     "target": 0.95,
+     "accuracy_at_target": 0.9564999999999999,
+     "qps_all": 57034.35478236242,
+     "median_ms": 0.13920851051807404,
+     "p99_ms": 0.4397149686701596,
+     "other_programs_cores": [
+      2.905,
+      2.104
+     ]
+    },
+    "build_seconds": 265.7253360748291,
+    "bytes_per_item": 572.0000068816375,
+    "memory": {
+     "items": 1162514,
+     "links_bytes": 581257000,
+     "numbers_bytes": 74400896,
+     "other_bytes": 9300120,
+     "total_bytes": 664958016,
+     "full_numbers_on_ssd_bytes": 465005600
+    },
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 1839.3722224737976,
+     "qps_all": 9142.014289245291,
+     "median_ms_cold": 0.8848330471664667,
+     "p99_ms_cold": 1.3167746877297757,
+     "bytes_per_item_counted": 572.0000068816375,
+     "bytes_per_item_measured": 610.1265085839826,
+     "ram_bytes_per_item_measured": 1010.1591137827157,
+     "folder_mb": 1131.136199
+    },
+    "tuning": {
+     "trial_items": 100000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 17910.74567458497,
+       "checks": 2998.7380645161275,
+       "bytes_per_item": 276.0,
+       "seconds": 3.089146083
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 15186.630097064086,
+       "checks": 3275.098653225804,
+       "bytes_per_item": 236.0,
+       "seconds": 2.855248667
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 21852.996648257784,
+       "checks": 2939.1235773195854,
+       "bytes_per_item": 360.0,
+       "seconds": 3.394698
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 23521.874618502265,
+       "checks": 2921.4612772277223,
+       "bytes_per_item": 444.0,
+       "seconds": 4.050865917
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 26939.282267406892,
+       "checks": 3034.844399999999,
+       "bytes_per_item": 608.0,
+       "seconds": 5.130283041
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 25939.3851083975,
+       "checks": 3050.592917431191,
+       "bytes_per_item": 608.0,
+       "seconds": 5.326024583
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 24249.35167375917,
+       "checks": 3172.7232249999975,
+       "bytes_per_item": 608.0,
+       "seconds": 4.646743917
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 19227.980557307,
+       "checks": 3388.0855555555545,
+       "bytes_per_item": 608.0,
+       "seconds": 3.4279275
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 6821.650677869496,
+       "checks": 6447.339428571428,
+       "bytes_per_item": 608.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 7233.289151491949,
+       "checks": 8234.778808823523,
+       "bytes_per_item": 572.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 50,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": 7163.597620352957,
+       "checks": 8234.778808823523,
+       "bytes_per_item": 572.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 25,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 572.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "rerank": 15,
+       "links": "full size, re-check",
+       "question_links": false,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 572.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 4,
+     "chosen_rerank": 50,
+     "chosen": 5,
+     "seconds": 81.265582917
+    },
+    "stats": {
+     "items": 1162514,
+     "start": 0,
+     "build_checks": 14910663875,
+     "change_checks": 0,
+     "mean_links": 104.79529106746241,
+     "no_links_in": 0,
+     "unreachable": 0,
+     "build_space": "same",
+     "ood_ratio": 1.0073020458221436,
+     "question_links": false,
+     "question_link_items": 0,
+     "popular_items": 0,
+     "extra_links": 0,
+     "changes": 0,
+     "slots_used": 1162514
+    }
+   }
+  }
+ ]
+}

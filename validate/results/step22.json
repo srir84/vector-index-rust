@@ -1,0 +1,2512 @@
+{
+ "step": "step22",
+ "pass": true,
+ "seconds": 425.9,
+ "checks": [
+  {
+   "check": "gooaq: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 41,965/s at 95% (1 core; 521 checks); all cores 285,490/s; typical 0.028 ms, slow 0.051 ms; build 57.9 s; 560 bytes/item; picked 32 links, slack 1.2, 4-bit copies; other programs using 1.0 -> 2.1 cores\n            HNSW          3,543/s   3,233 bytes/item  build 9 s\n            DiskANN       8,679/s   3,240 bytes/item  build 8 s\n            CoreNN        1,502/s   7,286 bytes/item  build 268 s\n            Glass        39,839/s   4,096 bytes/item  build 11 s\n            ScaNN        11,137/s   3,523 bytes/item  build 10 s\n            RoarGraph     6,796/s   3,183 bytes/item  build 8 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9225,
+       "sec": 2.0490957889705898e-05,
+       "checks": 483.438
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9225,
+       "sec": 2.032825001515448e-05,
+       "checks": 483.438
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9464,
+       "sec": 2.2255666088312863e-05,
+       "checks": 506.6
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9516,
+       "sec": 2.4529165821149944e-05,
+       "checks": 527.86
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9586,
+       "sec": 2.5566875003278257e-05,
+       "checks": 554.367
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9642,
+       "sec": 2.631404181011021e-05,
+       "checks": 582.113
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9744999999999999,
+       "sec": 3.108745813369751e-05,
+       "checks": 649.299
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9771000000000001,
+       "sec": 3.594254190102219e-05,
+       "checks": 712.253
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9851000000000001,
+       "sec": 4.062779108062387e-05,
+       "checks": 789.289
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9919,
+       "sec": 4.9540416104719044e-05,
+       "checks": 974.845
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9959,
+       "sec": 5.9436958050355315e-05,
+       "checks": 1253.693
+      }
+     ],
+     "qps95": 41964.56711048841,
+     "status95": "ok",
+     "checks95": 521.3184615384613,
+     "target": 0.94,
+     "accuracy_at_target": 0.9586,
+     "qps_all": 285489.98537376145,
+     "median_ms": 0.02833292819559574,
+     "p99_ms": 0.0514350621961057,
+     "other_programs_cores": [
+      0.961,
+      2.135
+     ]
+    },
+    "build_seconds": 57.94248867034912,
+    "bytes_per_item": 560.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2506.6336996049913,
+     "qps_all": 16937.466264313007,
+     "median_ms_cold": 0.5865624407306314,
+     "p99_ms_cold": 1.1274652951397,
+     "bytes_per_item_counted": 560.00008,
+     "bytes_per_item_measured": 619.80936,
+     "ram_bytes_per_item_measured": 3691.97344,
+     "folder_mb": 363.312827
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 3543.2283644431186,
+      "status": "ok",
+      "best": 0.9869999999999999,
+      "bytes_per_item": 3232.65528,
+      "qps_all": 32083.11728544553,
+      "build_s": 9.464724249904975
+     },
+     "diskann": {
+      "qps95": 8679.311748248823,
+      "status": "ok",
+      "best": 0.9877,
+      "bytes_per_item": 3240.0,
+      "qps_all": 36263.417464461854,
+      "build_s": 8.122946
+     },
+     "corenn": {
+      "qps95": 1501.9824292477126,
+      "status": "below_min_effort",
+      "best": 0.9833000000000001,
+      "bytes_per_item": 7286.12864,
+      "qps_all": 14265.564181593272,
+      "build_s": 267.59767358296085
+     },
+     "glass": {
+      "qps95": 39838.87682903835,
+      "status": "ok",
+      "best": 0.9894999999999999,
+      "bytes_per_item": 4096.0,
+      "qps_all": 231816.86684299994,
+      "build_s": 10.956222958862782
+     },
+     "scann": {
+      "qps95": 11136.900798502103,
+      "status": "ok",
+      "best": 0.9997,
+      "bytes_per_item": 3522.51657,
+      "qps_all": 72242.59062206376,
+      "build_s": 9.745559588000106
+     },
+     "roargraph": {
+      "qps95": 6795.802503164434,
+      "status": "ok",
+      "best": 0.9836,
+      "bytes_per_item": 3183.33736,
+      "qps_all": 38593.21405483039,
+      "build_s": 7.53569
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 50115.17874350756,
+       "checks": 510.9167826086955,
+       "bytes_per_item": 944.0,
+       "seconds": 3.370028542
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 41784.32315548678,
+       "checks": 526.0078749999999,
+       "bytes_per_item": 904.0,
+       "seconds": 2.885153625
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 46816.20542950942,
+       "checks": 624.974,
+       "bytes_per_item": 1028.0,
+       "seconds": 3.34164125
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 37958.346920444535,
+       "checks": 786.595,
+       "bytes_per_item": 1112.0,
+       "seconds": 3.880836
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27279.89866208738,
+       "checks": 1095.926,
+       "bytes_per_item": 1276.0,
+       "seconds": 5.0682395
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 39243.40736170203,
+       "checks": 591.6013736263736,
+       "bytes_per_item": 944.0,
+       "seconds": 3.094704833
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 47404.22119180058,
+       "checks": 543.9629009900989,
+       "bytes_per_item": 944.0,
+       "seconds": 3.25554225
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 50184.71274261441,
+       "checks": 510.90875652173895,
+       "bytes_per_item": 944.0,
+       "seconds": 3.192388417
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 37861.23358306724,
+       "checks": 525.0472580645159,
+       "bytes_per_item": 944.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 41214.99976809596,
+       "checks": 534.1361428571428,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 4,
+     "chosen": 0,
+     "seconds": 32.291999084
+    }
+   }
+  },
+  {
+   "check": "gooaq: closer to the fastest rival than part 1",
+   "pass": true,
+   "detail": "1.05x Glass's speed (part 1: 0.51x)",
+   "data": null
+  },
+  {
+   "check": "glove: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 9,457/s at 95% (1 core; 5,655 checks); all cores 103,681/s; typical 0.103 ms, slow 0.247 ms; build 38.8 s; 620 bytes/item; picked 96 links, slack 1.3, 4-bit copies; other programs using 2.0 -> 1.9 cores\n            HNSW            790/s   1,088 bytes/item  build 11 s\n            DiskANN       3,307/s   1,300 bytes/item  build 14 s\n            CoreNN          349/s   5,570 bytes/item  build 178 s\n            Glass         8,345/s   1,472 bytes/item  build 7 s\n            ScaNN        12,650/s     920 bytes/item  build 2 s\n            RoarGraph     1,745/s   1,077 bytes/item  build 15 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8798999999999999,
+       "sec": 5.337829189375043e-05,
+       "checks": 3116.792
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9004,
+       "sec": 6.335274991579354e-05,
+       "checks": 3579.241
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9235,
+       "sec": 8.045970811508596e-05,
+       "checks": 4457.041
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9294,
+       "sec": 8.369070920161903e-05,
+       "checks": 4726.552
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9416,
+       "sec": 0.00010449787508696318,
+       "checks": 5308.449
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9513999999999999,
+       "sec": 0.00010595112503506244,
+       "checks": 5713.199
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9609,
+       "sec": 0.00011731350002810359,
+       "checks": 6503.587
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9712999999999999,
+       "sec": 0.00014175074989907443,
+       "checks": 7722.307
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9818,
+       "sec": 0.00017869170801714063,
+       "checks": 9304.761
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9902,
+       "sec": 0.00023908187495544554,
+       "checks": 12223.436
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9951000000000001,
+       "sec": 0.0003244954580441117,
+       "checks": 17560.713
+      }
+     ],
+     "qps95": 9456.84444647738,
+     "status95": "ok",
+     "checks95": 5655.377571428572,
+     "target": 0.95,
+     "accuracy_at_target": 0.9513999999999999,
+     "qps_all": 103680.66498267384,
+     "median_ms": 0.10279146954417229,
+     "p99_ms": 0.24746016599237922,
+     "other_programs_cores": [
+      2.043,
+      1.867
+     ]
+    },
+    "build_seconds": 38.81735277175903,
+    "bytes_per_item": 620.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 4033.7483557290457,
+     "qps_all": 26661.452379369002,
+     "median_ms_cold": 0.9564795764163136,
+     "p99_ms_cold": 1.469311318360269,
+     "bytes_per_item_counted": 620.00008,
+     "bytes_per_item_measured": 656.01632,
+     "ram_bytes_per_item_measured": 1456.37496,
+     "folder_mb": 142.109009
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 789.8755973973701,
+      "status": "ok",
+      "best": 0.9898999999999999,
+      "bytes_per_item": 1088.32432,
+      "qps_all": 7126.8514074780815,
+      "build_s": 10.72161179210525
+     },
+     "diskann": {
+      "qps95": 3307.3689258466306,
+      "status": "ok",
+      "best": 0.9846999999999999,
+      "bytes_per_item": 1300.0,
+      "qps_all": 9585.889570552148,
+      "build_s": 14.082488
+     },
+     "corenn": {
+      "qps95": 349.4369262948989,
+      "status": "ok",
+      "best": 0.9798,
+      "bytes_per_item": 5570.06848,
+      "qps_all": 2608.6573750608445,
+      "build_s": 177.61043920798693
+     },
+     "glass": {
+      "qps95": 8344.98340433807,
+      "status": "ok",
+      "best": 0.9877,
+      "bytes_per_item": 1472.0,
+      "qps_all": 77448.08537768835,
+      "build_s": 6.5859925001859665
+     },
+     "scann": {
+      "qps95": 12649.840505958646,
+      "status": "ok",
+      "best": 0.9997999999999999,
+      "bytes_per_item": 920.43185,
+      "qps_all": 95533.41176183491,
+      "build_s": 2.4551436680003462
+     },
+     "roargraph": {
+      "qps95": 1745.3854887057312,
+      "status": "ok",
+      "best": 0.9853,
+      "bytes_per_item": 1077.12716,
+      "qps_all": 14564.450189893485,
+      "build_s": 14.6451
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 14822.261649448506,
+       "checks": 2894.0610624999986,
+       "bytes_per_item": 376.0,
+       "seconds": 1.723959125
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 13300.536863701256,
+       "checks": 2943.6664605263145,
+       "bytes_per_item": 336.0,
+       "seconds": 1.751392666
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 16847.612989303823,
+       "checks": 2840.1288653846145,
+       "bytes_per_item": 460.0,
+       "seconds": 1.648339625
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 18052.545365782396,
+       "checks": 2695.658391304347,
+       "bytes_per_item": 544.0,
+       "seconds": 1.639833667
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 19178.864601716614,
+       "checks": 2818.4383584905663,
+       "bytes_per_item": 708.0,
+       "seconds": 1.926631708
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 15613.600576499184,
+       "checks": 3173.5163362831845,
+       "bytes_per_item": 708.0,
+       "seconds": 1.730350042
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 18702.04595663839,
+       "checks": 2912.0133571428564,
+       "bytes_per_item": 708.0,
+       "seconds": 1.8368819589999998
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 19275.69428121585,
+       "checks": 2804.8486753246743,
+       "bytes_per_item": 708.0,
+       "seconds": 1.944173208
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 8482.965213601225,
+       "checks": 5614.944318181812,
+       "bytes_per_item": 708.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 9469.53858155553,
+       "checks": 5741.892011363634,
+       "bytes_per_item": 620.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 96,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 4,
+     "chosen": 7,
+     "seconds": 19.435302875
+    }
+   }
+  },
+  {
+   "check": "glove: closer to the fastest rival than part 1",
+   "pass": true,
+   "detail": "0.75x ScaNN's speed (part 1: 0.39x)",
+   "data": null
+  },
+  {
+   "check": "yandex: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 41,411/s at 95% (1 core; 989 checks); all cores 372,099/s; typical 0.029 ms, slow 0.054 ms; build 26.9 s; 460 bytes/item; picked 48 links, slack 1.3, 8-bit copies; other programs using 2.2 -> 1.2 cores\n            HNSW          5,118/s     961 bytes/item  build 6 s\n            DiskANN      18,032/s     968 bytes/item  build 7 s\n            CoreNN        1,998/s   4,599 bytes/item  build 71 s\n            Glass        45,403/s   1,344 bytes/item  build 2 s\n            ScaNN        30,163/s     920 bytes/item  build 2 s\n            RoarGraph    11,496/s     921 bytes/item  build 5 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8845000000000001,
+       "sec": 1.559408288449049e-05,
+       "checks": 670.383
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9027,
+       "sec": 1.620474993251264e-05,
+       "checks": 718.393
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9174,
+       "sec": 1.9252333091571928e-05,
+       "checks": 799.381
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9279999999999999,
+       "sec": 1.985279214568436e-05,
+       "checks": 844.733
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9376,
+       "sec": 2.0770916948094964e-05,
+       "checks": 900.079
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.953,
+       "sec": 2.4965374963358044e-05,
+       "checks": 1010.455
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9606,
+       "sec": 2.648383309133351e-05,
+       "checks": 1095.342
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9702999999999999,
+       "sec": 3.3234999980777505e-05,
+       "checks": 1249.594
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9808999999999999,
+       "sec": 4.0255292085930705e-05,
+       "checks": 1497.228
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9887,
+       "sec": 4.710258287377656e-05,
+       "checks": 1899.433
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9945,
+       "sec": 6.255258386954666e-05,
+       "checks": 2471.892
+      }
+     ],
+     "qps95": 41410.82926490642,
+     "status95": "ok",
+     "checks95": 988.9531818181817,
+     "target": 0.95,
+     "accuracy_at_target": 0.953,
+     "qps_all": 372098.6842680936,
+     "median_ms": 0.029125018045306206,
+     "p99_ms": 0.05442027701064944,
+     "other_programs_cores": [
+      2.2030000000000003,
+      1.189
+     ]
+    },
+    "build_seconds": 26.85724401473999,
+    "bytes_per_item": 460.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 5657.756643785931,
+     "qps_all": 29044.82512187271,
+     "median_ms_cold": 0.810625497251749,
+     "p99_ms_cold": 1.2442550086416302,
+     "bytes_per_item_counted": 460.00008,
+     "bytes_per_item_measured": 632.42336,
+     "ram_bytes_per_item_measured": 1432.45432,
+     "folder_mb": 139.708545
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 5118.471851684303,
+      "status": "ok",
+      "best": 0.9843,
+      "bytes_per_item": 960.65528,
+      "qps_all": 59204.87857428053,
+      "build_s": 5.5896902499953285
+     },
+     "diskann": {
+      "qps95": 18031.901927600888,
+      "status": "ok",
+      "best": 0.9776999999999999,
+      "bytes_per_item": 968.0,
+      "qps_all": 57900.52689479474,
+      "build_s": 6.623298
+     },
+     "corenn": {
+      "qps95": 1997.6111585822691,
+      "status": "ok",
+      "best": 0.9799,
+      "bytes_per_item": 4598.82496,
+      "qps_all": 14704.77408043038,
+      "build_s": 70.91963716701139
+     },
+     "glass": {
+      "qps95": 45403.0920897068,
+      "status": "ok",
+      "best": 0.9833000000000001,
+      "bytes_per_item": 1344.0,
+      "qps_all": 432635.19509578333,
+      "build_s": 2.4740144580136985
+     },
+     "scann": {
+      "qps95": 30163.16336238979,
+      "status": "ok",
+      "best": 0.9999,
+      "bytes_per_item": 920.43185,
+      "qps_all": 199145.3081628205,
+      "build_s": 2.4360221260003527
+     },
+     "roargraph": {
+      "qps95": 11495.970651806992,
+      "status": "ok",
+      "best": 0.976,
+      "bytes_per_item": 921.26352,
+      "qps_all": 109412.18304658224,
+      "build_s": 4.809
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 64625.59948001363,
+       "checks": 660.0738719999997,
+       "bytes_per_item": 376.0,
+       "seconds": 1.36590725
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 54718.17426611494,
+       "checks": 671.2706212121212,
+       "bytes_per_item": 336.0,
+       "seconds": 1.291004667
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 65858.50268408362,
+       "checks": 687.7401282051278,
+       "bytes_per_item": 460.0,
+       "seconds": 1.529625667
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 65033.54188079569,
+       "checks": 776.7285454545454,
+       "bytes_per_item": 544.0,
+       "seconds": 1.684635
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 63233.77488635219,
+       "checks": 859.999,
+       "bytes_per_item": 708.0,
+       "seconds": 1.7757613330000002
+      },
+      {
+       "r": 48,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 52167.21970512212,
+       "checks": 728.5086990291256,
+       "bytes_per_item": 460.0,
+       "seconds": 1.29056825
+      },
+      {
+       "r": 48,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 63684.82714768054,
+       "checks": 718.9481681415924,
+       "bytes_per_item": 460.0,
+       "seconds": 1.4907144589999999
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 71697.45267214488,
+       "checks": 672.4020909090906,
+       "bytes_per_item": 460.0,
+       "seconds": 1.5022322909999999
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 59642.41445940017,
+       "checks": 729.9797586206893,
+       "bytes_per_item": 460.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 48,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 54362.5324388238,
+       "checks": 897.1458399999998,
+       "bytes_per_item": 372.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 48,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen": 7,
+     "seconds": 15.822177708
+    }
+   }
+  },
+  {
+   "check": "yandex: closer to the fastest rival than part 1",
+   "pass": true,
+   "detail": "0.91x Glass's speed (part 1: 0.62x)",
+   "data": null
+  },
+  {
+   "check": "llama: reaches 95% (HNSW, DiskANN and CoreNN never do)",
+   "pass": true,
+   "detail": "ours 45,671/s at 95% (1 core; 1,005 checks); all cores 516,851/s; typical 0.024 ms, slow 0.033 ms; build 16.9 s; 264 bytes/item; picked 24 links, slack 1.3, 8-bit copies; other programs using 0.1 -> 2.0 cores\n            HNSW      never 95% (best 41%)     928 bytes/item  build 9 s\n            DiskANN   never 95% (best 94%)   1,012 bytes/item  build 6 s\n            CoreNN    never 95% (best 51%)   2,227 bytes/item  build 33 s\n            Glass     never 95% (best 38%)   1,024 bytes/item  build 3 s\n            ScaNN        11,891/s     655 bytes/item  build 3 s\n            RoarGraph    76,990/s     528 bytes/item  build 1 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8695999999999999,
+       "sec": 1.3336834032088519e-05,
+       "checks": 678.86
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8981999999999999,
+       "sec": 1.4105458045378327e-05,
+       "checks": 739.303
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9153,
+       "sec": 1.7063832841813566e-05,
+       "checks": 816.722
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9256,
+       "sec": 1.741545810364187e-05,
+       "checks": 855.035
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9332,
+       "sec": 1.8329041078686714e-05,
+       "checks": 890.439
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9444000000000001,
+       "sec": 2.0535541931167245e-05,
+       "checks": 966.464
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9585000000000001,
+       "sec": 2.396037499420345e-05,
+       "checks": 1062.237
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9667999999999999,
+       "sec": 2.4489874951541424e-05,
+       "checks": 1184.025
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9782,
+       "sec": 2.977166697382927e-05,
+       "checks": 1398.928
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9898999999999999,
+       "sec": 4.5794665813446046e-05,
+       "checks": 2017.812
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9952,
+       "sec": 7.367275003343821e-05,
+       "checks": 3126.14
+      }
+     ],
+     "qps95": 45670.94410753147,
+     "status95": "ok",
+     "checks95": 1004.5015035460982,
+     "target": 0.95,
+     "accuracy_at_target": 0.9444000000000001,
+     "qps_all": 516851.3842998006,
+     "median_ms": 0.023791100829839706,
+     "p99_ms": 0.032588208559900515,
+     "other_programs_cores": [
+      0.131,
+      1.96
+     ]
+    },
+    "build_seconds": 16.93985605239868,
+    "bytes_per_item": 264.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 11918.708494342574,
+     "qps_all": 52255.36220748576,
+     "median_ms_cold": 0.5580208962783217,
+     "p99_ms_cold": 0.9769605775363744,
+     "bytes_per_item_counted": 264.00008,
+     "bytes_per_item_measured": 388.46512,
+     "ram_bytes_per_item_measured": 1412.79352,
+     "folder_mb": 86.412206
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.41150000000000003,
+      "bytes_per_item": 928.32376,
+      "qps_all": 9188.765935038004,
+      "build_s": 9.495482290978543
+     },
+     "diskann": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.9351,
+      "bytes_per_item": 1012.0,
+      "qps_all": 923.6202960018323,
+      "build_s": 5.870518
+     },
+     "corenn": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.5115000000000001,
+      "bytes_per_item": 2227.4048,
+      "qps_all": 278.1145893790608,
+      "build_s": 32.554528667009436
+     },
+     "glass": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.3834,
+      "bytes_per_item": 1024.0,
+      "qps_all": 8562.807651610927,
+      "build_s": 3.0384352079126984
+     },
+     "scann": {
+      "qps95": 11890.826438646835,
+      "status": "ok",
+      "best": 0.9970000000000001,
+      "bytes_per_item": 654.6535,
+      "qps_all": 104241.77503452018,
+      "build_s": 2.770629750999433
+     },
+     "roargraph": {
+      "qps95": 76989.7026272736,
+      "status": "below_min_effort",
+      "best": 0.9811,
+      "bytes_per_item": 527.7028,
+      "qps_all": 660501.9815059445,
+      "build_s": 1.28393
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 65009.90094987012,
+       "checks": 859.4851018518516,
+       "bytes_per_item": 304.0,
+       "seconds": 1.234790583
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 75486.60319056018,
+       "checks": 691.8092857142856,
+       "bytes_per_item": 264.0,
+       "seconds": 1.118272334
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 55201.82864336892,
+       "checks": 1072.2474563106796,
+       "bytes_per_item": 388.0,
+       "seconds": 1.2996562919999999
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 55046.60090330809,
+       "checks": 1163.1327101449274,
+       "bytes_per_item": 472.0,
+       "seconds": 1.3121948749999999
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 51725.9485010236,
+       "checks": 1249.1646725663716,
+       "bytes_per_item": 636.0,
+       "seconds": 1.369891291
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 52504.53198294962,
+       "checks": 831.9207115384615,
+       "bytes_per_item": 264.0,
+       "seconds": 1.174246959
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 72924.92703400958,
+       "checks": 726.1393783783783,
+       "bytes_per_item": 264.0,
+       "seconds": 1.154217042
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 79263.18029577936,
+       "checks": 651.995252427184,
+       "bytes_per_item": 264.0,
+       "seconds": 1.122724042
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 946.377545454545,
+       "bytes_per_item": 264.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 200.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen": 7,
+     "seconds": 13.792963125
+    }
+   }
+  },
+  {
+   "check": "llama: closer to the fastest rival than part 1",
+   "pass": true,
+   "detail": "0.59x RoarGraph's speed (part 1: 0.40x)",
+   "data": null
+  },
+  {
+   "check": "landmark: faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 70,100/s at 95% (1 core; 278 checks); all cores 312,199/s; typical 0.018 ms, slow 0.030 ms; build 33.5 s; 904 bytes/item; picked 24 links, slack 1.0, 8-bit copies; other programs using 1.9 -> 1.3 cores\n            HNSW          7,200/s   3,233 bytes/item  build 5 s\n            DiskANN      16,567/s   3,240 bytes/item  build 4 s\n            CoreNN        1,637/s   7,383 bytes/item  build 107 s\n            Glass        60,587/s   3,968 bytes/item  build 5 s\n            ScaNN        23,436/s   3,479 bytes/item  build 6 s\n            RoarGraph    12,914/s   3,155 bytes/item  build 9 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.454166602343321e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.4349833130836486e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.479941699653864e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.4397958060726523e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.4265374979004265e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.4484333107247949e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9617000000000001,
+       "sec": 1.4667375013232231e-05,
+       "checks": 277.674
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9711000000000001,
+       "sec": 1.7807125113904477e-05,
+       "checks": 300.259
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9829000000000001,
+       "sec": 1.865674997679889e-05,
+       "checks": 324.55
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9922000000000001,
+       "sec": 2.7846499811857938e-05,
+       "checks": 401.436
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9962,
+       "sec": 2.924504200927913e-05,
+       "checks": 472.736
+      }
+     ],
+     "qps95": 70099.80469996737,
+     "status95": "below_min_effort",
+     "checks95": 277.674,
+     "target": 0.88,
+     "accuracy_at_target": 0.9617000000000001,
+     "qps_all": 312199.20947214524,
+     "median_ms": 0.017707934603095055,
+     "p99_ms": 0.030250465497374535,
+     "other_programs_cores": [
+      1.8670000000000002,
+      1.263
+     ]
+    },
+    "build_seconds": 33.51022410392761,
+    "bytes_per_item": 904.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 3330.026894602952,
+     "qps_all": 26245.25531514617,
+     "median_ms_cold": 0.3774163778871298,
+     "p99_ms_cold": 0.701131443493068,
+     "bytes_per_item_counted": 904.00008,
+     "bytes_per_item_measured": 963.70976,
+     "ram_bytes_per_item_measured": 4036.3656,
+     "folder_mb": 397.712494
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 7200.18403956872,
+      "status": "ok",
+      "best": 0.9946999999999999,
+      "bytes_per_item": 3232.65528,
+      "qps_all": 70505.28941849626,
+      "build_s": 5.330186459003016
+     },
+     "diskann": {
+      "qps95": 16567.26308813784,
+      "status": "below_min_effort",
+      "best": 0.9897,
+      "bytes_per_item": 3240.0,
+      "qps_all": 81241.36810463888,
+      "build_s": 4.108991
+     },
+     "corenn": {
+      "qps95": 1637.4423004473108,
+      "status": "below_min_effort",
+      "best": 0.9978999999999999,
+      "bytes_per_item": 7383.12192,
+      "qps_all": 15601.161673886407,
+      "build_s": 107.4599369999487
+     },
+     "glass": {
+      "qps95": 60587.08722334431,
+      "status": "below_min_effort",
+      "best": 0.9824999999999999,
+      "bytes_per_item": 3968.0,
+      "qps_all": 429876.4394589741,
+      "build_s": 4.604822250083089
+     },
+     "scann": {
+      "qps95": 23435.762452679526,
+      "status": "ok",
+      "best": 0.9991,
+      "bytes_per_item": 3479.36854,
+      "qps_all": 149748.23578542253,
+      "build_s": 5.594363793999946
+     },
+     "roargraph": {
+      "qps95": 12913.890180277906,
+      "status": "below_min_effort",
+      "best": 0.9868,
+      "bytes_per_item": 3155.07308,
+      "qps_all": 75787.23612589593,
+      "build_s": 8.59535
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 73443.00822561693,
+       "checks": 354.41,
+       "bytes_per_item": 944.0,
+       "seconds": 2.194342875
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 82021.47790985838,
+       "checks": 300.659,
+       "bytes_per_item": 904.0,
+       "seconds": 1.836327375
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 59713.82151041135,
+       "checks": 449.858,
+       "bytes_per_item": 1028.0,
+       "seconds": 2.151379167
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 55179.36532760216,
+       "checks": 513.361,
+       "bytes_per_item": 1112.0,
+       "seconds": 2.175398209
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 49045.673214250965,
+       "checks": 591.502,
+       "bytes_per_item": 1276.0,
+       "seconds": 2.32257575
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 93523.09251937151,
+       "checks": 248.902,
+       "bytes_per_item": 904.0,
+       "seconds": 1.657630917
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 80426.91433376625,
+       "checks": 293.221,
+       "bytes_per_item": 904.0,
+       "seconds": 1.7759665
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 78727.35387983808,
+       "checks": 306.434,
+       "bytes_per_item": 904.0,
+       "seconds": 1.918107708
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 73201.21121233828,
+       "checks": 278.734,
+       "bytes_per_item": 904.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 67577.30362670783,
+       "checks": 305.33278160919537,
+       "bytes_per_item": 520.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 24,
+     "chosen_alpha": 1.0,
+     "chosen_code_bits": 8,
+     "chosen": 5,
+     "seconds": 17.876035792
+    }
+   }
+  },
+  {
+   "check": "landmark: closer to the fastest rival than part 1",
+   "pass": true,
+   "detail": "1.16x Glass's speed (part 1: 0.47x)",
+   "data": null
+  },
+  {
+   "check": "arxiv (held back): faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 41,278/s at 95% (1 core; 508 checks); all cores 189,439/s; typical 0.028 ms, slow 0.045 ms; build 45.3 s; 944 bytes/item; picked 32 links, slack 1.2, 8-bit copies; other programs using 2.1 -> 1.9 cores\n            HNSW          3,560/s   3,233 bytes/item  build 8 s\n            DiskANN       9,095/s   3,240 bytes/item  build 7 s\n            CoreNN        1,480/s   7,277 bytes/item  build 180 s\n            Glass        39,260/s   4,096 bytes/item  build 9 s\n            ScaNN        13,975/s   3,523 bytes/item  build 8 s\n            RoarGraph     7,158/s   3,172 bytes/item  build 7 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.9401999999999999,
+       "sec": 2.230004104785621e-05,
+       "checks": 479.873
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9401999999999999,
+       "sec": 2.2388416109606624e-05,
+       "checks": 479.873
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9401999999999999,
+       "sec": 2.1844707895070314e-05,
+       "checks": 479.873
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9401999999999999,
+       "sec": 2.177591691724956e-05,
+       "checks": 479.873
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9401999999999999,
+       "sec": 2.1755249937996268e-05,
+       "checks": 479.873
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9518000000000001,
+       "sec": 2.456325013190508e-05,
+       "checks": 513.037
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9585000000000001,
+       "sec": 2.7534416876733303e-05,
+       "checks": 542.626
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9707000000000001,
+       "sec": 3.254529205150902e-05,
+       "checks": 607.512
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9829000000000001,
+       "sec": 3.6007917020469904e-05,
+       "checks": 710.528
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9912000000000001,
+       "sec": 4.875179100781679e-05,
+       "checks": 902.974
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9952,
+       "sec": 5.5278416955843565e-05,
+       "checks": 1075.791
+      }
+     ],
+     "qps95": 41278.34768478598,
+     "status95": "ok",
+     "checks95": 507.89086206896525,
+     "target": 0.95,
+     "accuracy_at_target": 0.9518000000000001,
+     "qps_all": 189438.78436449022,
+     "median_ms": 0.02775003667920828,
+     "p99_ms": 0.04500218899920583,
+     "other_programs_cores": [
+      2.058,
+      1.869
+     ]
+    },
+    "build_seconds": 45.337697982788086,
+    "bytes_per_item": 944.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 2877.5612080136275,
+     "qps_all": 20390.633562603183,
+     "median_ms_cold": 0.5105625605210662,
+     "p99_ms_cold": 0.9512042370624831,
+     "bytes_per_item_counted": 944.00008,
+     "bytes_per_item_measured": 1003.68672,
+     "ram_bytes_per_item_measured": 4076.5064,
+     "folder_mb": 401.712663
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 3559.519828086431,
+      "status": "ok",
+      "best": 0.9874,
+      "bytes_per_item": 3232.65528,
+      "qps_all": 44115.21548140934,
+      "build_s": 7.931755207944661
+     },
+     "diskann": {
+      "qps95": 9095.054481443412,
+      "status": "ok",
+      "best": 0.9893000000000001,
+      "bytes_per_item": 3240.0,
+      "qps_all": 41039.1102720893,
+      "build_s": 6.520703
+     },
+     "corenn": {
+      "qps95": 1479.7062898802076,
+      "status": "below_min_effort",
+      "best": 0.9824999999999999,
+      "bytes_per_item": 7276.78976,
+      "qps_all": 13955.889960215858,
+      "build_s": 179.85617325012572
+     },
+     "glass": {
+      "qps95": 39259.72553220218,
+      "status": "ok",
+      "best": 0.9914999999999999,
+      "bytes_per_item": 4096.0,
+      "qps_all": 283259.3937807107,
+      "build_s": 8.721004208084196
+     },
+     "scann": {
+      "qps95": 13975.461715154019,
+      "status": "ok",
+      "best": 0.9994999999999999,
+      "bytes_per_item": 3522.51657,
+      "qps_all": 92968.84093517873,
+      "build_s": 7.991652920999968
+     },
+     "roargraph": {
+      "qps95": 7158.386407815755,
+      "status": "ok",
+      "best": 0.9888999999999999,
+      "bytes_per_item": 3172.07468,
+      "qps_all": 44267.784504956246,
+      "build_s": 7.43184
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 64576.29092364457,
+       "checks": 417.121,
+       "bytes_per_item": 944.0,
+       "seconds": 2.35238275
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 67141.9217962892,
+       "checks": 360.6820843373494,
+       "bytes_per_item": 904.0,
+       "seconds": 2.473316125
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 49269.65957710097,
+       "checks": 556.446,
+       "bytes_per_item": 1028.0,
+       "seconds": 2.513317834
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 41140.324215375855,
+       "checks": 692.891,
+       "bytes_per_item": 1112.0,
+       "seconds": 2.817899458
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 33876.43841792391,
+       "checks": 881.539,
+       "bytes_per_item": 1276.0,
+       "seconds": 3.131846
+      },
+      {
+       "r": 24,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 54777.40567039021,
+       "checks": 404.27540740740733,
+       "bytes_per_item": 904.0,
+       "seconds": 2.284840708
+      },
+      {
+       "r": 24,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 62720.14155962468,
+       "checks": 379.09280487804864,
+       "bytes_per_item": 904.0,
+       "seconds": 2.394468834
+      },
+      {
+       "r": 24,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 66879.46173395823,
+       "checks": 361.0172926829268,
+       "bytes_per_item": 904.0,
+       "seconds": 2.34931825
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 46090.94716711717,
+       "checks": 480.88845038167915,
+       "bytes_per_item": 944.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 46618.99101466112,
+       "checks": 501.54272093023206,
+       "bytes_per_item": 560.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen": 0,
+     "seconds": 23.373386791
+    }
+   }
+  },
+  {
+   "check": "laion (held back): faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 20,050/s at 95% (1 core; 1,218 checks); all cores 119,729/s; typical 0.058 ms, slow 0.167 ms; build 58.2 s; 688 bytes/item; picked 32 links, slack 1.2, 8-bit copies; other programs using 1.1 -> 1.0 cores\n            HNSW          1,743/s   2,209 bytes/item  build 16 s\n            DiskANN       4,319/s   2,216 bytes/item  build 5 s\n            CoreNN        1,009/s   6,235 bytes/item  build 87 s\n            Glass        18,279/s   2,944 bytes/item  build 17 s\n            ScaNN        11,196/s   2,350 bytes/item  build 6 s\n            RoarGraph     3,023/s   2,199 bytes/item  build 22 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8865000000000001,
+       "sec": 2.645195904187858e-05,
+       "checks": 716.676
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9018,
+       "sec": 3.0951749999076125e-05,
+       "checks": 791.834
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9236000000000001,
+       "sec": 3.678262513130903e-05,
+       "checks": 922.979
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9320999999999999,
+       "sec": 3.8433915935456755e-05,
+       "checks": 988.449
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9408,
+       "sec": 4.352170904166997e-05,
+       "checks": 1098.649
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9492,
+       "sec": 4.943866701796651e-05,
+       "checks": 1204.309
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9599,
+       "sec": 5.526862503029406e-05,
+       "checks": 1390.948
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9692000000000001,
+       "sec": 6.237270799465477e-05,
+       "checks": 1674.756
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9813000000000001,
+       "sec": 8.276829193346203e-05,
+       "checks": 2189.543
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9919,
+       "sec": 0.00012593450001440942,
+       "checks": 3362.936
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9962,
+       "sec": 0.00021503041707910599,
+       "checks": 5550.156
+      }
+     ],
+     "qps95": 20050.30552315044,
+     "status95": "ok",
+     "checks95": 1218.2633177570078,
+     "target": 0.96,
+     "accuracy_at_target": 0.9599,
+     "qps_all": 119729.40713783377,
+     "median_ms": 0.058125006034970284,
+     "p99_ms": 0.1672866055741906,
+     "other_programs_cores": [
+      1.105,
+      1.038
+     ]
+    },
+    "build_seconds": 58.15457892417908,
+    "bytes_per_item": 688.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 3277.7293860233963,
+     "qps_all": 15184.424391086068,
+     "median_ms_cold": 0.5984170129522681,
+     "p99_ms_cold": 1.1122874962165952,
+     "bytes_per_item_counted": 688.00008,
+     "bytes_per_item_measured": 1085.44216,
+     "ram_bytes_per_item_measured": 3133.4424,
+     "folder_mb": 308.527456
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 1742.862817831858,
+      "status": "ok",
+      "best": 0.9793,
+      "bytes_per_item": 2208.65528,
+      "qps_all": 16425.159578715273,
+      "build_s": 15.642704291967675
+     },
+     "diskann": {
+      "qps95": 4319.091297743693,
+      "status": "ok",
+      "best": 0.9856,
+      "bytes_per_item": 2216.0,
+      "qps_all": 19422.00124300808,
+      "build_s": 4.868865
+     },
+     "corenn": {
+      "qps95": 1008.8657738364046,
+      "status": "ok",
+      "best": 0.9811,
+      "bytes_per_item": 6234.9312,
+      "qps_all": 8346.098759763585,
+      "build_s": 86.93197895796038
+     },
+     "glass": {
+      "qps95": 18278.745891718205,
+      "status": "ok",
+      "best": 0.9789,
+      "bytes_per_item": 2944.0,
+      "qps_all": 163186.46728206103,
+      "build_s": 17.373386832885444
+     },
+     "scann": {
+      "qps95": 11196.2620395206,
+      "status": "ok",
+      "best": 0.9999,
+      "bytes_per_item": 2349.74601,
+      "qps_all": 78222.01363125353,
+      "build_s": 5.790544210999997
+     },
+     "roargraph": {
+      "qps95": 3022.631922339527,
+      "status": "ok",
+      "best": 0.9792,
+      "bytes_per_item": 2198.73124,
+      "qps_all": 16904.551173431955,
+      "build_s": 21.7404
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 39070.296699002894,
+       "checks": 808.2602142857141,
+       "bytes_per_item": 688.0,
+       "seconds": 3.852691333
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 33726.61243239736,
+       "checks": 803.0072321428567,
+       "bytes_per_item": 648.0,
+       "seconds": 3.358024542
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 39195.79453105382,
+       "checks": 836.9439545454543,
+       "bytes_per_item": 772.0,
+       "seconds": 4.43223875
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 38487.43769456338,
+       "checks": 904.8449789473684,
+       "bytes_per_item": 856.0,
+       "seconds": 4.708738666
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 40040.9924968446,
+       "checks": 942.373790697674,
+       "bytes_per_item": 1020.0,
+       "seconds": 5.071890625
+      },
+      {
+       "r": 96,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 31942.720405763423,
+       "checks": 860.8116999999995,
+       "bytes_per_item": 1020.0,
+       "seconds": 3.302868666
+      },
+      {
+       "r": 96,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 36795.132663484095,
+       "checks": 844.2759811320745,
+       "bytes_per_item": 1020.0,
+       "seconds": 4.328732708
+      },
+      {
+       "r": 96,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 38122.95924395333,
+       "checks": 1005.7803428571426,
+       "bytes_per_item": 1020.0,
+       "seconds": 6.067218125
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 30026.82476208428,
+       "checks": 863.8447222222218,
+       "bytes_per_item": 688.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": 29757.483426746225,
+       "checks": 906.2361913043472,
+       "bytes_per_item": 432.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen": 0,
+     "seconds": 39.228943042
+    }
+   }
+  },
+  {
+   "check": "yi (held back): reaches 95% (HNSW, DiskANN and CoreNN never do)",
+   "pass": true,
+   "detail": "ours 34,897/s at 95% (1 core; 1,310 checks); all cores 350,882/s; typical 0.040 ms, slow 0.061 ms; build 17.7 s; 304 bytes/item; picked 32 links, slack 1.3, 8-bit copies; other programs using 0.6 -> 1.8 cores\n            HNSW      never 95% (best 53%)     928 bytes/item  build 8 s\n            DiskANN   never 95% (best 90%)   1,012 bytes/item  build 5 s\n            CoreNN    never 95% (best 35%)   1,925 bytes/item  build 9 s\n            Glass     never 95% (best 43%)   1,024 bytes/item  build 3 s\n            ScaNN         8,005/s     655 bytes/item  build 3 s\n            RoarGraph    31,379/s     546 bytes/item  build 3 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8815,
+       "sec": 1.7107291147112845e-05,
+       "checks": 807.897
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.9045,
+       "sec": 1.9258290994912385e-05,
+       "checks": 911.284
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9238,
+       "sec": 2.2999915992841125e-05,
+       "checks": 1036.197
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.9301,
+       "sec": 2.3825875017791988e-05,
+       "checks": 1090.91
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9410000000000001,
+       "sec": 2.5223334087058903e-05,
+       "checks": 1192.582
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9480000000000001,
+       "sec": 2.7868374949321152e-05,
+       "checks": 1278.684
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9593999999999999,
+       "sec": 3.23577499948442e-05,
+       "checks": 1458.867
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9722,
+       "sec": 3.914758306927979e-05,
+       "checks": 1741.366
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9821,
+       "sec": 4.68624581117183e-05,
+       "checks": 2155.152
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9912000000000001,
+       "sec": 7.697670790366829e-05,
+       "checks": 3250.67
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9960000000000001,
+       "sec": 0.00012245641718618572,
+       "checks": 4833.718
+      }
+     ],
+     "qps95": 34896.72449696945,
+     "status95": "ok",
+     "checks95": 1310.2950526315776,
+     "target": 0.96,
+     "accuracy_at_target": 0.9593999999999999,
+     "qps_all": 350882.26082637283,
+     "median_ms": 0.03958295565098524,
+     "p99_ms": 0.06071353098377585,
+     "other_programs_cores": [
+      0.612,
+      1.7719999999999998
+     ]
+    },
+    "build_seconds": 17.738618850708008,
+    "bytes_per_item": 304.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 7872.517677066547,
+     "qps_all": 46443.313136556004,
+     "median_ms_cold": 0.6247295532375574,
+     "p99_ms_cold": 1.0835007857531307,
+     "bytes_per_item_counted": 304.00008,
+     "bytes_per_item_measured": 427.95056,
+     "ram_bytes_per_item_measured": 1452.60664,
+     "folder_mb": 90.412484
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.5281,
+      "bytes_per_item": 928.32376,
+      "qps_all": 7313.683907340194,
+      "build_s": 7.866378583014011
+     },
+     "diskann": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.901,
+      "bytes_per_item": 1012.0,
+      "qps_all": 888.669288833515,
+      "build_s": 4.990156
+     },
+     "corenn": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.3536,
+      "bytes_per_item": 1925.12,
+      "qps_all": 448.1456209504784,
+      "build_s": 8.849961792118847
+     },
+     "glass": {
+      "qps95": null,
+      "status": "never",
+      "best": 0.4264,
+      "bytes_per_item": 1024.0,
+      "qps_all": 7549.057074638558,
+      "build_s": 2.8165840830188245
+     },
+     "scann": {
+      "qps95": 8005.329660299205,
+      "status": "ok",
+      "best": 0.9960000000000001,
+      "bytes_per_item": 654.6535,
+      "qps_all": 56735.97912076705,
+      "build_s": 3.077509876000022
+     },
+     "roargraph": {
+      "qps95": 31379.265355959113,
+      "status": "ok",
+      "best": 0.9715999999999999,
+      "bytes_per_item": 546.04732,
+      "qps_all": 292872.16510726884,
+      "build_s": 3.16023
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 58445.04531883377,
+       "checks": 791.248072463768,
+       "bytes_per_item": 304.0,
+       "seconds": 1.212734083
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 56346.16167185734,
+       "checks": 751.5111428571425,
+       "bytes_per_item": 264.0,
+       "seconds": 1.213044042
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 53310.694014321416,
+       "checks": 867.8908878504668,
+       "bytes_per_item": 388.0,
+       "seconds": 1.302408333
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 51616.52009514914,
+       "checks": 881.8814222222219,
+       "bytes_per_item": 472.0,
+       "seconds": 1.273929458
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 52722.911024750225,
+       "checks": 895.7651034482755,
+       "bytes_per_item": 636.0,
+       "seconds": 1.317268167
+      },
+      {
+       "r": 32,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 42952.83449663751,
+       "checks": 793.7907272727267,
+       "bytes_per_item": 304.0,
+       "seconds": 1.430561625
+      },
+      {
+       "r": 32,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 54463.28190778319,
+       "checks": 759.3659014084502,
+       "bytes_per_item": 304.0,
+       "seconds": 1.238991583
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": true,
+       "searches_per_s": 61488.881445809646,
+       "checks": 811.0609767441856,
+       "bytes_per_item": 304.0,
+       "seconds": 1.186073875
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": 1207.557181818181,
+       "bytes_per_item": 304.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2999999523162842,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": true,
+       "searches_per_s": null,
+       "checks": null,
+       "bytes_per_item": 240.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2999999523162842,
+     "chosen_code_bits": 8,
+     "chosen": 7,
+     "seconds": 14.151145541
+    }
+   }
+  },
+  {
+   "check": "gist (held back): faster at 95% than HNSW, DiskANN and CoreNN",
+   "pass": true,
+   "detail": "ours 11,811/s at 95% (1 core; 1,487 checks); all cores 50,031/s; typical 0.090 ms, slow 0.143 ms; build 62.4 s; 1,136 bytes/item; picked 32 links, slack 1.2, 8-bit copies; other programs using 1.1 -> 1.8 cores\n            HNSW            781/s   4,128 bytes/item  build 36 s\n            DiskANN       2,648/s   4,008 bytes/item  build 16 s\n            CoreNN          536/s   8,110 bytes/item  build 96 s\n            Glass         9,479/s   5,184 bytes/item  build 33 s\n            ScaNN         4,614/s   4,348 bytes/item  build 9 s\n            RoarGraph     2,050/s   3,917 bytes/item  build 31 s",
+   "data": {
+    "ours": {
+     "curve": [
+      {
+       "target": 0.88,
+       "accuracy": 0.8785999999999999,
+       "sec": 5.29080422129482e-05,
+       "checks": 961.839
+      },
+      {
+       "target": 0.9,
+       "accuracy": 0.8966,
+       "sec": 6.361083406955004e-05,
+       "checks": 1066.042
+      },
+      {
+       "target": 0.92,
+       "accuracy": 0.9221,
+       "sec": 6.976429210044444e-05,
+       "checks": 1212.549
+      },
+      {
+       "target": 0.93,
+       "accuracy": 0.932,
+       "sec": 7.41103331092745e-05,
+       "checks": 1299.672
+      },
+      {
+       "target": 0.94,
+       "accuracy": 0.9423999999999999,
+       "sec": 8.024899987503887e-05,
+       "checks": 1397.839
+      },
+      {
+       "target": 0.95,
+       "accuracy": 0.9503999999999999,
+       "sec": 8.489841688424349e-05,
+       "checks": 1491.295
+      },
+      {
+       "target": 0.96,
+       "accuracy": 0.9650000000000001,
+       "sec": 9.440412512049079e-05,
+       "checks": 1697.396
+      },
+      {
+       "target": 0.97,
+       "accuracy": 0.9742000000000001,
+       "sec": 0.00010588054195977748,
+       "checks": 1891.622
+      },
+      {
+       "target": 0.98,
+       "accuracy": 0.9827,
+       "sec": 0.00012279725004918872,
+       "checks": 2276.363
+      },
+      {
+       "target": 0.99,
+       "accuracy": 0.9907,
+       "sec": 0.0001665776250883937,
+       "checks": 2947.019
+      },
+      {
+       "target": 0.995,
+       "accuracy": 0.9951000000000001,
+       "sec": 0.00019806829211302103,
+       "checks": 3695.958
+      }
+     ],
+     "qps95": 11811.12415139118,
+     "status95": "ok",
+     "checks95": 1486.6222000000007,
+     "target": 0.95,
+     "accuracy_at_target": 0.9503999999999999,
+     "qps_all": 50031.37201755858,
+     "median_ms": 0.08956203237175941,
+     "p99_ms": 0.14254768611863256,
+     "other_programs_cores": [
+      1.055,
+      1.75
+     ]
+    },
+    "build_seconds": 62.39836001396179,
+    "bytes_per_item": 1136.00008,
+    "ssd": {
+     "same_answers": true,
+     "cached_share_after_drop": 0.0,
+     "qps": 1919.073164051719,
+     "qps_all": 13869.368886790962,
+     "median_ms_cold": 1.7222089227288961,
+     "p99_ms_cold": 2.504477626644075,
+     "bytes_per_item_counted": 1136.00008,
+     "bytes_per_item_measured": 1208.65128,
+     "ram_bytes_per_item_measured": 5048.73344,
+     "folder_mb": 497.714815
+    },
+    "rivals": {
+     "hnsw": {
+      "qps95": 781.4726037786553,
+      "status": "ok",
+      "best": 0.9894999999999999,
+      "bytes_per_item": 4128.32432,
+      "qps_all": 8300.049519303464,
+      "build_s": 35.52396404207684
+     },
+     "diskann": {
+      "qps95": 2648.2732885397577,
+      "status": "ok",
+      "best": 0.9917,
+      "bytes_per_item": 4008.0,
+      "qps_all": 13445.92050771796,
+      "build_s": 16.348258
+     },
+     "corenn": {
+      "qps95": 536.3438231126421,
+      "status": "ok",
+      "best": 0.9904,
+      "bytes_per_item": 8110.24384,
+      "qps_all": 5670.876515384284,
+      "build_s": 95.63549783290364
+     },
+     "glass": {
+      "qps95": 9478.645019329268,
+      "status": "ok",
+      "best": 0.9865999999999999,
+      "bytes_per_item": 5184.0,
+      "qps_all": 63803.48555079221,
+      "build_s": 33.238080917159095
+     },
+     "scann": {
+      "qps95": 4613.770821375576,
+      "status": "ok",
+      "best": 0.9994,
+      "bytes_per_item": 4348.19447,
+      "qps_all": 33450.31689642026,
+      "build_s": 9.018328336999957
+     },
+     "roargraph": {
+      "qps95": 2050.1548559954463,
+      "status": "ok",
+      "best": 0.9795,
+      "bytes_per_item": 3917.27788,
+      "qps_all": 10098.629884548222,
+      "build_s": 31.1007
+     }
+    },
+    "tuning": {
+     "trial_items": 20000,
+     "timing_questions": 1000,
+     "target": 0.95,
+     "trials": [
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 29697.650434748677,
+       "checks": 720.0168636363635,
+       "bytes_per_item": 1136.0,
+       "seconds": 3.275037208
+      },
+      {
+       "r": 24,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 26243.109915462876,
+       "checks": 715.3029148936167,
+       "bytes_per_item": 1096.0,
+       "seconds": 3.002899542
+      },
+      {
+       "r": 48,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 29353.05803452901,
+       "checks": 728.7936901408445,
+       "bytes_per_item": 1220.0,
+       "seconds": 3.245787041
+      },
+      {
+       "r": 64,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 30316.77240088776,
+       "checks": 769.7119999999999,
+       "bytes_per_item": 1304.0,
+       "seconds": 3.407049667
+      },
+      {
+       "r": 96,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 29333.577779814834,
+       "checks": 840.402,
+       "bytes_per_item": 1468.0,
+       "seconds": 3.122028875
+      },
+      {
+       "r": 64,
+       "alpha": 1.0,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 21213.89283526333,
+       "checks": 894.2937222222218,
+       "bytes_per_item": 1304.0,
+       "seconds": 3.098921208
+      },
+      {
+       "r": 64,
+       "alpha": 1.100000023841858,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 27724.076219066894,
+       "checks": 800.2512134831459,
+       "bytes_per_item": 1304.0,
+       "seconds": 3.167725042
+      },
+      {
+       "r": 64,
+       "alpha": 1.2999999523162842,
+       "code_bits": 8,
+       "links": "auto",
+       "question_links": false,
+       "searches_per_s": 30087.307337937655,
+       "checks": 776.6626860465115,
+       "bytes_per_item": 1304.0,
+       "seconds": 3.563197875
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 8,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 12822.515424726134,
+       "checks": 1326.7356470588234,
+       "bytes_per_item": 1136.0,
+       "seconds": 0.0
+      },
+      {
+       "r": 32,
+       "alpha": 1.2000000476837158,
+       "code_bits": 4,
+       "links": "full size",
+       "question_links": false,
+       "searches_per_s": 10926.516933928908,
+       "checks": 1711.485685393257,
+       "bytes_per_item": 656.0,
+       "seconds": 0.0
+      }
+     ],
+     "chosen_r": 32,
+     "chosen_alpha": 1.2000000476837158,
+     "chosen_code_bits": 8,
+     "chosen": 0,
+     "seconds": 30.161150083
+    }
+   }
+  }
+ ]
+}
