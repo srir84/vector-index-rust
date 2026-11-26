@@ -618,7 +618,7 @@ Every step's check was run again on the final code, in a fresh copy of the proje
   - the honesty box: what we did not beat, where the rivals' settings search may be smaller than their authors would use, and what needed a Linux container or a patch.
 - **Check:** `validate/step33.py`: every number on the page is recomputed from the results files and matches; the page shows no errors and fits a phone screen.
 - **Pass:** all of the above.
-- **Status:** passed, 8/8 (`validate/results/step33.json`). Published as a private page: https://claude.ai/artifact/6EhyxKEHviCQsZBQ1qUGsE
+- **Status:** passed, 8/8 (`validate/results/step33.json`). Published as a private page; the file itself is `page/results.html`.
   - `tools/results_page.py` writes `page/results.html` from the results files only: 358 different numbers, each recomputed independently by `validate/step33.py`, which also finds no number outside them except the method's constants and axis ticks.
   - **In Chrome,** at 390 px and 1280 px, light and dark: no errors, no sideways scroll, and the chart readout works. Headless Chrome keeps its window at least 500 px wide, so the check runs the page in a frame of exactly the width tested.
   - **Added after the rival runs:** Glass's quickest setting on Landmark (it already finds 96.72%; its dot sits there), the re-checks of steps 30b and 30c, and a short "why the lead grew".
@@ -776,3 +776,10 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
   - **`REPORT.md` part 5** comes first; the picture is `diagrams/speed-part5.png` (`tools/draw_report.py part5`). **`WRITE-UP.md`** is brought up to part 5.
   - **`validate/step43.py`** recomputes both of part 5's tables cell by cell, and accounts for every other number in part 5 and the write-up: from the results files, or from the tuning constants in `tune.rs`. On its first run it caught two numbers copied wrong from the logs, 0.15% for 0.14% and 6.0% for 6.1%. Both are fixed here, and in step 37's and step 42's notes.
   - **Part 4's checks:** `validate/step35.py` is not rerun. It checks part 4's report against part 4's page and step 28's freeze, both since moved on, and its results file stays as part 4's record. `validate/results/step33.json` now holds part 5's page check; part 4's was 8/8 with 358 numbers (`REPORT.md` part 4).
+
+## 44. After the freeze: the playground and build progress
+- **Builds:** `playground/` (download, build and search a public dataset from the command line or a browser page, with every answer checked), and `idx.build_progress()`, which the page reads while a build runs. A README chart and table of part 5's speeds against the other indexes (`tools/draw_report.py readme`).
+- **Check:** build progress only reports. With the same data and settings, the old code (step 42's freeze) and the new code save the same index, byte for byte.
+- **Pass:** identical saved files for `cos`, `ip` and `l2`.
+- **Status:** passed. `validate/step44_same_build.py OUT_DIR` builds 40,000 random items of 48 numbers with `tune="off"` (the settings trial picks by timing, so two builds with it on can differ anyway) and saves each index. Run under step 42's package and under the new one, `diff -r` finds no difference.
+  - **Part 5's results stand** for the frozen code. `validate/step43.py`'s first check, "the code is as frozen in step 42", now fails, as it should: `index.rs`, `lib.rs`, `suggest.rs`, `tune.rs` and the Python package changed, by the progress lines only.

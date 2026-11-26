@@ -2,7 +2,9 @@
 
 Download a dataset, build an index on it, search it, and see how it did, from the command line or a browser page. Every index setting is vindex's default: it picks its own.
 
-![The browser page after a build and a search](playground.png)
+![The browser page downloading, building and searching a dataset](playground.gif)
+
+*Waits are sped up about 7×; the page's own clock shows the real time. Recorded with `tools/record_playground.py`.*
 
 ## Before you start
 Do the main README's **Install** first, then add one package, for reading the dataset files:
