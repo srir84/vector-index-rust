@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vindex playground</title>
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --fg: #1d1f21; --muted: #6a6f75; --line: #e2e0da;
+  --accent: #1f6f5c; --accent-soft: #dcefe8; --warn: #a3471c; --warn-soft: #f7e3d8; --bar: #e9e7e1;
+  --part1: #1f6f5c; --part2: #6aa898; --part3: #c9ddd6;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a; --panel: #1d2024; --fg: #e8e6e1; --muted: #9aa0a6; --line: #30343a;
+    --accent: #5cc3a6; --accent-soft: #1d3a33; --warn: #f0a37e; --warn-soft: #3d2a20; --bar: #2a2e33;
+    --part1: #5cc3a6; --part2: #3e8a76; --part3: #2b5a4e;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+header { display: flex; align-items: baseline; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+header h1 { font-size: 17px; margin: 0; }
+header .sub { color: var(--muted); }
+main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 16px; padding: 16px 20px; }
+@media (max-width: 1150px) { main { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; }
+.card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.kind { white-space: normal; min-width: 12em; }
+td.done { white-space: normal; }
+th { font-weight: 600; color: var(--muted); font-size: 12px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+#datasets tbody tr { cursor: pointer; }
+#datasets tbody tr:hover { background: var(--bg); }
+#datasets tbody tr.sel { background: var(--accent-soft); }
+.tag { display: inline-block; font-size: 11px; padding: 0 6px; border-radius: 9px; background: var(--bar); color: var(--muted); margin-right: 3px; }
+.tag.on { background: var(--accent-soft); color: var(--accent); }
+.tag.warn { background: var(--warn-soft); color: var(--warn); }
+.name { font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
+button { font: inherit; padding: 6px 14px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: var(--panel); cursor: pointer; }
+button.ghost { background: transparent; color: var(--accent); }
+button:disabled { opacity: .4; cursor: default; }
+input { font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--fg); width: 9em; }
+label { color: var(--muted); }
+.bar { height: 10px; background: var(--bar); border-radius: 5px; overflow: hidden; margin: 8px 0 4px; }
+.bar > div { height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+.bar.busy > div { width: 30% !important; animation: slide 1.2s ease-in-out infinite alternate; }
+@keyframes slide { from { margin-left: 0; } to { margin-left: 70%; } }
+.muted { color: var(--muted); }
+.err { color: var(--warn); }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 3px 14px; margin: 0; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+#steps { max-height: 180px; overflow-y: auto; font-size: 12.5px; margin-top: 8px; }
+#steps div { display: flex; gap: 10px; }
+#steps .t { color: var(--muted); width: 4.5em; text-align: right; font-variant-numeric: tabular-nums; }
+.mem { display: flex; height: 14px; border-radius: 4px; overflow: hidden; margin: 6px 0; }
+.legend span { margin-right: 12px; font-size: 12px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+svg text { fill: var(--muted); font-size: 11px; }
+.ok { color: var(--accent); font-weight: 600; }
+.no { color: var(--warn); font-weight: 600; }
+.empty { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>vindex playground</h1>
+  <span class="sub">download a dataset, build an index, search it, see how it did</span>
+</header>
+<main>
+  <section>
+    <div class="card">
+      <h2>Datasets</h2>
+      <div class="scroll">
+        <table id="datasets">
+          <thead><tr><th>dataset</th><th>kind</th><th class="num">items</th><th class="num">dims</th><th class="num">GB</th><th>done</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin:8px 0 0"><span class="tag">in report</span> one of the 13 in REPORT.md &nbsp; <span class="tag warn">unlike</span> questions look unlike the items (e.g. text searching photos). Your own files in <span class="name">playground/data/</span> show up here too.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2 id="sel-title">Pick a dataset</h2>
+      <div id="sel-body" class="empty">Click a row on the left.</div>
+      <div id="actions" hidden>
+        <div class="row">
+          <button id="b-get">Download</button>
+          <button id="b-build">Build</button>
+          <label>cores <input id="threads" placeholder="all" style="width:4.5em"></label>
+        </div>
+        <div class="row">
+          <button id="b-search">Search</button>
+          <label>targets <input id="targets" value="0.90 0.95 0.99"></label>
+          <label>or list sizes <input id="sizes" placeholder="e.g. 50 100"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="job-card" hidden>
+      <h2 id="job-title">Job</h2>
+      <div><b id="job-phase"></b> <span id="job-step" class="muted"></span></div>
+      <div class="bar" id="job-bar"><div></div></div>
+      <div class="muted" id="job-meta"></div>
+      <div id="steps"></div>
+    </div>
+
+    <div class="card" id="build-card" hidden>
+      <h2>Build</h2>
+      <dl class="facts" id="build-facts"></dl>
+      <div class="mem" id="mem"></div>
+      <div class="legend" id="mem-legend"></div>
+    </div>
+
+    <div class="card" id="search-card" hidden>
+      <h2>Search</h2>
+      <div id="search-sub" class="muted"></div>
+      <div class="scroll"><table id="runs"><thead><tr><th>effort</th><th class="num">found of true top 10</th><th class="num">questions / s</th><th class="num">checks per question</th></tr></thead><tbody></tbody></table></div>
+      <div class="scroll"><svg id="chart" width="460" height="230" role="img" aria-label="Questions per second against share of the true top 10 found"></svg></div>
+    </div>
+
+    <div class="card" id="q-card" hidden>
+      <h2>One question up close</h2>
+      <div class="row">
+        <label>question # <input id="q-i" value="0" style="width:5em"></label>
+        <label>target <input id="q-t" value="0.95" style="width:5em"></label>
+        <button class="ghost" id="b-q">Search it</button>
+      </div>
+      <div id="q-out"></div>
+    </div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const el = (tag, props = {}, ...kids) => {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) k === "class" ? (e.className = v) : (e[k] = v);
+  for (const k of kids) e.append(k);
+  return e;
+};
+const fmt = (n) => (n == null ? "?" : Number(n).toLocaleString());
+const mb = (b) => `${fmt(Math.round(b / 1e6))} MB`;
+const secs = (s) => (s >= 90 ? `${Math.floor(s / 60)} min ${Math.round(s % 60)} s` : `${s.toFixed(0)} s`);
+
+let sel = null, sets = [], polling = false, steps = [], lastKey = null;
+
+async function api(path, body) {
+  const opt = body ? { method: "POST", headers: { "Content-Type": "application/json", "X-Playground": "1" }, body: JSON.stringify(body) } : {};
+  const r = await fetch(path, opt);
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || r.statusText);
+  return j;
+}
+
+async function loadSets() {
+  sets = await api("/api/datasets");
+  const tb = $("datasets").tBodies[0];
+  tb.replaceChildren();
+  for (const d of sets) {
+    const done = el("td", { class: "done" });
+    for (const [k, w] of [["downloaded", "downloaded"], ["built", "built"], ["searched", "searched"]]) if (d[k]) done.append(el("span", { class: "tag on", textContent: w }));
+    const kind = el("td", { class: "kind" }, d.kind + " ");
+    if (d.in_report) kind.append(el("span", { class: "tag", textContent: "in report" }));
+    if (d.unlike) kind.append(el("span", { class: "tag warn", textContent: "unlike" }));
+    const tr = el("tr", {}, el("td", { class: "name", textContent: d.name }), kind,
+      el("td", { class: "num", textContent: fmt(d.items) }), el("td", { class: "num", textContent: d.dims ?? "?" }),
+      el("td", { class: "num", textContent: d.gb.toFixed(2) }), done);
+    if (d.name === sel) tr.className = "sel";
+    tr.onclick = () => select(d.name);
+    tb.append(tr);
+  }
+  if (sel) showSel();
+}
+
+function showSel() {
+  const d = sets.find((x) => x.name === sel);
+  if (!d) return;
+  $("sel-title").textContent = d.name;
+  $("sel-body").className = "";
+  $("sel-body").textContent = `${d.kind} · ${fmt(d.items)} items of ${d.dims ?? "?"} numbers · ${d.gb.toFixed(2)} GB download`;
+  $("actions").hidden = false;
+  const busy = polling;
+  $("b-get").disabled = busy || d.downloaded;
+  $("b-get").textContent = d.downloaded ? "Downloaded" : "Download";
+  $("b-build").disabled = busy || !d.downloaded;
+  $("b-build").textContent = d.built ? "Build again" : "Build";
+  $("b-search").disabled = busy || !d.built;
+  $("b-q").disabled = busy || !d.built;
+}
+
+async function select(name) {
+  sel = name;
+  for (const tr of $("datasets").tBodies[0].rows) tr.className = tr.cells[0].textContent === name ? "sel" : "";
+  showSel();
+  const info = await api(`/api/info?name=${encodeURIComponent(name)}`);
+  showBuild(info.build);
+  showSearch(info.search);
+  $("q-card").hidden = !info.build;
+  $("q-out").replaceChildren();
+}
+
+function showBuild(b) {
+  $("build-card").hidden = !b;
+  if (!b) return;
+  const s = b.stats, c = b.chosen, m = b.memory;
+  const facts = [
+    ["items", `${fmt(b.items)} of ${b.dims} numbers, metric ${b.metric}`],
+    ["build time", `${secs(b.build_seconds)} on ${b.threads}` + (b.tuning_seconds ? ` (trying settings: ${secs(b.tuning_seconds)})` : "")],
+    ["sample questions", b.sample_questions],
+    ["test questions", b.test_questions],
+    ["settings picked", c ? `${c.chosen_r} links per item, slack ${(+c.chosen_alpha).toFixed(1)}, ${c.chosen_code_bits}-bit copies, re-check ${c.chosen_rerank}` : "defaults (too little data to try others)"],
+    ["questions unlike items", s.ood_ratio == null ? "not measured" : `ratio ${s.ood_ratio.toFixed(2)} → question links ${s.question_links ? "on" : "off"}`],
+    ["links per item", `${(+s.mean_links).toFixed(1)} on average`],
+    ["unreachable items", fmt(s.unreachable)],
+    ["memory", `${mb(m.total_bytes)} (${Math.round(m.total_bytes / b.items)} bytes per item), plus ${mb(m.full_numbers_on_ssd_bytes)} of full numbers that can stay on SSD`],
+    ["built at", b.built_at],
+  ];
+  $("build-facts").replaceChildren(...facts.flatMap(([k, v]) => [el("dt", { textContent: k }), el("dd", { textContent: v })]));
+  const parts = [["links", m.links_bytes, "--part1"], ["small copies", m.numbers_bytes, "--part2"], ["other", m.other_bytes, "--part3"]];
+  $("mem").replaceChildren(...parts.map(([, v, c]) => el("div", { style: `width:${(100 * v) / m.total_bytes}%;background:var(${c})` })));
+  $("mem-legend").replaceChildren(...parts.map(([k, v, c]) => el("span", {}, el("i", { style: `background:var(${c})` }), `${k} ${mb(v)}`)));
+}
+
+function showSearch(r) {
+  $("search-card").hidden = !r;
+  if (!r) return;
+  $("search-sub").textContent = `${fmt(r.questions)} test questions, ${r.threads} core, searched ${r.searched_at}`;
+  $("runs").tBodies[0].replaceChildren(...r.runs.map((x) => el("tr", {},
+    el("td", { textContent: "target" in x ? `target ${x.target}` : `list size ${x.list_size}` }),
+    el("td", { class: "num", textContent: `${(100 * x.found).toFixed(1)}%` }),
+    el("td", { class: "num", textContent: fmt(x.questions_per_s) }),
+    el("td", { class: "num", textContent: fmt(Math.round(x.checks)) }))));
+  drawChart(r.runs);
+}
+
+function drawChart(runs) {
+  const svg = $("chart"), W = 460, H = 230, L = 62, R = 16, T = 12, B = 40;
+  const ns = "http://www.w3.org/2000/svg";
+  const s = (tag, a, text) => { const e = document.createElementNS(ns, tag); for (const k in a) e.setAttribute(k, a[k]); if (text != null) e.textContent = text; return e; };
+  svg.replaceChildren();
+  const xs = runs.map((r) => 100 * r.found), ys = runs.map((r) => r.questions_per_s);
+  const x0 = Math.min(85, Math.floor(Math.min(...xs))), x1 = 100, y1 = Math.max(...ys) * 1.15;
+  const X = (v) => L + ((v - x0) / (x1 - x0)) * (W - L - R), Y = (v) => H - B - (v / y1) * (H - T - B);
+  for (let v = x0; v <= x1; v += x1 - x0 > 10 ? 5 : 1) {
+    svg.append(s("line", { x1: X(v), x2: X(v), y1: T, y2: H - B, stroke: "var(--line)" }));
+    svg.append(s("text", { x: X(v), y: H - B + 15, "text-anchor": "middle" }, `${v}%`));
+  }
+  for (let k = 0; k <= 4; k++) {
+    const v = (y1 * k) / 4;
+    svg.append(s("line", { x1: L, x2: W - R, y1: Y(v), y2: Y(v), stroke: "var(--line)" }));
+    svg.append(s("text", { x: L - 6, y: Y(v) + 4, "text-anchor": "end" }, fmt(Math.round(v / 100) * 100)));
+  }
+  svg.append(s("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle" }, "found of the true top 10"));
+  svg.append(s("text", { x: 12, y: (T + H - B) / 2, "text-anchor": "middle", transform: `rotate(-90 12 ${(T + H - B) / 2})` }, "questions / s"));
+  const pts = runs.map((r, i) => [X(xs[i]), Y(ys[i]), "target" in r ? `${r.target}` : `L${r.list_size}`]).sort((a, b) => a[0] - b[0]);
+  svg.append(s("polyline", { points: pts.map((p) => p.slice(0, 2).join(",")).join(" "), fill: "none", stroke: "var(--accent)", "stroke-width": 2 }));
+  for (const [x, y, t] of pts) {
+    svg.append(s("circle", { cx: x, cy: y, r: 4.5, fill: "var(--accent)" }));
+    svg.append(s("text", { x: x + 7, y: y - 7 }, t));
+  }
+}
+
+function showJob(j) {
+  $("job-card").hidden = !j;
+  if (!j) return;
+  const p = j.progress || {};
+  $("job-title").textContent = `${j.kind}: ${j.name}`;
+  $("job-phase").textContent = j.state === "running" ? (p.phase || "starting") : j.state === "done" ? "done" : "failed";
+  $("job-step").textContent = j.state === "running" ? (p.step || "") : "";
+  const bar = $("job-bar");
+  const pct = j.state === "done" ? 100 : p.total ? (100 * p.done) / p.total : null;
+  bar.classList.toggle("busy", j.state === "running" && pct == null);
+  bar.firstElementChild.style.width = `${pct ?? 0}%`;
+  let meta = `${secs(j.elapsed)}`;
+  if (j.state === "running" && p.total) meta += p.phase === "downloading" ? ` · ${mb(p.done)} of ${mb(p.total)}` : ` · ${fmt(p.done)} of ${fmt(p.total)}`;
+  $("job-meta").replaceChildren(meta, ...(j.error ? [el("div", { class: "err", textContent: j.error })] : []));
+  const key = `${p.phase}|${p.step}`;
+  if (j.state === "running" && key !== lastKey && p.phase) {
+    steps.push([j.elapsed, p.phase, p.step]);
+    lastKey = key;
+    $("steps").append(el("div", {}, el("span", { class: "t", textContent: secs(j.elapsed) }), el("span", { textContent: p.phase + (p.step ? ` · ${p.step}` : "") })));
+    $("steps").scrollTop = 1e9;
+  }
+}
+
+async function poll() {
+  if (polling) return;
+  polling = true;
+  showSel();
+  try {
+    for (;;) {
+      const j = await api("/api/job");
+      showJob(j);
+      if (!j || j.state !== "running") break;
+      await new Promise((r) => setTimeout(r, 400));
+    }
+  } finally {
+    polling = false;
+    await loadSets();
+    if (sel) await select(sel);
+  }
+}
+
+async function start(path, body) {
+  try {
+    steps = []; lastKey = null; $("steps").replaceChildren();
+    if (path === "/api/build") { $("build-card").hidden = true; $("search-card").hidden = true; $("q-card").hidden = true; }
+    if (path === "/api/search") $("search-card").hidden = true;
+    showJob(await api(path, { name: sel, ...body }));
+    poll();
+  } catch (e) {
+    alertBox(e.message);
+  }
+}
+
+function alertBox(msg) {
+  $("job-card").hidden = false;
+  $("job-meta").replaceChildren(el("div", { class: "err", textContent: msg }));
+}
+
+const nums = (s) => s.split(/[\s,]+/).filter(Boolean).map(Number);
+$("b-get").onclick = () => start("/api/download", {});
+$("b-build").onclick = () => start("/api/build", { threads: $("threads").value.trim() || null });
+$("b-search").onclick = () => {
+  const sizes = nums($("sizes").value);
+  start("/api/search", { targets: sizes.length && !$("targets").value.trim() ? [] : nums($("targets").value), list_sizes: sizes });
+};
+$("b-q").onclick = async () => {
+  try {
+    const r = await api(`/api/question?name=${encodeURIComponent(sel)}&i=${+$("q-i").value}&target=${+$("q-t").value}`);
+    const hits = r.found.filter((f) => f.true).length;
+    $("q-out").replaceChildren(
+      el("p", { textContent: `found ${hits} of the true 10, checking ${fmt(r.checks)} items` }),
+      el("table", {}, el("thead", {}, el("tr", {}, el("th", { textContent: "#" }), el("th", { textContent: "item" }), el("th", { class: "num", textContent: "distance (smaller is closer)" }), el("th", { textContent: "in true top 10?" }))),
+        el("tbody", {}, ...r.found.map((f, i) => el("tr", {}, el("td", { textContent: i + 1 }), el("td", { class: "name", textContent: f.item }),
+          el("td", { class: "num", textContent: f.distance.toFixed(4) }), el("td", { class: f.true ? "ok" : "no", textContent: f.true ? "yes" : "no" }))))),
+      ...(r.missed.length ? [el("p", { class: "muted", textContent: `true answers it missed: ${r.missed.join(", ")}` })] : []));
+  } catch (e) {
+    $("q-out").replaceChildren(el("p", { class: "err", textContent: e.message }));
+  }
+};
+
+loadSets().then(poll);
+</script>
+</body>
+</html>

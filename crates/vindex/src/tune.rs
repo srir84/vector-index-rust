@@ -9,6 +9,7 @@
 //! only when more than 5% faster: a 20% trial over-rates small changes. Close calls are timed longer, and when new
 //! links lose that last test, slack is tried again at the links in use.
 
+use std::sync::Arc;
 use std::time::Instant;
 
 use serde::{Deserialize, Serialize};
@@ -16,6 +17,7 @@ use serde::{Deserialize, Serialize};
 use crate::effort::TIE_EPS;
 use crate::index::{Effort, Index, Settings, Switch, Tune};
 use crate::metric::{normalize, Metric};
+use crate::progress::Progress;
 use crate::rng::Rng;
 
 /// Links per item tried, and slack (alpha) tried at the chosen links.
@@ -93,7 +95,7 @@ pub fn trial_size(n: usize) -> usize {
 }
 
 /// Pick links per item and slack for these items and sample questions; None when there is too little data.
-pub fn pick(base: &Settings, metric: Metric, dim: usize, x: &[f32], train_q: &[f32]) -> Option<Tuning> {
+pub fn pick(base: &Settings, metric: Metric, dim: usize, x: &[f32], train_q: &[f32], progress: &Arc<Progress>) -> Option<Tuning> {
     let (n, nt) = (x.len() / dim, train_q.len() / dim);
     if n < MIN_ITEMS || nt < MIN_QUESTIONS {
         return None;
@@ -102,7 +104,7 @@ pub fn pick(base: &Settings, metric: Metric, dim: usize, x: &[f32], train_q: &[f
     rows.sort_unstable();
     let xs: Vec<f32> = rows.iter().flat_map(|&i| x[i * dim..(i + 1) * dim].iter().copied()).collect();
     let nm = (nt / 4).min(1000);
-    Some(search(base, First::Settings(base), metric, dim, &xs, train_q, nm))
+    Some(search(base, First::Settings(base), metric, dim, &xs, train_q, nm, progress))
 }
 
 fn switch_name(s: Switch) -> &'static str {
@@ -182,6 +184,8 @@ struct Ctx<'a> {
     tenth: Option<Vec<f32>>,
     trials: Vec<Trial>,
     kept: Vec<(usize, Held<'a>, Plan)>,
+    /// The build's progress, shared with each trial build.
+    progress: Arc<Progress>,
 }
 
 impl<'a> Ctx<'a> {
@@ -223,7 +227,10 @@ impl<'a> Ctx<'a> {
             return None;
         }
         let mut idx = Index::new(self.dim, self.metric, s.clone()).ok()?;
+        self.progress.phase(format!("trial {}: {} links per item, slack {}", self.trials.len() + 1, s.r, s.alpha));
+        idx.progress = self.progress.clone();
         idx.build(self.xs, &self.ids, Some(self.build_q)).ok()?;
+        self.progress.step("timing the trial", 0);
         let td = self.tenth.get_or_insert_with(|| idx.tenth_distances(&self.scaled));
         let plan = plan(&idx, self.timing_q, td, self.base.tune_target);
         let sps = plan.map(|p| 1.0 / time_plan(&idx, self.timing_q, &p));
@@ -340,6 +347,7 @@ impl<'a> Ctx<'a> {
 /// slack is tried again at the start's links, and that pick faces the same test. (Copy size is chosen after
 /// the build, on the real index: a trial small enough to sit in the chip's caches cannot see what smaller copies
 /// save in memory reads.)
+#[allow(clippy::too_many_arguments)]
 pub(crate) fn search<'a>(
     base: &'a Settings,
     first: First<'a>,
@@ -348,6 +356,7 @@ pub(crate) fn search<'a>(
     xs: &'a [f32],
     train_q: &'a [f32],
     nm: usize,
+    progress: &Arc<Progress>,
 ) -> Tuning {
     let started = Instant::now();
     let nt = train_q.len() / dim;
@@ -369,6 +378,7 @@ pub(crate) fn search<'a>(
         tenth: None,
         trials: Vec::new(),
         kept: Vec::new(),
+        progress: progress.clone(),
     };
     let start = match first {
         First::Settings(s) => c.try_one(s),
@@ -491,7 +501,7 @@ mod tests {
         let d = 8;
         let (x, tq) = (data(12_000, d, 1), data(1_000, d, 2));
         let s = Settings { l_build: 40, effort_questions: 400, ..Settings::default() };
-        let t = pick(&s, Metric::L2, d, &x, &tq).unwrap();
+        let t = pick(&s, Metric::L2, d, &x, &tq, &Arc::default()).unwrap();
         assert_eq!((t.trial_items, t.timing_questions), (12_000, 250));
         assert_eq!((t.trials[0].r, t.trials[0].alpha), (32, 1.2), "the current settings are timed first");
         // links first, then slack at the fastest links (and again at the start's when new links lose at the end)
@@ -500,10 +510,10 @@ mod tests {
         assert!(t.trials.iter().all(|tr| tr.searches_per_s.is_some()));
         // a memory limit leaves out the choices that keep more
         let lim = Settings { max_bytes_per_item: bytes_per_item(&Settings { r: 48, ..s.clone() }, d) as usize, ..s.clone() };
-        let t = pick(&lim, Metric::L2, d, &x, &tq).unwrap();
+        let t = pick(&lim, Metric::L2, d, &x, &tq, &Arc::default()).unwrap();
         assert!(t.trials.iter().all(|tr| tr.r <= 48));
         // too little data: nothing is tried
-        assert!(pick(&s, Metric::L2, d, &x[..9_000 * d], &tq).is_none());
+        assert!(pick(&s, Metric::L2, d, &x[..9_000 * d], &tq, &Arc::default()).is_none());
     }
 
     #[test]

@@ -15,6 +15,7 @@ use crate::qlinks;
 use crate::rng::Rng;
 use crate::codes::Codes;
 use crate::prefetch::prefetch_bytes;
+use crate::progress::Progress;
 use crate::score::{CodeScore, FullScore, Score};
 use crate::search::{finish_plain, finish_rerank, seed, walk, walk_with, Scratch, SortedList};
 use crate::store::Store;
@@ -330,6 +331,8 @@ pub struct Index {
     pub tuning: Option<Tuning>,
     /// The items grouped into buckets, for the bucket search (part 5, DESIGN.md section 23), when built.
     pub buckets: Option<crate::buckets::Buckets>,
+    /// What the build is doing now, readable while it runs. Settings trials share it.
+    pub progress: Arc<Progress>,
 }
 
 /// Bytes kept in memory, by part (DESIGN.md section 10).
@@ -451,6 +454,7 @@ impl Index {
             item_gap: OnceLock::new(),
             tuning: None,
             buckets: None,
+            progress: Arc::default(),
         })
     }
 
@@ -527,13 +531,17 @@ impl Index {
         }
         // links per item and slack, picked on a trial (part 2); too little data keeps the settings as they are
         if self.s.tune == Tune::Auto {
-            if let Some(t) = train_q.and_then(|tq| crate::tune::pick(&self.s, self.metric, d, x, tq)) {
+            self.progress.phase("trying settings on a sample".to_string());
+            let progress = self.progress.clone();
+            if let Some(t) = train_q.and_then(|tq| crate::tune::pick(&self.s, self.metric, d, x, tq, &progress)) {
                 self.s.r = t.chosen_r;
                 self.s.alpha = t.chosen_alpha;
                 self.s.code_bits = t.chosen_code_bits;
                 self.tuning = Some(t);
             }
+            self.progress.phase("building".to_string());
         }
+        self.progress.step("storing the items", 0);
         // full numbers (cosine data scaled to length 1), ids; spare slots for adds
         let cap = if self.s.spare > 0.0 { (n as f64 * (1.0 + self.s.spare as f64)) as usize + 16 } else { n };
         self.store = Store::ram(d, cap);
@@ -568,6 +576,7 @@ impl Index {
                 return err("order must list every row once");
             }
         }
+        self.progress.step("linking the items", n.saturating_sub(1) as u64);
         self.link_all(order);
         // The effort table learns from the first `effort_questions` sample questions. With question links on and
         // `effort_apart`, the links use only the questions after those (and the table at most half), so the table
@@ -583,19 +592,23 @@ impl Index {
                 } else {
                     tq
                 };
+                self.progress.step("linking the sample questions' answers", 0);
                 self.question_links(links_q);
             }
         }
         if self.s.code_bits != 0 {
+            self.progress.step("making the small copies", 0);
             self.make_codes();
         }
         let mut effort_truth = None;
         if self.s.learned_effort {
+            self.progress.step("learning the effort table", 0);
             let (qs, tenth) = self.scaled_with_tenth(effort_q.expect("checked above"));
             self.set_learned(Some(self.learn_from(&qs, &tenth)));
             effort_truth = Some((qs, tenth));
         }
         if self.s.renumber {
+            self.progress.step("renumbering", 0);
             self.renumber();
         }
         // popular items' extra links (part 3), then the copy size (part 2), then the re-check count (part 3), each
@@ -604,6 +617,7 @@ impl Index {
             if self.graph.has_extra() && self.s.popular_links == Switch::Auto {
                 let tq = train_q.expect("the tuning ran on them");
                 let timing = &tq[tq.len() - t.timing_questions * d..];
+                self.progress.step("timing extra links for popular items", 0);
                 self.choose_popular_links(qs, tenth, timing);
             }
         }
@@ -611,12 +625,14 @@ impl Index {
             if self.s.code_bits == 8 && self.s.question_bits == 16 {
                 let tq = train_q.expect("the tuning ran on them");
                 let timing = &tq[tq.len() - t.timing_questions * d..];
+                self.progress.step("timing 8-bit against 4-bit copies", 0);
                 self.choose_copy_size(&qs, &tenth, timing);
             }
             // then the re-check count (part 3), at the chosen copy size
             if self.codes.is_some() {
                 let tq = train_q.expect("the tuning ran on them");
                 let nt = self.tuning.as_ref().map_or(0, |t| t.timing_questions);
+                self.progress.step("timing the re-check count", 0);
                 self.choose_rerank(&qs, &tenth, &tq[tq.len() - nt * d..]);
             }
         }
@@ -1189,6 +1205,7 @@ impl Index {
                     graph.alive[u as usize] = 1;
                 }
                 back_links(&mut graph, &sp, batch, r, alpha);
+                self.progress.advance(batch.len() as u64);
                 pos += batch.len();
                 bsz = (bsz * 2).min(max_batch);
             }
@@ -1561,6 +1578,16 @@ mod tests {
     fn data(n: usize, d: usize, seed: u64) -> Vec<f32> {
         let mut r = Rng::new(seed);
         (0..n * d).map(|_| (r.next_u64() >> 40) as f32 / (1u64 << 24) as f32 - 0.5).collect()
+    }
+
+    #[test]
+    fn progress_counts_every_linked_item() {
+        let (d, n) = (8, 2000);
+        let s = Settings { learned_effort: false, code_bits: 0, renumber: false, tune: Tune::Off, ..Settings::default() };
+        let mut a = Index::new(d, Metric::L2, s).unwrap();
+        a.build(&data(n, d, 4), &(0..n as u64).collect::<Vec<_>>(), None).unwrap();
+        let p = a.progress.now();
+        assert_eq!((p.step.as_str(), p.done, p.total), ("linking the items", n as u64 - 1, n as u64 - 1));
     }
 
     #[test]

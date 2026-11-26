@@ -50,6 +50,6 @@ flowchart LR
 - **Our own guesses:** before the last round of changes we wrote down 8 results; 3 were wrong and 1 half right.
 
 **Where to look.**
-- [The results page](https://claude.ai/artifact/6EhyxKEHviCQsZBQ1qUGsE): every number, with a chart for each dataset. A script checks every number against the results files.
+- [The results page](https://srir84.github.io/vector-index-rust/page/results.html) (`page/results.html`): every number, with a chart for each dataset. A script checks every number against the results files.
 - `REPORT.md` has all five parts, with every table. `STEPS.md` has each step, its check and its result.
 - `demo/`: ask a question of GooAQ's 1.45 million Google answers, on your own machine.
