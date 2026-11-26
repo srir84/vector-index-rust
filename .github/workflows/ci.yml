@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Rust nightly (rust-toolchain.toml says why)
-        run: rustup toolchain install nightly --profile minimal --component clippy
+        run: rustup toolchain install nightly-2026-07-14 --profile minimal --component clippy
       - name: Clippy
         run: cargo clippy --release --all-targets -- -D warnings
       - name: Rust tests
