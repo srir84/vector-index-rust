@@ -783,3 +783,14 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
 - **Pass:** identical saved files for `cos`, `ip` and `l2`.
 - **Status:** passed. `validate/step44_same_build.py OUT_DIR` builds 40,000 random items of 48 numbers with `tune="off"` (the settings trial picks by timing, so two builds with it on can differ anyway) and saves each index. Run under step 42's package and under the new one, `diff -r` finds no difference.
   - **Part 5's results stand** for the frozen code. `validate/step43.py`'s first check, "the code is as frozen in step 42", now fails, as it should: `index.rs`, `lib.rs`, `suggest.rs`, `tune.rs` and the Python package changed, by the progress lines only.
+
+## 45. After the freeze: review fixes, tests and CI
+- **Builds:** fixes from an outside review of the code:
+  - `search` (and `search_buckets`) refuse `k = 0`; before, it panicked;
+  - `build_in_order` refuses an order that lists a row twice; before, it checked only the length and range;
+  - `save` writes each file to `<name>.tmp` and puts them in place only once all are written, so a failed save leaves the previous index whole; before, it overwrote each file in place;
+  - the switches `learned_effort`, `track_usage`, `effort_apart` and `renumber` read `on`/`off` and `yes`/`no` as the others do, and refuse anything else; before, any other word meant false.
+  - New tests: recall@10 against exact search on random data (cos, ip, l2), the refused inputs, the failed save, the switch words, and a Python test suite (`tests/`). Clippy's warnings are cleared. CI runs both test suites on macOS and Linux x86.
+- **Check:** with the same data and settings, the code before and after these fixes saves the same index, byte for byte (`validate/step44_same_build.py`, as in step 44).
+- **Pass:** identical saved files for `cos`, `ip` and `l2`.
+- **Status:** passed: `diff -r` finds no difference. `cargo test --release -p vindex`: 43 passed. `pytest tests/`: 7 passed. The recall test finds 93.5% (cos), 95.4% (ip) and 94.3% (l2) at target 0.95; it requires 90%.

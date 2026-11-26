@@ -691,14 +691,14 @@ def build(ds, extra, missing):
     body = f"""
 <div class="wrap">
 <header>
-  <p class="eyebrow">vindex &middot; part 5 &middot; full size again</p>
+  <p class="eyebrow">vindex &middot; benchmark results</p>
   <h1>{h1}</h1>
   <p class="lede">vindex is a search index for AI embeddings, the lists of numbers that stand for texts, photos or
   words. Given a question, it finds the 10 closest items without checking them all. Here it races the fastest
   rivals on {N("summary.datasets", str(total))} public datasets of {N("summary.items_min", f_items(min(items)))} to
   {N("summary.items_max", f_items(max(items)))} items.{rest}</p>
-  <p class="lede">Part 5 made fresh builds steadier and fixed the change test on Landmark, then ran our side again at
-  full size, with one more dataset held back until the end: GloVe-100. Part 4’s numbers are shown beside.</p>
+  <p class="lede">All on one Apple-silicon Mac, which favours vindex: read the box below before trusting the numbers.
+  These are the final version’s numbers (part 5); an earlier version’s (part 4) are shown beside.</p>
   {draft}
 </header>
 
@@ -707,6 +707,26 @@ def build(ds, extra, missing):
   <p class="caption">Questions answered per second on one processor core, when each index finds 95% of the true 10
   closest items. Right of the line, we are faster. The thin mark is part 4’s build.</p>
   {ratio_chart(ds, N)}
+</section>
+
+<section aria-labelledby="h-first" class="limits">
+  <h2 id="h-first">Read this before trusting the numbers</h2>
+  <ul>
+    <li><b>The machine favours vindex.</b> vindex has hand-written vector code for Apple chips (NEON) and was built
+      with profile-guided optimization. The rivals were written for Intel and AMD chips first. HNSW (hnswlib) has no
+      vector code for Apple chips at all, so its numbers here say little. Glass’s own Apple-chip code is switched off
+      upstream, so it runs plain loops that the compiler vectorizes. RoarGraph’s Intel code runs through a
+      translation layer, and ScaNN in a Linux container. On an Intel or AMD server the results may differ.</li>
+    <li><b>Not every strong index was tried.</b> SymphonyQG needs Intel’s AVX-512. NGT-QG, LoRANN and Faiss were not
+      run. “Fastest rival” means the fastest of Glass, ScaNN, RoarGraph, CoreNN and HNSW.</li>
+    <li><b>vindex learns from sample questions</b> drawn from the same source as the test questions, for its search
+      effort and its extra links. RoarGraph uses them too; Glass, ScaNN and HNSW do not.</li>
+    <li><b>Held back for one round each.</b> The index was built in five parts. Each held-back dataset was kept out of
+      one part, then used like the others; only GloVe-100 stayed locked until the code was frozen.</li>
+    <li><b>Rerun it yourself:</b> the rivals’ scripts, versions, patches and every result are in
+      <a href="https://github.com/srir84/vector-index-experiments">vector-index-experiments</a>, and ours in
+      <a href="https://github.com/srir84/vector-index-rust">vector-index-rust</a>.</li>
+  </ul>
 </section>
 
 <section aria-labelledby="h-datasets">
