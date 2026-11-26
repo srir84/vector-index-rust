@@ -68,7 +68,7 @@ The page runs one job at a time and listens on this machine only.
 - **in-report:** one of the 13 datasets in `REPORT.md`. The others are new to vindex.
 - **unlike:** the questions look unlike the items, for example text searching photos. These files bring their own sample questions.
 - **Size:** building Yahoo (a 1.04 GB file) took 5.7 GB of memory at its peak. Bigger files need more. `dpr-jina-768-normalized` (64 GB) needs more than 128 GB.
-- **Good first picks:** `yi-128-ip` (0.27 GB, under 2 minutes in all) and `yahoo-minilm-384-normalized` (1 GB, about 5 minutes).
+- **Good first picks:** `yi-128-ip` (0.27 GB, a few minutes in all) and `yahoo-minilm-384-normalized` (1 GB, about 5 minutes).
 
 ## How it checks the answers
 - **Sample questions** (the index learns its effort from them): the file's own (`learn`) when it has them, else 20,000 items set aside and not stored. This matches every result in `REPORT.md`.
