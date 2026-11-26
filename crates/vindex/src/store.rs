@@ -27,7 +27,7 @@ impl Store {
         if dim == 0 || bytes % (dim * 4) != 0 {
             return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "numbers file is not whole rows"));
         }
-        if (map.as_ptr() as usize) % 4 != 0 {
+        if !(map.as_ptr() as usize).is_multiple_of(4) {
             return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "numbers file is not 4-byte aligned"));
         }
         Ok(Store::Mapped { dim, rows: bytes / (dim * 4), map })

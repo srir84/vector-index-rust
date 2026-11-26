@@ -54,6 +54,7 @@ impl Default for Usage {
     }
 }
 
+#[allow(clippy::neg_cmp_op_on_partial_ord)] // `!(v >= first)` is also true for NaN, on purpose
 fn bucket(v: f64, first: f64, n: usize) -> usize {
     if !(v >= first) {
         return 0; // below the first edge, zero, or not a number

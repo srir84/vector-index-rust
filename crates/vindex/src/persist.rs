@@ -7,7 +7,7 @@
 use std::collections::HashMap;
 use std::fs;
 use std::io::{Read, Write};
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 use crate::codes::Codes;
 use crate::effort::Learned;
@@ -128,10 +128,62 @@ fn bytes_of<T: Copy>(v: &[T]) -> &[u8] {
     unsafe { std::slice::from_raw_parts(v.as_ptr() as *const u8, std::mem::size_of_val(v)) }
 }
 
-fn write_file(dir: &Path, name: &str, bytes: &[u8]) -> Result<()> {
-    let mut f = fs::File::create(dir.join(name)).map_err(io)?;
-    f.write_all(bytes).map_err(io)?;
-    f.sync_all().map_err(io)
+/// The files of one `save`. Each is written to `<name>.tmp` first; only when all are written do they replace the old
+/// ones, so a save that fails part-way (disk full, a crash) leaves the folder's previous index whole. The old
+/// meta.bin goes first and the new one comes last, so a folder caught between the two has no meta.bin and is never
+/// taken for a complete index.
+struct Staged<'a> {
+    dir: &'a Path,
+    names: Vec<&'static str>,
+    gone: Vec<&'static str>,
+    committed: bool,
+}
+
+impl<'a> Staged<'a> {
+    fn new(dir: &'a Path) -> Self {
+        Staged { dir, names: Vec::new(), gone: Vec::new(), committed: false }
+    }
+
+    fn tmp(&self, name: &str) -> PathBuf {
+        self.dir.join(format!("{name}.tmp"))
+    }
+
+    fn write(&mut self, name: &'static str, bytes: &[u8]) -> Result<()> {
+        self.names.push(name);
+        let mut f = fs::File::create(self.tmp(name)).map_err(io)?;
+        f.write_all(bytes).map_err(io)?;
+        f.sync_all().map_err(io)
+    }
+
+    /// Remove `name` once the new files are in place.
+    fn remove(&mut self, name: &'static str) {
+        self.gone.push(name);
+    }
+
+    fn commit(mut self) -> Result<()> {
+        self.committed = true;
+        match fs::remove_file(self.dir.join("meta.bin")) {
+            Err(e) if e.kind() != std::io::ErrorKind::NotFound => return Err(io(e)),
+            _ => {}
+        }
+        for name in &self.names {
+            fs::rename(self.tmp(name), self.dir.join(name)).map_err(io)?;
+        }
+        for name in &self.gone {
+            let _ = fs::remove_file(self.dir.join(name));
+        }
+        fs::File::open(self.dir).and_then(|d| d.sync_all()).map_err(io)
+    }
+}
+
+impl Drop for Staged<'_> {
+    fn drop(&mut self) {
+        if !self.committed {
+            for name in &self.names {
+                let _ = fs::remove_file(self.tmp(name));
+            }
+        }
+    }
 }
 
 /// Read a whole file of plain numbers of type T straight into `out`, checking first that its size is exactly
@@ -270,6 +322,7 @@ impl Index {
             return Err(Error("nothing to save: the index is empty".into()));
         }
         fs::create_dir_all(dir).map_err(io)?;
+        let mut st = Staged::new(dir);
         let (n, d, slots) = (self.n_used, self.dim, self.graph.slots);
         let mut w = W(Vec::new());
         w.0.extend_from_slice(MAGIC);
@@ -339,30 +392,29 @@ impl Index {
             w.text(k);
             w.text(v);
         }
-        write_file(dir, "links.u32", bytes_of(&self.graph.nbrs[..n * slots]))?;
-        write_file(dir, "degree.u32", bytes_of(&self.graph.deg[..n]))?;
-        write_file(dir, "alive.u8", &self.graph.alive[..n])?;
-        write_file(dir, "ids.u64", bytes_of(&self.ext[..n]))?;
+        st.write("links.u32", bytes_of(&self.graph.nbrs[..n * slots]))?;
+        st.write("degree.u32", bytes_of(&self.graph.deg[..n]))?;
+        st.write("alive.u8", &self.graph.alive[..n])?;
+        st.write("ids.u64", bytes_of(&self.ext[..n]))?;
         let mut fl: Vec<u32> = self.free.clone();
         fl.extend_from_slice(&self.pending_free);
-        write_file(dir, "free.u32", bytes_of(&fl))?;
+        st.write("free.u32", bytes_of(&fl))?;
         let numbers: Vec<f32> = (0..n).flat_map(|u| self.store.row(u).iter().copied()).collect();
-        write_file(dir, "numbers.f32", bytes_of(&numbers))?;
+        st.write("numbers.f32", bytes_of(&numbers))?;
         if let Some(c) = &self.codes {
-            write_file(dir, "codes.u8", &c.data[..n * c.row_bytes()])?;
+            st.write("codes.u8", &c.data[..n * c.row_bytes()])?;
         }
         if let Some(t) = &self.train_q {
-            write_file(dir, "train_q.f32", bytes_of(t))?;
+            st.write("train_q.f32", bytes_of(t))?;
         }
         // popular items' extra links (part 3): how many each slot has, then all of them in slot order
         if self.graph.has_extra() {
             let flat: Vec<u32> = (0..n).flat_map(|u| self.graph.extra_links(u).iter().copied()).collect();
-            write_file(dir, "extra_n.u8", &self.graph.extra_n[..n])?;
-            write_file(dir, "extra.u32", bytes_of(&flat))?;
+            st.write("extra_n.u8", &self.graph.extra_n[..n])?;
+            st.write("extra.u32", bytes_of(&flat))?;
         } else {
-            for f in ["extra_n.u8", "extra.u32"] {
-                let _ = fs::remove_file(dir.join(f));
-            }
+            st.remove("extra_n.u8");
+            st.remove("extra.u32");
         }
         // the usage stats and the spot checks' counts, readable as they are
         let (usage, checked_q) = {
@@ -385,14 +437,15 @@ impl Index {
                 .map_err(|e| Error(format!("usage.json: {e}")))?;
             (json, q)
         };
-        write_file(dir, "usage.json", &usage)?;
+        st.write("usage.json", &usage)?;
         if let Some(t) = &self.tuning {
             let json = serde_json::to_vec_pretty(t).map_err(|e| Error(format!("tuning.json: {e}")))?;
-            write_file(dir, "tuning.json", &json)?;
+            st.write("tuning.json", &json)?;
         }
-        write_file(dir, "checked_q.f32", bytes_of(&checked_q))?;
+        st.write("checked_q.f32", bytes_of(&checked_q))?;
         // meta.bin last: a folder without it is never taken for a complete index
-        write_file(dir, "meta.bin", &w.0)
+        st.write("meta.bin", &w.0)?;
+        st.commit()
     }
 
     /// Load an index saved with `save`. With `Numbers::Ssd` the full numbers stay in the file (searches only).
@@ -592,6 +645,27 @@ mod tests {
         let p = std::env::temp_dir().join(format!("vindex-test-{name}-{}", std::process::id()));
         let _ = fs::remove_dir_all(&p);
         p
+    }
+
+    #[test]
+    fn a_failed_save_keeps_the_old_index() {
+        let d = 8;
+        let s = Settings { learned_effort: false, tune: crate::index::Tune::Off, ..Settings::default() };
+        let mut a = Index::new(d, Metric::L2, s).unwrap();
+        a.build(&data(800, d, 1), &(0..800u64).collect::<Vec<_>>(), None).unwrap();
+        let dir = tmp("failed-save");
+        a.save(&dir).unwrap();
+        let before = Index::load(&dir, Numbers::Ram).unwrap().search(&data(5, d, 2), 10, Effort::List(40)).unwrap().ids;
+        // a later save that cannot finish: one of its files cannot be written
+        a.delete(3).unwrap();
+        fs::create_dir(dir.join("ids.u64.tmp")).unwrap();
+        assert!(a.save(&dir).is_err());
+        fs::remove_dir(dir.join("ids.u64.tmp")).unwrap();
+        let left: Vec<String> = fs::read_dir(&dir).unwrap().map(|e| e.unwrap().file_name().into_string().unwrap()).collect();
+        assert!(left.iter().all(|f| !f.ends_with(".tmp")), "{left:?}");
+        let after = Index::load(&dir, Numbers::Ram).unwrap().search(&data(5, d, 2), 10, Effort::List(40)).unwrap().ids;
+        assert_eq!(before, after, "the folder still holds the first save");
+        let _ = fs::remove_dir_all(&dir);
     }
 
     #[test]
