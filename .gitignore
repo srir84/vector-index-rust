@@ -6,3 +6,6 @@ validate/results/*.tmp
 demo/work/
 demo/data/
 .DS_Store
+# The playground's datasets and indexes: made by playground/play.py
+playground/data/
+playground/work/

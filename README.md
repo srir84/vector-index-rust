@@ -31,6 +31,16 @@ The first build downloads the Rust version pinned in `rust-toolchain.toml` (a ni
 
 For 1–7% more speed, `tools/build_py_pgo.sh` builds it guided by a practice run (needs `rustup component add llvm-tools-preview`).
 
+## Try it on a public dataset
+After Install, one command downloads a dataset, builds an index on it and searches it, checking every answer against the true ones:
+```sh
+uv pip install --python .venv h5py                                     # reads the dataset files
+.venv/bin/python playground/play.py list                               # 22 datasets: text, photos, code, chatbot
+.venv/bin/python playground/play.py run yahoo-minilm-384-normalized    # 1 GB; about 5 minutes
+.venv/bin/python playground/play.py ui                                 # or do it in a browser: http://127.0.0.1:8035/
+```
+It shows each build step as it runs, then the memory, the settings the index picked, and the share of the true top 10 found at each target, with questions per second. `playground/README.md` has the steps, the datasets, and how to use your own file.
+
 ## Use from Python
 ```python
 import numpy as np
@@ -53,6 +63,7 @@ idx.add(1_000_000, rng.standard_normal(64, dtype=np.float32))  # changes, one at
 idx.delete(0)
 idx.update(1, rng.standard_normal(64, dtype=np.float32))
 
+print(idx.build_progress())                                    # from another thread while build() runs: phase, step, done, total
 idx.save("my_index")                                           # a folder
 idx = vindex.Index.load("my_index", numbers="ssd")             # full numbers stay on SSD: search only
 print(idx.memory())                                            # bytes kept in memory, by part
@@ -143,6 +154,7 @@ validate/run_all.sh 9 10            # or just some steps
 | `STEPS.md` | the build steps (0 to 43, in five parts), each one's check and result |
 | `REPORT.md` | results for all five parts, newest first: against the rivals on 13 datasets, met and missed targets |
 | `WRITE-UP.md` | one page for readers new to it, with a link to the results page |
+| `playground/` | try it on a public dataset or your own file, from the command line or a browser page |
 | `demo/` | ask questions of GooAQ's 1.45 million Google answers on your own machine |
 | `crates/vindex` | the index (Rust library) |
 | `crates/vindex-py` | the Python package |

@@ -153,6 +153,8 @@ struct PyIndex {
     dim: usize,
     inner: RwLock<::vindex::Index>,
     pools: Mutex<HashMap<usize, Arc<ThreadPool>>>,
+    /// The index's build progress, kept outside the lock so it can be read while a build holds it.
+    progress: Arc<::vindex::Progress>,
 }
 
 /// The spot checks' report as a dict: one accuracy estimate per kind of search, plus what they cost.
@@ -213,7 +215,7 @@ fn broken() -> PyErr {
 
 impl PyIndex {
     fn wrap(inner: ::vindex::Index) -> Self {
-        PyIndex { dim: inner.dim, inner: RwLock::new(inner), pools: Mutex::new(HashMap::new()) }
+        PyIndex { dim: inner.dim, progress: inner.progress.clone(), inner: RwLock::new(inner), pools: Mutex::new(HashMap::new()) }
     }
 
     fn read(&self) -> PyResult<RwLockReadGuard<'_, ::vindex::Index>> {
@@ -450,6 +452,18 @@ impl PyIndex {
     fn effort_table(&self, py: Python<'_>, target: f64) -> PyResult<(Vec<usize>, Vec<f32>)> {
         let t = py.detach(|| self.read().map(|g| g.learned().map(|e| (e.table(target), e.cuts.clone()))))?;
         t.ok_or_else(|| PyValueError::new_err("this index has no learned effort"))
+    }
+
+    /// What a running build is doing: `phase` (a settings trial, or the build itself), `step`, and `done` of `total`
+    /// items linked (both 0 in steps that do not count). Safe to call from another thread while `build` runs.
+    fn build_progress<'py>(&self, py: Python<'py>) -> PyResult<Bound<'py, PyDict>> {
+        let p = self.progress.now();
+        let d = PyDict::new(py);
+        d.set_item("phase", p.phase)?;
+        d.set_item("step", p.step)?;
+        d.set_item("done", p.done)?;
+        d.set_item("total", p.total)?;
+        Ok(d)
     }
 
     /// Bytes kept in memory, by part (links, numbers searched on, other, total), plus the full numbers that can stay on SSD.

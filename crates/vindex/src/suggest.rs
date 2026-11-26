@@ -114,7 +114,7 @@ impl Index {
         // timed on the last questions, as the build's tuning is: a quarter, at most 1,000. With about 2,000 real
         // questions a question-links rebuild's gain is predicted to about +-20% (step 19: Llama said 4.4x, gave 3.6x;
         // timing on half of them instead said 3.3x and gave 4.2x)
-        let t = tune::search(&base, first, self.metric, self.dim, &xs, &qs, (checked.len() / 4).min(1000));
+        let t = tune::search(&base, first, self.metric, self.dim, &xs, &qs, (checked.len() / 4).min(1000), &Default::default());
         if let (Some(c), Some(v0)) = (t.chosen, t.trials.first().and_then(|f| f.searches_per_s)) {
             let best = &t.trials[c];
             let v1 = best.searches_per_s.unwrap_or(0.0);
