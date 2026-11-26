@@ -55,7 +55,7 @@ Made by `tools/draw_report.py readme` from `validate/results/` (step 42 for vind
 **More detail:**
 - `WRITE-UP.md`: one page for newcomers.
 - `REPORT.md`: every table, from part 1 to part 5.
-- `page/results.html`: every number, with a chart for each dataset. Download it and open it in a browser.
+- [The results page](https://srir84.github.io/vector-index-rust/page/results.html): every number, with a chart for each dataset (`page/results.html`).
 
 ## Get started
 
