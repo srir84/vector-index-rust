@@ -129,9 +129,9 @@ fn bytes_of<T: Copy>(v: &[T]) -> &[u8] {
 }
 
 /// The files of one `save`. Each is written to `<name>.tmp` first; only when all are written do they replace the old
-/// ones, so a save that fails part-way (disk full, a crash) leaves the folder's previous index whole. The old
-/// meta.bin goes first and the new one comes last, so a folder caught between the two has no meta.bin and is never
-/// taken for a complete index.
+/// ones, so a save that fails while writing (disk full, a crash) leaves the folder's previous index whole. Then the
+/// old meta.bin and the old index's files the new one does not have are removed, and the new files renamed in, meta.bin
+/// last. A crash during those renames leaves a folder with no meta.bin: `load` refuses it rather than mix two saves.
 struct Staged<'a> {
     dir: &'a Path,
     names: Vec<&'static str>,
@@ -161,17 +161,19 @@ impl<'a> Staged<'a> {
     }
 
     fn commit(mut self) -> Result<()> {
-        self.committed = true;
-        match fs::remove_file(self.dir.join("meta.bin")) {
-            Err(e) if e.kind() != std::io::ErrorKind::NotFound => return Err(io(e)),
-            _ => {}
+        let remove = |name: &str| match fs::remove_file(self.dir.join(name)) {
+            Err(e) if e.kind() != std::io::ErrorKind::NotFound => Err(io(e)),
+            _ => Ok(()),
+        };
+        remove("meta.bin")?;
+        // before any new file is in place, so a new meta.bin is never read with the old index's extra files
+        for name in &self.gone {
+            remove(name)?;
         }
         for name in &self.names {
             fs::rename(self.tmp(name), self.dir.join(name)).map_err(io)?;
         }
-        for name in &self.gone {
-            let _ = fs::remove_file(self.dir.join(name));
-        }
+        self.committed = true;
         fs::File::open(self.dir).and_then(|d| d.sync_all()).map_err(io)
     }
 }
@@ -441,6 +443,8 @@ impl Index {
         if let Some(t) = &self.tuning {
             let json = serde_json::to_vec_pretty(t).map_err(|e| Error(format!("tuning.json: {e}")))?;
             st.write("tuning.json", &json)?;
+        } else {
+            st.remove("tuning.json");
         }
         st.write("checked_q.f32", bytes_of(&checked_q))?;
         // meta.bin last: a folder without it is never taken for a complete index
@@ -655,7 +659,7 @@ mod tests {
         a.build(&data(800, d, 1), &(0..800u64).collect::<Vec<_>>(), None).unwrap();
         let dir = tmp("failed-save");
         a.save(&dir).unwrap();
-        let before = Index::load(&dir, Numbers::Ram).unwrap().search(&data(5, d, 2), 10, Effort::List(40)).unwrap().ids;
+        let alive_before = fs::read(dir.join("alive.u8")).unwrap();
         // a later save that cannot finish: one of its files cannot be written
         a.delete(3).unwrap();
         fs::create_dir(dir.join("ids.u64.tmp")).unwrap();
@@ -663,8 +667,9 @@ mod tests {
         fs::remove_dir(dir.join("ids.u64.tmp")).unwrap();
         let left: Vec<String> = fs::read_dir(&dir).unwrap().map(|e| e.unwrap().file_name().into_string().unwrap()).collect();
         assert!(left.iter().all(|f| !f.ends_with(".tmp")), "{left:?}");
-        let after = Index::load(&dir, Numbers::Ram).unwrap().search(&data(5, d, 2), 10, Effort::List(40)).unwrap().ids;
-        assert_eq!(before, after, "the folder still holds the first save");
+        assert_eq!(fs::read(dir.join("alive.u8")).unwrap(), alive_before, "the folder still holds the first save");
+        let old = Index::load(&dir, Numbers::Ram).unwrap();
+        assert_eq!(old.stats().items, 800, "item 3, deleted after the first save, is still there");
         let _ = fs::remove_dir_all(&dir);
     }
 

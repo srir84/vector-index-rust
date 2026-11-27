@@ -26,6 +26,9 @@ fn debug_search_graph<'py>(
     k: usize,
 ) -> PyResult<(Bound<'py, PyArray2<i64>>, Bound<'py, PyArray2<f32>>, Bound<'py, PyArray1<u64>>)> {
     let m = metric_of(metric)?;
+    if k == 0 {
+        return Err(PyValueError::new_err("k must be at least 1"));
+    }
     let (x, nbrs, deg, q) = (x.as_array(), nbrs.as_array(), deg.as_array(), q.as_array());
     let (n, d, slots) = (x.nrows(), x.ncols(), nbrs.ncols());
     if nbrs.nrows() != n || deg.len() != n || q.ncols() != d {
