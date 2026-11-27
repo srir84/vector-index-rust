@@ -63,7 +63,7 @@ PLAN = {"glass": ["gooaq", "yandex", "landmark", "arxiv", "laion", "gist", "nyti
         "scann": ["glove", "nytimes", NEW], "roargraph": ["llama", "yi", "llama2"], "corenn": ["gist"], "hnsw": ORDER}
 PLAN8 = {t: ORDER for t in ("faiss_hnsw", "faiss_hnsw_sq8", "faiss_ivfpq", "lorann")}
 NOT_RIVAL = {"hnsw"}   # hnswlib has no vector code for Apple chips: shown, but Faiss HNSW stands in as the HNSW rival
-LEVEL = 0.05          # within 5% counts as level: about the timing noise of one core
+LEVEL = 0.10          # within 10% counts as level: timing a pair again moved a ratio by up to 16% (part 4)
 X0, X1 = 0.85, 1.0    # the accuracy shown on the speed-accuracy charts
 esc = html.escape
 
@@ -438,11 +438,11 @@ def limits(ds, extra, N):
     if level:
         li.append("<b>Level, not ahead:</b> " + "; ".join(
             f'{esc(NAME[d["name"]])} ({N(f"{d["name"]}.ratio", f_x(d["ratio"]))} {TOOL[d["fastest"]]}’s speed)'
-            for d in level) + ". Within 5% is about the timing noise of one core.")
+            for d in level) + ". Within 10% counts as level: timing the same pair again has moved a ratio by up to 16%.")
     li.append("<b>Memory:</b> our speeds are with everything in memory, where we use "
               f'{N("limits.vs_lo", f"{min(vs):.2f}")} to {N("limits.vs_hi", f"{max(vs):.2f}")}× the fastest '
               "rival’s memory per item. With the full numbers left on the SSD we use "
-              f'{N("limits.mem_lo", f"{min(mem):.1f}")} to {N("limits.mem_hi", f"{max(mem):.1f}")}× less, but answer '
+              f'{N("limits.mem_lo", f"{min(mem):.1f}")} to {N("limits.mem_hi", f"{max(mem):.1f}")}× less than that, but answer '
               f'{N("limits.slow_lo", f"{min(slow):.0f}")} to {N("limits.slow_hi", f"{max(slow):.0f}")}× fewer '
               "questions per second.")
     li.append("<b>The bucket search was left out:</b> on GloVe and GloVe-100, ScaNN groups the items into buckets and "
@@ -455,14 +455,22 @@ def limits(ds, extra, N):
               "and HNSW) ran in part 5. DiskANN, slower in the samples, was not rerun. SymphonyQG needs "
               "Intel’s AVX-512 and cannot run on this Mac. After part 5’s code was frozen, Faiss (HNSW, HNSW-SQ8 and "
               f'IVF-PQ) and LoRANN ran on all {N("summary.datasets", str(len(ORDER)))} datasets, and from then on HNSW '
-              "(hnswlib) does not count as a rival: it has no vector code for Apple chips, and Faiss HNSW stands in.")
+              "(hnswlib) does not count as a rival: it has no vector code for Apple chips, and Faiss HNSW stands in. "
+              "Picking rivals on the samples missed some: Faiss and LoRANN, run everywhere, beat the sample-picked "
+              "rival on LAION, ImageNet and GIST1M. ScaNN, a bucket index like Faiss IVF-PQ, ran at full size on "
+              "three datasets only.")
     graph = sorted(set(tried["hnsw"]) | set(tried["glass"]) | set(tried["roargraph"]))
     li.append(f'<b>Their settings:</b> each rival tried {N("tried.graph", span(graph))} settings on the tuning '
               f'questions (ScaNN {N("tried.scann", span(tried["scann"]))}) and kept its fastest at 95%. Their authors '
-              "may know better ones. CoreNN ran on its author’s own settings only. Faiss HNSW reused HNSW’s settings, "
+              "may know better ones. Many picks sit at the edge of the grid (Glass and RoarGraph at the most links tried, "
+              "Faiss IVF-PQ at the larger bucket count), so a wider grid might make them faster. "
+              "CoreNN ran on its author’s own settings only. Faiss HNSW reused HNSW’s settings, "
               "and Faiss HNSW-SQ8 Glass’s (HNSW’s where Glass did not run). Faiss IVF-PQ tried "
               f'{N("tried8.faiss_ivfpq", span(tried8["faiss_ivfpq"]))} bucket counts and LoRANN '
-              f'{N("tried8.lorann", span(tried8["lorann"]))} settings, with and without its reduced size.')
+              f'{N("tried8.lorann", span(tried8["lorann"]))} settings, with and without its reduced size. LoRANN got the '
+              "sample questions only on the three chatbot datasets, as its documentation advises for questions "
+              "unlike the items; on the three text-to-photo datasets, where our index turned its question links on, "
+              "it did not.")
     li.append("<b>Containers and patches:</b> ScaNN has no Mac version, so it ran in a Linux container on the same Mac"
               + (f' ({N("docker.cores", cores)} cores)' if cores else "") + ", which may cost it some speed. Glass, "
               "RoarGraph and CoreNN needed small changes to build on a Mac; their search code was not changed, "
@@ -814,7 +822,8 @@ def build(ds, extra, missing):
 <section aria-labelledby="h-expected">
   <h2 id="h-expected">What we expected, written before part 5’s changes</h2>
   {expectations(extra, ds, N)}
-  <p class="note">Two more, about which choices flip and why Landmark drifted, are marked in the project’s step
+  <p class="note">The speed ratios in these expectations are against the rivals of that time, before Faiss and
+  LoRANN were added. Two more, about which choices flip and why Landmark drifted, are marked in the project’s step
   notes. Part 4’s expectations are in its report.</p>
 </section>
 

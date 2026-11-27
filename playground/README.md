@@ -7,10 +7,7 @@ Download a dataset, build an index on it, search it, and see how it did, from th
 *Waits are sped up about 7×; the page's own clock shows the real time. Recorded with `tools/record_playground.py`.*
 
 ## Before you start
-Do the main README's **Install** first, then add one package, for reading the dataset files:
-```sh
-uv pip install --python .venv h5py         # or: .venv/bin/pip install h5py
-```
+Do the main README's **Install** first. It installs `h5py`, which the playground uses to read the dataset files.
 All commands below run from the repo's top folder.
 
 ## From the command line
@@ -53,7 +50,7 @@ built 657,305 items of 384 numbers (cos) in 282 s on all cores
 
 ## From a browser
 ```sh
-.venv/bin/python playground/play.py ui          # then open http://127.0.0.1:8035/
+.venv/bin/python playground/play.py ui          # then open http://127.0.0.1:8035/ (Ctrl-C stops it)
 ```
 1. Click a dataset.
 2. Press **Download**, then **Build**, then **Search**. The page shows each step as it runs, how far linking has got, and the time so far.
@@ -68,7 +65,7 @@ The page runs one job at a time and listens on this machine only.
 - **in-report:** one of the 13 datasets in `REPORT.md`. The others are new to vindex.
 - **unlike:** the questions look unlike the items, for example text searching photos. These files bring their own sample questions.
 - **Size:** building Yahoo (a 1.04 GB file) took 5.7 GB of memory at its peak. Bigger files need more. `dpr-jina-768-normalized` (64 GB) needs more than 128 GB.
-- **Good first picks:** `yi-128-ip` (0.27 GB, a few minutes in all) and `yahoo-minilm-384-normalized` (1 GB, about 5 minutes).
+- **Good first picks:** `yi-128-ip` (0.27 GB, a few minutes in all) and `yahoo-minilm-384-normalized` (1 GB download, then about 5 minutes to build).
 
 ## How it checks the answers
 - **Sample questions** (the index learns its effort from them): the file's own (`learn`) when it has them, else 20,000 items set aside and not stored. This matches every result in `REPORT.md`.

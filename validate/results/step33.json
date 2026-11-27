@@ -1,7 +1,7 @@
 {
  "step": "step33",
  "pass": false,
- "seconds": 16.4,
+ "seconds": 2.5,
  "checks": [
   {
    "check": "the code is as frozen in step 42",
@@ -18,7 +18,7 @@
   {
    "check": "every number on the page is recomputed from the results files and matches",
    "pass": true,
-   "detail": "774 numbers (733 different), 0 wrong",
+   "detail": "775 numbers (733 different), 0 wrong",
    "data": null
   },
   {

@@ -1,7 +1,7 @@
 {
  "step": "step43",
  "pass": false,
- "seconds": 0.2,
+ "seconds": 0.1,
  "checks": [
   {
    "check": "the code is as frozen in step 42",
@@ -140,8 +140,8 @@
       "47"
      ],
      "step 47": [
-      "10",
-      "1.08",
+      "9",
+      "1.34",
       "2.08",
       "1.08",
       "1.01",

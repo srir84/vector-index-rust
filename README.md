@@ -9,7 +9,7 @@
 - **It tunes itself:** at build time it picks graph degree, pruning alpha, code size and re-rank depth on a sample. In use, it spot-checks a few searches and relearns the budget table if a target is missed.
 - **Changes:** add, delete and update in place, then save and load.
 
-Each piece builds on published work; "How it compares to known methods" below says which. It runs on macOS with Apple silicon only: it has NEON kernels and no x86 SIMD yet.
+Each piece builds on published work; "How it compares to known methods" below says which. It is fast only on Apple silicon: it has NEON kernels and no x86 SIMD yet. It also builds and passes its tests on Linux x86, where it runs plain loops.
 
 ## How fast is it?
 
@@ -17,8 +17,8 @@ Each piece builds on published work; "How it compares to known methods" below sa
 
 **The test:** 13 public datasets, every item of each (187,843 to 1.45 million), 1,000 test queries each, one core of an Apple M3 Max, at 95% recall@10.
 
-- **Faster than the fastest other index tried on 10 of 13,** by 1.08× to 2.08×. Timing a pair again moved its ratio by up to 16% (part 4: Yandex 1.30× then 1.10×, ImageNet 1.60× then 1.86×), so Yandex's 1.08× is a tie.
-- **Level on GIST1M** (1.01× LoRANN).
+- **Faster than the fastest other index tried on 9 of 13,** by 1.34× to 2.08×.
+- **Level on 2:** Yandex (1.08× Glass) and GIST1M (1.01× LoRANN). Within 10% counts as level: timing a pair again moved its ratio by up to 16% (part 4: Yandex 1.30× then 1.10×, ImageNet 1.60× then 1.86×).
 - **On chatbot attention vectors** (Llama, Yi; maximum inner product): 1.75× to 1.95× RoarGraph, which is built for such queries. Faiss HNSW never reaches 95% there.
 - **Faiss and LoRANN were added after the code was frozen** (step 47). They became the fastest other index on LAION and ImageNet (Faiss IVF-PQ) and on GIST1M (LoRANN), and cut vindex's lead there: LAION 2.19× to 2.08×, ImageNet 1.70× to 1.38×, GIST1M 1.35× to 1.01×.
 - **Slower on the two GloVe word datasets:** ScaNN is 1.36× and 1.37× as fast. On GloVe Faiss IVF-PQ is faster too (vindex 0.77×), and on GloVe-100 Glass (vindex 0.93×). GloVe-100 is the one dataset kept untouched until the code was frozen.
@@ -43,7 +43,10 @@ Each piece builds on published work; "How it compares to known methods" below sa
 | GloVe-100: words | 7,184 | ScaNN 9,828 | 0.73× | 0.93× | 0.90× | 1,971 |
 
 - **vindex ÷ it:** one core, 95% recall@10, read off each index's effort-vs-recall curve at exactly 95%.
-- **At 90%:** the same at 90% recall, against the fastest other index there.
+- **Landmark:** Glass already passes 95% at its quickest setting, so its speed there is a floor and vindex's 1.34× is at most that.
+- **At 90%:** the same at 90% recall, against the fastest other index there. On GooAQ, Llama, Landmark and arXiv both already pass 90% at their quickest setting, so that cell compares their quickest settings.
+- **One core:** each index ran with one thread (Faiss with `omp_set_num_threads(1)`; its CPU time matched its wall time). The M3 Max has 12 performance and 4 efficiency cores. A macOS storage scan used up to 4.3 other cores during vindex's runs.
+- **Only recall@10 at 90% and 95% was compared.** The effort sweeps stop shortly after 95%, so nothing here says how the indexes compare at 99%.
 - **All 16 cores:** queries/s with every core, at the setting each index picked for 95% on the tuning queries (test recall 94% to 97%). This compares the indexes roughly, not at an exact recall. ScaNN's container had 8 cores.
 - **Faiss HNSW:** plain float32 HNSW (`IndexHNSWFlat`, with Faiss's NEON code), at the links and build effort hnswlib picked. It replaces hnswlib here, which has no ARM SIMD. Faiss HNSW is 1.7× to 4.5× as fast as hnswlib was on the same data.
 
@@ -58,9 +61,10 @@ Made by `tools/draw_report.py readme`. vindex's numbers come from `validate/resu
 - **Not every strong index was tried.**
   - SymphonyQG, the fastest on many VIBE datasets, needs AVX-512, which Apple chips lack.
   - NGT-QG was not run: its quantized-graph search is x86-only.
-  - "Fastest other index" means the fastest of Glass, ScaNN, RoarGraph, CoreNN, Faiss (HNSW, HNSW-SQ8, IVF-PQ) and LoRANN. Glass, ScaNN, RoarGraph and CoreNN ran at full size only where they were fastest on 100,000-item samples. Faiss and LoRANN ran on all 13.
-- **The others got small settings grids.** Each graph index tried 9 settings (32/64/96 links × build effort 100/200/400), and ScaNN tried 6. Glass picked the largest corner on 4 of 8 datasets, so a bigger grid might help it. Faiss HNSW and HNSW-SQ8 reused hnswlib's and Glass's picks without a grid of their own. Faiss IVF-PQ tried 2 bucket counts and LoRANN 2 to 4 settings, each with a sweep of buckets searched and candidates re-checked.
-- **vindex learns from sample queries.** It uses 20,000 training queries from the same source as the test queries, for its search budget and its extra links. RoarGraph uses them too, and LoRANN on the three chatbot datasets; the others use none.
+  - "Fastest other index" means the fastest of Glass, ScaNN, RoarGraph, CoreNN, Faiss (HNSW, HNSW-SQ8, IVF-PQ) and LoRANN.
+- **The rivals were picked on samples, and that missed some.** Glass, ScaNN and RoarGraph ran at full size only where they were fastest on 100,000-item samples (ScaNN also on NYTimes, where it was within 1.3×), and CoreNN on GIST1M, the dataset its author tested on. Faiss and LoRANN, run on all 13 later, beat the sample-picked rival on LAION, ImageNet and GIST1M. ScaNN, a bucket index like Faiss IVF-PQ, ran at full size on 3 datasets only. Where both ran it was 0.99× to 1.63× as fast as Faiss IVF-PQ; at 1.63× it would beat vindex on ImageNet.
+- **The others got small settings grids, and many picks sit at the edge.** Each graph index tried 9 settings (32/64/96 links × build effort 100/200/400), and ScaNN tried 6. Glass picked 96 links on 5 of 9 datasets, and RoarGraph on all 3 (where vindex's leads are 1.75× to 1.95×). vindex, which picks its own links, took 24 on Landmark and Llama, below the rivals' smallest. Faiss IVF-PQ tried 2 bucket counts and took the larger on 12 of 13; LoRANN tried 2 to 4 settings. Faiss HNSW and HNSW-SQ8 reused hnswlib's and Glass's picks without a grid of their own. A wider grid might make the rivals faster.
+- **vindex learns from sample queries.** It uses 20,000 training queries from the same source as the test queries, for its search budget and its extra links. RoarGraph uses them too. LoRANN got them only on the three chatbot datasets, as its documentation advises for queries unlike the items; on Yandex, LAION and ImageNet, where vindex turned its question links on, it did not. The others use none.
 - **The held-back datasets were held back for one round each.**
   - The project was built in five rounds. Eight datasets were each kept out of one round, then measured, then used like the others.
   - Only GloVe-100 was untouched until the code was frozen, and there vindex came third.
@@ -69,9 +73,9 @@ Made by `tools/draw_report.py readme`. vindex's numbers come from `validate/resu
 
 **Where it is not better**
 - **Build time:** slower than the fastest other index on all 13 datasets: 3.0× (GooAQ) to 24× (Yi) as long, and 454× on GIST1M, where LoRANN builds in 2 seconds. Trying settings is part of it: on 100,000-item samples, builds took 2.6–7× longer with it. `tune="off"` skips it, at a cost in speed.
-- **Memory:** with everything in memory, about as much as Glass or a little less, and more than RoarGraph, ScaNN, Faiss IVF-PQ and LoRANN (1.26× to 1.32× the last two, where they are the fastest other index). It can leave the full vectors on SSD, using 0.17–0.70× hnswlib's memory, but then answers 2–23× fewer queries per second.
+- **Memory:** with everything in memory, 0.92× to 2.13× the fastest other index's memory per item: less on GooAQ and arXiv, about the same as Glass on Yandex, Landmark and NYTimes, and more against RoarGraph (1.5× to 1.56×), Faiss IVF-PQ and LoRANN (1.26× to 1.32×) and ScaNN (1.66× and 2.13×). It can leave the full vectors on SSD, using 0.14× to 1.25× the fastest other index's memory, but then answers 2–23× fewer queries per second.
 - **Unreachable items:** a few items can't be found by any search: 0 to 1,209 per dataset, out of up to 1.45 million (GIST1M has the most).
-- **Scope:** one machine, tested up to 1.45 million items, no filtered search, and macOS on Apple silicon only.
+- **Scope:** one machine, tested up to 1.45 million items, no filtered search, and fast only on Apple silicon.
 
 **More detail:**
 - `WRITE-UP.md`: one page for newcomers.
@@ -85,7 +89,7 @@ Made by `tools/draw_report.py readme`. vindex's numbers come from `validate/resu
 ## Get started
 
 ### 1. Install
-Needs a Mac with Apple silicon, [rustup](https://rustup.rs), [uv](https://docs.astral.sh/uv/) (or plain `pip`), and Python 3.10 or newer.
+Needs a Mac with Apple silicon, [rustup](https://rustup.rs), [uv](https://docs.astral.sh/uv/) (or plain `pip`), and Python 3.10 or newer (the commands below use 3.13, which `uv` downloads if needed).
 
 ```sh
 git clone https://github.com/srir84/vector-index-rust.git
@@ -102,8 +106,9 @@ For 1–7% more speed, `tools/build_py_pgo.sh` builds it guided by a practice ru
 The playground downloads a dataset, builds an index on it, searches it, and checks every answer against the true ones:
 ```sh
 .venv/bin/python playground/play.py list                               # 22 datasets: text, photos, code, chatbot
-.venv/bin/python playground/play.py run yahoo-minilm-384-normalized    # 1 GB; about 5 minutes
-.venv/bin/python playground/play.py ui                                 # or use the browser page: http://127.0.0.1:8035/
+.venv/bin/python playground/play.py run yi-128-ip                     # quickest: 0.27 GB download, a few minutes in all
+.venv/bin/python playground/play.py run yahoo-minilm-384-normalized    # 1 GB download, then about 5 minutes to build
+.venv/bin/python playground/play.py ui                                 # or the browser page: http://127.0.0.1:8035/ (Ctrl-C stops it)
 ```
 It shows each build step as it runs. Then it shows the memory, the settings the index picked, and, at each target, the share of the true top 10 found and the searches per second. `playground/README.md` has the steps, the datasets, and how to use your own file.
 
@@ -119,7 +124,7 @@ train = rng.standard_normal((2_000, 64), dtype=np.float32)     # sample question
 Q = rng.standard_normal((100, 64), dtype=np.float32)           # questions
 
 idx = vindex.Index(64, metric="cos")                           # "cos" (angle), "ip" (best score) or "l2"
-idx.build(X, ids, train_questions=train)                       # uses all cores; threads=N to limit
+idx.build(X, ids, train_questions=train)                       # about a minute here: it tunes itself; tune="off" skips that
 
 found, dists, checks = idx.search(Q, k=10, target=0.95)        # effort learned per question, aiming at 95%
 found, dists, checks = idx.search(Q, k=10, list_size=100)      # or one fixed effort for every question
@@ -129,13 +134,13 @@ idx.add(1_000_000, rng.standard_normal(64, dtype=np.float32))  # changes, one at
 idx.delete(0)
 idx.update(1, rng.standard_normal(64, dtype=np.float32))
 
-print(idx.build_progress())                                    # from another thread while build() runs: phase, step, done, total
 idx.save("my_index")                                           # a folder
 idx = vindex.Index.load("my_index", numbers="ssd")             # full numbers stay on SSD: search only
 print(idx.memory())                                            # bytes kept in memory, by part
 print(idx.stats())
 ```
 
+- **Build:** uses all cores (`threads=N` to limit). While it runs, `idx.build_progress()` from another thread gives the phase, step, done and total.
 - **Numbers:** `float32` only (convert with `.astype(np.float32)`; `float64` is refused), every row the same length, no NaN or infinity. Questions must come from the same model as the items, or its paired model (for example CLIP's text and image halves).
 - **Metric:** the one the model was made for. `cos` suits most text and image models; `ip` is for models scored by a plain dot product; `l2` is straight-line distance.
 - **Answers:** `found` holds ids (`-1` where fewer than `k` exist), `dists` their distances (smaller is closer), `checks` the work per question.
@@ -259,7 +264,8 @@ cargo run --release -p vindex --example basic
 ## Checking it
 ```sh
 cargo test -p vindex --release           # Rust tests on small random data, including recall@10 against exact search
-.venv/bin/python -I -m pytest tests/     # the Python package (uv pip install --python .venv pytest)
+uv pip install --python .venv pytest    # once, for the Python tests
+.venv/bin/python -I -m pytest tests/     # the Python package
 REUSE_GRID=1 validate/run_all.sh         # each build step's check, against the experiments' recorded results
 validate/run_all.sh 9 10                 # or just some steps
 ```
@@ -275,7 +281,7 @@ validate/run_all.sh 9 10                 # or just some steps
   - part 4: steps 28 to 32 (`validate/step29.py`, `validate/step30.py rivals`, then `validate/step30.py`, and so on);
   - part 5: `validate/step42.py ours`, `validate/step42.py changes` and `validate/step42.py rivals`, then `validate/step42.py`. These take about 6 hours.
   - ScaNN runs in Docker, which must be running for the rivals' runs.
-- **The reports' numbers are checked too:** `validate/step33.py` (the results page) and `validate/step43.py` (`REPORT.md` part 5 and `WRITE-UP.md`) check every number against the results files. Steps 44 and 45 changed the code after the freeze, so `step43.py`'s first check ("the code is as frozen") fails. `STEPS.md` steps 44 and 45 show that the changed code builds the same index, byte for byte.
+- **The reports' numbers are checked too:** `validate/step33.py` (the results page), `validate/step43.py` (`REPORT.md` part 5 and `WRITE-UP.md`) and `validate/step47_readme.py` (this README's two tables) check every number against the results files. Steps 44 and 45 changed the code after the freeze, so `step43.py`'s first check ("the code is as frozen") fails. `STEPS.md` steps 44 and 45 show that the changed code builds the same index, byte for byte.
 - **`STEPS.md`** says what each step checks and what it found.
 
 ## Files
@@ -285,7 +291,7 @@ validate/run_all.sh 9 10                 # or just some steps
 | `DESIGN.md` | how each part works, with the default settings |
 | `ARCHITECTURE.md` | the parts and how data sits in memory and on disk |
 | `REPORT.md` | results for all five parts, newest first: against the rivals on 13 datasets, met and missed targets |
-| `SPEC.md`, `STEPS.md` | the project's history: the targets set before each part, and each build step (0 to 43 in five parts; 44 and 45 after the freeze) with its check and result |
+| `SPEC.md`, `STEPS.md` | the project's history: the targets set before each part, and each build step (0 to 43 in five parts; 44 to 47 after the freeze) with its check and result |
 | `playground/` | try it on a public dataset or your own file, from the command line or a browser page |
 | `demo/` | ask questions of GooAQ's 1.45 million Google answers on your own machine |
 | `crates/vindex` | the index (Rust library) |

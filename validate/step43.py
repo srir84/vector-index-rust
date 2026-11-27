@@ -159,7 +159,7 @@ def main():
     s8 = {n: {t: r for t in STEP8 if (r := rival(t, n, EXP / "results" / "step8"))} for n in EVERY}
     rv8 = {n: {**{t: r for t, r in rv[n].items() if t != "hnsw"}, **s8[n]} for n in EVERY}
     ratio8 = {n: q[n] / max(r["qps95"] for r in rv8[n].values() if r["qps95"]) for n in EVERY}
-    ahead = [r for r in ratio8.values() if r >= 1.05]   # the results page's rule: within 5% is level
+    ahead = [r for r in ratio8.values() if r >= 1.10]   # the results page's rule: within 10% is level
     fh = [q[n] / s8[n]["faiss_hnsw"]["qps95"] for n in EVERY if s8[n]["faiss_hnsw"]["qps95"]]
     derived["step 47"] = [str(len(ahead)), f"{min(ahead):.2f}", f"{max(ahead):.2f}", f"{ratio8['yandex']:.2f}",
                           f"{ratio8['gist']:.2f}", f"{ratio['gist']:.2f}", f"{q['glove'] / s8['glove']['faiss_ivfpq']['qps95']:.2f}",

@@ -7,6 +7,8 @@ Five parts:
 - **Part 2** is the index that picks its own settings and keeps itself on target, tested on four held-back datasets.
 - **Part 1** (further down) is the first Rust build, with one setting for every dataset.
 
+**After the freeze (steps 46 and 47, in `STEPS.md`):** Faiss (HNSW, HNSW-SQ8, IVF-PQ) and LoRANN were run on all 13 datasets after part 5's code was frozen, and now count as rivals; hnswlib, which has no ARM vector code, no longer does. They are faster than part 5's fastest rival on LAION and ImageNet (Faiss IVF-PQ) and GIST1M (LoRANN). With them, vindex is ahead on 9 of 13, level on Yandex (1.08×) and GIST1M (1.01×), and behind on GloVe and GloVe-100. Part 5 below is kept as it was measured, against the rivals of that time. The current comparison is the README's table and the results page. Step 46 measures what each piece of the index adds.
+
 # Part 5: steady builds, the change test, and GloVe-100
 
 **In one line:** still ahead of the fastest rival on the same eleven datasets, and the change test now passes on all thirteen. GloVe is still lost to ScaNN (0.73×), and so is the new held-back GloVe-100 (0.73×). Fresh builds are steadier but not fully steady.

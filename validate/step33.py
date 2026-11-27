@@ -40,12 +40,12 @@ TOOL = {"hnsw": "HNSW", "glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGr
 NAME = {"gooaq": "GooAQ", "glove": "GloVe", "yandex": "Yandex", "llama": "Llama", "landmark": "Landmark", "arxiv": "arXiv",
         "laion": "LAION", "yi": "Yi", "gist": "GIST1M", "nytimes": "NYTimes", "imagenet": "ImageNet",
         "llama2": "Llama, 2nd head", NEW: "GloVe-100"}
-LEVEL = 0.05
+LEVEL = 0.10
 # The method's own constants, the only numbers allowed outside a data-n element (each phrase is cut out of the
 # visible text before it is searched for numbers).
 CONSTANTS = ["part 4", "Part 4", "part 5", "Part 5", "GloVe-100", "95%", "true 10", "10 closest", "of its 10 answers", "9.5", "middle of 5 timed runs",
              "Llama 3", "AVX-512", "CC BY 4.0", "90% of its items", "10% more were added, 10% deleted and 10%",
-             "drift under 1 point", "Within 5%", "never reaches 85%", "at least 10\u00d7 as fast",
+             "drift under 1 point", "Within 10%", "by up to 16%", "never reaches 85%", "at least 10\u00d7 as fast",
              "within 1.3\u00d7 of the fastest"]
 NUMBER = re.compile(r"(?<![A-Za-z0-9])[−+-]?\d[\d,]*(?:\.\d+)?(?![A-Za-z0-9])")
 
