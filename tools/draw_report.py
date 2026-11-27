@@ -57,7 +57,8 @@ NEW = [("nytimes", "NYTimes (new, held back)"), ("imagenet", "ImageNet (new, hel
 PLAIN = {"gooaq": "GooAQ", "glove": "GloVe", "yandex": "Yandex", "llama": "Llama", "landmark": "Landmark",
          "arxiv": "arXiv", "laion": "LAION", "yi": "Yi", "gist": "GIST1M"}
 RIVAL_NAMES = {"glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGraph", "diskann": "DiskANN", "hnsw": "HNSW",
-               "corenn": "CoreNN"}
+               "corenn": "CoreNN", "faiss_hnsw": "Faiss HNSW", "faiss_hnsw_sq8": "Faiss HNSW-SQ8",
+               "faiss_ivfpq": "Faiss IVF-PQ", "lorann": "LoRANN"}
 
 
 def part3():
@@ -304,7 +305,8 @@ def _qps_at(curve, target, sec="sec"):
 def readme():
     """The README's chart and table: vindex (part 5, step 42) against the fastest other index tried on each dataset
     (the experiments' results/step6, and results/step7 for GloVe-100), at full size. Chart: searches per second at
-    95% recall@10, one core. Table: the same, plus the ratio at 90%, the ratio on all cores, and hnswlib."""
+    95% recall@10, one core. Table: the same, plus the ratio at 90%, the ratio on all cores, and Faiss HNSW (step 8's
+    Faiss and LoRANN runs count as rivals; hnswlib, which has no ARM vector code, no longer does)."""
     exp = ROOT.parent / "vector-index-experiments" / "results"
     ours = {c["check"].split(":")[0]: c["data"]["ours"]
             for c in json.loads((ROOT / "validate" / "results" / "step42-ours.json").read_text())["checks"]
@@ -314,18 +316,20 @@ def readme():
     for name in rows:
         o = ours[name]
         rv = {}
-        for f in (exp / ("step7" if name == "glove100" else "step6") / "final").glob(f"*/{name}/best.json"):
+        files = [*(exp / ("step7" if name == "glove100" else "step6") / "final").glob(f"*/{name}/best.json"),
+                 *(exp / "step8" / "final").glob(f"*/{name}/best.json")]   # step 8: Faiss and LoRANN
+        for f in files:
             r = json.loads(f.read_text())
             rv[r["tool"]] = {"95": _qps_at(r["curve"], 0.95, "sec_per_query_1core"),
                              "90": _qps_at(r["curve"], 0.90, "sec_per_query_1core"),
                              "all": 1 / r["final"]["sec_per_query_allcores"]}
-        others = {t: v for t, v in rv.items() if t != "hnsw"}
+        others = {t: v for t, v in rv.items() if t != "hnsw"}   # hnswlib has no ARM vector code: Faiss HNSW stands in
         best = max((t for t in others if others[t]["95"]), key=lambda t: others[t]["95"])
         best90 = max((others[t]["90"] for t in others if others[t]["90"]), default=None)
         best_all = max(v["all"] for v in others.values())
         table.append({"name": name, "ours": o["qps95"], "best": best, "rival": others[best]["95"],
                       "r90": _qps_at(o["curve"], 0.90) / best90 if best90 else None,
-                      "r_all": o["qps_all"] / best_all, "hnsw": rv.get("hnsw", {}).get("95")})
+                      "r_all": o["qps_all"] / best_all, "hnsw": rv.get("faiss_hnsw", {}).get("95")})
     table.sort(key=lambda r: r["ours"] / r["rival"], reverse=True)
 
     plt.rcParams.update({"font.family": "Helvetica Neue", "font.size": 9.5, "text.color": INK,
@@ -358,13 +362,14 @@ def readme():
     fig.suptitle("vindex against the fastest other index tried, 13 public datasets", x=0.02, y=0.99, ha="left",
                  va="top", fontsize=12.5, fontweight="bold", color=INK)
     fig.text(0.02, 0.962, "Every item of each dataset (187,843 to 1.45 million), 1,000 test queries, one core of an "
-             "Apple M3 Max. Others tried: Glass, ScaNN, RoarGraph, CoreNN, hnswlib.", fontsize=9, color=INK2, va="top")
-    fig.tight_layout(rect=(0, 0, 1, 0.945))
+             "Apple M3 Max.\nOthers tried: Glass, ScaNN, RoarGraph, Faiss (HNSW, HNSW-SQ8, IVF-PQ), LoRANN, CoreNN.", fontsize=9,
+             color=INK2, va="top", linespacing=1.5)
+    fig.tight_layout(rect=(0, 0, 1, 0.93))
     out_file = OUT.with_name("benchmark.png")
     fig.savefig(out_file, dpi=160, facecolor=SURFACE)
     print("wrote", out_file)
     ratio = lambda v: "–" if v is None else (f"**{v:.2f}×**" if v > 1 else f"{v:.2f}×")
-    print("| Dataset | vindex | Fastest other index | vindex ÷ it | at 90% | all 16 cores | hnswlib |")
+    print("| Dataset | vindex | Fastest other index | vindex ÷ it | at 90% | all 16 cores | Faiss HNSW |")
     print("|---|---|---|---|---|---|---|")
     for r in table:
         hn = f"{r['hnsw']:,.0f}" if r["hnsw"] else "never 95%"

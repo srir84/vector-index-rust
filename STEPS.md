@@ -794,3 +794,58 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
 - **Check:** with the same data and settings, the code before and after these fixes saves the same index, byte for byte (`validate/step44_same_build.py`, as in step 44).
 - **Pass:** identical saved files for `cos`, `ip` and `l2`.
 - **Status:** passed: `diff -r` finds no difference. `cargo test --release -p vindex`: 43 passed. `pytest tests/`: 7 passed. The recall test finds 93.5% (cos), 95.4% (ip) and 94.3% (l2) at target 0.95; it requires 90%.
+  - **A second review** found three more: a save that replaced an index of another kind could leave the old index's extra files (such as `checked_q.f32`) beside the new `meta.bin`; a save without tuning kept the old `tuning.json`; and `debug_search_graph` panicked on `k = 0`. Now `save` removes `meta.bin` and the old extra files before the new files go in, removes a stale `tuning.json`, and reports any error removing them; `debug_search_graph` refuses `k = 0`. A save stopped partway leaves no `meta.bin`, so `load` refuses the folder instead of reading a mix. Step 44's check, run again on this code under the profile-guided build: identical saved files for `cos`, `ip` and `l2`. CI: both jobs pass.
+
+## 46. After the freeze: what each piece adds
+- **Builds:** `validate/step46_pieces.py`. Each of GooAQ, GloVe, LAION and Llama is built at full size with the settings its tuned build picked in step 42, tuning off, then again with one piece changed: 8-bit codes where 4-bit was picked, no codes (the walk on full vectors), no question links, no popular links, the graph on x instead of the Möbius-transformed vectors, and the default settings. "Fixed effort" searches the first build with one list size for every query, read off at 95%. Measured as step 42 measured.
+- **Check:** each variant's speed at 95% recall@10, as a share of the first row.
+- **Status:** done, 20 rows in 47 minutes. The first row is 1% to 8% faster than step 42's tuned build of the same settings (40,019 against 39,545 on GooAQ; 108,604 against 100,112 on Llama): a new build, timed again.
+
+| Change | GooAQ | GloVe | LAION | Llama |
+|---|---|---|---|---|
+| As the tuning picked (tuning off, same settings) | 40,019/s | 3,056/s | 10,858/s | 108,604/s |
+| One list size for every query (no per-query budget) | 0.94× | 0.78× | 0.92× | 1.00× |
+| 8-bit codes instead of 4-bit | 0.90× | – | – | – |
+| No codes: the walk compares full float32 vectors | 0.38× | 0.58× | 0.44× | 0.84× |
+| No question links | – | – | 0.94× | 0.03× |
+| No popular links | – | – | – | 0.42× |
+| Graph built on x, not x / ‖x‖² | – | – | – | never 95% (best 56%) |
+| Default settings (r 32, alpha 1.2, 8-bit, re-check 50) | 0.90× (the 8-bit row) | 0.49× | 0.90× | 0.88× |
+
+  - **The codes** matter most on wide data (0.38× to 0.58× without them on GooAQ, GloVe and LAION; 0.84× on Llama).
+  - **The per-query budget** makes it 1.06× to 1.28× as fast, and changes nothing on Llama (1.00×).
+  - **Llama needs its question links and the Möbius graph:** 0.03× without the links; with the graph on x the search never passes 56%. The popular links make it 2.4× as fast (0.42× without).
+  - **4-bit over 8-bit on GooAQ:** 1.11× (0.90× with 8-bit).
+
+## 47. After the freeze: Faiss and LoRANN
+- **Builds:** four more rivals, each with its own ARM NEON code, on all 13 datasets at full size: Faiss HNSW (`IndexHNSWFlat`), Faiss HNSW-SQ8 (8-bit HNSW, then the best 20 re-checked on the full numbers), Faiss IVF-PQ (buckets and 4-bit fast-scan codes, then a re-check) and LoRANN (buckets and a small learned model per bucket, then a re-check). The experiments' step 8: `scripts/step8_more_rivals.py`, `bench/runners/faiss_idx.py`, `bench/runners/lorann_idx.py`. Reviewers had pointed out that hnswlib has no ARM vector code and that Faiss and LoRANN were never tried.
+- **How they were run:** as steps 6 and 7 ran the others: a settings search on the tuning queries, then the best setting on the test queries, one core, median of 5 runs, read off at exactly 95%.
+  - Faiss HNSW used the links and build effort hnswlib picked; Faiss HNSW-SQ8 Glass's (hnswlib's where Glass did not run).
+  - Faiss IVF-PQ tried one bucket per 1,000 and per 250 items; LoRANN sqrt(items) and 2 × sqrt(items) buckets, with and without its reduced 128 or 256 numbers. LoRANN got the training queries on the three chatbot datasets, as its documentation advises.
+  - Buckets searched and candidates re-checked were swept together. The first sweep stopped at 3,200 re-checks and 0.5% of the buckets: LoRANN on GloVe and Faiss IVF-PQ on Llama and Yi were still gaining at 3,200 with every bucket searched, and Faiss IVF-PQ on GooAQ reached 95% at 0.5%. The sweep was widened to 25,600 and 0.1%, and those four rerun; all four then reach 95%.
+  - NGT-QG was not run: its quantized-graph search is x86-only.
+- **Check:** each rival's result per dataset; vindex's part 5 numbers (step 42) against the fastest other index, now counting these four and no longer hnswlib.
+- **Status:** done. Test queries per second, one core, at 95% recall@10:
+
+| Dataset | vindex | Faiss HNSW | Faiss HNSW-SQ8 | Faiss IVF-PQ | LoRANN | hnswlib (step 6/7) |
+|---|---|---|---|---|---|---|
+| GooAQ | 39,545 | 10,923 | ≥11,014 | 12,503 | 6,351 | 3,221 |
+| GloVe | 2,907 | 518 | 672 | 3,773 | 690 | 297 |
+| Yandex | 14,971 | 4,153 | 4,771 | 7,603 | 5,829 | 2,187 |
+| Llama | 100,112 | never (26%) | never (26%) | 1,190 | 6,162 | never (30%) |
+| Landmark | 46,560 | 18,565 | ≥13,350 | 16,129 | 22,407 | 5,194 |
+| arXiv | 29,407 | 8,926 | 9,619 | 11,089 | 6,992 | 2,694 |
+| LAION | 10,566 | 1,410 | 2,457 | 5,088 | 1,213 | 801 |
+| Yi | 44,284 | never (40%) | never (40%) | 870 | 5,166 | never (49%) |
+| GIST1M | 3,921 | 1,347 | 1,575 | 845 | 3,866 | 302 |
+| NYTimes | 12,169 | 1,414 | 2,546 | 4,319 | 1,152 | 701 |
+| ImageNet | 15,379 | 2,416 | 3,547 | 11,120 | 4,814 | 985 |
+| Llama, 2nd head | 57,607 | never (28%) | never (28%) | 2,454 | 5,440 | never (27%) |
+| GloVe-100 | 7,184 | 1,971 | 1,071 | 6,027 | 2,680 | 1,012 |
+
+  - **The fastest other index changed on three datasets:** LAION and ImageNet (Faiss IVF-PQ), and GIST1M (LoRANN). vindex's lead there fell: LAION 2.19× to 2.08×, ImageNet 1.70× to 1.38×, GIST1M 1.35× to 1.01× (level).
+  - **vindex is now faster on 10 of 13** (1.08× to 2.08×; Yandex's 1.08× is within timing noise), level on GIST1M (1.01×), and slower on GloVe (ScaNN 1.36×, Faiss IVF-PQ 1.30× as fast) and GloVe-100 (ScaNN 1.37×).
+  - **Faiss HNSW is 1.7× to 4.5× as fast as hnswlib** at the same settings, and still never reaches 95% on the three chatbot datasets. Faiss HNSW-SQ8 reached 95% at its smallest search effort on GooAQ and Landmark, so its speed there is a lower bound.
+  - **LoRANN builds fast:** 2 seconds on GIST1M against vindex's 903.
+  - The README's table and chart (`tools/draw_report.py readme`), the write-up and the results page now count these rivals. `validate/step43.py` checks the write-up's new numbers against the step 8 files, and `validate/step33.py` the page's (774 numbers, 0 wrong). In both, the first check, "the code is as frozen in step 42", fails, as expected since step 44: the code changed after the freeze.
+

@@ -17,48 +17,50 @@ Each piece builds on published work; "How it compares to known methods" below sa
 
 **The test:** 13 public datasets, every item of each (187,843 to 1.45 million), 1,000 test queries each, one core of an Apple M3 Max, at 95% recall@10.
 
-- **Faster than the fastest other index tried on 11 of 13,** by 1.08× to 2.19×. Timing a pair again moved its ratio by up to 16% (part 4: Yandex 1.30× then 1.10×, ImageNet 1.60× then 1.86×), so Yandex's 1.08× is a tie.
-- **The largest leads are on chatbot attention vectors** (Llama, Yi; maximum inner product): 1.75× to 1.95× RoarGraph, which is built for such queries.
-- **Slower on the two GloVe word datasets:** ScaNN is 1.36× and 1.37× as fast. On GloVe-100 Glass is faster too (vindex 0.93×). GloVe-100 is the one dataset kept untouched until the code was frozen.
+- **Faster than the fastest other index tried on 10 of 13,** by 1.08× to 2.08×. Timing a pair again moved its ratio by up to 16% (part 4: Yandex 1.30× then 1.10×, ImageNet 1.60× then 1.86×), so Yandex's 1.08× is a tie.
+- **Level on GIST1M** (1.01× LoRANN).
+- **On chatbot attention vectors** (Llama, Yi; maximum inner product): 1.75× to 1.95× RoarGraph, which is built for such queries. Faiss HNSW never reaches 95% there.
+- **Faiss and LoRANN were added after the code was frozen** (step 47). They became the fastest other index on LAION and ImageNet (Faiss IVF-PQ) and on GIST1M (LoRANN), and cut vindex's lead there: LAION 2.19× to 2.08×, ImageNet 1.70× to 1.38×, GIST1M 1.35× to 1.01×.
+- **Slower on the two GloVe word datasets:** ScaNN is 1.36× and 1.37× as fast. On GloVe Faiss IVF-PQ is faster too (vindex 0.77×), and on GloVe-100 Glass (vindex 0.93×). GloVe-100 is the one dataset kept untouched until the code was frozen.
 - **On all 16 cores the lead is smaller,** and Glass wins on Landmark and GIST1M (vindex 0.69× and 0.68×).
 
 <details open><summary><b>The numbers</b></summary>
 
-| Dataset | vindex (queries/s) | Fastest other index | vindex ÷ it | at 90% | all 16 cores | hnswlib |
+| Dataset | vindex (queries/s) | Fastest other index | vindex ÷ it | at 90% | all 16 cores | Faiss HNSW |
 |---|---|---|---|---|---|---|
-| LAION: text to photos | 10,566 | Glass 4,833 | **2.19×** | **1.58×** | **1.07×** | 801 |
+| LAION: text to photos | 10,566 | Faiss IVF-PQ 5,088 | **2.08×** | **1.58×** | **1.07×** | 1,410 |
 | Llama, 2nd head: chatbot attention | 57,607 | RoarGraph 29,507 | **1.95×** | **2.06×** | **1.50×** | never 95% |
 | Yi: chatbot attention | 44,284 | RoarGraph 24,371 | **1.82×** | **1.94×** | **2.02×** | never 95% |
 | Llama: chatbot attention | 100,112 | RoarGraph 57,226 | **1.75×** | **1.95×** | **1.53×** | never 95% |
-| ImageNet: text to photos | 15,379 | Glass 9,068 | **1.70×** | **1.43×** | **1.25×** | 985 |
-| GooAQ: Google answers | 39,545 | Glass 26,512 | **1.49×** | **1.50×** | **1.14×** | 3,221 |
-| NYTimes: news | 12,169 | Glass 8,523 | **1.43×** | **1.16×** | **1.38×** | 701 |
-| arXiv: paper summaries | 29,407 | Glass 21,627 | **1.36×** | **1.15×** | **1.19×** | 2,694 |
-| GIST1M: photo features | 3,921 | Glass 2,905 | **1.35×** | **1.27×** | 0.68× | 302 |
-| Landmark: photos | 46,560 | Glass 34,762 | **1.34×** | **1.44×** | 0.69× | 5,194 |
-| Yandex: text to photos | 14,971 | Glass 13,872 | **1.08×** | **1.04×** | **1.06×** | 2,187 |
-| GloVe: words | 2,907 | ScaNN 3,956 | 0.73× | 0.72× | 0.76× | 297 |
-| GloVe-100: words | 7,184 | ScaNN 9,828 | 0.73× | 0.93× | 0.90× | 1,012 |
+| GooAQ: Google answers | 39,545 | Glass 26,512 | **1.49×** | **1.50×** | **1.14×** | 10,923 |
+| NYTimes: news | 12,169 | Glass 8,523 | **1.43×** | **1.16×** | **1.38×** | 1,414 |
+| ImageNet: text to photos | 15,379 | Faiss IVF-PQ 11,120 | **1.38×** | **1.43×** | **1.25×** | 2,416 |
+| arXiv: paper summaries | 29,407 | Glass 21,627 | **1.36×** | **1.15×** | **1.19×** | 8,926 |
+| Landmark: photos | 46,560 | Glass 34,762 | **1.34×** | **1.44×** | 0.69× | 18,565 |
+| Yandex: text to photos | 14,971 | Glass 13,872 | **1.08×** | **1.04×** | **1.06×** | 4,153 |
+| GIST1M: photo features | 3,921 | LoRANN 3,866 | **1.01×** | **1.02×** | 0.68× | 1,347 |
+| GloVe: words | 2,907 | ScaNN 3,956 | 0.73× | 0.72× | 0.67× | 518 |
+| GloVe-100: words | 7,184 | ScaNN 9,828 | 0.73× | 0.93× | 0.90× | 1,971 |
 
 - **vindex ÷ it:** one core, 95% recall@10, read off each index's effort-vs-recall curve at exactly 95%.
 - **At 90%:** the same at 90% recall, against the fastest other index there.
 - **All 16 cores:** queries/s with every core, at the setting each index picked for 95% on the tuning queries (test recall 94% to 97%). This compares the indexes roughly, not at an exact recall. ScaNN's container had 8 cores.
-- **hnswlib:** plain float32 HNSW, which has no ARM SIMD (see below). It is not a fair speed reference on this machine.
+- **Faiss HNSW:** plain float32 HNSW (`IndexHNSWFlat`, with Faiss's NEON code), at the links and build effort hnswlib picked. It replaces hnswlib here, which has no ARM SIMD. Faiss HNSW is 1.7× to 4.5× as fast as hnswlib was on the same data.
 
-Made by `tools/draw_report.py readme`. vindex's numbers come from `validate/results/step42-ours.json`. The others' come from [vector-index-experiments](https://github.com/srir84/vector-index-experiments) (`results/step6/`, and `results/step7/` for GloVe-100).
+Made by `tools/draw_report.py readme`. vindex's numbers come from `validate/results/step42-ours.json`. The others' come from [vector-index-experiments](https://github.com/srir84/vector-index-experiments) (`results/step6/`, `results/step7/` for GloVe-100, and `results/step8/` for Faiss and LoRANN).
 </details>
 
 **Read this before trusting the numbers**
 - **The machine favours vindex.**
   - vindex has hand-written NEON kernels and was built with profile-guided optimization (`tools/build_py_pgo.sh`).
-  - The others were written for x86 first. hnswlib has no ARM SIMD: its distance loop compiles to scalar code without fast-math. Glass's ARM kernels are commented out upstream, so it runs plain loops, which the compiler auto-vectorizes. RoarGraph's x86 SIMD goes through the SIMDe translation layer. ScaNN ran in a Linux container on the same Mac.
+  - The others were written for x86 first. Faiss and LoRANN have ARM NEON code. hnswlib has none: its distance loop compiles to scalar code without fast-math, so Faiss HNSW stands in for it. Glass's ARM kernels are commented out upstream, so it runs plain loops, which the compiler auto-vectorizes. RoarGraph's x86 SIMD goes through the SIMDe translation layer. ScaNN ran in a Linux container on the same Mac.
   - On an x86 server the results may differ.
 - **Not every strong index was tried.**
   - SymphonyQG, the fastest on many VIBE datasets, needs AVX-512, which Apple chips lack.
-  - NGT-QG, LoRANN and Faiss were not run.
-  - "Fastest other index" means the fastest of Glass, ScaNN, RoarGraph, CoreNN and hnswlib. At full size, only the fastest on 100,000-item samples, plus hnswlib, were run.
-- **The others got small settings grids.** Each graph index tried 9 settings (32/64/96 links × build effort 100/200/400), and ScaNN tried 6. Glass picked the largest corner on 4 of 8 datasets, so a bigger grid might help it.
-- **vindex learns from sample queries.** It uses 20,000 training queries from the same source as the test queries, for its search budget and its extra links. RoarGraph uses them too; Glass, ScaNN and hnswlib use none.
+  - NGT-QG was not run: its quantized-graph search is x86-only.
+  - "Fastest other index" means the fastest of Glass, ScaNN, RoarGraph, CoreNN, Faiss (HNSW, HNSW-SQ8, IVF-PQ) and LoRANN. Glass, ScaNN, RoarGraph and CoreNN ran at full size only where they were fastest on 100,000-item samples. Faiss and LoRANN ran on all 13.
+- **The others got small settings grids.** Each graph index tried 9 settings (32/64/96 links × build effort 100/200/400), and ScaNN tried 6. Glass picked the largest corner on 4 of 8 datasets, so a bigger grid might help it. Faiss HNSW and HNSW-SQ8 reused hnswlib's and Glass's picks without a grid of their own. Faiss IVF-PQ tried 2 bucket counts and LoRANN 2 to 4 settings, each with a sweep of buckets searched and candidates re-checked.
+- **vindex learns from sample queries.** It uses 20,000 training queries from the same source as the test queries, for its search budget and its extra links. RoarGraph uses them too, and LoRANN on the three chatbot datasets; the others use none.
 - **The held-back datasets were held back for one round each.**
   - The project was built in five rounds. Eight datasets were each kept out of one round, then measured, then used like the others.
   - Only GloVe-100 was untouched until the code was frozen, and there vindex came third.
@@ -66,8 +68,8 @@ Made by `tools/draw_report.py readme`. vindex's numbers come from `validate/resu
 - **Can be rerun:** every script, setting and result is in this repo and in [vector-index-experiments](https://github.com/srir84/vector-index-experiments), including each index's version, commit and patch (`baselines/VERSIONS.md`).
 
 **Where it is not better**
-- **Build time:** slower than the fastest other index on all 12 datasets where both were timed, by 1.5× (GIST1M) to 23× (Yi). Trying settings is part of it: on 100,000-item samples, builds took 2.6–7× longer with it. `tune="off"` skips it, at a cost in speed.
-- **Memory:** with everything in memory, about as much as Glass or a little less, and more than RoarGraph and ScaNN. It can leave the full vectors on SSD, using 0.17–0.70× hnswlib's memory, but then answers 2–23× fewer queries per second.
+- **Build time:** slower than the fastest other index on all 13 datasets: 3.0× (GooAQ) to 24× (Yi) as long, and 454× on GIST1M, where LoRANN builds in 2 seconds. Trying settings is part of it: on 100,000-item samples, builds took 2.6–7× longer with it. `tune="off"` skips it, at a cost in speed.
+- **Memory:** with everything in memory, about as much as Glass or a little less, and more than RoarGraph, ScaNN, Faiss IVF-PQ and LoRANN (1.26× to 1.32× the last two, where they are the fastest other index). It can leave the full vectors on SSD, using 0.17–0.70× hnswlib's memory, but then answers 2–23× fewer queries per second.
 - **Unreachable items:** a few items can't be found by any search: 0 to 1,209 per dataset, out of up to 1.45 million (GIST1M has the most).
 - **Scope:** one machine, tested up to 1.45 million items, no filtered search, and macOS on Apple silicon only.
 
@@ -164,6 +166,25 @@ None of these parts is new on its own. The work is in combining them, the self-t
 | Inner product on a graph | Möbius transformation ([Zhou et al., NeurIPS 2019](https://papers.nips.cc/paper/2019/hash/0fd7e4f42a8b4b4ef33394d35212b13e-Abstract.html)) | Used only to build the graph. |
 | Deletes | FreshDiskANN ([Singh et al., 2021](https://arxiv.org/abs/2105.09613)) | Repaired at once, without batch consolidation. |
 | Picking settings | Faiss's parameter autotuning | Trial builds on a sample, timed. A new choice wins only when clearly faster, so rebuilds pick the same. |
+
+### What each piece adds
+Each dataset built at full size with the settings its tuned build picked, then again with one piece changed. Speed at 95% recall@10 on test queries, one core, as a share of the first row (step 46, `validate/step46_pieces.py`). "–": the piece was not in use there.
+
+| Change | GooAQ | GloVe | LAION | Llama |
+|---|---|---|---|---|
+| As the tuning picked (tuning off, same settings) | 40,019/s | 3,056/s | 10,858/s | 108,604/s |
+| One list size for every query (no per-query budget) | 0.94× | 0.78× | 0.92× | 1.00× |
+| 8-bit codes instead of 4-bit | 0.90× | – | – | – |
+| No codes: the walk compares full float32 vectors | 0.38× | 0.58× | 0.44× | 0.84× |
+| No question links | – | – | 0.94× | 0.03× |
+| No popular links | – | – | – | 0.42× |
+| Graph built on x, not x / ‖x‖² | – | – | – | never 95% (best 56%) |
+| Default settings (r 32, alpha 1.2, 8-bit, re-check 50) | 0.90× (the 8-bit row) | 0.49× | 0.90× | 0.88× |
+
+- **The codes** matter most on wide data: the walk on full vectors is 0.38× to 0.58× as fast on GooAQ, GloVe and LAION, and 0.84× on Llama (128 numbers).
+- **The per-query budget** makes it 1.06× to 1.28× as fast (0.78× to 0.94× without it), and changes nothing on Llama.
+- **On Llama, the question links and the Möbius graph are what make it work:** without them it is 0.03× as fast, or never reaches 95%. The popular links make it 2.4× as fast.
+- **The tuning's picks against the defaults:** 1.1× to 2.0×.
 
 ### Words used in the code and docs
 The code and older docs use plain words for standard terms:

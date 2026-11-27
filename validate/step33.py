@@ -32,7 +32,11 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PLAN = {"glass": ["gooaq", "yandex", "landmark", "arxiv", "laion", "gist", "nytimes", "imagenet", NEW],
         "scann": ["glove", "nytimes", NEW], "roargraph": ["llama", "yi", "llama2"], "corenn": ["gist"], "hnsw": EVERY}
 WHERE = lambda n: FULL7 if n == NEW else FULL   # GloVe-100's rivals ran in part 5, the others' in part 4
-TOOL = {"hnsw": "HNSW", "glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGraph", "corenn": "CoreNN"}
+STEP8 = EXP / "results" / "step8"   # Faiss and LoRANN on every dataset, run after part 5's freeze
+PLAN8 = {t: EVERY for t in ("faiss_hnsw", "faiss_hnsw_sq8", "faiss_ivfpq", "lorann")}
+NOT_RIVAL = {"hnsw"}   # shown, but not counted: hnswlib has no vector code for Apple chips (Faiss HNSW stands in)
+TOOL = {"hnsw": "HNSW", "glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGraph", "corenn": "CoreNN",
+        "faiss_hnsw": "Faiss HNSW", "faiss_hnsw_sq8": "Faiss HNSW-SQ8", "faiss_ivfpq": "Faiss IVF-PQ", "lorann": "LoRANN"}
 NAME = {"gooaq": "GooAQ", "glove": "GloVe", "yandex": "Yandex", "llama": "Llama", "landmark": "Landmark", "arxiv": "arXiv",
         "laion": "LAION", "yi": "Yi", "gist": "GIST1M", "nytimes": "NYTimes", "imagenet": "ImageNet",
         "llama2": "Llama, 2nd head", NEW: "GloVe-100"}
@@ -72,6 +76,14 @@ def f_time(s):
 
 def words(xs):
     return (", ".join(map(str, xs[:-1])) + f" or {xs[-1]}" if len(xs) > 1 else str(xs[0])) if xs else "?"
+
+
+def settings_text(p):
+    if "leaves" in p:
+        return f"{p['leaves']:,} buckets, {p['dims_per_block']} number{'s' if p['dims_per_block'] > 1 else ''} per code"
+    if "buckets" in p:
+        return f"{p['buckets']:,} buckets" + (f", scored on {p['global_dim']} numbers" if p.get("global_dim") else "")
+    return f"{p['links']} links, build list {p['build']}" + (f", slack {p['slack']}" if p.get("slack") else "")
 
 
 def line(points):
@@ -128,24 +140,22 @@ def expected():
         others += o["ours"]["other_programs_cores"]
         curves[n] = [("vindex", True, line([(p["accuracy"], p["sec"]) for p in o["ours"]["curve"]]))]
         best = None
-        for tool, names in PLAN.items():
-            if n not in names or not (r := rival(tool, n, WHERE(n))):
+        runs = [(t, WHERE(n)) for t, names in PLAN.items() if n in names] + [(t, STEP8) for t in PLAN8]
+        for tool, where in runs:
+            if not (r := rival(tool, n, where)):
                 continue
-            raw = json.loads((WHERE(n) / "final" / tool / n / "best.json").read_text())
+            raw = json.loads((where / "final" / tool / n / "best.json").read_text())
             curves[n].append((TOOL[tool], False, line([(p["accuracy"], p["sec_per_query_1core"]) for p in raw["curve"]])))
             k = f"{n}.{tool}"
             if r["qps95"]:
                 e[f"{k}.qps"] = f_int(r["qps95"])
-                if best is None or r["qps95"] > best[1]["qps95"]:
+                if tool not in NOT_RIVAL and (best is None or r["qps95"] > best[1]["qps95"]):
                     best = (tool, r)
             e[f"{k}.best"] = f_pct(r["best"])
             if r["status"] == "below_min_effort":   # already past 95% at its quickest setting: that setting's accuracy
                 e[f"{k}.floor"] = f_pct(min(raw["curve"], key=lambda p: p["sec_per_query_1core"])["accuracy"])
             e[f"{k}.qps_all"], e[f"{k}.mem"], e[f"{k}.build"] = f_int(r["qps_all"]), f_int(r["bytes_per_item"]), f_time(r["build_s"])
-            p = r["params"]
-            e[f"{k}.settings"] = (f"{p['leaves']:,} buckets, {p['dims_per_block']} number{'s' if p['dims_per_block'] > 1 else ''} "
-                                  "per code" if "leaves" in p else f"{p['links']} links, build list {p['build']}"
-                                  + (f", slack {p['slack']}" if p.get("slack") else ""))
+            e[f"{k}.settings"] = settings_text(r["params"])
         if best:
             ratios[n] = o["ours"]["qps95"] / best[1]["qps95"]
             e[f"{n}.ratio"], e[f"{n}.inverse"] = f_x(ratios[n]), f_x(1 / ratios[n])
@@ -205,11 +215,15 @@ def expected():
     e["tried.dims"] = words(sorted({p["dims_per_block"] for per in grid["scann"].values() for p in per}))
     for n, per in grid["scann"].items():
         e[f"tried.buckets.{n}"] = words([f"{b:,}" for b in sorted({p["leaves"] for p in per})])
+    for t in ("faiss_ivfpq", "lorann"):   # settings tried per dataset in step 8
+        e[f"tried8.{t}"] = span(sorted({len(list((STEP8 / "grid" / t / n).glob("*.json"))) for n in EVERY} - {0}))
     fz = json.loads(FROZEN5.read_text())
     e["versions"] = ", ".join(re.sub(r"^(\w+?)(?:_py)?-([\d.]+)\.dist-info$", r"\1 \2", x) for x in fz["rival_versions"])
     vtext = (EXP / "baselines" / "VERSIONS.md").read_text()
     e["version.scann"] = re.search(r"scann (\d+\.\d+\.\d+) from PyPI", vtext).group(1)
     e["version.roargraph"] = re.search(r"matchyc/RoarGraph commit ([0-9a-f]{7})", vtext).group(1)
+    e["version.faiss"] = re.search(r"faiss-cpu (\d+\.\d+\.\d+) from PyPI", vtext).group(1)
+    e["version.lorann"] = re.search(r"lorann (\d+\.\d+\.\d+) from PyPI", vtext).group(1)
     if (OUT / "step31-sentence.txt").exists():
         src["sentence31"] = (OUT / "step31-sentence.txt").read_text().strip()
     e["exp.changes.passed"], e["exp.changes.all"] = str(sum(ok for _, ok in s42.values())), str(len(s42))
@@ -328,7 +342,7 @@ def main():
               + ("".join(f"\n      {w}" for w in wrong[:12])))
     must = [f"{n}.{w}" for n in EVERY for w in ("items", "ours.qps", "ours.mem_ram", "ours.mem_ssd", "changes.drift")]
     must += [f"{n}.{w}" for n in ALL for w in ("p4.qps", "ratio4", "changes4.drift")]
-    must += [f"{n}.ratio" for n in EVERY if f"{n}.ratio" in e] + [f"{n}.{t}.mem" for t, ns in PLAN.items() for n in ns]
+    must += [f"{n}.ratio" for n in EVERY if f"{n}.ratio" in e] + [f"{n}.{t}.mem" for t, ns in {**PLAN, **PLAN8}.items() for n in ns]
     absent = [k for k in must if k not in shown]
     rep.check("the page shows every dataset's headline numbers", not absent, "all there" if not absent else ", ".join(absent[:10]))
     psrc = {k: v[0] if len(v) == 1 else v for k, v in p.srcs.items()}
