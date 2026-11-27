@@ -147,8 +147,8 @@ fn blocks_n<const N: usize>(q: &[f32], xs: [&[f32]; N], blocks: usize, sq: bool)
 }
 
 /// The same sums written one number at a time: the fallback on other chips, and the reference the tests compare
-/// the vector version with, bit for bit.
-#[cfg_attr(target_arch = "aarch64", allow(dead_code))]
+/// the vector version with, bit for bit. Some of it is used only by the tests, or only on one kind of chip.
+#[allow(dead_code)]
 pub(crate) mod portable {
     use super::LANES;
 

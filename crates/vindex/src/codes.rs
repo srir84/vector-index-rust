@@ -339,7 +339,7 @@ pub fn dot_u8_i16_n<const N: usize>(a: &[i16], cs: [&[u8]; N]) -> [i32; N] {
 #[inline]
 pub fn dot_u4_i16_n<const N: usize>(a: &[i16], cs: [&[u8]; N]) -> [i32; N] {
     let nb = cs[0].len();
-    assert!(nb % 16 == 0 && a.len() == nb * 2 && cs.iter().all(|c| c.len() == nb), "4-bit rows come in blocks of 16 bytes");
+    assert!(nb.is_multiple_of(16) && a.len() == nb * 2 && cs.iter().all(|c| c.len() == nb), "4-bit rows come in blocks of 16 bytes");
     let mut out = [0i32; N];
     #[cfg(target_arch = "aarch64")]
     // SAFETY: each row has nb bytes and the question 2 * nb numbers (checked above); loads stay inside both.
@@ -587,7 +587,7 @@ mod tests {
 
     #[test]
     fn values_outside_the_trained_range_are_clipped() {
-        let r = vec![vec![0.0f32, 1.0], vec![1.0, 2.0]];
+        let r = [vec![0.0f32, 1.0], vec![1.0, 2.0]];
         let mut c = Codes::train(r.iter().map(|v| v.as_slice()), 2, Metric::Ip, 3);
         c.set(2, &[5.0, -5.0]);
         assert_eq!(c.row(2), &[255, 0]);

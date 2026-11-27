@@ -178,7 +178,7 @@ impl Index {
     fn note_change(&mut self) {
         self.changes += 1;
         let every = self.s.qlinks_refresh_every;
-        if every > 0 && self.changes % every == 0 && self.train_q.is_some() {
+        if every > 0 && self.changes.is_multiple_of(every) && self.train_q.is_some() {
             let c = self.question_links_round();
             self.change_checks += c;
         }

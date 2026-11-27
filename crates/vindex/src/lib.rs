@@ -5,6 +5,10 @@
 //! search effort per question, question links where questions look unlike the items, repair right
 //! away after a delete, and 1-byte copies with a full-number re-check. See `DESIGN.md`.
 
+// Index loops are kept where they follow the vector kernels' lane order or index several arrays at once, and the
+// build's inner functions take their parts as separate arguments so the borrows stay disjoint.
+#![allow(clippy::needless_range_loop, clippy::too_many_arguments)]
+
 pub mod audit;
 pub mod buckets;
 pub mod build;

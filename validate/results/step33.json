@@ -1,12 +1,12 @@
 {
  "step": "step33",
- "pass": true,
- "seconds": 2.3,
+ "pass": false,
+ "seconds": 16.4,
  "checks": [
   {
    "check": "the code is as frozen in step 42",
-   "pass": true,
-   "detail": "unchanged",
+   "pass": false,
+   "detail": "index: crates/vindex/src/changes.rs changed; index: crates/vindex/src/codes.rs changed; index: crates/vindex/src/index.rs changed; index: crates/vindex/src/lib.rs changed; index: crates/vindex/src/metric.rs changed",
    "data": null
   },
   {
@@ -18,7 +18,7 @@
   {
    "check": "every number on the page is recomputed from the results files and matches",
    "pass": true,
-   "detail": "499 numbers (466 different), 0 wrong",
+   "detail": "774 numbers (733 different), 0 wrong",
    "data": null
   },
   {
@@ -36,13 +36,13 @@
   {
    "check": "no other number is on the page (only the method's constants and axis ticks)",
    "pass": true,
-   "detail": "115 axis ticks",
+   "detail": "114 axis ticks",
    "data": null
   },
   {
    "check": "the hover data is each index's speed-accuracy line from the results files",
    "pass": true,
-   "detail": "42 lines on 13 datasets",
+   "detail": "94 lines on 13 datasets",
    "data": null
   },
   {

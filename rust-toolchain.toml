@@ -1,6 +1,7 @@
 [toolchain]
-# Nightly (tested: rustc 1.99.0-nightly daf2e5e18, 2026-07-13). On macOS 27, Python extensions built with
+# Nightly, pinned to the one it was built and tested with (rustc 1.99.0-nightly daf2e5e18, 2026-07-13). On macOS 27, Python extensions built with
 # stable 1.90 and 1.97 can fail to load ("mis-aligned LINKEDIT string pool"): with those, the linker leaves the
 # string table 4-byte aligned after an odd-length indirect-symbol table. Nightly's link step pads it to 8.
 # Checked with two different symbol counts (243 and 253 indirect symbols); see STEPS.md, step 0.
-channel = "nightly"
+channel = "nightly-2026-07-14"
+components = ["clippy"]

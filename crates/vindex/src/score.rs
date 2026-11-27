@@ -151,7 +151,7 @@ mod tests {
                     store.set(i, row);
                 }
                 let mut full = FullScore { metric, q: &q, store: &store };
-                let mut one = vec![0f32; 9];
+                let mut one = [0f32; 9];
                 let mut many = vec![0f32; 9];
                 for (o, &i) in one.iter_mut().zip(&ids) {
                     *o = full.one(i);

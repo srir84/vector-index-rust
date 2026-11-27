@@ -8,7 +8,7 @@ rivals, one panel per dataset.
           but at full size
   part 5: validate/results/step42-ours.json (and step 30 for the rivals and part 4's dots; GloVe-100's rivals from the
           experiments' results/step7) -> diagrams/speed-part5.png
-  readme: the same runs, with HNSW -> diagrams/benchmark.png, and the README's table printed
+  readme: the same runs against the fastest other index -> diagrams/benchmark.png, and the README's table printed
 
 Needs matplotlib (the experiments' environment has it):
     ../vector-index-experiments/.venv/bin/python -I tools/draw_report.py [part2 | part3 | part4 | part5 | readme]
@@ -57,7 +57,8 @@ NEW = [("nytimes", "NYTimes (new, held back)"), ("imagenet", "ImageNet (new, hel
 PLAIN = {"gooaq": "GooAQ", "glove": "GloVe", "yandex": "Yandex", "llama": "Llama", "landmark": "Landmark",
          "arxiv": "arXiv", "laion": "LAION", "yi": "Yi", "gist": "GIST1M"}
 RIVAL_NAMES = {"glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGraph", "diskann": "DiskANN", "hnsw": "HNSW",
-               "corenn": "CoreNN"}
+               "corenn": "CoreNN", "faiss_hnsw": "Faiss HNSW", "faiss_hnsw_sq8": "Faiss HNSW-SQ8",
+               "faiss_ivfpq": "Faiss IVF-PQ", "lorann": "LoRANN"}
 
 
 def part3():
@@ -285,44 +286,68 @@ README_NAMES = {"gooaq": "GooAQ: Google answers", "glove": "GloVe: words", "yand
                 "llama2": "Llama, 2nd head: chatbot attention", "glove100": "GloVe-100: words"}
 
 
+def _qps_at(curve, target, sec="sec"):
+    """Searches per second at exactly `target` recall, read off an effort sweep as the experiments do
+    (bench/measures.py cost_at_target): linear between the last point below and the first at or above it."""
+    pts = sorted((c[sec], c["accuracy"]) for c in curve)
+    best = 0.0
+    for i, (cost, acc) in enumerate(pts):
+        prev = best
+        best = max(best, acc)
+        if best >= target:
+            if i == 0 or best == prev:
+                return 1 / cost
+            c0 = pts[i - 1][0]
+            return 1 / (c0 + (target - prev) * (cost - c0) / (best - prev))
+    return None
+
+
 def readme():
-    """The README's chart: searches per second at 95% for vindex (part 5, step 42), the fastest rival and HNSW (step
-    30; GloVe-100's from the experiments' results/step7), one row per dataset. Also prints the README's table."""
-    p4 = per_dataset("step30")
-    now = {c["check"].split(":")[0]: c["data"]["ours"]["qps95"]
-           for c in json.loads((ROOT / "validate" / "results" / "step42-ours.json").read_text())["checks"]
-           if c.get("data") and "at full size" in c["check"]}
-    step7 = ROOT.parent / "vector-index-experiments" / "results" / "step7" / "final"
-    p4["glove100"] = {t: 1 / r["sec_per_query_at95"] if r.get("sec_per_query_at95") else None
-                      for t in ("scann", "glass", "hnsw") for r in [json.loads((step7 / t / "glove100" / "best.json").read_text())]}
+    """The README's chart and table: vindex (part 5, step 42) against the fastest other index tried on each dataset
+    (the experiments' results/step6, and results/step7 for GloVe-100), at full size. Chart: searches per second at
+    95% recall@10, one core. Table: the same, plus the ratio at 90%, the ratio on all cores, and Faiss HNSW (step 8's
+    Faiss and LoRANN runs count as rivals; hnswlib, which has no ARM vector code, no longer does)."""
+    exp = ROOT.parent / "vector-index-experiments" / "results"
+    ours = {c["check"].split(":")[0]: c["data"]["ours"]
+            for c in json.loads((ROOT / "validate" / "results" / "step42-ours.json").read_text())["checks"]
+            if c.get("data") and "at full size" in c["check"]}
     rows = [n for n, _ in DATASETS + HELD_BACK + NEW] + ["glove100"]
     table = []
     for name in rows:
-        rv = {t: v for t, v in p4[name].items() if t != "ours" and v}
-        best = max((t for t in rv if t != "hnsw"), key=rv.get)
-        table.append((name, now[name], best, rv[best], p4[name].get("hnsw")))
-    table.sort(key=lambda r: r[1] / r[3], reverse=True)
+        o = ours[name]
+        rv = {}
+        files = [*(exp / ("step7" if name == "glove100" else "step6") / "final").glob(f"*/{name}/best.json"),
+                 *(exp / "step8" / "final").glob(f"*/{name}/best.json")]   # step 8: Faiss and LoRANN
+        for f in files:
+            r = json.loads(f.read_text())
+            rv[r["tool"]] = {"95": _qps_at(r["curve"], 0.95, "sec_per_query_1core"),
+                             "90": _qps_at(r["curve"], 0.90, "sec_per_query_1core"),
+                             "all": 1 / r["final"]["sec_per_query_allcores"]}
+        others = {t: v for t, v in rv.items() if t != "hnsw"}   # hnswlib has no ARM vector code: Faiss HNSW stands in
+        best = max((t for t in others if others[t]["95"]), key=lambda t: others[t]["95"])
+        best90 = max((others[t]["90"] for t in others if others[t]["90"]), default=None)
+        best_all = max(v["all"] for v in others.values())
+        table.append({"name": name, "ours": o["qps95"], "best": best, "rival": others[best]["95"],
+                      "r90": _qps_at(o["curve"], 0.90) / best90 if best90 else None,
+                      "r_all": o["qps_all"] / best_all, "hnsw": rv.get("faiss_hnsw", {}).get("95")})
+    table.sort(key=lambda r: r["ours"] / r["rival"], reverse=True)
 
     plt.rcParams.update({"font.family": "Helvetica Neue", "font.size": 9.5, "text.color": INK,
                          "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK})
-    fig, ax = plt.subplots(figsize=(9.2, 0.62 * len(table) + 1.7), facecolor=SURFACE)
+    fig, ax = plt.subplots(figsize=(9.2, 0.5 * len(table) + 1.8), facecolor=SURFACE)
     ax.set_facecolor(SURFACE)
-    h = 0.26
-    for y, (name, ours, best, rival, hnsw) in enumerate(table):
-        for dy, v, colour in ((-h, ours, OURS), (0, rival, RIVAL), (h, hnsw, "#c9c7c1")):
-            if v:
-                ax.barh(y + dy, v, height=h * 0.92, color=colour, zorder=2)
-        ax.text(ours * 1.08, y - h, f"{ours / rival:.2f}x the fastest rival", va="center", fontsize=8,
-                color=INK if ours > rival else "#b4471c", fontweight="bold")
-        ax.text(rival * 1.08, y, RIVAL_NAMES[best], va="center", fontsize=7.5, color=INK2)
-        if hnsw:
-            ax.text(hnsw * 1.08, y + h, f"HNSW (we are {ours / hnsw:.1f}x)", va="center", fontsize=7.5, color=INK2)
-        else:
-            ax.text(120, y + h, "HNSW never reaches 95%", va="center", fontsize=7.5, color=INK2)
-    ax.set_yticks(range(len(table)), [README_NAMES[r[0]] for r in table])
+    h = 0.36
+    for y, r in enumerate(table):
+        ours_v, rival = r["ours"], r["rival"]
+        for dy, v, colour in ((-h / 2, ours_v, OURS), (h / 2, rival, RIVAL)):
+            ax.barh(y + dy, v, height=h * 0.92, color=colour, zorder=2)
+        ax.text(ours_v * 1.08, y - h / 2, f"{ours_v / rival:.2f}x", va="center", fontsize=8.5,
+                color=INK if ours_v > rival else "#b4471c", fontweight="bold")
+        ax.text(rival * 1.08, y + h / 2, RIVAL_NAMES[r["best"]], va="center", fontsize=7.5, color=INK2)
+    ax.set_yticks(range(len(table)), [README_NAMES[r["name"]] for r in table])
     ax.set_ylim(len(table) - 0.5, -0.6)
     ax.set_xscale("log")
-    ax.set_xlim(100, 1_000_000)
+    ax.set_xlim(1_000, 300_000)
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}"))
     ax.xaxis.set_minor_formatter(NullFormatter())
     ax.grid(axis="x", color=GRID, lw=0.8, zorder=0)
@@ -331,23 +356,25 @@ def readme():
     ax.spines["bottom"].set_color(GRID)
     ax.tick_params(axis="both", which="both", length=0)
     from matplotlib.patches import Patch
-    keys = [Patch(color=c, label=k) for k, c in (("vindex", OURS), ("fastest other index", RIVAL), ("HNSW", "#c9c7c1"))]
-    ax.legend(handles=keys, loc="lower left", bbox_to_anchor=(0.0, 1.0), ncol=3, frameon=False, fontsize=9)
-    ax.set_xlabel("searches per second on one core, finding 95% of the true 10 closest (log scale; longer is faster)")
-    fig.suptitle("vindex against other indexes on 13 public datasets", x=0.02, y=0.99, ha="left", va="top",
-                 fontsize=12.5, fontweight="bold", color=INK)
-    fig.text(0.02, 0.962, "Every item of each dataset (187,843 to 1.45 million), 1,000 test questions, one core of an "
-             "M3 Max. Faster on 11 of 13; ScaNN wins on the two GloVe datasets.", fontsize=9, color=INK2, va="top")
-    fig.tight_layout(rect=(0, 0, 1, 0.945))
+    keys = [Patch(color=c, label=k) for k, c in (("vindex", OURS), ("fastest other index tried", RIVAL))]
+    ax.legend(handles=keys, loc="lower left", bbox_to_anchor=(0.0, 1.0), ncol=2, frameon=False, fontsize=9)
+    ax.set_xlabel("queries per second, one core, at 95% recall@10 (log scale; longer is faster)")
+    fig.suptitle("vindex against the fastest other index tried, 13 public datasets", x=0.02, y=0.99, ha="left",
+                 va="top", fontsize=12.5, fontweight="bold", color=INK)
+    fig.text(0.02, 0.962, "Every item of each dataset (187,843 to 1.45 million), 1,000 test queries, one core of an "
+             "Apple M3 Max.\nOthers tried: Glass, ScaNN, RoarGraph, Faiss (HNSW, HNSW-SQ8, IVF-PQ), LoRANN, CoreNN.", fontsize=9,
+             color=INK2, va="top", linespacing=1.5)
+    fig.tight_layout(rect=(0, 0, 1, 0.93))
     out_file = OUT.with_name("benchmark.png")
     fig.savefig(out_file, dpi=160, facecolor=SURFACE)
     print("wrote", out_file)
-    print("| Dataset | vindex | Fastest other index | vindex ÷ it | HNSW | vindex ÷ HNSW |")
-    print("|---|---|---|---|---|---|")
-    for name, ours, best, rival, hnsw in table:
-        mark = f"**{ours / rival:.2f}×**" if ours > rival else f"{ours / rival:.2f}×"
-        hn = f"{hnsw:,.0f} | {ours / hnsw:.1f}×" if hnsw else "never reaches 95% | –"
-        print(f"| {README_NAMES[name]} | {ours:,.0f} | {RIVAL_NAMES[best]} {rival:,.0f} | {mark} | {hn} |")
+    ratio = lambda v: "–" if v is None else (f"**{v:.2f}×**" if v > 1 else f"{v:.2f}×")
+    print("| Dataset | vindex | Fastest other index | vindex ÷ it | at 90% | all 16 cores | Faiss HNSW |")
+    print("|---|---|---|---|---|---|---|")
+    for r in table:
+        hn = f"{r['hnsw']:,.0f}" if r["hnsw"] else "never 95%"
+        print(f"| {README_NAMES[r['name']]} | {r['ours']:,.0f} | {RIVAL_NAMES[r['best']]} {r['rival']:,.0f} | "
+              f"{ratio(r['ours'] / r['rival'])} | {ratio(r['r90'])} | {ratio(r['r_all'])} | {hn} |")
 
 
 if __name__ == "__main__":

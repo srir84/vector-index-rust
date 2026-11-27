@@ -157,6 +157,7 @@ pub(crate) enum First<'a> {
 }
 
 /// A trial kept for a head-to-head: one built here, or the index itself.
+#[allow(clippy::large_enum_variant)] // at most two are alive at a time
 enum Held<'a> {
     Own(Index),
     Borrowed(&'a Index),

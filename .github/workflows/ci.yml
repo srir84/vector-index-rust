@@ -1,0 +1,31 @@
+# Build, lint and test on macOS (Apple silicon: the NEON code) and Linux x86 (the plain-code fallback).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rust nightly (rust-toolchain.toml says why)
+        run: rustup toolchain install nightly-2026-07-14 --profile minimal --component clippy
+      - name: Clippy
+        run: cargo clippy --release --all-targets -- -D warnings
+      - name: Rust tests
+        run: cargo test --release -p vindex
+      - uses: astral-sh/setup-uv@v6
+      - name: Build the Python package
+        run: |
+          uv venv --python 3.13 .venv
+          uv pip install --python .venv numpy maturin pytest
+          tools/build_py.sh
+      - name: Python tests
+        run: .venv/bin/python -I -m pytest tests/ -q

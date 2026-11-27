@@ -187,6 +187,13 @@ impl Settings {
         fn num<T: std::str::FromStr>(k: &str, v: &str) -> Result<T> {
             v.parse::<T>().map_err(|_| Error(format!("setting {k}: cannot read {v:?}")))
         }
+        fn flag(k: &str, v: &str) -> Result<bool> {
+            match v {
+                "true" | "True" | "1" | "on" | "yes" => Ok(true),
+                "false" | "False" | "0" | "off" | "no" => Ok(false),
+                _ => err(format!("{k}: use true or false, not {v:?}")),
+            }
+        }
         match key {
             "r" => self.r = num(key, value)?,
             "l_build" => self.l_build = num(key, value)?,
@@ -216,10 +223,10 @@ impl Settings {
                     _ => return err(format!("tune: use auto or off, not {value:?}")),
                 }
             }
-            "learned_effort" => self.learned_effort = matches!(value, "true" | "True" | "1"),
-            "track_usage" => self.track_usage = matches!(value, "true" | "True" | "1"),
-            "effort_apart" => self.effort_apart = matches!(value, "true" | "True" | "1"),
-            "renumber" => self.renumber = matches!(value, "true" | "True" | "1"),
+            "learned_effort" => self.learned_effort = flag(key, value)?,
+            "track_usage" => self.track_usage = flag(key, value)?,
+            "effort_apart" => self.effort_apart = flag(key, value)?,
+            "renumber" => self.renumber = flag(key, value)?,
             "question_bits" => self.question_bits = num(key, value)?,
             "build_space" => {
                 self.build_space = match value {
@@ -504,7 +511,7 @@ impl Index {
     /// against the prototype with its exact order.
     pub fn build_in_order(&mut self, x: &[f32], ids: &[u64], train_q: Option<&[f32]>, order: Option<&[u32]>) -> Result<()> {
         let d = self.dim;
-        if x.len() % d != 0 || x.len() / d != ids.len() {
+        if !x.len().is_multiple_of(d) || x.len() / d != ids.len() {
             return err(format!("x has {} numbers, which is not {} rows of {d}", x.len(), ids.len()));
         }
         if self.n_used > 0 {
@@ -526,6 +533,13 @@ impl Index {
             return err("the learned effort needs training questions (train_questions=...), or set learned_effort=False");
         }
         let n = ids.len();
+        if let Some(o) = order {
+            let mut seen = vec![false; n];
+            let once = o.len() == n && o.iter().all(|&i| (i as usize) < n && !std::mem::replace(&mut seen[i as usize], true));
+            if !once {
+                return err("order must list every row once");
+            }
+        }
         if n == 0 {
             return err("nothing to build");
         }
@@ -571,11 +585,6 @@ impl Index {
             None
         };
         self.graph = Graph::new(cap, self.s.slots());
-        if let Some(o) = order {
-            if o.len() != n || o.iter().any(|&i| i as usize >= n) {
-                return err("order must list every row once");
-            }
-        }
         self.progress.step("linking the items", n.saturating_sub(1) as u64);
         self.link_all(order);
         // The effort table learns from the first `effort_questions` sample questions. With question links on and
@@ -708,7 +717,7 @@ impl Index {
                     rerank: self.s.rerank,
                     links: label.to_string(),
                     question_links: self.train_q.is_some(),
-                    searches_per_s: sec.is_finite().then(|| 1.0 / sec),
+                    searches_per_s: sec.is_finite().then_some(1.0 / sec),
                     checks: p.map(|p| p.checks),
                     bytes_per_item: 0.0,
                     seconds: 0.0,
@@ -769,7 +778,7 @@ impl Index {
                     rerank: self.s.rerank,
                     links: "full size".to_string(),
                     question_links: self.train_q.is_some(),
-                    searches_per_s: sec.is_finite().then(|| 1.0 / sec),
+                    searches_per_s: sec.is_finite().then_some(1.0 / sec),
                     checks: p.map(|p| p.checks),
                     bytes_per_item: crate::tune::bytes_per_item(&Settings { code_bits: bits, ..self.s.clone() }, d),
                     seconds: 0.0,
@@ -842,7 +851,7 @@ impl Index {
                     rerank: *c,
                     links: "full size, re-check".to_string(),
                     question_links: self.train_q.is_some(),
-                    searches_per_s: sec.is_finite().then(|| 1.0 / sec),
+                    searches_per_s: sec.is_finite().then_some(1.0 / sec),
                     checks: p.map(|p| p.checks),
                     bytes_per_item: crate::tune::bytes_per_item(&self.s, d),
                     seconds: 0.0,
@@ -982,9 +991,7 @@ impl Index {
     /// distances are already known, so this costs only searches. Needs `RELEARN_MIN` of them; returns how many
     /// were used. The counts for targets start again, since they measured the old table.
     pub fn relearn_effort(&self) -> Option<usize> {
-        if self.learned().is_none() {
-            return None;
-        }
+        self.learned()?;
         let checked: Vec<Checked> = self.checked_questions().into_iter().filter(|c| c.tenth.is_finite()).collect();
         if checked.len() < RELEARN_MIN {
             return None;
@@ -1003,14 +1010,14 @@ impl Index {
     fn learn_from(&self, qs: &[f32], tenth: &[f32]) -> Learned {
         let nq = tenth.len();
         // first stage alone: each question's hardness z
-        let z: Vec<f32> = self.run_learned(&qs, &[], &[L1]).into_iter().map(|r| r.2).collect();
+        let z: Vec<f32> = self.run_learned(qs, &[], &[L1]).into_iter().map(|r| r.2).collect();
         let mut sorted = z.clone();
         sorted.sort_by(|a, b| a.total_cmp(b));
         let cuts: Vec<f32> = (1..effort::N_BINS).map(|i| effort::quantile(&sorted, i as f64 / effort::N_BINS as f64)).collect();
         let bins: Vec<usize> = z.iter().map(|&v| effort::bin_of(&cuts, v)).collect();
         let (mut levels, mut correct, mut checks) = (Vec::new(), Vec::new(), Vec::new());
         for &l in effort::L_GRID.iter() {
-            let runs = self.run_learned(&qs, &[], &[l]);
+            let runs = self.run_learned(qs, &[], &[l]);
             let c: Vec<u32> = runs
                 .iter()
                 .zip(tenth)
@@ -1238,7 +1245,10 @@ impl Index {
     pub fn search_buckets(&self, q: &[f32], k: usize, n_probe: usize, pool: usize, parallel: bool) -> Result<SearchOut> {
         let Some(b) = &self.buckets else { return err("this index has no buckets; build them first") };
         let d = self.dim;
-        if q.len() % d != 0 {
+        if k == 0 {
+            return err("k must be at least 1");
+        }
+        if !q.len().is_multiple_of(d) {
             return err("questions are not whole rows");
         }
         check_finite(q, "the questions")?;
@@ -1289,7 +1299,10 @@ impl Index {
 
     fn search_batch(&self, q: &[f32], k: usize, effort: Effort, parallel: bool, quiet: bool) -> Result<SearchOut> {
         let d = self.dim;
-        if q.len() % d != 0 {
+        if k == 0 {
+            return err("k must be at least 1");
+        }
+        if !q.len().is_multiple_of(d) {
             return err("questions are not whole rows");
         }
         check_finite(q, "the questions")?;
@@ -1479,6 +1492,7 @@ impl Index {
             b.insert(at, d);
             b.truncate(n);
         };
+        #[allow(clippy::chunks_exact_to_as_chunks)] // the remainder is scored one at a time below
         let mut quads = alive.chunks_exact(4);
         for c in &mut quads {
             let rows = [0, 1, 2, 3].map(|j| self.store.row(c[j] as usize));
@@ -1578,6 +1592,69 @@ mod tests {
     fn data(n: usize, d: usize, seed: u64) -> Vec<f32> {
         let mut r = Rng::new(seed);
         (0..n * d).map(|_| (r.next_u64() >> 40) as f32 / (1u64 << 24) as f32 - 0.5).collect()
+    }
+
+    /// The exact top 10 of each question by checking every item, as ids.
+    fn exact_top10(x: &[f32], q: &[f32], d: usize, metric: Metric) -> Vec<Vec<u64>> {
+        let (mut xs, mut qs) = (x.to_vec(), q.to_vec());
+        if metric == Metric::Cos {
+            xs.chunks_mut(d).for_each(normalize);
+            qs.chunks_mut(d).for_each(normalize);
+        }
+        qs.chunks(d)
+            .map(|qq| {
+                let mut all: Vec<(f32, u64)> = xs.chunks(d).enumerate().map(|(i, r)| (metric.distance(qq, r), i as u64)).collect();
+                all.sort_by(|a, b| a.0.total_cmp(&b.0).then(a.1.cmp(&b.1)));
+                all.iter().take(10).map(|p| p.1).collect()
+            })
+            .collect()
+    }
+
+    #[test]
+    fn finds_the_true_top_10() {
+        // the default build without the settings trials (they only time choices), searched at the 95% target,
+        // against the exact answers: recall@10 on new questions
+        let (d, n) = (24, 20_000);
+        let (x, tq, q) = (data(n, d, 11), data(2000, d, 12), data(200, d, 13));
+        for metric in [Metric::Cos, Metric::Ip, Metric::L2] {
+            let mut a = Index::new(d, metric, Settings { tune: Tune::Off, ..Settings::default() }).unwrap();
+            a.build(&x, &(0..n as u64).collect::<Vec<_>>(), Some(&tq)).unwrap();
+            let truth = exact_top10(&x, &q, d, metric);
+            let out = a.search(&q, 10, Effort::Target(0.95)).unwrap();
+            let found: usize = out
+                .ids
+                .chunks(10)
+                .zip(&truth)
+                .map(|(got, t)| got.iter().filter(|&&g| g >= 0 && t.contains(&(g as u64))).count())
+                .sum();
+            let recall = found as f64 / (10 * truth.len()) as f64;
+            assert!(recall >= 0.90, "{metric:?}: recall@10 {recall:.3} at target 0.95");
+        }
+    }
+
+    #[test]
+    fn refuses_bad_input() {
+        let (d, n) = (8, 500);
+        let s = Settings { learned_effort: false, tune: Tune::Off, ..Settings::default() };
+        let ids: Vec<u64> = (0..n as u64).collect();
+        let mut a = Index::new(d, Metric::L2, s.clone()).unwrap();
+        let mut order: Vec<u32> = (0..n as u32).collect();
+        order[1] = 0; // row 0 twice, row 1 never
+        assert!(a.build_in_order(&data(n, d, 1), &ids, None, Some(&order)).is_err());
+        assert_eq!(a.n_used, 0, "a refused build leaves the index empty");
+        a.build(&data(n, d, 1), &ids, None).unwrap();
+        assert!(a.search(&data(1, d, 2), 0, Effort::List(50)).is_err(), "k = 0");
+        assert!(a.search(&data(1, d, 2), 1, Effort::List(50)).is_ok());
+    }
+
+    #[test]
+    fn reads_switches_as_words() {
+        let mut s = Settings::default();
+        for (v, want) in [("on", true), ("off", false), ("yes", true), ("no", false), ("True", true), ("0", false)] {
+            s.set("renumber", v).unwrap();
+            assert_eq!(s.renumber, want, "{v}");
+        }
+        assert!(s.set("learned_effort", "maybe").is_err());
     }
 
     #[test]

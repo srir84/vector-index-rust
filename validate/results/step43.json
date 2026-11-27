@@ -1,12 +1,12 @@
 {
  "step": "step43",
- "pass": true,
- "seconds": 0.1,
+ "pass": false,
+ "seconds": 0.2,
  "checks": [
   {
    "check": "the code is as frozen in step 42",
-   "pass": true,
-   "detail": "unchanged",
+   "pass": false,
+   "detail": "index: crates/vindex/src/changes.rs changed; index: crates/vindex/src/codes.rs changed; index: crates/vindex/src/index.rs changed; index: crates/vindex/src/lib.rs changed; index: crates/vindex/src/metric.rs changed",
    "data": null
   },
   {
@@ -138,6 +138,17 @@
       "90",
       "3.3",
       "47"
+     ],
+     "step 47": [
+      "10",
+      "1.08",
+      "2.08",
+      "1.08",
+      "1.01",
+      "1.35",
+      "0.77",
+      "2.51",
+      "8.61"
      ]
     }
    }
@@ -151,7 +162,7 @@
   {
    "check": "no raw diagram is left, and every picture shown exists",
    "pass": true,
-   "detail": "3 pictures: diagrams/speed-part5.png, diagrams/WRITE-UP-d1-8a3011f6.png, diagrams/speed-part5.png",
+   "detail": "3 pictures: diagrams/speed-part5.png, diagrams/WRITE-UP-d1-8a3011f6.png, diagrams/benchmark.png",
    "data": null
   }
  ]
