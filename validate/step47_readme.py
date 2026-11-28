@@ -1,4 +1,4 @@
-"""Step 47: the README's two tables, checked against the results files.
+"""Step 47: the benchmark's two tables (docs/BENCHMARK.md since step 49; the README before), checked against the results files.
     ../vector-index-experiments/.venv/bin/python -I validate/step47_readme.py      (needs matplotlib, as draw_report does)
 Checks:
   - "The numbers": every row is what `tools/draw_report.py readme` prints from the results files (step 42 and
@@ -51,7 +51,7 @@ def pieces():
 
 def main():
     rep = Report("step47-readme")
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "docs" / "BENCHMARK.md").read_text()
 
     printed = subprocess.run([sys.executable, "-I", str(ROOT / "tools" / "draw_report.py"), "readme"],
                              capture_output=True, text=True, check=True).stdout
@@ -59,7 +59,7 @@ def main():
             if ln.startswith("|")][2:]
     have = table_rows(readme, "| Dataset | vindex (queries/s) |")
     bad = [f"{h!r} against {w!r}" for h, w in zip(have, want) if h != w]
-    rep.check("README 'The numbers': every row matches the results files", len(have) == len(want) == 13 and not bad,
+    rep.check("docs/BENCHMARK.md 'The numbers': every row matches the results files", len(have) == len(want) == 13 and not bad,
               f"{len(have)} rows checked" + "".join(f"\n      {b}" for b in bad[:5]))
 
     want = pieces()
@@ -70,7 +70,7 @@ def main():
         cells = [c.strip() for c in row.strip("|").split("|")][1:] if row else None
         if cells is None or [c.split(" (the 8-bit row)")[0] for c in cells] != want[v]:
             bad.append(f"{label}: {cells} against {want[v]}")
-    rep.check("README 'What each piece adds': every cell matches step 46's results", len(have) == len(ROWS) and not bad,
+    rep.check("docs/BENCHMARK.md 'What each piece adds': every cell matches step 46's results", len(have) == len(ROWS) and not bad,
               f"{len(have)} rows checked" + "".join(f"\n      {b}" for b in bad))
     rep.finish()
 

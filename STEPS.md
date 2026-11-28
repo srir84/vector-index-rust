@@ -885,3 +885,11 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
   - **Build time:** Glass's Yandex build at effort 800 takes 189 seconds, so vindex's builds are now 1.4× (Yandex) to 454× (GIST1M) as long as the fastest other index's.
   - **One ScaNN setting failed:** GooAQ with 14,540 buckets and one number per code. Its container stopped after building the buckets, with no error message, twice. Its neighbours (14,540 buckets with two numbers per code, and 4,362 with one) passed 95% at their quickest setting and were slower than the pick; ScaNN on GooAQ reaches 4,425 queries/s against Glass's 26,512. The runner now records the container's exit code.
   - A fix in the step 9 script: a final whose settings no longer match the pick is rerun (before, it was kept if the file existed).
+
+## 49. A shorter README, for technical and non-technical readers
+- **Builds:** the README (305 lines) was a reference manual whose first screen assumed the reader knew vector search. It is now a short front page: what vector search is and what vindex does, why it is interesting, the chart and a three-line result, a five-minute try, a code example, how it works in plain words, who it suits and who it does not, and where to read next. Its detail moved, word for word, into three pages:
+  - `docs/BENCHMARK.md`: the result, the full table and its notes, the caveats, where vindex is not better, and what each piece adds;
+  - `docs/GUIDE.md`: install, the playground, use from Python and Rust, self-fitting, settings, checking it, and the files;
+  - `docs/HOW-IT-WORKS.md`: how each part works in standard terms, the published work each builds on, and the glossary.
+- **Check:** `validate/step47_readme.py` now checks the two tables in `docs/BENCHMARK.md`; the README's Python example was run as written (about a minute, as it says).
+- **Status:** done. Every number on the new README is one already in the checked docs.

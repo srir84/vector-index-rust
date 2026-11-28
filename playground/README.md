@@ -7,7 +7,7 @@ Download a dataset, build an index on it, search it, and see how it did, from th
 *Waits are sped up about 7×; the page's own clock shows the real time. Recorded with `tools/record_playground.py`.*
 
 ## Before you start
-Do the main README's **Install** first. It installs `h5py`, which the playground uses to read the dataset files.
+Do the install in the main README (or `docs/GUIDE.md`) first. It installs `h5py`, which the playground uses to read the dataset files.
 All commands below run from the repo's top folder.
 
 ## From the command line
