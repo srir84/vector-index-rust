@@ -28,10 +28,8 @@ NAMES = {"GooAQ": "gooaq", "GloVe": "glove", "Yandex": "yandex", "Llama": "llama
 CONSTANTS = CONSTANTS4 + ["Five parts", "five parts", "Part 5", "part 5", "GloVe-100", "within 10%", "1.25–1.5×",
                           "at least 1.25×", "within 3%", "Three fresh builds", "three fresh builds", "three builds",
                           "100 numbers per word", "3 replacement links", "up to 8", "13 public datasets",
-                          "all thirteen", "all 13 datasets", "eight datasets", "a few percent"]
-
-
-STEP8 = ["faiss_hnsw", "faiss_hnsw_sq8", "faiss_ivfpq", "lorann"]
+                          "all thirteen", "all 13 datasets", "eight datasets", "a few percent",
+                          "16 to 160 links, build effort up to 800"]   # step 48's grid caps (the experiments' step 9)
 
 
 def runs(step):
@@ -154,16 +152,20 @@ def main():
                  f"{json.loads((OUT / 'step42-changes.json').read_text())['seconds'] / 3600:.1f}",
                  f"{sum(r.get('wall_seconds', 0) for r in step7) / 60:.0f}"],
     }
-    # step 47 (after the freeze): Faiss and LoRANN on all 13 (the experiments' results/step8), counted as rivals;
-    # hnswlib no longer counts, Faiss HNSW stands in
-    s8 = {n: {t: r for t in STEP8 if (r := rival(t, n, EXP / "results" / "step8"))} for n in EVERY}
-    rv8 = {n: {**{t: r for t, r in rv[n].items() if t != "hnsw"}, **s8[n]} for n in EVERY}
+    # steps 47 and 48 (after the freeze): every rival's current result (the experiments' results/current.json:
+    # steps 6 to 9, with Faiss and LoRANN); hnswlib no longer counts, Faiss HNSW stands in
+    cur = json.loads((EXP / "results" / "current.json").read_text())["rivals"]
+    s8 = {n: {t: r for t, per in cur.items() if n in per and per[n]["final"]
+              and (r := rival(t, n, EXP / "results" / per[n]["final"].split("/")[0]))} for n in EVERY}
+    rv8 = {n: {t: r for t, r in s8[n].items() if t != "hnsw"} for n in EVERY}
     ratio8 = {n: q[n] / max(r["qps95"] for r in rv8[n].values() if r["qps95"]) for n in EVERY}
-    ahead = [r for r in ratio8.values() if r >= 1.05]   # the results page's rule: within 5% is level
+    ahead = [r for r in ratio8.values() if r >= 1.10]   # the results page's rule: within 10% is level
     fh = [q[n] / s8[n]["faiss_hnsw"]["qps95"] for n in EVERY if s8[n]["faiss_hnsw"]["qps95"]]
     derived["step 47"] = [str(len(ahead)), f"{min(ahead):.2f}", f"{max(ahead):.2f}", f"{ratio8['yandex']:.2f}",
                           f"{ratio8['gist']:.2f}", f"{ratio['gist']:.2f}", f"{q['glove'] / s8['glove']['faiss_ivfpq']['qps95']:.2f}",
                           f"{min(fh):.2f}", f"{max(fh):.2f}"]
+    # step 48: Glass's results before its wider grid (step 6), on the two datasets where the wider grid beat them
+    derived["step 48"] = [f"{q[n] / rival('glass', n, EXP / 'results' / 'step6')['qps95']:.2f}" for n in ("yandex", "landmark")]
     for vs in derived.values():
         allowed |= {core(x) for v in vs for x in TOKEN.findall(v)}
     unexplained = {}

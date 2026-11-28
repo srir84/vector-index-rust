@@ -7,9 +7,9 @@ It reads, and only reads:
   validate/results/step37-before.json, step37.json, step37-full.json, step30b.json   how steady fresh builds are
   validate/results/step31.json, step31-sentence.txt   the CoreNN sentence (part 4)
   validate/results/step42-frozen.json, step30-docker.txt, machine.json          versions and the machine
-  the experiments' results/step6/final/<rival>/<dataset>/best.json             the rivals at full size (part 4)
-  the experiments' results/step7/final/<rival>/glove100/best.json              GloVe-100's rivals (part 5)
-  the experiments' results/step8/final/<rival>/<dataset>/best.json             Faiss and LoRANN, all 13 (after the freeze)
+  the experiments' results/current.json, and the finals and grids it names        the rivals at full size: part 4's
+                                                                                (step 6), GloVe-100's (step 7), Faiss and
+                                                                                LoRANN (step 8), the gaps closed (step 9)
   the experiments' data/prepared/<dataset>/card.json and items_full.npy (its shape only)   the datasets
 Every number on the page sits in an element with a data-n key, and every passage copied from a results file in one
 with a data-src key; validate/step33.py recomputes or re-reads each one and checks the page. The pictures are drawn
@@ -31,8 +31,10 @@ RES = ROOT / "validate" / "results"
 EXP = Path(os.environ.get("VINDEX_EXPERIMENTS", ROOT.parent / "vector-index-experiments"))
 DATA = EXP / "data" / "prepared"
 NEW = "glove100"   # part 5's held-back dataset: its rivals ran in part 5 (step 42), the others' in part 4
-RUNS = lambda n: EXP / "results" / ("step7" if n == NEW else "step6")
-STEP8 = EXP / "results" / "step8"   # Faiss and LoRANN, run on every dataset after part 5's freeze
+# which rival result is current for each dataset (steps 6 to 9): the experiments' scripts/current_results.py
+CURRENT = json.loads((EXP / "results" / "current.json").read_text())["rivals"]
+FINAL = lambda t, n: EXP / "results" / CURRENT[t][n]["final"] if CURRENT[t][n]["final"] else None
+GRIDS = lambda t, n: [EXP / "results" / g for g in CURRENT[t][n]["grids"]]
 OUT = ROOT / "page" / "results.html"
 
 ORDER = ["gooaq", "glove", "yandex", "llama", "landmark", "arxiv", "laion", "yi", "gist", "nytimes", "imagenet", "llama2",
@@ -59,11 +61,9 @@ WHAT = {   # from each card's "what", in everyday words; the count goes in front
 DISTANCE = {"cos": "angle", "ip": "best score", "l2": "straight-line distance"}
 TOOL = {"ours": "vindex", "hnsw": "HNSW", "glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGraph", "corenn": "CoreNN",
         "faiss_hnsw": "Faiss HNSW", "faiss_hnsw_sq8": "Faiss HNSW-SQ8", "faiss_ivfpq": "Faiss IVF-PQ", "lorann": "LoRANN"}
-PLAN = {"glass": ["gooaq", "yandex", "landmark", "arxiv", "laion", "gist", "nytimes", "imagenet", NEW],
-        "scann": ["glove", "nytimes", NEW], "roargraph": ["llama", "yi", "llama2"], "corenn": ["gist"], "hnsw": ORDER}
-PLAN8 = {t: ORDER for t in ("faiss_hnsw", "faiss_hnsw_sq8", "faiss_ivfpq", "lorann")}
+PLAN = {t: [n for n in ORDER if n in per] for t, per in CURRENT.items()}
 NOT_RIVAL = {"hnsw"}   # hnswlib has no vector code for Apple chips: shown, but Faiss HNSW stands in as the HNSW rival
-LEVEL = 0.05          # within 5% counts as level: about the timing noise of one core
+LEVEL = 0.10          # within 10% counts as level: timing a pair again moved a ratio by up to 16% (part 4)
 X0, X1 = 0.85, 1.0    # the accuracy shown on the speed-accuracy charts
 esc = html.escape
 
@@ -151,10 +151,9 @@ def load(allow_missing):
              "distance": DISTANCE[card["formula"]], "licence": card.get("licence", ""), "rivals": {},
              "ours": ours_of(ours[n]), "p4": ours_of(ours4[n]) if n in ours4 else None,
              "changes": changes.get(n), "changes4": changes4.get(n)}
-        runs = [(t, RUNS(n)) for t, names in PLAN.items() if n in names] + [(t, STEP8) for t in PLAN8]
-        for tool, where in runs:
-            f = where / "final" / tool / n / "best.json"
-            if not f.exists():
+        for tool in (t for t, names in PLAN.items() if n in names):
+            f = FINAL(tool, n)
+            if not f:
                 missing.append(f"{tool}/{n}")
                 continue
             r = json.loads(f.read_text())
@@ -187,10 +186,8 @@ def load(allow_missing):
              "sentence31": (RES / "step31-sentence.txt").read_text().strip() if (RES / "step31-sentence.txt").exists() else None,
              "questions": json.loads((DATA / "gooaq" / "card.json").read_text())["questions"],
              "slice": json.loads((DATA / "gooaq" / "card.json").read_text())["slice_items"],
-             "tried": {t: {n: [json.loads(f.read_text())["params"] for f in sorted((RUNS(n) / "grid" / t / n).glob("*.json"))]
-                           for n in names} for t, names in PLAN.items()},
-             "tried8": {t: {n: [json.loads(f.read_text())["params"] for f in sorted((STEP8 / "grid" / t / n).glob("*.json"))]
-                            for n in names} for t, names in PLAN8.items()}}
+             "tried": {t: {n: [json.loads(f.read_text())["params"] for g in GRIDS(t, n) for f in sorted(g.glob("*.json"))]
+                           for n in names} for t, names in PLAN.items()}}
     # how steady fresh builds are: part 4's rebuilds (step 30b), three builds of each sample before the fix and after
     # (step 37), and Yandex at full size: step 37's three builds against part 5's frozen run
     rc = [c["data"] for c in checks("step30b") if c.get("data")]
@@ -427,7 +424,6 @@ def limits(ds, extra, N):
     vs = [d["ours"]["mem_ram"] / d["rivals"][d["fastest"]]["mem"] for d in ds.values() if d["fastest"]]
     oth = [c for d in ds.values() for c in d["ours"]["others"]]
     tried = {t: sorted({len(v) for v in per.values() if v}) for t, per in extra["tried"].items()}
-    tried8 = {t: sorted({len(v) for v in per.values() if v}) for t, per in extra["tried8"].items()}
     span = lambda s: (str(s[0]) if len(s) == 1 else f"{s[0]}–{s[-1]}") if s else "?"
     cores = extra["docker"].split(" cores")[0].split()[-1] if " cores" in extra["docker"] else None
     li = []
@@ -438,11 +434,11 @@ def limits(ds, extra, N):
     if level:
         li.append("<b>Level, not ahead:</b> " + "; ".join(
             f'{esc(NAME[d["name"]])} ({N(f"{d["name"]}.ratio", f_x(d["ratio"]))} {TOOL[d["fastest"]]}’s speed)'
-            for d in level) + ". Within 5% is about the timing noise of one core.")
+            for d in level) + ". Within 10% counts as level: timing the same pair again has moved a ratio by up to 16%.")
     li.append("<b>Memory:</b> our speeds are with everything in memory, where we use "
               f'{N("limits.vs_lo", f"{min(vs):.2f}")} to {N("limits.vs_hi", f"{max(vs):.2f}")}× the fastest '
               "rival’s memory per item. With the full numbers left on the SSD we use "
-              f'{N("limits.mem_lo", f"{min(mem):.1f}")} to {N("limits.mem_hi", f"{max(mem):.1f}")}× less, but answer '
+              f'{N("limits.mem_lo", f"{min(mem):.1f}")} to {N("limits.mem_hi", f"{max(mem):.1f}")}× less than that, but answer '
               f'{N("limits.slow_lo", f"{min(slow):.0f}")} to {N("limits.slow_hi", f"{max(slow):.0f}")}× fewer '
               "questions per second.")
     li.append("<b>The bucket search was left out:</b> on GloVe and GloVe-100, ScaNN groups the items into buckets and "
@@ -455,14 +451,23 @@ def limits(ds, extra, N):
               "and HNSW) ran in part 5. DiskANN, slower in the samples, was not rerun. SymphonyQG needs "
               "Intel’s AVX-512 and cannot run on this Mac. After part 5’s code was frozen, Faiss (HNSW, HNSW-SQ8 and "
               f'IVF-PQ) and LoRANN ran on all {N("summary.datasets", str(len(ORDER)))} datasets, and from then on HNSW '
-              "(hnswlib) does not count as a rival: it has no vector code for Apple chips, and Faiss HNSW stands in.")
+              "(hnswlib) does not count as a rival: it has no vector code for Apple chips, and Faiss HNSW stands in. "
+              "Picking rivals on the samples missed some: Faiss and LoRANN, run everywhere, beat the sample-picked "
+              "rival on LAION, ImageNet and GIST1M. ScaNN, a bucket index like Faiss IVF-PQ, then ran at full size "
+              "on every dataset too, and was not the fastest on any it had skipped.")
     graph = sorted(set(tried["hnsw"]) | set(tried["glass"]) | set(tried["roargraph"]))
     li.append(f'<b>Their settings:</b> each rival tried {N("tried.graph", span(graph))} settings on the tuning '
               f'questions (ScaNN {N("tried.scann", span(tried["scann"]))}) and kept its fastest at 95%. Their authors '
-              "may know better ones. CoreNN ran on its author’s own settings only. Faiss HNSW reused HNSW’s settings, "
+              "may know better ones. The graph indexes first tried 32, 64 or 96 links and build effort 100, 200 or 400; "
+              "where a pick sat at the edge of that, the next step out was tried until it no longer did (16 to 160 "
+              "links, build effort up to 800), which made Glass faster on Yandex and Landmark. "
+              "CoreNN ran on its author’s own settings only. Faiss HNSW reused HNSW’s settings, "
               "and Faiss HNSW-SQ8 Glass’s (HNSW’s where Glass did not run). Faiss IVF-PQ tried "
-              f'{N("tried8.faiss_ivfpq", span(tried8["faiss_ivfpq"]))} bucket counts and LoRANN '
-              f'{N("tried8.lorann", span(tried8["lorann"]))} settings, with and without its reduced size.')
+              f'{N("tried.faiss_ivfpq", span(tried["faiss_ivfpq"]))} bucket counts and LoRANN '
+              f'{N("tried.lorann", span(tried["lorann"]))} settings, with and without its reduced size. LoRANN got the '
+              "sample questions on the three chatbot datasets, as its documentation advises for questions "
+              "unlike the items, and later also on the three text-to-photo datasets, where our index turned its "
+              "question links on; there its settings were tried both with them and without.")
     li.append("<b>Containers and patches:</b> ScaNN has no Mac version, so it ran in a Linux container on the same Mac"
               + (f' ({N("docker.cores", cores)} cores)' if cores else "") + ", which may cost it some speed. Glass, "
               "RoarGraph and CoreNN needed small changes to build on a Mac; their search code was not changed, "
@@ -814,7 +819,8 @@ def build(ds, extra, missing):
 <section aria-labelledby="h-expected">
   <h2 id="h-expected">What we expected, written before part 5’s changes</h2>
   {expectations(extra, ds, N)}
-  <p class="note">Two more, about which choices flip and why Landmark drifted, are marked in the project’s step
+  <p class="note">The speed ratios in these expectations are against the rivals of that time, before Faiss and
+  LoRANN were added. Two more, about which choices flip and why Landmark drifted, are marked in the project’s step
   notes. Part 4’s expectations are in its report.</p>
 </section>
 

@@ -821,7 +821,7 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
 - **Builds:** four more rivals, each with its own ARM NEON code, on all 13 datasets at full size: Faiss HNSW (`IndexHNSWFlat`), Faiss HNSW-SQ8 (8-bit HNSW, then the best 20 re-checked on the full numbers), Faiss IVF-PQ (buckets and 4-bit fast-scan codes, then a re-check) and LoRANN (buckets and a small learned model per bucket, then a re-check). The experiments' step 8: `scripts/step8_more_rivals.py`, `bench/runners/faiss_idx.py`, `bench/runners/lorann_idx.py`. Reviewers had pointed out that hnswlib has no ARM vector code and that Faiss and LoRANN were never tried.
 - **How they were run:** as steps 6 and 7 ran the others: a settings search on the tuning queries, then the best setting on the test queries, one core, median of 5 runs, read off at exactly 95%.
   - Faiss HNSW used the links and build effort hnswlib picked; Faiss HNSW-SQ8 Glass's (hnswlib's where Glass did not run).
-  - Faiss IVF-PQ tried one bucket per 1,000 and per 250 items; LoRANN sqrt(items) and 2 × sqrt(items) buckets, with and without its reduced 128 or 256 numbers. LoRANN got the training queries on the three chatbot datasets, as its documentation advises.
+  - Faiss IVF-PQ tried one bucket per 1,000 and per 250 items; LoRANN sqrt(items) and 2 × sqrt(items) buckets, each scored on every number (below 200 numbers), on every number or 128 (up to 256), or on 128 or 256 (wider). LoRANN got the training queries on the three chatbot datasets, as its documentation advises.
   - Buckets searched and candidates re-checked were swept together. The first sweep stopped at 3,200 re-checks and 0.5% of the buckets: LoRANN on GloVe and Faiss IVF-PQ on Llama and Yi were still gaining at 3,200 with every bucket searched, and Faiss IVF-PQ on GooAQ reached 95% at 0.5%. The sweep was widened to 25,600 and 0.1%, and those four rerun; all four then reach 95%.
   - NGT-QG was not run: its quantized-graph search is x86-only.
 - **Check:** each rival's result per dataset; vindex's part 5 numbers (step 42) against the fastest other index, now counting these four and no longer hnswlib.
@@ -844,8 +844,44 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
 | GloVe-100 | 7,184 | 1,971 | 1,071 | 6,027 | 2,680 | 1,012 |
 
   - **The fastest other index changed on three datasets:** LAION and ImageNet (Faiss IVF-PQ), and GIST1M (LoRANN). vindex's lead there fell: LAION 2.19× to 2.08×, ImageNet 1.70× to 1.38×, GIST1M 1.35× to 1.01× (level).
-  - **vindex is now faster on 10 of 13** (1.08× to 2.08×; Yandex's 1.08× is within timing noise), level on GIST1M (1.01×), and slower on GloVe (ScaNN 1.36×, Faiss IVF-PQ 1.30× as fast) and GloVe-100 (ScaNN 1.37×).
+  - **vindex is now faster on 9 of 13** (1.34× to 2.08×), level on Yandex (1.08×) and GIST1M (1.01×), and slower on GloVe (ScaNN 1.36×, Faiss IVF-PQ 1.30× as fast) and GloVe-100 (ScaNN 1.37×).
   - **Faiss HNSW is 1.7× to 4.5× as fast as hnswlib** at the same settings, and still never reaches 95% on the three chatbot datasets. Faiss HNSW-SQ8 reached 95% at its smallest search effort on GooAQ and Landmark, so its speed there is a lower bound.
   - **LoRANN builds fast:** 2 seconds on GIST1M against vindex's 903.
   - The README's table and chart (`tools/draw_report.py readme`), the write-up and the results page now count these rivals. `validate/step43.py` checks the write-up's new numbers against the step 8 files, and `validate/step33.py` the page's (774 numbers, 0 wrong). In both, the first check, "the code is as frozen in step 42", fails, as expected since step 44: the code changed after the freeze.
+  - **An outside review of the docs** (before sharing) found no wrong numbers, and these gaps, now stated in the README, the write-up and the results page rather than rerun:
+    - picking the full-size rivals on samples missed some: Faiss and LoRANN beat the sample-picked rival on three datasets, and ScaNN ran at full size on three datasets only (where both ran it was 0.99× to 1.63× as fast as Faiss IVF-PQ, enough to beat vindex on ImageNet);
+    - many rival picks sit at the edge of their grid: Glass at 96 links on 5 of 9 datasets, RoarGraph on all 3, Faiss IVF-PQ at its larger bucket count on 12 of 13; vindex took 24 links on Landmark and Llama, below the rivals' smallest;
+    - Glass on Landmark passes 95% at its quickest setting, so vindex's 1.34× there is at most that;
+    - LoRANN got the sample queries only on the chatbot datasets, not on the three text-to-photo ones where vindex turned its question links on;
+    - "level" now means within 10% everywhere (it was 5% on the results page): timing a pair again has moved a ratio by up to 16%. So Yandex (1.08×) is level, and vindex is faster on 9 of 13;
+    - Faiss's one-core runs were checked: CPU time equals wall time.
+  - `validate/step47_readme.py` checks the README's two tables (the rival table and step 46's) against the results files.
 
+## 48. After the freeze: closing the rivals' gaps
+- **Builds:** none in vindex. The experiments' step 9 (`scripts/step9_close_gaps.py`) reran the rivals where step 47's outside review found gaps:
+  - LoRANN: its step 8 settings again on Yandex, LAION and ImageNet, with the training queries (vindex turned its question links on there).
+  - Faiss IVF-PQ: one bucket per 100 items, on all 13 (it had taken the larger of its two bucket counts on 12 of 13).
+  - ScaNN: its 6 settings at full size on the 10 datasets it had skipped.
+  - Glass and RoarGraph: one step past each edge of the grid their pick sat on (links 16, 24, 128 or 160; build effort 800), repeated until the pick was inside the tried settings or at the cap.
+- **How:** as steps 6 to 8 ran: settings on the tuning queries, and the fastest at 95% kept across the earlier runs and these. Where a new setting was the fastest, it ran on the test queries (one core, median of 5) and replaced the earlier result. `scripts/current_results.py` writes `results/current.json`, which names the current result for each rival and dataset; the README table, the write-up's check and the results page read it.
+- **Check:** each run's result; then the README table (`validate/step47_readme.py`), the write-up (`validate/step43.py`) and the results page (`validate/step33.py`) against the new files.
+- **Status:** done. 109 settings on the tuning queries, 14 new results on the test queries. Test queries per second, one core, at 95% recall@10:
+
+| Gap | Where a new setting won | Before | After | Fastest other index |
+|---|---|---|---|---|
+| LoRANN with the training queries | ImageNet (2,264 buckets, 256 numbers) | 4,814 | 6,020 | unchanged (Faiss IVF-PQ 11,120) |
+| Faiss IVF-PQ with one bucket per 100 items | GIST1M (9,790 buckets) | 845 | 791 | unchanged (LoRANN 3,866) |
+| ScaNN on 10 more datasets | all 10 (new) | – | 1,318 (GIST1M) to 10,747 (Yandex) | unchanged on all 10 |
+| Glass past the grid's edge | Yandex (128 links, build effort 800) | 13,872 | 16,182 | Glass: vindex 1.08× → 0.93× |
+| | Landmark (24 links) | 34,762 | 41,448 | Glass: vindex 1.34× → 1.12× |
+| RoarGraph past 96 links | none: 128 links was slower | | | unchanged |
+
+  - **vindex is faster on 9 of 13** (1.12× to 2.08×), level on GIST1M (1.01×) and Yandex (0.93×: Glass is now 1.08× as fast), and slower on GloVe and GloVe-100, as before. On all 16 cores Glass now wins on Yandex too (vindex 0.87×).
+  - **Glass on Landmark** still passes 95% at its quickest setting, so vindex's 1.12× there is at most that.
+  - **ScaNN was 0.35× to 5.8× as fast as Faiss IVF-PQ** across the 13. On ImageNet it reached 7,392 queries/s, so the sample-based guess that it might beat vindex there was wrong.
+  - **LoRANN's training queries did not help on the tuning queries:** slower on Yandex and LAION, the same on ImageNet (6,040 against 5,994). ImageNet's pick changed by that small margin, and its new test result is 25% faster than step 47's.
+  - **Faiss IVF-PQ's GIST1M pick** was faster on the tuning queries and 6% slower on the test queries. The rule keeps the tuning queries' pick.
+  - **Picks still at the edge of what was tried:** Glass's build effort 800 on Yandex (the cap) and 100 on arXiv (the least), RoarGraph's build effort 100 on Llama, and ScaNN's most buckets on Llama and Llama2 (a tenth to a fifth of RoarGraph's speed there).
+  - **Build time:** Glass's Yandex build at effort 800 takes 189 seconds, so vindex's builds are now 1.4× (Yandex) to 454× (GIST1M) as long as the fastest other index's.
+  - **One ScaNN setting failed:** GooAQ with 14,540 buckets and one number per code. Its container stopped after building the buckets, with no error message, twice. Its neighbours (14,540 buckets with two numbers per code, and 4,362 with one) passed 95% at their quickest setting and were slower than the pick; ScaNN on GooAQ reaches 4,425 queries/s against Glass's 26,512. The runner now records the container's exit code.
+  - A fix in the step 9 script: a final whose settings no longer match the pick is rerun (before, it was kept if the file existed).

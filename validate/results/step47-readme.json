@@ -1,0 +1,19 @@
+{
+ "step": "step47-readme",
+ "pass": true,
+ "seconds": 0.4,
+ "checks": [
+  {
+   "check": "README 'The numbers': every row matches the results files",
+   "pass": true,
+   "detail": "13 rows checked",
+   "data": null
+  },
+  {
+   "check": "README 'What each piece adds': every cell matches step 46's results",
+   "pass": true,
+   "detail": "8 rows checked",
+   "data": null
+  }
+ ]
+}
