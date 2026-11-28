@@ -35,8 +35,9 @@ flowchart LR
 
 ![Our speed against the fastest rival's on each dataset](diagrams/benchmark.png)
 
-- **Fastest on 9 of 13 datasets:** 1.34× to 2.08× the speed of the fastest rival. Level on Yandex (1.08×, Glass) and GIST1M (1.01×, LoRANN): within 10% counts as level.
+- **Fastest on 9 of 13 datasets:** 1.12× to 2.08× the speed of the fastest rival. Level on GIST1M (1.01×, LoRANN) and Yandex (0.93×, Glass): within 10% counts as level.
 - **Faiss and LoRANN, added after the freeze, cut our lead** on LAION and ImageNet (Faiss's bucket search) and on GIST1M (LoRANN): GIST1M went from 1.35× to 1.01×.
+- **Wider settings grids for the rivals, tried later, made Glass faster** on Yandex and Landmark: Yandex went from 1.08× to 0.93×, Landmark from 1.34× to 1.12×. ScaNN, run on all 13 later, was not the fastest on any dataset it had skipped.
 - **2.51× to 8.61× as fast as HNSW** (Faiss's, which has vector code for Apple chips). On the three chatbot datasets HNSW never finds 95%.
 - **17.1× as fast as CoreNN** on GIST1M, the dataset CoreNN's author tested on, using its author's settings (part 4). CoreNN keeps its items in a database on disk, so this compares different designs.
 - **Bigger data helped us:** in the samples we were only level with Glass on three datasets. With every item, Glass slowed down more than we did.
@@ -47,7 +48,7 @@ flowchart LR
 - **GloVe and GloVe-100:** ScaNN is 1.36× and 1.37× as fast as we are. On GloVe Faiss's bucket search is faster too (we are 0.77×), and on GloVe-100 Glass (we are 0.93×). It scans groups of short codes instead of walking links. We built that way of searching too, but it did not beat ScaNN, so it was left out.
 - **Fully steady builds:** one sample (ImageNet) still flips between two settings, and in the final run Yandex's build picked differently from three made just before it, so Yandex came out 17% slower than in part 4.
 - **Memory:** at the speeds above, we use about as much memory as Glass, or a little less, and more than RoarGraph, ScaNN, Faiss's bucket search and LoRANN. With the full numbers left on the SSD we use 0.17 to 0.70 times HNSW's memory, but answer 2 to 23 times fewer questions per second.
-- **The rivals' settings and machine:** each tried up to 9 settings, many picks sit at the edge of that grid, and their authors may know better ones. Glass, ScaNN and RoarGraph ran at full size only where they were fastest on samples, and that pick missed: Faiss and LoRANN, run everywhere later, beat it on three datasets. ScaNN ran at full size on three datasets only, and might beat us on ImageNet. They were written for Intel and AMD chips first, and on this Mac some ran without their own vector code: the README lists which. ScaNN ran in a Linux container on the Mac.
+- **The rivals' settings and machine:** each tried 9 settings at first; where a pick sat at the edge of that grid, the next step out was tried until it no longer did (16 to 160 links, build effort up to 800), and their authors may still know better ones. Glass and RoarGraph ran at full size only where they were fastest on samples, and that pick missed: Faiss and LoRANN, run everywhere later, beat it on three datasets. They were written for Intel and AMD chips first, and on this Mac some ran without their own vector code: the README lists which. ScaNN ran in a Linux container on the Mac.
 - **Our own guesses:** before the last round of changes we wrote down 8 results; 3 were wrong and 1 half right.
 
 **Where to look.**

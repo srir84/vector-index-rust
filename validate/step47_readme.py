@@ -1,8 +1,8 @@
 """Step 47: the README's two tables, checked against the results files.
     ../vector-index-experiments/.venv/bin/python -I validate/step47_readme.py      (needs matplotlib, as draw_report does)
 Checks:
-  - "The numbers": every row is what `tools/draw_report.py readme` prints from the results files (step 42 and the
-    experiments' steps 6, 7 and 8);
+  - "The numbers": every row is what `tools/draw_report.py readme` prints from the results files (step 42 and
+    the experiments' results/current.json: steps 6 to 9);
   - "What each piece adds": every cell, recomputed from validate/results/step46-pieces.json.
 """
 import json

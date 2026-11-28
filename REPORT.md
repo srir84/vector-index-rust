@@ -7,7 +7,7 @@ Five parts:
 - **Part 2** is the index that picks its own settings and keeps itself on target, tested on four held-back datasets.
 - **Part 1** (further down) is the first Rust build, with one setting for every dataset.
 
-**After the freeze (steps 46 and 47, in `STEPS.md`):** Faiss (HNSW, HNSW-SQ8, IVF-PQ) and LoRANN were run on all 13 datasets after part 5's code was frozen, and now count as rivals; hnswlib, which has no ARM vector code, no longer does. They are faster than part 5's fastest rival on LAION and ImageNet (Faiss IVF-PQ) and GIST1M (LoRANN). With them, vindex is ahead on 9 of 13, level on Yandex (1.08×) and GIST1M (1.01×), and behind on GloVe and GloVe-100. Part 5 below is kept as it was measured, against the rivals of that time. The current comparison is the README's table and the results page. Step 46 measures what each piece of the index adds.
+**After the freeze (steps 46 to 48, in `STEPS.md`):** Faiss (HNSW, HNSW-SQ8, IVF-PQ) and LoRANN were run on all 13 datasets after part 5's code was frozen, and now count as rivals; hnswlib, which has no ARM vector code, no longer does. They are faster than part 5's fastest rival on LAION and ImageNet (Faiss IVF-PQ) and GIST1M (LoRANN). Step 48 then widened the rivals' settings grids, ran ScaNN on all 13 and gave LoRANN the sample queries on the text-to-photo datasets; Glass got faster on Yandex and Landmark. With all of them, vindex is ahead on 9 of 13 (1.12× to 2.08×), level on GIST1M (1.01×) and Yandex (0.93×), and behind on GloVe and GloVe-100. Part 5 below is kept as it was measured, against the rivals of that time. The current comparison is the README's table and the results page. Step 46 measures what each piece of the index adds.
 
 # Part 5: steady builds, the change test, and GloVe-100
 

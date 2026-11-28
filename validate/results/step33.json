@@ -1,7 +1,7 @@
 {
  "step": "step33",
  "pass": false,
- "seconds": 2.5,
+ "seconds": 2.4,
  "checks": [
   {
    "check": "the code is as frozen in step 42",
@@ -18,7 +18,7 @@
   {
    "check": "every number on the page is recomputed from the results files and matches",
    "pass": true,
-   "detail": "775 numbers (733 different), 0 wrong",
+   "detail": "836 numbers (794 different), 0 wrong",
    "data": null
   },
   {
@@ -36,13 +36,13 @@
   {
    "check": "no other number is on the page (only the method's constants and axis ticks)",
    "pass": true,
-   "detail": "114 axis ticks",
+   "detail": "106 axis ticks",
    "data": null
   },
   {
    "check": "the hover data is each index's speed-accuracy line from the results files",
    "pass": true,
-   "detail": "94 lines on 13 datasets",
+   "detail": "104 lines on 13 datasets",
    "data": null
   },
   {

@@ -304,10 +304,11 @@ def _qps_at(curve, target, sec="sec"):
 
 def readme():
     """The README's chart and table: vindex (part 5, step 42) against the fastest other index tried on each dataset
-    (the experiments' results/step6, and results/step7 for GloVe-100), at full size. Chart: searches per second at
+    (the experiments' results/current.json: steps 6 to 9), at full size. Chart: searches per second at
     95% recall@10, one core. Table: the same, plus the ratio at 90%, the ratio on all cores, and Faiss HNSW (step 8's
     Faiss and LoRANN runs count as rivals; hnswlib, which has no ARM vector code, no longer does)."""
     exp = ROOT.parent / "vector-index-experiments" / "results"
+    current = json.loads((exp / "current.json").read_text())["rivals"]
     ours = {c["check"].split(":")[0]: c["data"]["ours"]
             for c in json.loads((ROOT / "validate" / "results" / "step42-ours.json").read_text())["checks"]
             if c.get("data") and "at full size" in c["check"]}
@@ -316,8 +317,8 @@ def readme():
     for name in rows:
         o = ours[name]
         rv = {}
-        files = [*(exp / ("step7" if name == "glove100" else "step6") / "final").glob(f"*/{name}/best.json"),
-                 *(exp / "step8" / "final").glob(f"*/{name}/best.json")]   # step 8: Faiss and LoRANN
+        # the current result of each rival on this dataset, steps 6 to 9 (the experiments' scripts/current_results.py)
+        files = [exp / per[name]["final"] for per in current.values() if name in per and per[name]["final"]]
         for f in files:
             r = json.loads(f.read_text())
             rv[r["tool"]] = {"95": _qps_at(r["curve"], 0.95, "sec_per_query_1core"),

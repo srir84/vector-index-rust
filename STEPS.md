@@ -856,3 +856,32 @@ Plan: `SPEC.md`, part 5. The code changes again in this part. Each step is check
     - "level" now means within 10% everywhere (it was 5% on the results page): timing a pair again has moved a ratio by up to 16%. So Yandex (1.08×) is level, and vindex is faster on 9 of 13;
     - Faiss's one-core runs were checked: CPU time equals wall time.
   - `validate/step47_readme.py` checks the README's two tables (the rival table and step 46's) against the results files.
+
+## 48. After the freeze: closing the rivals' gaps
+- **Builds:** none in vindex. The experiments' step 9 (`scripts/step9_close_gaps.py`) reran the rivals where step 47's outside review found gaps:
+  - LoRANN: its step 8 settings again on Yandex, LAION and ImageNet, with the training queries (vindex turned its question links on there).
+  - Faiss IVF-PQ: one bucket per 100 items, on all 13 (it had taken the larger of its two bucket counts on 12 of 13).
+  - ScaNN: its 6 settings at full size on the 10 datasets it had skipped.
+  - Glass and RoarGraph: one step past each edge of the grid their pick sat on (links 16, 24, 128 or 160; build effort 800), repeated until the pick was inside the tried settings or at the cap.
+- **How:** as steps 6 to 8 ran: settings on the tuning queries, and the fastest at 95% kept across the earlier runs and these. Where a new setting was the fastest, it ran on the test queries (one core, median of 5) and replaced the earlier result. `scripts/current_results.py` writes `results/current.json`, which names the current result for each rival and dataset; the README table, the write-up's check and the results page read it.
+- **Check:** each run's result; then the README table (`validate/step47_readme.py`), the write-up (`validate/step43.py`) and the results page (`validate/step33.py`) against the new files.
+- **Status:** done. 109 settings on the tuning queries, 14 new results on the test queries. Test queries per second, one core, at 95% recall@10:
+
+| Gap | Where a new setting won | Before | After | Fastest other index |
+|---|---|---|---|---|
+| LoRANN with the training queries | ImageNet (2,264 buckets, 256 numbers) | 4,814 | 6,020 | unchanged (Faiss IVF-PQ 11,120) |
+| Faiss IVF-PQ with one bucket per 100 items | GIST1M (9,790 buckets) | 845 | 791 | unchanged (LoRANN 3,866) |
+| ScaNN on 10 more datasets | all 10 (new) | – | 1,318 (GIST1M) to 10,747 (Yandex) | unchanged on all 10 |
+| Glass past the grid's edge | Yandex (128 links, build effort 800) | 13,872 | 16,182 | Glass: vindex 1.08× → 0.93× |
+| | Landmark (24 links) | 34,762 | 41,448 | Glass: vindex 1.34× → 1.12× |
+| RoarGraph past 96 links | none: 128 links was slower | | | unchanged |
+
+  - **vindex is faster on 9 of 13** (1.12× to 2.08×), level on GIST1M (1.01×) and Yandex (0.93×: Glass is now 1.08× as fast), and slower on GloVe and GloVe-100, as before. On all 16 cores Glass now wins on Yandex too (vindex 0.87×).
+  - **Glass on Landmark** still passes 95% at its quickest setting, so vindex's 1.12× there is at most that.
+  - **ScaNN was 0.35× to 5.8× as fast as Faiss IVF-PQ** across the 13. On ImageNet it reached 7,392 queries/s, so the sample-based guess that it might beat vindex there was wrong.
+  - **LoRANN's training queries did not help on the tuning queries:** slower on Yandex and LAION, the same on ImageNet (6,040 against 5,994). ImageNet's pick changed by that small margin, and its new test result is 25% faster than step 47's.
+  - **Faiss IVF-PQ's GIST1M pick** was faster on the tuning queries and 6% slower on the test queries. The rule keeps the tuning queries' pick.
+  - **Picks still at the edge of what was tried:** Glass's build effort 800 on Yandex (the cap) and 100 on arXiv (the least), RoarGraph's build effort 100 on Llama, and ScaNN's most buckets on Llama and Llama2 (a tenth to a fifth of RoarGraph's speed there).
+  - **Build time:** Glass's Yandex build at effort 800 takes 189 seconds, so vindex's builds are now 1.4× (Yandex) to 454× (GIST1M) as long as the fastest other index's.
+  - **One ScaNN setting failed:** GooAQ with 14,540 buckets and one number per code. Its container stopped after building the buckets, with no error message, twice. Its neighbours (14,540 buckets with two numbers per code, and 4,362 with one) passed 95% at their quickest setting and were slower than the pick; ScaNN on GooAQ reaches 4,425 queries/s against Glass's 26,512. The runner now records the container's exit code.
+  - A fix in the step 9 script: a final whose settings no longer match the pick is rerun (before, it was kept if the file existed).

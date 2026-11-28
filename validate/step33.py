@@ -24,16 +24,16 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))   # -I leaves the script folder out
 from common import DATA, EXP, OUT, ROOT, Report, frozen_changes
-from step30 import ALL, FULL, ours_full, rival
-from step42 import EVERY, FROZEN5, FULL7, NEW, part5_full
+from step30 import ALL, ours_full, rival
+from step42 import EVERY, FROZEN5, NEW, part5_full
 
 PAGE = ROOT / "page" / "results.html"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-PLAN = {"glass": ["gooaq", "yandex", "landmark", "arxiv", "laion", "gist", "nytimes", "imagenet", NEW],
-        "scann": ["glove", "nytimes", NEW], "roargraph": ["llama", "yi", "llama2"], "corenn": ["gist"], "hnsw": EVERY}
-WHERE = lambda n: FULL7 if n == NEW else FULL   # GloVe-100's rivals ran in part 5, the others' in part 4
-STEP8 = EXP / "results" / "step8"   # Faiss and LoRANN on every dataset, run after part 5's freeze
-PLAN8 = {t: EVERY for t in ("faiss_hnsw", "faiss_hnsw_sq8", "faiss_ivfpq", "lorann")}
+# which rival result is current for each dataset (steps 6 to 9): the experiments' scripts/current_results.py
+CURRENT = json.loads((EXP / "results" / "current.json").read_text())["rivals"]
+PLAN = {t: [n for n in EVERY if n in per] for t, per in CURRENT.items()}
+WHERE = lambda t, n: EXP / "results" / CURRENT[t][n]["final"].split("/")[0]   # the step folder of the final in use
+GRIDS = lambda t, n: [EXP / "results" / g for g in CURRENT[t][n]["grids"]]
 NOT_RIVAL = {"hnsw"}   # shown, but not counted: hnswlib has no vector code for Apple chips (Faiss HNSW stands in)
 TOOL = {"hnsw": "HNSW", "glass": "Glass", "scann": "ScaNN", "roargraph": "RoarGraph", "corenn": "CoreNN",
         "faiss_hnsw": "Faiss HNSW", "faiss_hnsw_sq8": "Faiss HNSW-SQ8", "faiss_ivfpq": "Faiss IVF-PQ", "lorann": "LoRANN"}
@@ -46,7 +46,9 @@ LEVEL = 0.10
 CONSTANTS = ["part 4", "Part 4", "part 5", "Part 5", "GloVe-100", "95%", "true 10", "10 closest", "of its 10 answers", "9.5", "middle of 5 timed runs",
              "Llama 3", "AVX-512", "CC BY 4.0", "90% of its items", "10% more were added, 10% deleted and 10%",
              "drift under 1 point", "Within 10%", "by up to 16%", "never reaches 85%", "at least 10\u00d7 as fast",
-             "within 1.3\u00d7 of the fastest"]
+             "within 1.3\u00d7 of the fastest",
+             # the graph rivals' grids: step 6's, then step 48's caps (the experiments' step 9)
+             "32, 64 or 96 links and build effort 100, 200 or 400", "16 to 160 links, build effort up to 800"]
 NUMBER = re.compile(r"(?<![A-Za-z0-9])[−+-]?\d[\d,]*(?:\.\d+)?(?![A-Za-z0-9])")
 
 
@@ -140,8 +142,7 @@ def expected():
         others += o["ours"]["other_programs_cores"]
         curves[n] = [("vindex", True, line([(p["accuracy"], p["sec"]) for p in o["ours"]["curve"]]))]
         best = None
-        runs = [(t, WHERE(n)) for t, names in PLAN.items() if n in names] + [(t, STEP8) for t in PLAN8]
-        for tool, where in runs:
+        for tool, where in ((t, WHERE(t, n)) for t, names in PLAN.items() if n in names and CURRENT[t][n]["final"]):
             if not (r := rival(tool, n, where)):
                 continue
             raw = json.loads((where / "final" / tool / n / "best.json").read_text())
@@ -205,7 +206,7 @@ def expected():
     e["steady.yandex_slower"] = f"{1 - ours['yandex']['ours']['qps95'] / min(b['qps95'] for b in y):.1%}"
     dk = (OUT / "step30-docker.txt").read_text()
     e["docker.cores"] = re.search(r"Docker VM: (\d+) cores", dk).group(1)
-    grid = {t: {n: [json.loads(f.read_text())["params"] for f in sorted((WHERE(n) / "grid" / t / n).glob("*.json"))]
+    grid = {t: {n: [json.loads(f.read_text())["params"] for g in GRIDS(t, n) for f in sorted(g.glob("*.json"))]
                 for n in names} for t, names in PLAN.items()}
     counts = lambda ts: sorted({len(p) for t in ts for p in grid[t].values() if p})
     span = lambda s: (str(s[0]) if len(s) == 1 else f"{s[0]}–{s[-1]}") if s else "?"
@@ -215,8 +216,8 @@ def expected():
     e["tried.dims"] = words(sorted({p["dims_per_block"] for per in grid["scann"].values() for p in per}))
     for n, per in grid["scann"].items():
         e[f"tried.buckets.{n}"] = words([f"{b:,}" for b in sorted({p["leaves"] for p in per})])
-    for t in ("faiss_ivfpq", "lorann"):   # settings tried per dataset in step 8
-        e[f"tried8.{t}"] = span(sorted({len(list((STEP8 / "grid" / t / n).glob("*.json"))) for n in EVERY} - {0}))
+    for t in ("faiss_ivfpq", "lorann"):   # settings tried per dataset (steps 8 and 9)
+        e[f"tried.{t}"] = span(counts([t]))
     fz = json.loads(FROZEN5.read_text())
     e["versions"] = ", ".join(re.sub(r"^(\w+?)(?:_py)?-([\d.]+)\.dist-info$", r"\1 \2", x) for x in fz["rival_versions"])
     vtext = (EXP / "baselines" / "VERSIONS.md").read_text()
@@ -342,7 +343,7 @@ def main():
               + ("".join(f"\n      {w}" for w in wrong[:12])))
     must = [f"{n}.{w}" for n in EVERY for w in ("items", "ours.qps", "ours.mem_ram", "ours.mem_ssd", "changes.drift")]
     must += [f"{n}.{w}" for n in ALL for w in ("p4.qps", "ratio4", "changes4.drift")]
-    must += [f"{n}.ratio" for n in EVERY if f"{n}.ratio" in e] + [f"{n}.{t}.mem" for t, ns in {**PLAN, **PLAN8}.items() for n in ns]
+    must += [f"{n}.ratio" for n in EVERY if f"{n}.ratio" in e] + [f"{n}.{t}.mem" for t, ns in PLAN.items() for n in ns]
     absent = [k for k in must if k not in shown]
     rep.check("the page shows every dataset's headline numbers", not absent, "all there" if not absent else ", ".join(absent[:10]))
     psrc = {k: v[0] if len(v) == 1 else v for k, v in p.srcs.items()}
